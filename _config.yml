@@ -1,2 +1,5 @@
-name: Your New Jekyll Site
-pygments: true
+name: Max Jacobson
+# pygments: true
+permalink: /:year/:title
+markdown: kramdown
+relative_permalinks: true
