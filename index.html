@@ -1,21 +1,14 @@
 ---
 layout: default
-title: Max Jacobson
+title: 55 hot links
 ---
 
-<div id="home">
-  <button class="home_toggle" style="display: none">Blog posts</button>
-  <button class="home_toggle">Links</button>
-  <div id="links" style="display: none">
-    <h2>55 hot links</h2>
-    <script language='javascript' src='http://pinboard.in/widgets/v1/linkroll?user=maxjacobson&amp;count=55'></script>
-  </div>
-  <div id="blogposts">
-    <h2>blog posts</h2>
-    <ul class="posts">
-      {% for post in site.posts %}
-        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-      {% endfor %}
-    </ul>
-  </div>
+<h2>55 hot links</h2>
+<script language='javascript' src='http://pinboard.in/widgets/v1/linkroll?user=maxjacobson&amp;count=55'></script>
+<div style='display: none'>
+  <ul>
+    <li id='hot_tag'>max_jacobson</li>
+    <li id='hot_tag'>layabout</li>
+    <li id='hot_tag'>beefsteak</li>
+  </ul>
 </div>
