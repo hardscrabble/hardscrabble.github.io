@@ -1,5 +1,4 @@
 name: Max Jacobson
-# pygments: true
-permalink: /a/post/from/:year/called/:title
+permalink: /:year/:title
 markdown: kramdown
 relative_permalinks: true

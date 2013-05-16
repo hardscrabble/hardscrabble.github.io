@@ -1,14 +1,27 @@
 ---
 layout: default
-title: 55 hot links
+title: welcome
 ---
 
-<h2>55 hot links</h2>
-<script language='javascript' src='http://pinboard.in/widgets/v1/linkroll?user=maxjacobson&amp;count=55'></script>
-<div style='display: none'>
-  <ul>
-    <li id='hot_tag'>max_jacobson</li>
-    <li id='hot_tag'>layabout</li>
-    <li id='hot_tag'>beefsteak</li>
-  </ul>
+<h3>hey welcome</h3>
+
+<p>Just fooling around with Jekyll here. Could this be my new homepage?</p>
+
+<hr>
+
+<h3>some links from pinboard</h3>
+
+<script language='javascript' src='http://pinboard.in/widgets/v1/linkroll?user=maxjacobson&amp;count=5'></script>
+
+<hr>
+
+<h3>most recent blog post</h3>
+
+<div class="first_post">
+  <span><em>Here's the most recent post (More posts available in the <a href="/archive">archive</a>):</em></span>
+  <h2>{{ site.posts.first.title }}</h2>
+  <span class="date"><a href="{{site.posts.first.url}}">{{ site.posts.first.date | date_to_string }}</a></span>
+  <span class="content">
+    {{ site.posts.first.content }}
+  </span>
 </div>

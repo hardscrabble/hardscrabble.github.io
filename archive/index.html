@@ -1,0 +1,17 @@
+---
+layout: default
+title: archive
+---
+
+<input type="text" id="searcher" placeholder="search..." autofocus="autofocus">
+
+<div class="posts">
+  {% for post in site.posts %}
+    <div class="post">
+      <span class="date">{{ post.date | date_to_string }}</span> - <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+      <div class="content" style="display: none">
+        {{post.content}}
+      </div>
+    </div>
+  {% endfor %}
+</div>
