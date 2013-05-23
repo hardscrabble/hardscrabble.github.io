@@ -14,3 +14,4 @@ $ ->
             $(this).fadeOut "fast"
       1000
       )
+  $("li").each (i) -> $(this).addClass "strikeout" if $(this).text().match /\– Done$/i

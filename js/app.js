@@ -11,7 +11,7 @@
     $searcher = $("#searcher");
     if ($searcher.val() !== void 0) {
       $posts = $(".post");
-      return setInterval(function() {
+      setInterval(function() {
         var q;
 
         puts("searching again...");
@@ -25,6 +25,11 @@
         });
       }, 1000);
     }
+    return $("li").each(function(i) {
+      if ($(this).text().match(/\– Done$/i)) {
+        return $(this).addClass("strikeout");
+      }
+    });
   });
 
 }).call(this);
