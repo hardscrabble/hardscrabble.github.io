@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Already with the updates
-date: 2012-12-01 07:36:00
+title: "Already with the updates"
+date: 2012-12-01 7:36 AM
 category: coding
 tags: devblog, ruby, sinatra, updates
 ---

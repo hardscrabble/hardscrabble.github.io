@@ -1,7 +1,7 @@
 ---
 layout: post
-title: added sorting
-date: 2012-12-01 09:20:00
+title: "added sorting"
+date: 2012-12-01 9:20 AM
 category: coding
 tags: devblog, feature, update
 ---

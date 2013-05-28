@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Art appreciator or one of Pavlov's dog?
-date: 2007-02-21 12:00:00
+title: "Art appreciator or one of Pavlov&rsquo;s dog?"
+date: 2007-02-21 12:00 AM
 category: pop culture
 tags: psychology, film, from the archives, music
 ---

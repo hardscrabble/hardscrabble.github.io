@@ -1,7 +1,7 @@
 ---
 layout: post
-title: migrations
-date: 2013-03-23 15:39:00
+title: "migrations"
+date: 2013-03-23 3:39 PM
 category: coding
 tags: markdown, squarespace, xml, github
 ---

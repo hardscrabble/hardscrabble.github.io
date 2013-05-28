@@ -1,7 +1,7 @@
 ---
 layout: post
-title: back to school
-date: 2013-04-04 15:54:00
+title: "back to school"
+date: 2013-04-04 3:54 PM
 category: personal
 tags: learning, flatiron school
 ---

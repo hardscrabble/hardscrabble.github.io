@@ -1,7 +1,7 @@
 ---
 layout: post
-title: testing this little devblog thing
-date: 2012-12-01 06:20:00
+title: "testing this little devblog thing"
+date: 2012-12-01 6:20 AM
 category: coding
 tags: devblog, markdown, ruby, sinatra
 ---

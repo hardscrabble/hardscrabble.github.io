@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "loving websites"
-date: 2013-04-22 18:30:00
+date: 2013-04-22 6:30 PM
 categories: rss twitter adn
 ---
 

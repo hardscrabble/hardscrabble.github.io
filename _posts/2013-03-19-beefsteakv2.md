@@ -1,7 +1,7 @@
 ---
 layout: post
-title: beefsteak v2
-date: 2013-03-19 05:45:00
+title: "beefsteak v2"
+date: 2013-03-19 05:45 AM
 category: coding
 tags: beefsteak, haml, devblog
 ---

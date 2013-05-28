@@ -1,7 +1,7 @@
 ---
 layout: post
-title: the horizontal rule
-date: 2012-12-31 04:29:00
+title: "the horizontal rule"
+date: 2012-12-31 4:29 AM
 category: the internet
 tags: youre doing it wrong, css, html, blogs, instapaper
 ---

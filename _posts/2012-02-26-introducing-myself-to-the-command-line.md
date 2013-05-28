@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Introducing myself to the command line
-date: 2012-02-26 12:00:00
+title: "Introducing myself to the command line"
+date: 2012-02-26 12:00 AM
 category: coding
 tags: command-line, learning, from the archives
 ---

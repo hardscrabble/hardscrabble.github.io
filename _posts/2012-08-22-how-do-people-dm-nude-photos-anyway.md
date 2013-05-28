@@ -1,7 +1,7 @@
 ---
 layout: post
-title: how do people DM nude photos anyway?
-date: 2012-08-22 23:51:00
+title: "how do people DM nude photos anyway?"
+date: 2012-08-22 11:51 PM
 category: the internet
 tags: from the archives, twitter, nsfw, television
 ---

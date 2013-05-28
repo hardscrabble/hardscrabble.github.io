@@ -1,7 +1,7 @@
 ---
 layout: post
-title: erb and indendation
-date: 2012-12-02 19:53:00
+title: "erb and indendation"
+date: 2012-12-02 7:53 PM
 category: coding
 tags: erb, ruby, html, indentation, sinatra
 ---

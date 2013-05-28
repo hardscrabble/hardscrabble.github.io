@@ -1,7 +1,7 @@
 ---
 layout: post
-title: using mobile web inspector
-date: 2013-01-15 22:50:00
+title: "using mobile web inspector"
+date: 2013-01-15 10:50 PM
 category: coding
 tags: jquery, javascript, safari, ios
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: some new features here
+title: "some new features here"
 date: 2012-12-13 21:07:00
 category: coding
 tags: devblog, tree, RSS

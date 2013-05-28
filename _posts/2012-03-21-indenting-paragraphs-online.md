@@ -1,7 +1,7 @@
 ---
 layout: post
-title: The easiest way to indent paragraphs online, not that you necessarily should
-date: 2012-03-21 12:00:00
+title: "The easiest way to indent paragraphs online, not that you necessarily should"
+date: 2012-03-21 12:00 AM
 category: the internet
 tags: pop culture, youre doing it wrong, css
 ---

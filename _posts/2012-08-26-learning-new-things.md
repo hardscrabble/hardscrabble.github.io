@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Learning new things
-date: 2012-08-26 17:13:00
+title: "Learning new things"
+date: 2012-08-26 5:13 PM
 category: coding
 tags: css, git, github, pinboard, sass, scss, wordpress, from the archives
 ---

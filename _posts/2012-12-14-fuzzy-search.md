@@ -1,7 +1,7 @@
 ---
 layout: post
-title: fuzzy search
-date: 2012-12-14 23:59:00
+title: "fuzzy search"
+date: 2012-12-14 11:59 PM
 category: coding
 tags: search, fuzzy, arrays, ruby, regular expressions
 ---

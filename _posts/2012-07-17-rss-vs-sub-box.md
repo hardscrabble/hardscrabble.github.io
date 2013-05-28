@@ -1,7 +1,7 @@
 ---
 layout: post
-title: People only use RSS when they don't know they're using it so maybe the "sub box" is its future
-date: 2012-07-17 12:00:00
+title: "People only use RSS when they don't know they're using it so maybe the 'sub box' is its future"
+date: 2012-07-17 12:00 AM
 category: the internet
 tags: from the archives, google reader, youtube, RSS
 ---

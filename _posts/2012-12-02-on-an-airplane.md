@@ -1,7 +1,7 @@
 ---
 layout: post
-title: I am on an airplane
-date: 2012-12-02 11:04:00
+title: "I am on an airplane"
+date: 2012-12-02 11:04 AM
 category: personal
 tags: the miracle of flight, college, family, memories, camp, teen tour, life, namaste
 ---

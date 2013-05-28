@@ -1,7 +1,7 @@
 ---
 layout: post
-title: categories and tags
-date: 2012-12-01 21:26:00
+title: "categories and tags"
+date: 2012-12-01 9:26 PM
 category: coding
 tags: devblog, wawa, nonsense, just writing for the sake of testing this system
 ---

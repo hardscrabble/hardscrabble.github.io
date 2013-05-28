@@ -1,7 +1,7 @@
 ---
 layout: post
-title: going open source
-date: 2012-12-02 20:58:00
+title: "going open source"
+date: 2012-12-02 8:58 PM
 category: coding
 tags: devblog, github, open source, san diego, pinboard, gems
 ---

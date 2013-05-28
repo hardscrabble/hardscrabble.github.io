@@ -1,7 +1,7 @@
 ---
 layout: post
-title: click to ugh
-date: 2013-01-21 15:37:00
+title: "click to ugh"
+date: 2013-01-21 3:37 PM
 category: the internet
 tags: youre doing it wrong, html, the av club
 ---

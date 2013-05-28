@@ -1,7 +1,7 @@
 ---
 layout: post
-title: gem anxiety
-date: 2012-12-01 06:41:00
+title: "gem anxiety"
+date: 2012-12-01 6:41 AM
 category: coding
 tags: command-line, gems, rubygems, ruby
 ---

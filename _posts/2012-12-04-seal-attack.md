@@ -1,7 +1,7 @@
 ---
 layout: post
-title: seal attack
-date: 2012-12-04 19:52:00
+title: "seal attack"
+date: 2012-12-04 7:52 PM
 category: video
 tags: seal, seals, video, wildlife, instagram, photos, photo
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Un Americano re Japon y mucho cafe e ansiedad
-date: 2011-03-12 12:00:00
+title: "Un Americano re Japón y mucho cafe e ansiedad"
+date: 2011-03-12 12:00 AM
 category: personal
 tags: coffee, from the archives
 ---
