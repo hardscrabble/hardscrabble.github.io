@@ -7,13 +7,10 @@ title: welcome
 
 <p>Just fooling around with Jekyll here. Could this be my new homepage?</p>
 
-<h3>most recent blog post</h3>
-
-<div class="first_post">
-  <span><em>Here's the most recent post (More posts available in the <a href="/archive">archive</a>):</em></span>
-  <h2>{{ site.posts.first.title }}</h2>
-  <span class="date"><a href="{{site.posts.first.url}}">{{ site.posts.first.date | date_to_string }}</a></span>
-  <span class="content">
-    {{ site.posts.first.content }}
-  </span>
+<div class="posts">
+  {% for post in site.posts %}
+    <div class="post">
+      <span class="date">{{ post.date | date_to_string }}</span> - <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+    </div>
+  {% endfor %}
 </div>

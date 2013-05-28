@@ -5,5 +5,4 @@ webmaster: max@maxjacobson.net
 permalink: /:year/:title
 markdown: kramdown
 relative_permalinks: true
-include: [".htaccess"]
 exclude: ["df.xml", "ex-feed.xml", "Gemfile", "Gemfile.lock", "Guardfile", "README.md"]
