@@ -1,5 +1,6 @@
 puts = (putter) -> console.log putter
 $ ->
+  # empower search on /archive
   $searcher = $("#searcher")
   if $searcher.val() isnt undefined
     $posts = $(".post")
@@ -14,4 +15,7 @@ $ ->
             $(this).fadeOut "fast"
       1000
       )
-  $("li").each (i) -> $(this).addClass "strikeout" if $(this).text().match /\– Done$/i
+
+  # if a list item is marked done, strike it out
+  $("li").each (i) ->
+    $(this).addClass "strikeout" if $(this).text().match /\– Done$/i

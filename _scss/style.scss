@@ -28,9 +28,9 @@ footer {
 }
 
 .strikeout {
-  text-decoration: line-through;
   font-family: 'redactedregular', sans-serif;
   &:hover {
     font-family: helvetica, sans-serif;
+    text-decoration: line-through;
   }
 }

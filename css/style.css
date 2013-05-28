@@ -7,7 +7,7 @@
 
 body {
   width: 500px;
-  margin: 0 auto;
+  margin: 10px auto;
   background-color: lightblue;
   font-family: helvetica, sans-serif; }
 
@@ -19,7 +19,7 @@ footer {
   margin: 10px 0; }
 
 .strikeout {
-  text-decoration: line-through;
   font-family: 'redactedregular', sans-serif; }
   .strikeout:hover {
-    font-family: helvetica, sans-serif; }
+    font-family: helvetica, sans-serif;
+    text-decoration: line-through; }
