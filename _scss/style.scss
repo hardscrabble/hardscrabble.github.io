@@ -39,3 +39,12 @@ footer {
     text-decoration: line-through;
   }
 }
+
+a {
+  transition-duration: .1s;
+  &:hover {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: lightcoral;
+  }
+}

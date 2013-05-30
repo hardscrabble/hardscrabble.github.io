@@ -27,3 +27,10 @@ footer {
   .strikeout:hover {
     font-family: helvetica, sans-serif;
     text-decoration: line-through; }
+
+a {
+  transition-duration: .1s; }
+  a:hover {
+    padding: 3px;
+    border-radius: 5px;
+    background-color: lightcoral; }
