@@ -23,7 +23,8 @@ footer {
   margin: 10px 0; }
 
 .strikeout {
-  font-family: 'redactedregular', sans-serif; }
+  font-family: 'redactedregular', sans-serif;
+  transition-duration: .1s; }
   .strikeout:hover {
     font-family: helvetica, sans-serif;
     text-decoration: line-through; }

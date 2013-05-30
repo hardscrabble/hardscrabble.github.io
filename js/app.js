@@ -25,7 +25,7 @@
         percentage = "" + (Math.floor((numerator / denominator) * 100)) + "%";
         $(this).append(" – " + percentage);
         if (percentage === "100%") {
-          return $(this).addClass("strikeout");
+          return $(this).find("a").addClass("strikeout");
         }
       }
     });

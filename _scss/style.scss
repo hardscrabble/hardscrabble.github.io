@@ -34,6 +34,7 @@ footer {
 
 .strikeout {
   font-family: 'redactedregular', sans-serif;
+  transition-duration: .1s;
   &:hover {
     font-family: helvetica, sans-serif;
     text-decoration: line-through;
