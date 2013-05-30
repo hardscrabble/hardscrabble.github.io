@@ -24,13 +24,21 @@ footer {
 
 .strikeout {
   font-family: 'redactedregular', sans-serif;
-  transition-duration: .1s; }
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s; }
   .strikeout:hover {
     font-family: helvetica, sans-serif;
     text-decoration: line-through; }
 
 a {
-  transition-duration: .1s; }
+  color: green;
+  text-decoration: none;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s; }
   a:hover {
     padding: 3px;
     border-radius: 5px;
