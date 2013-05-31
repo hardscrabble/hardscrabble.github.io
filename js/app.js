@@ -6,7 +6,7 @@
   };
 
   $(function() {
-    var tasks;
+    var tasks, total_percentage;
 
     tasks = {
       total: 0,
@@ -24,13 +24,13 @@
         tasks.complete += numerator;
         percentage = "" + (Math.floor((numerator / denominator) * 100)) + "%";
         $(this).append(" – " + percentage);
-        if (percentage === "100%") {
-          return $(this).find("a").addClass("strikeout");
-        }
+        return $(this).append($("<br/>")).append($("<div class='progress " + (percentage !== "100%" ? 'progress-striped active' : void 0) + "'><div class='bar' style='width: " + percentage + ";'></div></div>"));
       }
     });
     if (tasks.total !== 0) {
-      return $("<p><strong>" + (Math.floor((tasks.complete / tasks.total) * 100)) + "% of total prework complete</strong></p>").insertBefore("#post h2:first");
+      total_percentage = "" + (Math.floor((tasks.complete / tasks.total) * 100)) + "%";
+      $("<p><strong>" + total_percentage + " of total prework complete</strong></p>").insertBefore("#post h2:first");
+      return $("<div class='progress " + (total_percentage !== '100%' ? 'progress-striped active' : void 0) + "'><div class='bar' style='width: " + total_percentage + ";'></div></div>").insertBefore("#post h2:first");
     }
   });
 
