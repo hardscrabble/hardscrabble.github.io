@@ -30,7 +30,8 @@
     if (tasks.total !== 0) {
       total_percentage = "" + (Math.floor((tasks.complete / tasks.total) * 100)) + "%";
       $("<p><strong>" + total_percentage + " of total prework complete</strong></p>").insertBefore("#post h2:first");
-      return $("<div class='progress " + (total_percentage !== '100%' ? 'progress-striped active' : void 0) + "'><div class='bar' style='width: " + total_percentage + ";'></div></div>").insertBefore("#post h2:first");
+      $("<div class='progress " + (total_percentage !== '100%' ? 'progress-striped active' : void 0) + "'><div class='bar' style='width: " + total_percentage + ";'></div></div>").insertBefore("#post h2:first");
+      return document.title = "" + total_percentage + " - " + document.title;
     }
   });
 

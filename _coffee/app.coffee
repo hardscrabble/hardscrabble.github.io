@@ -20,3 +20,4 @@ $ ->
     total_percentage = "#{Math.floor((tasks.complete/tasks.total)*100)}%"
     $("<p><strong>#{total_percentage} of total prework complete</strong></p>").insertBefore "#post h2:first"
     $("<div class='progress #{'progress-striped active' if total_percentage isnt '100%'}'><div class='bar' style='width: #{total_percentage};'></div></div>").insertBefore "#post h2:first"
+    document.title = "#{total_percentage} - #{document.title}"
