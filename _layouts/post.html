@@ -3,6 +3,9 @@ layout: default
 ---
 <h2>{{ page.title }}</h2>
 <p class="date">{{ page.date | date_to_string }}</p>
+{% if page.beverage %}
+  <p class="beverage">Beverage: {{ page.beverage }}</p>
+{% endif %}
 
 <div id="post">
 {{ content }}

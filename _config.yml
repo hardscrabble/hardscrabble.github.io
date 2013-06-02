@@ -5,3 +5,4 @@ permalink: /:year/:title
 markdown: kramdown
 relative_permalinks: true
 exclude: ["Gemfile", "Gemfile.lock", "Guardfile", "README.md"]
+my_pages: ["feed", "about"]
