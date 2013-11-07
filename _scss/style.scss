@@ -1,53 +1,10 @@
-body {
-  width: 500px;
-  margin: 10px auto;
-  background-color: lightblue;
-  font-family: helvetica, sans-serif;
-}
+@import 'lib/normalize';
+@import 'lib/animate.min';
 
-footer {
-  margin-top: 20px;
-  border-top: dashed black 3px;
-  ul.links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-}
+@import 'layout';
+@import 'post';
+@import 'footnotes';
+@import 'footer';
+@import 'codeblocks';
+@import 'links';
 
-#searcher {
-  margin: 10px 0;
-}
-
-.strikeout {
-  $strikeout_reveal_speed: .1s;
-  font-family: 'redactedregular', sans-serif;
-  -webkit-transition-duration: $strikeout_reveal_speed;
-  -moz-transition-duration: $strikeout_reveal_speed;
-  -o-transition-duration: $strikeout_reveal_speed;
-  transition-duration: $strikeout_reveal_speed;
-  &:hover {
-    font-family: helvetica, sans-serif;
-    text-decoration: line-through;
-  }
-}
-
-.footnotes {
-  border-top: 1px dashed black;
-  padding-top: 10px;
-}
-
-a {
-  $a_hover_speed: .1s;
-  color: green;
-  text-decoration: none;
-  -webkit-transition-duration: $a_hover_speed;
-  -moz-transition-duration: $a_hover_speed;
-  -o-transition-duration: $a_hover_speed;
-  transition-duration: $a_hover_speed;
-  &:hover {
-    padding: 3px;
-    border-radius: 5px;
-    background-color: lightcoral;
-  }
-}

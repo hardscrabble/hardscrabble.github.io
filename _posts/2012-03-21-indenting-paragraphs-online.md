@@ -1,9 +1,13 @@
 ---
 layout: post
-title: "The easiest way to indent paragraphs online, not that you necessarily should"
+title: The easiest way to indent paragraphs online, not that you necessarily should
 date: 2012-03-21 12:00 AM
+from: jacobsonian I think
 category: the internet
-tags: pop culture, youre doing it wrong, css
+tags:
+- pop culture
+- youre doing it wrong
+- css
 ---
 
 Today I read DC Pierson's recent essay [Writing About 2Pac In Los Angeles, A Place It Turns Out He Isn't From](http://dcpierson.tumblr.com/post/19605918654/) and even though I liked reading it a lot, the main thing I've been thinking about since has nothing to do with hip-hop or Los Angeles or writing. It's this: why did he indent his paragraphs?
@@ -19,13 +23,17 @@ And, maybe. More on that later.
 
 First, let's delve into the nitty gritty of formatting for the web. Let's look at the beginning of one of Pierson's paragraphs, in HTML, to see how he accomplished indentation:
 
-    <p class="body1"><span>            </span>Then I moved[...]</p>
+{% highlight html %}
+<p class="body1"><span>            </span>Then I moved[...]</p>
+{% endhighlight %}
 
 Basically, he inserted a bunch of spaces at the beginning of each paragraph. I think a lot of people do it this way. I don't know if this is "wrong" so much as... I think there's a better way. I'm no expert but here's my take on the best way to format indented paragraphs online.
 
 Basically, just add this code anywhere in your post:
 
-    <style>p+p { text-indent: 2em; margin-top: -1em; }</style>
+{% highlight html %}
+<style>p+p { text-indent: 2em; margin-top: -1em; }</style>
+{% endhighlight %}
 
 The `text-indent: 2em` part will indent the first line of each non-first paragraph by two ems. An em is basically whatever size the text is. 2em seemed right to me. [Popcorn Fiction](http://www.mulhollandbooks.com/popcornfiction/) uses 3em. You can adjust that figure or replace it with 25px or whatever you want.
 
@@ -114,3 +122,4 @@ And you can style the `<hr />` (horizontal rule) to look however you want, inclu
 * * *
 
 So anyway I generally avoid indenting text online. I think the urge is mostly to do with wanting to put on book airs. But I'm not writing a book, even if I'm writing a novel. I'm writing a web page.
+

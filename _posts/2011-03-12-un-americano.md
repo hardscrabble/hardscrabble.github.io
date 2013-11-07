@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "Un Americano re Japón y mucho cafe e ansiedad"
+title: Un Americano re Japón y mucho cafe e ansiedad
 date: 2011-03-12 12:00 AM
 category: personal
-tags: coffee, from the archives
+from: jacobsonian
+tags:
+- coffee
+- from the archives
 ---
 
 So today on my lunch break I walk to [the Stumptown cafe in the Ace Hotel][1] on 29th street in Manhattan to buy a pound of "Hair Bender" coffee beans. I'd heard some good things, you know? It's supposed to be really great. Ace Hotel seems like a really expensive youth hostel, or like a teen opium lounge, or like a nightclub/library hybrid with a chill bouncer or - and so I got on a serious line to buy some coffee, I was probably waiting for like ten minutes, and I hand over the bag and ask for an Americano - (which I used to be embarrassed to order because I was told it's named that by Europeans who think we're sissy for watering town our coffee but now I realize that's actually how I like my coffee and it can't be *that* pejorative if we're using it all the time, like *we* can call each other and our drinks that and we're sort of *taking it back* you know?) - and as the quiet, vested, bearded man makes it for me I realize it's cash only and I only have two dollars and I'm going to have to go to the ATM in the lobby and I say sorry, I'll be right back, da da da, and I go to the lobby and *of course* the ATM is currently being serviced and I'll have to go find another one if I want any cash any time soon. So I start walking around and I think I remember I passed my bank on the way here and so I walk the three blocks and get some money and walk the three blocks back, and when I get back there's, like, a gaggle of muslims on 29th street now, like maybe fifty or sixty guys, all facing the same way - I look for a mosque and don't see one, just a middle eastern restaurant - and preparing their prayer rugs, some on the sidewalk and some on the edge of the street, and praying as cars whiz by and the residents of stumptown gawk indifferently.
@@ -56,3 +59,4 @@ Lately I've been growing dissatisfied with my french press for a couple of reaso
     It brews faster, is easier to clean up, and doesn't have the sediment in the drink, without losing the taste. It had been my understanding that the main boon of french press was the lack of paper filter, which ensured that all of the oils in the coffee grounds weren't stuck in the filter. The Aeropress does have a filter, but claims that this isn't an issue.
 
  [7]: http://twitter.com/maxjacobson/status/46274344829190144
+

@@ -1,8 +1,18 @@
-name: Max Jacobson
-description: A dorkblog
-url: http://maxjacobson.github.io
+title: hardscrabble
+author: Max Jacobson
+
+url: http://hardscrabble.net
+baseurl: /
+
 permalink: /:year/:title
-markdown: kramdown
 relative_permalinks: true
-exclude: ["Gemfile", "Gemfile.lock", "Guardfile", "README.md"]
-my_pages: ["feed", "about"]
+
+exclude:
+- "Gemfile"
+- "Gemfile.lock"
+- "Guardfile"
+- "README.md"
+
+markdown: kramdown
+pygments: true
+

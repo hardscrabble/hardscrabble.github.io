@@ -1,0 +1,7 @@
+<script src='{{ site.baseurl }}js/lib/jquery.min.js'></script>
+<script src='{{ site.baseurl }}js/helpers.js'></script>
+<script src='{{ site.baseurl }}js/app.js'></script>
+{% for script in page.scripts %}
+  <script src='{{ site.baseurl }}js/{{ script }}.js'></script>
+{% endfor %}
+

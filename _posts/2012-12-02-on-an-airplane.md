@@ -1,9 +1,17 @@
 ---
 layout: post
-title: "I am on an airplane"
+title: I am on an airplane
 date: 2012-12-02 11:04 AM
 category: personal
-tags: the miracle of flight, college, family, memories, camp, teen tour, life, namaste
+tags:
+- the miracle of flight
+- college
+- family
+- memories
+- camp
+- teen tour
+- life
+- namaste
 ---
 
 I am flying to California with my sister and my dad and we're going to look at some schools that she has applied to. I'm grateful I was invited on this trip. I'm not sure I'm strictly necessary.
@@ -15,3 +23,4 @@ Gaby wants to study linguistics because she loves learning and learning about la
 I am a stalk of grass bending in the wind, growing toward the sun. I hope she will be too.
 
 She just caught me writing this and laughed at me. Namaste.
+

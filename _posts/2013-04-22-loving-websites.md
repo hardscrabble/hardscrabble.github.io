@@ -1,8 +1,12 @@
 ---
 layout: post
-title:  "loving websites"
+title:  loving websites
 date: 2013-04-22 6:30 PM
-categories: rss twitter adn
+category: the internet
+tags:
+- rss
+- twitter
+- adn
 ---
 
 I was sad when I read that Google Reader was ending and I want to examine that emotion. I love Google Reader. I also love Twitter and I'd be sad if Twitter stopped existing.

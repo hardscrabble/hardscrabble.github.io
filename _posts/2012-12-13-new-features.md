@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "some new features here"
+title: some new features here
 date: 2012-12-13 21:07:00
 category: coding
-tags: devblog, tree, RSS
+tags:
+- devblog
+- tree
+- RSS
 ---
 
 Things I've added to beefsteak tonight:
@@ -61,6 +64,7 @@ Here's what the tree for this site looks like right now:
     ├── Procfile
     ├── public
     │   └── img
+
     │       ├── 2012-12-04-seal-1.jpg
     │       ├── 2012-12-04-seal-2.jpg
     │       ├── 2012-12-04-seal-3.jpg

@@ -1,9 +1,15 @@
 ---
 layout: post
-title: "going open source"
+title: going open source
 date: 2012-12-02 8:58 PM
 category: coding
-tags: devblog, github, open source, san diego, pinboard, gems
+tags:
+- devblog
+- github
+- open source
+- san diego
+- pinboard
+- gems
 ---
 
 Just for fun I'm sharing [the source code for this blog in full on github](https://github.com/maxjacobson/beefsteak). I don't know if anyone else will or should use this but maybe they'll want to and I won't stop them.
@@ -21,3 +27,4 @@ I'm worried that it will be a whole hassle if I ever want to change the address 
 Right now my Top Level website, <http://maxjacobson.net> is mostly just a front for my Pinboard public links. maybe I'll merge that idea into this one and put the whole thing at that address. I glanced over [the Pinboard gem](https://rubygems.org/gems/pinboard) and I could probably whip something up myself instead of using the [linkroll widget](http://pinboard.in/resources/linkroll). That would give me some more flexibility to display multimedia stuff, [Layabout](http://layabout.maxjacobson.net)-style and do some more color-coding without having to use jquery like I'm currently doing to emphasize posts with the `max_jacobson` tag.
 
 I'm just daydreaming here.
+

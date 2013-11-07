@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "click to ugh"
+title: click to ugh
 date: 2013-01-21 3:37 PM
 category: the internet
-tags: youre doing it wrong, html, the av club
+tags:
+- youre doing it wrong
+- html
+- the av club
 ---
 
 It's time for [You're Doing it Wrong](http://www.maxjacobson.net/tag/youre-doing-it-wrong), my sometimes series where I complain about blogs whose HTML or CSS bugs me!
@@ -12,11 +15,15 @@ Today's offending blog is The AV Club, which I generally really like and read al
 
 How the heck did they come up with this embed code for a YouTube video:
 
-    <embed width="425" height="344" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://www.youtube.com/v/Yww4BLjReEk%26hl=en%26fs=1%26rel=0">
+{% highlight html %}
+<embed width="425" height="344" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" src="http://www.youtube.com/v/Yww4BLjReEk%26hl=en%26fs=1%26rel=0">
+{% endhighlight %}
 
 Had they copied the embed code from beneath the YouTube video, they would have gotten this:
 
-    <iframe width="560" height="315" src="http://www.youtube.com/embed/Yww4BLjReEk" frameborder="0" allowfullscreen></iframe>
+{% highlight html %}
+<iframe width="560" height="315" src="http://www.youtube.com/embed/Yww4BLjReEk" frameborder="0" allowfullscreen></iframe>
+{% endhighlight %}
 
 I don't know where The AV Club got their embed code, but exhibit A for it's outdatedness is the macromedia reference. Try going to that page. Because Macromedia doesn't exist anymore, you'll be redirected to Flash's new owner, Adobe. This post is from three days ago; Adobe acquired Macromedia seven years ago.
 
@@ -38,7 +45,9 @@ Which is fine, I guess. It's what I signed up for, using this extension. But c'm
 
 (AbsolutePunk is doing something custom too. Its code looks like this:
 
-    <div align="center"><object width="472" height="389" bgcolor="#f7f7f7"><param name="movie" value="http://www.youtube.com/v/Z-DSFrGnQrk&amp;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="wmode" value="transparent"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Z-DSFrGnQrk&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="472" height="389" bgcolor="#f7f7f7" wmode="transparent"></embed></object></div>
+{% highlight html %}
+<div align="center"><object width="472" height="389" bgcolor="#f7f7f7"><param name="movie" value="http://www.youtube.com/v/Z-DSFrGnQrk&amp;fs=1"></param><param name="allowFullScreen" value="true"></param><param name="wmode" value="transparent"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Z-DSFrGnQrk&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="472" height="389" bgcolor="#f7f7f7" wmode="transparent"></embed></object></div>
+{% endhighlight %}
 
 I don't really understand that either, but I don't need to, because it behaves the way I expect it to. It looks like all AbsolutePunk video embeds use the same aspect ratio (472x389) but at least it works with ClickToPlugin.)
 
@@ -53,3 +62,4 @@ Look at that aspect ratio -- no black bars! And this is all without manually cop
 Unfortunatley it's not as well-documented as it could be. [Vimeo's oEmbed API](https://developer.vimeo.com/apis/oembed) is better in that regard and supports the most important feature: `maxwidth`. I suspect this is at the root of the hardcoded aspect ratios; designers don't want videos bursting out of their layouts. Vimeo's page is very useful and clear. YouTube, as far as I can tell, has only provided [one brief blog post](http://apiblog.youtube.com/2009/10/oembed-support.html) on the subject.
 
 Maybe that's the problem?
+

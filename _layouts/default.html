@@ -2,38 +2,18 @@
 <html lang='en'></html>
 <head>
   <meta charset='UTF-8'>
-  <title>{{ page.title }} | Max Jacobson</title>
-  <meta content='Max Jacobson' name='author'>
-  <link href='/feed' rel='alternate' title='Posts feed' type='application/atom+xml'>
-  <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/lib/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta content='{{ site.author }}' name='author'>
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
   <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  {% include stylesheets.html %}
 </head>
 <body>
-  <header>
-    <h1>
-      <a href="/">Max Jacobson</a>
-    </h1>
-  </header>
 
-  <div class='yield'>
-    {{ content }}
-  </div>
-
-  <footer>
-    <h2>Arrive alive!</h2>
-    <ul class="links">
-      <li><a href="https://twitter.com/maxjacobson" class="twitter-follow-button" data-show-count="true" data-size="large" data-dnt="true">Follow @maxjacobson</a></li>
-      <li><a href='https://alpha.app.net/intent/follow/?user_id=%40maxjacobson' class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@maxjacobson' data-show-username='1'>Follow me on App.net</a></li>
-      <li><iframe src="http://ghbtns.com/github-btn.html?user=maxjacobson&type=follow&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
-      <li><a href="/feed">RSS Feed</a></li>
-    </ul>
-  </footer>
-  <script src='/js/lib/jquery.js'></script>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
-  <script src='/js/app.js'></script>
+{% include header.html %}
+{{ content }}
+{% include footer.html %}
+{% include javascripts.html %}
 </body>
 </html>
+

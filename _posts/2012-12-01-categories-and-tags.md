@@ -3,7 +3,11 @@ layout: post
 title: "categories and tags"
 date: 2012-12-01 9:26 PM
 category: coding
-tags: devblog, wawa, nonsense, just writing for the sake of testing this system
+tags:
+- devblog
+- wawa
+- nonsense
+- just writing for the sake of testing this system
 ---
 
 I added some functionality for categories and tags. The difference between categories and tags, in my implementation, is that there can only be one category, but there can be a bunch of tags.

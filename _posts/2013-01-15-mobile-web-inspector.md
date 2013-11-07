@@ -1,9 +1,13 @@
 ---
 layout: post
-title: "using mobile web inspector"
+title: using mobile web inspector
 date: 2013-01-15 10:50 PM
 category: coding
-tags: jquery, javascript, safari, ios
+tags:
+- jquery
+- javascript
+- safari
+- ios
 ---
 
 I've just figured out why infinite scrolling wasn't working on Layabout on my iPod Touch.
@@ -12,22 +16,26 @@ I'm using jQuery to detect when the user has reached the bottom of the page. The
 
 If the user is scrolling, check if the current window height plus the amount of stuff above it is greater than or equal to the total height of the document. This works on the desktop (in the browsers I tested anyway) and on the iPad, but not on my iPod Touch.
 
-    $(window).scroll(function() {
-      if($(window).scrollTop() + $(window).height() >= $(document).height()) {
-        // ...
-      }
-    });
+{% highlight javascript %}
+$(window).scroll(function() {
+  if($(window).scrollTop() + $(window).height() >= $(document).height()) {
+    // ...
+  }
+});
+{% endhighlight %}
 
 On the web, a nice and easy way to figure out problems like these is to use the console and log some variables. So I found myself adding in some stuff like this:
 
-    var scroll_top = $(window).scrollTop();
-    var window_height = $(window).height();
-    var document_height = $(document).height();
-    var current_position = scroll_top + window_height;
-    console.log("scroll top: " + scroll_top);
-    console.log("window height: " + window_height);
-    console.log("current position: " + current_position);
-    console.log("document height: " + document_height);
+{% highlight javascript %}
+var scroll_top = $(window).scrollTop();
+var window_height = $(window).height();
+var document_height = $(document).height();
+var current_position = scroll_top + window_height;
+console.log("scroll top: " + scroll_top);
+console.log("window height: " + window_height);
+console.log("current position: " + current_position);
+console.log("document height: " + document_height);
+{% endhighlight %}
 
 But it's not very easy to access the console on an iOS device, so these messages were getting logged to nowhere.
 
@@ -73,3 +81,4 @@ Let's revisit the numbers from the earlier log example:
 So if I'm right that Mobile Safari is mis-reporting its height by 224 pixels, how come my earlier logic was falling short by 185 pixels? I think that difference (39 pixels) must be the height of the navigation toolbar?
 
 Maybe!
+

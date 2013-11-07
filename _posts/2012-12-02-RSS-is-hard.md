@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "RSS is hard to implement and I&rsquo;m not sure I&rsquo;m doing it right"
+title: RSS is hard to implement and I&rsquo;m not sure I&rsquo;m doing it right
 date: 2012-12-01 11:07 PM
 category: coding
-tags: rss, devblog, xml
+tags: 
+- rss
+- devblog
+- xml
 ---
 
 I'm pretty sure I'm not doing this right but I've added an RSS feed so that's fun, enjoy.

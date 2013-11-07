@@ -1,9 +1,13 @@
 ---
 layout: post
-title: "writing prose with marked"
+title: writing prose with marked
 date: 2013-01-12 5:32 PM
 category: coding
-tags: css, markdown, marked, writing
+tags:
+- css
+- markdown
+- marked
+- writing
 ---
 
 Yesterday I got the urge to write some fiction. This has been a decreasingly frequent urge for me, so I seized on it.
@@ -22,3 +26,4 @@ The goal is for me to be able to write in my programmy, vimmy text editor on one
 A screenshot and the code over [on GitHub][].
 
 [on GitHub]: https://github.com/maxjacobson/marked-themes
+

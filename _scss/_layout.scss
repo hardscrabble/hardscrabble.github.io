@@ -1,0 +1,13 @@
+$minwidth: 620px;
+
+body {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media (min-width: $minwidth) {
+  body {
+    width: $minwidth;
+  }
+}
+
