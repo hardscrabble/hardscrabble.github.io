@@ -1,7 +1,8 @@
 title: hardscrabble
 author: Max Jacobson
+description: the personal website of Max Jacobson, a programmer in New York
 
-url: http://hardscrabble.net
+url: 'http://hardscrabble.net'
 baseurl: /
 
 permalink: /:year/:title
