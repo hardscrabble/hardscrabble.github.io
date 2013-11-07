@@ -13,7 +13,7 @@
     window.location.replace("" + root + "/" + match[1] + "/" + match[2] + "/");
   }
 
-  octopress = /blog\/(\d{4}\/[a-z\-]+)$/i;
+  octopress = /blog\/(\d{4}\/[a-z\-]+\/.+)/i;
 
   if (current_url.match(octopress)) {
     alert("please update your bookmarks, the site has moved from maxjacobson.github.io!!!");
