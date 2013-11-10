@@ -3439,13 +3439,9 @@ body {
 
 footer {
   text-align: center;
-  margin-top: 20px;
+  margin: 20px 0;
   padding-top: 20px;
   border-top: dashed black 3px; }
-  footer ul.links {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
 
 /* Code Highlighting Style for Pygments or Rouge */
 /* Solarized Light Color Scheme by Ethan Schoonover */
