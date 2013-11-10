@@ -6,11 +6,13 @@ layout: default
 
   <h2>{{ page.title }}</h2>
 
-  <p class="date">{{ page.date | date_to_string }}</p>
+  <p class="meta">
+    <span class="date">{{ page.date | date_to_string }}</span>
+    |
+    <span class="source"><a href="https://raw.github.com/maxjacobson/maxjacobson.github.io/master/{{page.path}}">md</a></span>
+  </p>
 
   {{ content }}
-
-  <p>Markdown source <a href="https://raw.github.com/maxjacobson/maxjacobson.github.io/master/{{page.path}}">on GitHub</a></p>
 
 </div>
 
