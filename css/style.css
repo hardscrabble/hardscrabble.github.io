@@ -3593,13 +3593,21 @@ footer {
     color: #eee8d5; }
 
 .highlight {
-  border: 1px dotted black;
-  width: 100%;
-  height: auto;
-  overflow: auto; }
-  .highlight pre {
-    margin: 0;
-    padding: 0 3px; }
+  border: 1px dotted black; }
+
+pre code {
+  display: block;
+  overflow-x: scroll;
+  white-space: pre;
+  word-wrap: normal; }
+
+code, pre {
+  font-family: Monaco, monospace; }
+
+code {
+  color: #ff32f4;
+  margin: 0 2px;
+  white-space: nowrap; }
 
 blockquote {
   border-left: black solid 1px;

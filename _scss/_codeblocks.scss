@@ -2,13 +2,25 @@
 
 .highlight {
   border: 1px dotted black;
-  pre {
-    margin: 0;
-    padding: 0 3px;
+}
+
+pre {
+  code {
+    display: block;
+    overflow-x: scroll;
+    white-space: pre;
+    word-wrap: normal;
   }
-  width: 100%;
-  height: auto;
-  overflow: auto;
+}
+
+code, pre {
+  font-family: Monaco, monospace;
+}
+
+code {
+  color: $hotpink;
+  margin: 0 2px;
+  white-space: nowrap;
 }
 
 
