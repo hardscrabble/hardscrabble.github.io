@@ -17,26 +17,28 @@ I'm almost certainly too quick to congratulate myself. It has approximately zero
 
 This is pretty much the whole app:
 
-    require 'sinatra'
-    require 'kramdown'
+{% highlight ruby %}
+require 'sinatra'
+require 'kramdown'
 
-    get '/' do
-      @title = "devblog - max jacobson"
-      the_html = String.new
-      the_html << "<h1>#{@title}</h1>\n\n<hr />"
-      posts = Dir.entries("posts")
-      posts.each do |filename|
-        if filename =~ /.md/
-          the_text = File.read("posts/" + filename)
-          the_html << Kramdown::Document.new(the_text).to_html + "<hr />"
-        end
-      end
-      erb the_html
+get '/' do
+  @title = "devblog - max jacobson"
+  the_html = String.new
+  the_html << "<h1>#{@title}</h1>\n\n<hr />"
+  posts = Dir.entries("posts")
+  posts.each do |filename|
+    if filename =~ /.md/
+      the_text = File.read("posts/" + filename)
+      the_html << Kramdown::Document.new(the_text).to_html + "<hr />"
     end
+  end
+  erb the_html
+end
 
-    get '/css/style.css' do
-      scss :style
-    end
+get '/css/style.css' do
+  scss :style
+end
+{% endhighlight %}
 
 It just checks all the files in a directory called "posts", checks all of the ones with the `.md` file extension, and then renders them all one after the other. That's it!
 
