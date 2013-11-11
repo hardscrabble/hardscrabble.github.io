@@ -3621,3 +3621,6 @@ a {
     padding: 3px;
     border-radius: 5px;
     background-color: lightcoral; }
+
+img {
+  width: 100%; }
