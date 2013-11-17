@@ -496,10 +496,16 @@ footer {
   .highlight .w {
     color: #eee8d5; }
 
+code {
+  color: #ff32f4;
+  margin: 0 2px;
+  white-space: nowrap; }
+
 .highlight {
   border: 1px dotted black; }
 
 pre code {
+  color: #586e75;
   display: block;
   overflow-x: scroll;
   white-space: pre;
@@ -507,11 +513,6 @@ pre code {
 
 code, pre {
   font-family: Monaco, monospace; }
-
-code {
-  color: #ff32f4;
-  margin: 0 2px;
-  white-space: nowrap; }
 
 blockquote {
   border-left: black solid 1px;
