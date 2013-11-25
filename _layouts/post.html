@@ -4,13 +4,26 @@ layout: default
 
 <div class="post">
 
-  <h2>{{ page.title }}</h2>
-
-  <p class="meta">
-    <span class="date">{{ page.date | date_to_string }}</span>
-    |
-    <span class="source"><a href="https://raw.github.com/maxjacobson/maxjacobson.github.io/master/{{page.path}}">md</a></span>
-  </p>
+  <div class="meta">
+    <div class="title">
+      <h2>
+        {{ page.title }}
+      </h2>
+      <span class="source"><a href="https://raw.github.com/maxjacobson/maxjacobson.github.io/master/{{page.path}}">source</a></span>
+    </div>
+    <div class="byline">
+      {% if page.author and page.author_url %}
+        by <a href="{{ page.author_url }}">{{ page.author }}</a>
+      {% elsif page.author %}
+        by {{ page.author }}
+      {% else %}
+        by {{ site.author }}
+      {% endif %}
+    </div>
+    <div class="date">
+      {{ page.date | date_to_string }}
+    </div>
+  </div>
 
   {{ content }}
 
