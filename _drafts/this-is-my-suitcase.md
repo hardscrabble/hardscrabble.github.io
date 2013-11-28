@@ -14,4 +14,7 @@ tags:
 
 I don't remember where I first heard of This Is My Suitcase, but I think it was on the absolute punk forums, probably in some thread about links to `zip`s of weird albums from bands no one has heard of, many of which I downloaded and sifted through and deleted. One of them was "Missent to Thailand". I have a vague memory of listening to it in an airport and being shocked by how much I liked this weird out of tune pop about being in love.
 
+When I made my short film "I'm So Happy I'm Ecstatic" I knew I needed to include one of their songs so I tweeted asking if I could and they said sure. I'm really glad it's in there.
+
+Camerlengo's music is just as often giddily inspirational as it is profoundly sad. He sings about death and love about as much as each other. He's morbidly twee. In his solo work he leaves out all the polish, often screams, often experiments
 
