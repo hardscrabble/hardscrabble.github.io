@@ -2,7 +2,10 @@
 title: Synchronize Our Dictionaries
 layout: post
 date: 2013-11-30 4:58 PM
-
+category: programming
+tags:
+- raganwald
+- coffeescript
 ---
 
 Recently I've been melting the butter stick of my brain against the griddle of Reginald Braithwaite, whose twin books on JavaScript and CoffeeScript as functional programming languages, *JavaScript Allonge* and *CoffeeScript Ristretto* have been tripping me out hard.
