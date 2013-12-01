@@ -20,6 +20,8 @@ But of course, this is the internet, so this weirdo in New York got to become qu
 
 [^isa]: the memory of one myspace band called "isa" continues to haunt / elude me
 
+I'm bummed I never saw them live, but they kind of only existed on the internet anyway? To me.
+
 When I made my short film ["I'm So Happy I'm Ecstatic"](https://vimeo.com/11394296) I knew I needed to include one of their songs. I'm really glad it's in there.
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/maxjacobson">@maxjacobson</a> go ahead!  send us the video when you&#39;re done if you can!  and you can hear songs from keys this friday on our myspace!</p>&mdash; this is my suitcase (@suitcaseband) <a href="https://twitter.com/suitcaseband/statuses/3391561631">August 18, 2009</a></blockquote>
