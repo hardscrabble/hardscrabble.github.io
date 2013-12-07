@@ -9,6 +9,7 @@ OK, this is embarrassing, but apropos of nothing, here's stuff I kind of want:
 * a [nintendo 3DS XL][] ([black friday deal][]) and some games like [pokemon][] or [zelda][]
 * maybe some kind of slow cooker? idk
 * some kind of airtight canister for storing coffee beans
+* an american giant hoodie
 * maybe a
 
 [go pro camera]: http://www.amazon.com/GoPro-CHDHE-301-HERO3-White-Edition/dp/B009TCCTSQ/ref=sr_1_3?s=photo&ie=UTF8&qid=1385740531&sr=1-3
