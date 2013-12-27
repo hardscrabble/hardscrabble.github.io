@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The easiest way to indent paragraphs online, not that you necessarily should
+title: 'The easiest way to indent paragraphs online, not that you necessarily should'
 date: 2012-03-21 12:00 AM
 from: jacobsonian I think
 category: the internet
