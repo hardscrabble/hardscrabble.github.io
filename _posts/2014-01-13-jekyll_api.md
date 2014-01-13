@@ -76,9 +76,9 @@ params = {
 response = requests.post("http://pairwith.maxjacobson.net:3000/blogs/" + blog_id + "/publish", params=params)
 
 if response.status_code == 200:
-	workflow.set_output("Successfully posted")
+  workflow.set_output("Successfully posted")
 else:
-	workflow.set_output("Something went wrong")
+  workflow.set_output("Something went wrong")
 {% endhighlight %}
 
 As I mention in the video, *in theory* I can deploy this app to an actual production environment (note the weird URL if you like) and allow other people to use it. I probably won't.
