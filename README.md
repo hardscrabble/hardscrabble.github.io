@@ -4,6 +4,8 @@ my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on [githu
 
 ## working on the site
 
+(note to self)
+
 * Run `bundle` to get the necessary gems.
 * Run `bundle exec guard` to watch & compile the scss and coffeescript and preview the site at <http://localhost:1234>
 
