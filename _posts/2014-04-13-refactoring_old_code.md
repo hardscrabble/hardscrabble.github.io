@@ -171,3 +171,6 @@ Because Layabout isn't currently open-sourceable, I extracted part of it into [a
 [a rubygem called film_snob]: https://github.com/maxjacobson/film_snob
 [I hope]: https://github.com/maxjacobson/film_snob/issues/1
 
+* * *
+
+**update** I did implement the oembed stuff!! Yeah!!
