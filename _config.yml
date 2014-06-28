@@ -14,6 +14,7 @@ exclude:
 - "Guardfile"
 - "README.md"
 - "vendor"
+- "bin"
 
 markdown: kramdown
 pygments: true
