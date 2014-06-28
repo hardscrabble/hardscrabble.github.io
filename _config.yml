@@ -13,6 +13,7 @@ exclude:
 - "Gemfile.lock"
 - "Guardfile"
 - "README.md"
+- "vendor"
 
 markdown: kramdown
 pygments: true

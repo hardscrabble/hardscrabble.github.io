@@ -1,12 +1,11 @@
 source "https://rubygems.org"
 
-gem 'jekyll'
-gem 'mr_poole'
+gem 'github-pages'
 
-gem 'kramdown'
-
-gem 'guard'
-gem 'guard-sass'
-gem 'guard-coffeescript'
-gem 'guard-jekyll-plus'
-
+group :development do
+  gem 'mr_poole'
+  gem 'guard'
+  gem 'guard-sass'
+  gem 'guard-coffeescript'
+  gem 'guard-jekyll-plus'
+end
