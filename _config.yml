@@ -20,3 +20,5 @@ exclude:
 markdown: kramdown
 pygments: true
 
+gems:
+  - jemoji
