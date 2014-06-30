@@ -1,7 +1,7 @@
 ---
 title: My New Computer
 layout: post
-date: 2014-06-29
+date: 2014-06-29 20:06
 ---
 
 Here's a screenshot of my desktop as of right now:
