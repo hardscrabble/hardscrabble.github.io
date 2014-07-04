@@ -16,4 +16,4 @@ I figured out today how to remove icons from the top left launcher panel. I coul
 
 I took a few minutes today to read about Mint Linux and considered switching, but I don't really like how it looks. I'm worried that this particular look that I use isn't very popular and won't be maintained for long, so I want to share that I like it this way and I recommend it, especially for programmers and writers interested in a simple and clean user experience that's not plugged in to all of their existing notification-generating lives.
 
-My new computer isn't actually very old. I got it nearly two months ago. I haven't given much thought to the idea of using Linux as a primary computer. I think that would be pretty hard given how used I am to OS X, but it's a terrific secondary computer.
+My new computer isn't actually very new. I got it nearly two months ago. I haven't given much thought to the idea of using Linux as a primary computer. I think that would be pretty hard given how used I am to OS X, but it's a terrific secondary computer.
