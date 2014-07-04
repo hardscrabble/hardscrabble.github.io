@@ -3,6 +3,16 @@ layout: page
 title: welcome
 ---
 
+## blog
+
+here's the latest 3 posts:
+
+{% for post in site.posts limit:3 %}
+  1. {{post.date | date_to_string}} -- [{{post.title}}]({{post.url}})
+{% endfor %}
+
+visit [/archive](/archive) for the complete list
+
 ## projects
 
 [Recently][] I'm excited about making small projects
@@ -26,8 +36,4 @@ More info here: <https://github.com/maxjacobson/film_snob> or just run `gem inst
 ### smashcut
 
 This one is more work in progress. It's something I've wanted to do for way too long. It's a screenplay parser. I'll probably never finish it. But I want to! <https://github.com/maxjacobson/smashcut>
-
-## blog
-
-visit [/archive](/archive) for some posts
 
