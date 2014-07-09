@@ -99,7 +99,7 @@ var object = {
     this.callbacks[eventName].push(callback);
   },
   emit: function(eventName) {
-    _this = this;
+    var _this = this;
     if(this.callbacks[eventName]) {
       this.callbacks[eventName].forEach(function(callback) {
         callback.apply(_this);
