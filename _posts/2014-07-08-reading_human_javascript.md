@@ -131,7 +131,7 @@ object =
     @attributes[attr] = value
     @emit "changed:#{attr}"
   on: (eventName, callback) ->
-    @callbacks[eventName] = [] unless @callbacks[eventName]?
+    @callbacks[eventName] ?= []
     @callbacks[eventName].push callback
   emit: (eventName) ->
     if @callbacks[eventName]?
