@@ -1,5 +1,4 @@
 ---
-layout: post
 title: javascript resources
 date: 2013-08-16 16:18
 from: fis-octopress
@@ -63,4 +62,3 @@ $ -> $("#shout").on "click", -> alert "YO WHAT UP"
 Which is kind of ridiculous and unreadable but cool that [it's valid](http://codepen.io/maxjacobson/pen/oisJp)?
 
 I guess all that's left is to keep going and start learning how to build complicated software in this cool language. I want to learn a JS framework next and can't figure out where to start. But that... is a tale for another blog post.
-

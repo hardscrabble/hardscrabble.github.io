@@ -1,5 +1,4 @@
 ---
-layout: post
 title: back to school
 date: 2013-04-04 3:54 PM
 category: personal
@@ -14,4 +13,3 @@ So I'm migrated and making plans for the future. The main part of the plan is to
 [knots of veins]: http://en.wikipedia.org/wiki/Arteriovenous_malformation
 [Art Brut]: http://www.youtube.com/watch?v=U7-q95zn2gg
 [smashcut]: https://rubygems.org/gems/smashcut
-

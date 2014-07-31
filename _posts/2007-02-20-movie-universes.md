@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Movie Universes
 date: 2007-02-20 12:00 AM
 category: pop culture

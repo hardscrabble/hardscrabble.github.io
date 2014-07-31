@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "learning ember.js: day two"
 date: 2013-09-01 23:59
 comments: false

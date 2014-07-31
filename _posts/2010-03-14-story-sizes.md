@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Story Sizes
 date: 2010-03-14 12:00 AM
 category: pop culture

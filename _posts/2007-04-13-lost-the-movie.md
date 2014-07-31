@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Lost: The Movie"
 date: 2007-04-13 12:00 AM
 category: pop culture

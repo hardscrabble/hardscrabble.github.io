@@ -1,6 +1,5 @@
 ---
 title: 'when your disk fills up, who are you?'
-layout: post
 date: 2014-09-06 20:19
 ---
 
@@ -29,4 +28,3 @@ Kind of the same!!
 It would have been hopelessly intimidating and weird to me a few years ago but for the me that I am today (someone who sometimes uses Linux) I can't help but find it much cooler.
 
 ncdu can be installed on a Mac via [homebrew](http://brew.sh/) with `brew install ncdu` or on Linux with `sudo apt-get install ncdu`.
-

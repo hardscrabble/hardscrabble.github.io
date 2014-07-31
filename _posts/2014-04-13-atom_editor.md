@@ -1,6 +1,5 @@
 ---
 title: "Atom Editor"
-layout: post
 date: 2014-04-13 11:58
 ---
 

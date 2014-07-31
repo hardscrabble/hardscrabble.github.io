@@ -1,6 +1,5 @@
 ---
 title: onscreen texts and I'm so Happy I'm Ecstatic
-layout: post
 date: 2014-08-20 22:46
 ---
 
@@ -24,4 +23,3 @@ I think I'm less petulant now than the nerd who wrote that tweet[^but]. I defini
 [^but]: (but then, I am writing this blog post)
 
 But some small petty part of me wants to be in videos like that or to maybe keep making video things.
-

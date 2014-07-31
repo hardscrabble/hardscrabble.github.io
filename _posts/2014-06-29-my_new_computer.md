@@ -1,6 +1,5 @@
 ---
 title: My New Computer
-layout: post
 date: 2014-06-29 20:06
 ---
 

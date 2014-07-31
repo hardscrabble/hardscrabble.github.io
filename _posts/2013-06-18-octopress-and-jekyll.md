@@ -1,5 +1,4 @@
 ---
-layout: post
 title: blogs... how do they work?
 date: 2013-06-18 12:45 AM
 category: coding
@@ -110,4 +109,3 @@ This file is not a complete web page. It has no doctype or `<head>` or `<body>` 
 ### unspelunk
 
 Honestly both are great. Octopress feels like rocket powered training wheels, but that's a fun visual so
-

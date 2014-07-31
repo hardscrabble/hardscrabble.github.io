@@ -1,6 +1,5 @@
 ---
 title: whoa, ruby's alias is weirder than I realized
-layout: post
 date: 2014-06-23 08:01
 
 ---

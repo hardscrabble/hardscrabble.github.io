@@ -1,6 +1,5 @@
 ---
 title: New Year's Resolutions
-layout: post
 date: 2014-01-06 20:23
 ---
 
@@ -32,4 +31,3 @@ Last year was good. I think I resolved to take programming seriously. I went to 
 
 * Less Twitter
 * Infinite Jest I guess?
-

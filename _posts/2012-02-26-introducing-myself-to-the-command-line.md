@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Introducing myself to the command line
 date: 2012-02-26 12:00 AM
 category: coding
@@ -110,4 +109,3 @@ Ah! Chapter 22 to the rescue. `unset` will flush that variable. Cool. I'm so rel
 "You have completed the crash course. At this point you should be a barely capable shell user." -- Nice. I feel that way. It feels pretty great.
 
 The conclusion links to [this](http://www.gnu.org/software/bash/manual/bashref.html) official bash reference. Also [this cheat sheet](http://cli.learncodethehardway.org/bash_cheat_sheet.pdf). Maybe I'll tackle those next.
-

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "learning ember.js: day one"
 date: 2013-08-31 21:09
 comments: false
@@ -94,7 +93,7 @@ App.IndexRoute = Ember.Route.extend
   model: ->
     firstName: "Max"
     lastName: "Jacobson"
-    posts: 
+    posts:
       [
         title: "Finished School"
         date:  "2013-08-23"
@@ -133,4 +132,3 @@ And that takes that data from the CoffeeScript and puts it on the page. Which to
 Making that and writing this post was like a cup of coffee. My brain is now attenuated to learn it better tomorrow, to receive knowledge, perhaps via a lengthy article or book I'll find and read. More posts to come as I dig deeper.
 
 Here's what I described in this post: <http://codepen.io/maxjacobson/pen/uckIL>
-

@@ -1,6 +1,5 @@
 ---
 title: shebangs and bins
-layout: post
 date: 2014-01-19 14:36
 ---
 
@@ -140,4 +139,3 @@ So, this defines our missing method, takes in the file as an argument, reads the
 * * *
 
 I'm sure there are actually practical reasons to use custom-written programs in the shebangs of other custom-written programs and if you think of any please let me know.
-
