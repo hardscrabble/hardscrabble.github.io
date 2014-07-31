@@ -18,7 +18,7 @@ exclude:
 - ".travis.yml"
 
 markdown: kramdown
-pygments: true
+highlighter: pygments
 
 gems:
   - jemoji

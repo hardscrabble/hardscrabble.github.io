@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem 'rb-gsl'
 gem 'github-pages'
 
 group :development do
