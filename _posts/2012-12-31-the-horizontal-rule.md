@@ -1,5 +1,4 @@
 ---
-layout: post
 title: the horizontal rule
 date: 2012-12-31 4:29 AM
 category: the internet
@@ -246,4 +245,3 @@ That behavior may make sense in some contexts, but not really in this one. So I 
 What's even more baffling is that hrs that *weren't* inline with paragraphs wouldn't display at all. Just regular plain old hrs. Not on Daring Fireball and not on here. For a parser that is so aggressive as to forcibly render hrs that don't want to be, it's bizarre that it ignores the ones with their hand raised.
 
 So, I dunno. I'm pleased that I managed to find a CSS replacement for Blanc and Hackett's vibe, but now I'm not sure if they were doing it wrong at all. At least theirs show up.
-

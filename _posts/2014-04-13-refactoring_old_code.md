@@ -1,6 +1,5 @@
 ---
 title: refactoring very old code
-layout: post
 date: 2014-04-13 13:15
 ---
 

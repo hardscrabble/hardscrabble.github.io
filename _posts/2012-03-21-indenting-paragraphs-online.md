@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 'The easiest way to indent paragraphs online, not that you necessarily should'
 date: 2012-03-21 12:00 AM
 from: jacobsonian I think
@@ -122,4 +121,3 @@ And you can style the `<hr />` (horizontal rule) to look however you want, inclu
 * * *
 
 So anyway I generally avoid indenting text online. I think the urge is mostly to do with wanting to put on book airs. But I'm not writing a book, even if I'm writing a novel. I'm writing a web page.
-

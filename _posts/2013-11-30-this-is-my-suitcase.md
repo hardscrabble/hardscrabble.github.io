@@ -1,5 +1,4 @@
 ---
-layout: post
 title: this is my suitcase
 date: 2013-11-30 8:39 PM
 category: pop culture
@@ -33,4 +32,3 @@ Their last album, "In The Wake Of Atrophy: a poignant album for heartsick humans
 [My Organs Are Our Organs]: http://www.youtube.com/watch?v=0Wlku3eTXOU
 
 If you're a heartsick human (and you are) then you know what to do.
-

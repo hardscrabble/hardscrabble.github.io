@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Favblogging with pinboard, ifttt, and the rest of the internet
 date: 2012-08-26 6:18 PM
 category: the internet
@@ -96,4 +95,3 @@ I'll give the final word to Rob Delaney:
 
   <a href="https://twitter.com/robdelaney/status/238203754736926721" data-datetime="2012-08-22T09:19:35+00:00">August 22, 2012</a>
 </blockquote>
-

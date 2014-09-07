@@ -3,21 +3,36 @@ author: Max Jacobson
 description: the personal website of Max Jacobson, a programmer in New York
 
 url: 'http://hardscrabble.net'
-baseurl: /
+baseurl: '/'
 port: 1234
 
-permalink: /:year/:title
+permalink: '/:year/:title'
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "page"
+    values:
+      layout: "page"
 
 exclude:
-- "Gemfile"
-- "Gemfile.lock"
-- "README.md"
-- "vendor"
-- "bin"
-- ".travis.yml"
+- 'Gemfile'
+- 'Gemfile.lock'
+- 'README.md'
+- 'vendor'
+- 'bin'
+- '.travis.yml'
 
 markdown: kramdown
 highlighter: pygments
 
 gems:
   - jemoji
+

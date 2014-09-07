@@ -1,6 +1,5 @@
 ---
 title: iBooks for Mavericks
-layout: post
 date: 2013-12-09 19:44
 
 ---
@@ -34,4 +33,3 @@ Right clicking a book also offers "Share", an empty dropright menu.
 Those filtering buttons along the top are permanently grey and unclickable for me?
 
 Anyway I really like iBooks because I'm excited about reading ePubs on my Mac.
-

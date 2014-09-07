@@ -1,5 +1,4 @@
 ---
-layout: post
 title: testing this little devblog thing
 date: 2012-12-01 6:20 AM
 category: coding
@@ -47,4 +46,3 @@ I wrote this in just a minute or two so I'll be sure to add more blog-like featu
 I feel smart right now so I'm comfortable admitting that I'd love to use Jekyll but just can't figure out how the hell it works.
 
 This is *not* one of those smartly static sites. It generates each page as you load it. Probably pretty fast, but still, not **smart**-smart.
-

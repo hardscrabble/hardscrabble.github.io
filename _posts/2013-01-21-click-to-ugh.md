@@ -1,5 +1,4 @@
 ---
-layout: post
 title: click to ugh
 date: 2013-01-21 3:37 PM
 category: the internet
@@ -62,4 +61,3 @@ Look at that aspect ratio -- no black bars! And this is all without manually cop
 Unfortunatley it's not as well-documented as it could be. [Vimeo's oEmbed API](https://developer.vimeo.com/apis/oembed) is better in that regard and supports the most important feature: `maxwidth`. I suspect this is at the root of the hardcoded aspect ratios; designers don't want videos bursting out of their layouts. Vimeo's page is very useful and clear. YouTube, as far as I can tell, has only provided [one brief blog post](http://apiblog.youtube.com/2009/10/oembed-support.html) on the subject.
 
 Maybe that's the problem?
-

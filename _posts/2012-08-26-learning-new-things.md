@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Learning new things
 date: 2012-08-26 5:13 PM
 category: coding
@@ -30,4 +29,3 @@ To set up this Wordpress blog I had to [follow some tricky instructions](http://
 The blog doesn't look anything like the homepage, but Wordpress themes are pretty tricky. They're all built with PHP which I don't know how to use. I'll probably not go down that rabbit hole.
 
 There are a lot of broken links, which I find beautiful.
-

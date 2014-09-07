@@ -1,5 +1,4 @@
 ---
-layout: post
 title: erb and indendation
 date: 2012-12-02 7:53 PM
 category: coding
@@ -70,4 +69,3 @@ end
 See how I'm manually inserting spaces and new lines (`\n`)? I feel like this is not how it's meant to be.
 
 So the idea i had earlier today is to not bother with new lines or spaces at all, just throw it all into one flat string, and then pass it through a method at the end for, essentially, "prettifying" it and indenting it properly, and then running erb on that. I don't know if I want to bite off that problem to solve just yet but I'm starting to want to. But I'm *sure* there's an easier way to be doing this.
-

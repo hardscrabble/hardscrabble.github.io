@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "My favorite podcasts of 2011"
 date: 2012-02-07 12:00 AM
 category: pop culture
@@ -31,4 +30,3 @@ Most of the ones I listen to are either comedy or technology podcasts.
 * [Who Charted?](http://www.earwolf.com/show/who-charted-howard-kremer-and-kulap-vilaysack/) With Howard Kremer and Kulap Vilaysack
 * [WTF](http://www.wtfpod.com/) with Marc Maron
 * [You Made It Weird](http://www.nerdist.com/podcast/you-made-it-weird/) with Pete Holmes
-

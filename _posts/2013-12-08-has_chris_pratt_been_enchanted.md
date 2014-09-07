@@ -1,6 +1,5 @@
 ---
 title: Has Chris Pratt Been Enchanted?
-layout: post
 date: 2013-12-08 22:29
 
 ---
@@ -54,4 +53,3 @@ Who is Chris Pratt? There seems to be no undercurrent of anxiety like drives som
 His simple positivity almost reminds me of artists like [Steve Roggenbuck](http://gawker.com/something-about-how-steve-roggenbucks-poetry-will-save-1456424675) or [Ryland Maserang](https://twitter.com/avocadoe) without the poetry?
 
 He's charming, politically neutral, and probably, I think, enchanted. I'd buy that stock.
-

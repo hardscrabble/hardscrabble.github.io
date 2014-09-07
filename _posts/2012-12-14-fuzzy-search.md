@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "fuzzy search"
 date: 2012-12-14 11:59 PM
 category: coding

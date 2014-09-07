@@ -1,5 +1,4 @@
 ---
-layout: post
 title: seal attack
 date: 2012-12-04 7:52 PM
 category: video

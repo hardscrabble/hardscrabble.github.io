@@ -1,5 +1,4 @@
 ---
-layout: post
 title:  loving websites
 date: 2013-04-22 6:30 PM
 category: the internet

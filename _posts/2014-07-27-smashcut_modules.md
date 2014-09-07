@@ -1,6 +1,5 @@
 ---
 title: composing a Parslet parser from modules and making code climate happy
-layout: post
 date: 2014-07-27 18:39
 ---
 

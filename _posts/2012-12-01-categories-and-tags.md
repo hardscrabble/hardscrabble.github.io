@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "categories and tags"
 date: 2012-12-01 9:26 PM
 category: coding
