@@ -37,5 +37,3 @@ The exclamation mark character means this alias doesn't refer to another git com
 
 I'm pretty happy with this. I have a nagging worry that it's too weird to not have some unwanted side effects, and if I discover any I'll update this post.
 
-Let me know on twitter if you try this: [@maxjacobson](http://twitter.com/maxjacobson)
-
