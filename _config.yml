@@ -36,3 +36,5 @@ highlighter: pygments
 gems:
   - jemoji
 
+poole:
+  word_separator: "-"
