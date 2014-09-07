@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-bundle exec jekyll serve --watch --baseurl / --port 1234 --drafts
+bundle exec jekyll serve --watch --baseurl /  --drafts
