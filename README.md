@@ -7,7 +7,8 @@ my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on [githu
 (note to self)
 
 * Run `bundle` to get the necessary gems.
-* Run `bin/guard` to watch & compile the scss and coffeescript and preview the site at <http://localhost:1234>
+* Run `bin/serve` to generate (and watch for changes then recompile)
+* visit <http://localhost:1234>
 
 ## publishing a new post
 

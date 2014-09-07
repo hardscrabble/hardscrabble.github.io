@@ -11,7 +11,6 @@ relative_permalinks: true
 exclude:
 - "Gemfile"
 - "Gemfile.lock"
-- "Guardfile"
 - "README.md"
 - "vendor"
 - "bin"
