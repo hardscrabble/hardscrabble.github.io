@@ -2,11 +2,11 @@ title: hardscrabble
 author: Max Jacobson
 description: the personal website of Max Jacobson, a programmer in New York
 
-url: 'http://hardscrabble.net'
-baseurl: '/'
+url: "http://hardscrabble.net"
+baseurl: "/"
 port: 1234
 
-permalink: '/:year/:title'
+permalink: "/:year/:title"
 
 defaults:
   -
@@ -23,12 +23,12 @@ defaults:
       layout: "page"
 
 exclude:
-- 'Gemfile'
-- 'Gemfile.lock'
-- 'README.md'
-- 'vendor'
-- 'bin'
-- '.travis.yml'
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "vendor"
+  - "bin"
+  - ".travis.yml"
 
 markdown: kramdown
 highlighter: pygments
