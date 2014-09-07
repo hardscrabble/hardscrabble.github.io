@@ -8,4 +8,4 @@ I'm a programmer from New York. I love the bands mewithoutYou, Bars of Gold, and
 
 * [@maxjacobson](http://twitter.com/maxjacobson)
 * [github/maxjacobson](http://github.com/maxjacobson)
-* <feedback@hardscrabble.net>
+* <max@hardscrabble.net>
