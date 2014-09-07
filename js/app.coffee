@@ -3,3 +3,4 @@
 
 $ ->
   puts "page ready"
+
