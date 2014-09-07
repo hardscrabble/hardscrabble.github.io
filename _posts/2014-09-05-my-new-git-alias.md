@@ -1,6 +1,5 @@
 ---
 title: my newest git alias is git
-layout: post
 date: 2014-09-06 19:35
 ---
 
@@ -36,4 +35,3 @@ I wanted a new alias that just kind of ignores the extraneous `git`. Most git al
 The exclamation mark character means this alias doesn't refer to another git command; instead, I want to run an arbitrary bash command... which, in this case, happens to be git itself. Luckily, the git aliasing system doesn't simply run the quoted bash command, but it passes the rest of the arguments along, so `git git st` now behaves the same as `git st`, not simply `git`.
 
 I'm pretty happy with this. I have a nagging worry that it's too weird to not have some unwanted side effects, and if I discover any I'll update this post.
-

@@ -1,6 +1,5 @@
 ---
 title: Didn't Ricky Gervais get in trouble for saying that? On MongoDB
-layout: post
 date: 2014-01-11 18:52
 ---
 

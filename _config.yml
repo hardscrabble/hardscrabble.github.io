@@ -2,23 +2,40 @@ title: hardscrabble
 author: Max Jacobson
 description: the personal website of Max Jacobson, a programmer in New York
 
-url: 'http://hardscrabble.net'
-baseurl: /
+url: "http://hardscrabble.net"
+baseurl: "/"
+port: 1234
 
-permalink: /:year/:title
-relative_permalinks: true
+permalink: "/:year/:title"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "page"
+    values:
+      layout: "page"
 
 exclude:
-- "Gemfile"
-- "Gemfile.lock"
-- "Guardfile"
-- "README.md"
-- "vendor"
-- "bin"
-- ".travis.yml"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "vendor"
+  - "bin"
+  - ".travis.yml"
 
 markdown: kramdown
-pygments: true
+highlighter: pygments
 
 gems:
   - jemoji
+
+poole:
+  word_separator: "-"
+

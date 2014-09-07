@@ -1,5 +1,4 @@
 ---
-layout: post
 title: random emoji in prompt
 date: 2013-06-13 7:05 PM
 category: coding
@@ -55,4 +54,3 @@ The only breakthrough I had is that `\$(function_name)` runs the function over a
 This fixes the bug where the Terminal wasn't remembering my current working directory and auto-cd-ing into it when I open a new tab.
 
 It should also be easier to drop this into your current prompt. Just add `\$(~/.emoji.rb)` wherever in your `PS1` you want it.
-

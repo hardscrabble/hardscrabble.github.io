@@ -1,5 +1,4 @@
 ---
-layout: post
 title: all the thoughts that went through my head while trying to pass the first test in the test suite of a warm up exercise this morning before coffee and then again this evening after painkillers
 date: 2013-07-03 3:52 AM
 category: coding
@@ -77,7 +76,7 @@ class Palindromes
 
     # At this point I sort of paused to think about what to do next and Kristen noticed I stopped typing and said something about how I should host a show called "Max Factor" and I laughed.
   end
-  
+
   # this felt as good a place as any to write that ace method I had in my back pocket
   def is_palindrome?(num)
     num.to_s == num.to_s.reverse
@@ -103,7 +102,7 @@ end
 
 first draft
 
-At this point something about the test bubbled to the surface of my mind. 
+At this point something about the test bubbled to the surface of my mind.
 
 {% highlight ruby %}
 largest = palindromes.largest
@@ -235,7 +234,7 @@ I want to be clear that at the time of the writing of this sentence I still don'
 
 what's the deal with arrays
 
-So maybe the order of nine and one matters later, but it's *not* why I failed this test. 
+So maybe the order of nine and one matters later, but it's *not* why I failed this test.
 
 The test asserts that this array includes the largest palindrome's factors. The largest value is nine -- I got that part! -- but there are two in-range pairs of numbers that multiply to form nine, and I'm not currently doing anything to group those together. The test is accounting for those two sets of pairs to be grouped in either order, but it wants *both*. Okay. Now I know.
 
@@ -326,4 +325,3 @@ I find problems like this very satisfying in that same disassociative, mind-clea
 >No matter how good you are, no matter how much experience you have, it’s probably impossible to get the entire fossil out of the ground without a few breaks and losses. To get even most of it, the shovel must give way to more delicate tools: airhose, palm-pick, perhaps even a toothbrush.
 
 *Right??* What a beautiful, humble reframing of what makes great creative work: no, you're not some genius coming up with profound, original ideas; you're just digging, and gently, and hoping that if you just keep trying stuff, you'll find something.
-

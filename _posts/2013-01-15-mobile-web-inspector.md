@@ -1,5 +1,4 @@
 ---
-layout: post
 title: using mobile web inspector
 date: 2013-01-15 10:50 PM
 category: coding
@@ -81,4 +80,3 @@ Let's revisit the numbers from the earlier log example:
 So if I'm right that Mobile Safari is mis-reporting its height by 224 pixels, how come my earlier logic was falling short by 185 pixels? I think that difference (39 pixels) must be the height of the navigation toolbar?
 
 Maybe!
-

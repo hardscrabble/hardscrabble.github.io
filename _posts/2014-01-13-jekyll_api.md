@@ -1,7 +1,6 @@
 ---
 title: updating a jekyll/github blog from the iPad, or anywhere, without touching git
-date: 2014-01-12
-layout: post
+date: 2014-01-12 0:00
 ---
 
 First of all: if anyone subscribes to my RSS feed, I apologize for flooding it today with test posts as I futzed with this.
@@ -12,7 +11,7 @@ Today I wrote my first [Editorial][] workflow and also my first Python script. F
 
 Editorial is a power user text editor for the iPad. Before today I never really used it but I think I'll use it more now.
 
-This project was inspired by  [a recent episode of the tech podcast Core Intuition](http://www.coreint.org/2013/12/episode-118-wrapping-up-2013/). They were discussing blogging software. One of the hosts, Daniel Jalkutt, makes the Mac blogging app [MarsEdit][], and they've both been around long enough to have really interesting thoughts on the space. MarsEdit allows bloggers to post to most of the major blog systems but not static blogs like [Jekyll][] (what I use for this blog), [Pelican][], [Octopress][] (which is built on Jekyll), [Roots][],  or any number of other, similar projects. 
+This project was inspired by  [a recent episode of the tech podcast Core Intuition](http://www.coreint.org/2013/12/episode-118-wrapping-up-2013/). They were discussing blogging software. One of the hosts, Daniel Jalkutt, makes the Mac blogging app [MarsEdit][], and they've both been around long enough to have really interesting thoughts on the space. MarsEdit allows bloggers to post to most of the major blog systems but not static blogs like [Jekyll][] (what I use for this blog), [Pelican][], [Octopress][] (which is built on Jekyll), [Roots][],  or any number of other, similar projects.
 
 [MarsEdit]: http://www.red-sweater.com/marsedit/
 [Jekyll]: http://jekyllrb.com/

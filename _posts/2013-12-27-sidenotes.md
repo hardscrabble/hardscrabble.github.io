@@ -1,6 +1,5 @@
 ---
 title: sidenotes
-layout: post
 date: 2013-12-27 18:43
 ---
 
@@ -105,4 +104,3 @@ $ ->
 * when you click a footnote link, nothing seems to happen. maybe the related sidenote should pulse briefly to attract the eye
 * I don't like how posts without sidenotes kind of look unbalanced now. This makes me want to have at least one footnote per post? Weird.
 * vertical positions are screwed up when a post includes an embedded tweet, because the tweet's height grows as Twitter's JavaScript reformats the HTML from a vanilla blockquote to a whole thing, by which time my code has already set a height for all the sidenotes
-

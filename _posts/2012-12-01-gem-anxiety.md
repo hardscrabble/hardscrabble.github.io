@@ -1,5 +1,4 @@
 ---
-layout: post
 title: gem anxiety
 date: 2012-12-01 6:41 AM
 category: coding

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Un Americano re Japón y mucho cafe e ansiedad
 date: 2011-03-12 12:00 AM
 category: personal
@@ -59,4 +58,3 @@ Lately I've been growing dissatisfied with my french press for a couple of reaso
     It brews faster, is easier to clean up, and doesn't have the sediment in the drink, without losing the taste. It had been my understanding that the main boon of french press was the lack of paper filter, which ensured that all of the oils in the coffee grounds weren't stuck in the filter. The Aeropress does have a filter, but claims that this isn't an issue.
 
  [7]: http://twitter.com/maxjacobson/status/46274344829190144
-

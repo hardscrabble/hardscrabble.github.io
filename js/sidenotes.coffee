@@ -1,3 +1,6 @@
+---
+---
+
 $ ->
   # grab the sidenotes divs
   $sidenotes_container = $(".sidenotes")

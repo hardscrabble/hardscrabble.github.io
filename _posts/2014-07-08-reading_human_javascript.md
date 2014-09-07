@@ -1,6 +1,5 @@
 ---
 title: reading Human JavaScript as a Rails developer who writes SOME CoffeeScript
-layout: post
 date: 2014-07-08 23:07
 ---
 
@@ -298,4 +297,3 @@ I don't feel totally prepared to build a front end app but I have a TON more con
 Maybe I'll make a website for my rubygem [film snob](https://github.com/maxjacobson/film_snob/)[^snob]. I think I'll stick with Ruby for the server, for now, but I'll try to keep it REALLY minimal. I made [this](https://gist.github.com/maxjacobson/9244b99019d4fad3832f) single file sinatra application to demo film snob to my sister, but maybe I'll redo it as a backbone app and put it on Heroku and link it from the README? Sounds like a plan :+1:.
 
 [^snob]: Which I really need to write about because it's been a thrill and a hoot to make, largely because some randos helped contribute to it.
-

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: my first gem
 date: 2012-12-20 7:45 AM
 category: coding

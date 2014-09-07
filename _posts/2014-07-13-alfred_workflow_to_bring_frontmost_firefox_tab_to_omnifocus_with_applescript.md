@@ -1,6 +1,5 @@
 ---
 title: An Alfred Workflow for adding the frontmost Firefox tab to OmniFocus with AppleScript
-layout: post
 date: 2014-07-13 20:33
 ---
 
@@ -102,4 +101,3 @@ It's kind of a dinky version of what I originally wanted to make. It's only for 
 I packaged it as [an Alfred Workflow here](https://github.com/maxjacobson/alfred-workflows/blob/master/Firefox%20tab%20to%20OmniFocus.alfredworkflow) so I can invoke it from wherever by typing `⌘+space` and then just writing `tab`.
 
 I wonder if this is useful to other people!
-

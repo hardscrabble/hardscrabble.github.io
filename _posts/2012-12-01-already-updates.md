@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Already with the updates
 date: 2012-12-01 7:36 AM
 category: coding
@@ -42,4 +41,3 @@ Here's what the `tree` of my project directory looks like right now:
     2 directories, 10 files
 
 Off topic, but: I learned how to customize my bash prompt earlier today and that's what it looks like.
-
