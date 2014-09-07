@@ -6,7 +6,6 @@ url: 'http://hardscrabble.net'
 baseurl: /
 
 permalink: /:year/:title
-relative_permalinks: true
 
 exclude:
 - "Gemfile"
