@@ -12,12 +12,8 @@ my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on [githu
 
 ## publishing a new post
 
-I'm trying out [Mr. Poole](https://github.com/mmcclimon/mr_poole), a butler for Jekyll. It has good documentation but I'll jot down the basic flow for my own reference:
-
-* `bin/poole draft "My Great New Post"`, which creates `_drafts/my_great_new_post.md`. The `_drafts` directory is great because the posts contained within it won't be included without a specific flag
-* edit that file, write a great post
-* `bin/poole publish _drafts/my_great_new_draft.md` which moves the file into the `_posts` directory *and* (awesomely) updates the YAML frontmatter with the timestamp of right now
-* then use git to commit and push
+* run `bin/new my great post` to create a draft file. Under the hoot it's using [Mr. Poole](https://github.com/mmcclimon/mr_poole), a butler for Jekyll.
+* run `bin/publish _drafts/my-great-post.md` to move that file into the `_posts` directory and add the current timestamp
 
 ## writing a guest post
 

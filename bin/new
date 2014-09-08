@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# take all of the arguments and put them in quotes
+bin/poole draft "$*"
+
