@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# take the first argument and pass it along to poole
+bin/poole publish $1
+
