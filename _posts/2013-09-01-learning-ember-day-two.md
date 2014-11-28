@@ -15,7 +15,7 @@ OK. Back to work.
 
 [Yesterday][] I stretched out my head and fell asleep. I was glad to see that while I was sleeping, the team made good and [released Ember 1.0][]
 
-[Yesterday]: http://maxjacobson.github.io/blog/2013/learning-ember-js-day-one/
+[Yesterday]: http://www.hardscrabble.net/2013/learning-ember-js-day-one/
 [released Ember 1.0]: http://emberjs.com/blog/2013/08/31/ember-1-0-released.html
 
 I made some small progress since then.
@@ -66,3 +66,4 @@ Rails has a very similar pattern but its find method anticipates looking up reco
 Anyway I have barely scratched the surface of Ember so please forgive me if I'm missing something. Goodnight!
 
 My progress as of today is here: [demo](http://maxjacobson.github.io/js_ember_day_two/) / [source](https://github.com/maxjacobson/js_ember_day_two)
+
