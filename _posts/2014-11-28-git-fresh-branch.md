@@ -97,3 +97,8 @@ I guess a lot of the work is being done by [symbolic-ref][].
 While researching this post, I noticed that git-extras also offers a
 [gh-pages](https://github.com/tj/git-extras/blob/master/bin/git-gh-pages) script
 that is even more tailored to the use case from my example. Of course! :leaves:
+
+* * *
+
+**edit**: I probably should have slept on this post and actually explored more
+how it's working under the hood. But I did not.
