@@ -103,6 +103,3 @@ that is even more tailored to the use case from my example. Of course! :leaves:
 **edit**: I probably should have slept on this post and actually explored more
 how it's working under the hood. But I did not.
 
-* * *
-
-**edit 2**: asdfkajsdkfjaskdfj did I break my site?
