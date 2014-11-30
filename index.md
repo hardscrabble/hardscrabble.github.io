@@ -1,5 +1,7 @@
 ---
 title: welcome
+scripts:
+  - pinboard
 ---
 
 ## blog
@@ -35,4 +37,8 @@ More info here: <https://github.com/maxjacobson/film_snob> or just run `gem inst
 ### smashcut
 
 This one is more work in progress. It's something I've wanted to do for way too long. It's a screenplay parser. I'll probably never finish it. But I want to! <https://github.com/maxjacobson/smashcut>
+
+## Pinboard Links
+
+<script language='javscript' src="http://pinboard.in/widgets/v1/linkroll?user=maxjacobson&count=15"></script>
 
