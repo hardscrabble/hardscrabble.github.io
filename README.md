@@ -28,7 +28,6 @@ you want to write one, fork the repo, write a post with YAML frontmatter that
 looks like the following, and submit a pull request:
 
 ```yaml
-layout: post
 title: my great blog post
 author: my name
 author_url: http://myblog.info
