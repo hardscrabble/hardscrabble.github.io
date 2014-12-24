@@ -1,3 +1,6 @@
+---
+---
+
 root        = "http://hardscrabble.net"
 current_url = document.URL
 
