@@ -9,7 +9,7 @@ date: 2015-01-02 11:49
 
 TLDW: add this to your `~/.vimrc`:
 
-{% highlight text %}
+{% highlight vim %}
 " hide the giant banner at the top of netrw
 let g:netrw_banner=0
 " hide gitignored files from netrw
