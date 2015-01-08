@@ -50,3 +50,8 @@ Mini.new.parse("132432")  # => "132432"@0
 {% endhighlight %}
 
 This is pretty nice when you have more than a few rules, and Code Climate rewarded me with a coveted A grade: <https://codeclimate.com/github/maxjacobson/smashcut/compare/0cd1d78b...c2668c0e>... well, for some of the classes anyway.
+
+**EDIT 2015-01-08**: Hrmph, that link is dead now. Suffice it to say that the
+changes from [this pull request][] improved the GPA from 1.9 to 3.56.
+
+[this pull request]: https://github.com/maxjacobson/smashcut/pull/26
