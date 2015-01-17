@@ -36,6 +36,7 @@ highlighter: pygments
 
 gems:
   - jemoji
+  - octopress-debugger
 
 poole:
   word_separator: "-"

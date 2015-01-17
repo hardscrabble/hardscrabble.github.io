@@ -10,3 +10,7 @@ gem 'github-pages', versions['github-pages']
 group :development do
   gem 'mr_poole'
 end
+
+group :jekyll_plugins do
+  gem 'octopress-debugger'
+end
