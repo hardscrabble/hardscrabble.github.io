@@ -118,17 +118,17 @@ For more information on what to do now, see https://developer.mozilla.org/docs/D
 {% endhighlight %}
 
 * I ran `./mach run` and *like lightning* a bluish moonish earth appears in my
-  Mac's dock and Firefox Nightly opens.
-* I visit [hardscrabble.net][7] just kind of vainly to see what my site looks
+  Mac's dock and Firefox Nightly opened.
+* I visited [hardscrabble.net][7] just kind of vainly to see what my site looks
   like in my freshly baked browser
-* I visit the URL in that last output (sidenote: I really love the trail of
-  breadcrumbs this process has been) and find a kind of [hilariously brief][8]
+* I visited the URL from that last output (sidenote: I really love the trail of
+  breadcrumbs this process has been) and found a kind of [hilariously brief][8]
   web page which mainly includes notes on how it should be succinct but also a
-  tag indicating it needs more content.
-* I follow the first listed interesting link about how to run Firefox's tests,
-  and before I overthink what's about to happen I run `./mach xpcshell-test` and
-  the most delightful thing happens, and I think it needs to be captured in a
-  video: <https://vimeo.com/119925549> (currently processing)
+  tag indicating it needs more content?
+* I followed the first listed interesting link about how to run Firefox's tests,
+  and before I could overthink what's about to happen I ran `./mach
+  xpcshell-test` and the most delightful thing happened, and I think it needs to
+  be captured in a video: <https://vimeo.com/119925549> (maybe still processing)
 
 [4]: https://developer.mozilla.org/en-US/docs/Simple_Firefox_build/Linux_and_MacOS_build_preparation
 [5]: https://twitter.com/maxjacobson/status/567890227693494272
