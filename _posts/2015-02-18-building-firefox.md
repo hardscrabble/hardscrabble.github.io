@@ -20,14 +20,15 @@ terrifying.
 
 [^1]: Chromium is basically Chrome, but open source.
 
-I came away from the Chromium post with a lot of knowledge about how I might
-make a contribution but actually more convinced that I'm not actually qualified
-to do so, because I don't know any of the languages she mentioned in the post.
-If I did, I'd be off to the races.
+I came away from the Chromium post with a lot of clear and friendly knowledge
+about how I might make a contribution but actually more convinced that I'm not
+qualified to do so, because I don't know any of the languages she mentioned in
+the post and don't currently plan to learn them. If I did, I'd know exactly
+where to start and how to proceed.
 
 The firefox blog post was an offer to help mentor a select few through getting
 up and running and making a first few contributions. I thought about it for a
-few minuts while I read the blog post and filed it away in the back of my mind,
+few minutes while I read the blog post and filed it away in the back of my mind,
 but I was too slow, and the offer has now closed. I thought maybe I could do it
 because having a mentor helps a lot and, from the sounds of it, the front-end of
 Firefox is built using the tools of the web, which I already kind of know and
