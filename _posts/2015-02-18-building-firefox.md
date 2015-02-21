@@ -128,7 +128,10 @@ For more information on what to do now, see https://developer.mozilla.org/docs/D
 * I followed the first listed interesting link about how to run Firefox's tests,
   and before I could overthink what's about to happen I ran `./mach
   xpcshell-test` and the most delightful thing happened, and I think it needs to
-  be captured in a video: <https://vimeo.com/119925549> (maybe still processing)
+  be captured in a video: 
+
+
+<iframe src="//player.vimeo.com/video/119925549?byline=0&portrait=0" width="686" height="386" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 [4]: https://developer.mozilla.org/en-US/docs/Simple_Firefox_build/Linux_and_MacOS_build_preparation
 [5]: https://twitter.com/maxjacobson/status/567890227693494272
