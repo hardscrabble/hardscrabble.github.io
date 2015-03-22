@@ -4,7 +4,7 @@ date: 2015-03-22 17:05
 ---
 
 I've previously [written about extracting a gem from a web app called
-[Layabout][film], but I neglected to mention that I later open sourced Layabout
+Layabout][film], but I neglected to mention that I later open sourced Layabout
 as well:
 
 [film]: http://www.hardscrabble.net/2014/refactoring_old_code/
