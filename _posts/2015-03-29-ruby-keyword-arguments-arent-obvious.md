@@ -239,7 +239,7 @@ the value you provided for that keyword, and yes that's right, it's nil. That
 works for me, but I know it's not obvious because I found myself trying to
 defend this behavior to a friend recently, who was sad that it didn't behave as
 his intuition desired, that a nil value would be replaced by the default value.
-To console him I attempted to write some code that would satisfyin his
+To console him I attempted to write some code that would satisfy his
 expectations, and I came up with this:
 
 {% highlight ruby %}
@@ -376,12 +376,13 @@ end
 stir_fry(8, ingredients: ["pepper", "seitan"], sauce: "fancy")
 {% endhighlight %}
 
-What the hell is happening there? Maybe it's clear. The first two arguments are
-ordinal, and the first one has a default value. So Ruby compares the arguments
-we provide when we call the method to the arguments in the method definition,
-and sees that we provided what looks like one ordinal value, and a few keyword
-values, so the one ordinal value must be `zest`, because `servings` has a
-default value and `zest` does not (Ruby here is smarter than I realized).
+What the hell is happening there? Maybe it's clear to you. it's not to me. The
+first two arguments are ordinal, and the first one has a default value. So Ruby
+compares the arguments we provide when we call the method to the arguments in
+the method definition, and sees that we provided what looks like one ordinal
+value, and a few keyword values, so the one ordinal value must be `zest`,
+because `servings` has a default value and `zest` does not (Ruby here is
+smarter than I realized).
 
 It kind of feels like Ruby is going to let us make this method definition more
 confusing, for example by moving the keyword arguments before the ordinal
