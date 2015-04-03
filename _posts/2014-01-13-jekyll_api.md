@@ -3,6 +3,8 @@ title: updating a jekyll/github blog from the iPad, or anywhere, without touchin
 date: 2014-01-12 0:00
 ---
 
+**UPDATE April 2015:** Here's a much, much better way to do it: <http://www.hardscrabble.net/2015/how-to-jekyll-from-ios/>
+
 First of all: if anyone subscribes to my RSS feed, I apologize for flooding it today with test posts as I futzed with this.
 
 Today I wrote my first [Editorial][] workflow and also my first Python script. Fun day!
