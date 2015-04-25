@@ -1,6 +1,6 @@
 ---
 title: my new menu bar guilt trip
-date: 2015-04-25 15:53
+date: 2015-04-25 15:53 EDT
 ---
 
 I just discovered [TextBar][] via [this article][1] and it's a pretty sweet Mac
