@@ -3,6 +3,8 @@ title: sidenotes
 date: 2013-12-27 18:43
 ---
 
+**EDIT April 2015**: I took it off the site because it was kind of bad :smile:
+
 ### background
 
 There's a hubbub[^hubbub] going around about a fun plugin for popover footnotes called Bigfoot.
