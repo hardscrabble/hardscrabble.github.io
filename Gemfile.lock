@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:maxjacobson/mr_poole.git
+  revision: 1c330a18c81de560c6e4a063dc2c57d7a73d6b8d
+  specs:
+    mr_poole (0.7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,7 +106,6 @@ GEM
     method_source (0.8.2)
     mini_portile (0.6.2)
     minitest (5.5.1)
-    mr_poole (0.7.0)
     net-dns (0.8.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -145,5 +150,5 @@ PLATFORMS
 DEPENDENCIES
   github-pages (= 33)
   json
-  mr_poole
+  mr_poole!
   octopress-debugger
