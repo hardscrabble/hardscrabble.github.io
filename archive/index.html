@@ -6,7 +6,7 @@ title: archive
   <ul>
     {% for post in site.posts %}
       <li>
-        <span class="date">{{ post.date | date_to_string }}</span> - <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+        <span class="date">{{ post.date | date_to_string }}</span> &mdash; <a class="title" href="{{ post.url }}">{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
