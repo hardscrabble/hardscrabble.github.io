@@ -25,9 +25,9 @@ currently 4 hours ahead of New York, from where this blog emanates, and from
 where I anxiously remind myself to update it.
 
 By stating that I was publishing a post at 15:53 UTC as opposed to 15:53 EDT, I
-was effectively backdating it, which I makes it sort earlier in RSS feeds. One
-of my favorite blogs, [The Setup][3], doesn't supply times at all, only dates,
-so whenever a new interview arrives, it arrives buried below all of the day's
+was effectively backdating it, which makes it sort earlier in RSS feeds. One of
+my favorite blogs, [The Setup][3], doesn't supply times at all, only dates, so
+whenever a new interview arrives, it arrives buried below all of the day's
 posts, which I find mildly inconvenient. It pains me to know I've caused
 something of the same, and I apologize.
 
