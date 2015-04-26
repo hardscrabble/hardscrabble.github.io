@@ -39,3 +39,9 @@ stuff, which I would've done if I had typed it out manually:
 
 It's not much and I'm not even sure I'm using the word macro right but it's
 mine.
+
+**Edit April 2015**: Turns out `hii` was a pretty bad choice, because it starts
+with `h`, which I type all the time in normal mode. It's the left arrow!
+Whenever I type `h` now, it doesn't immediately move left, it hangs a moment
+while it waits to see if I really mean just `h`, or if I'm gonna continue and
+write `hii`. So, I've changed it from `hii` to `,hii` and now I'm happy again.
