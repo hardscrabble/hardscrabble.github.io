@@ -6,10 +6,10 @@ date: 2015-01-18 20:33
 I wish Vim plugin authors would stop exposing commands that start with E. Is
 that a reasonable thing to feel? I do feel it.
 
-I [use netrw][0] to browse files in vim, and I enter netrw by writin `:E`. I do
-this all the time. `:E` is short for `:Explore`. I could type `:Ex`, `:Exp`,
-`:Expl`, `:Explo`, `:Explor` as well, but I type `:E`. This is what my fingers
-remember.
+I [use netrw][0] to browse files in vim, and I enter netrw by writing `:E`. I
+do this all the time. `:E` is short for `:Explore`. I could type `:Ex`, `:Exp`,
+  `:Expl`, `:Explo`, `:Explor` as well, but I type `:E`. This is what my
+  fingers remember.
 
 [0]: http://www.hardscrabble.net/2015/a-cleaner-file-browsing-interface-for-vim/
 
@@ -35,3 +35,12 @@ possible?  I couldn't find how in my few minutes of searching), because this
 solution is kind of fragile; next time I install the plugin on some other
 computer, it won't include my fix.
 
+**Edit April 2015**: I've sort of solved this problem by no longer typing `:E`,
+and instead adding this line to my vimrc:
+
+{% highlight vim %}
+nmap <silent> <Leader>e :Explore<CR>
+{% endhighlight %}
+
+Which lets me type `,e` to jump right to netrw (`,` is my Leader character. By
+default, the Leader character is `\`.)`
