@@ -8,7 +8,7 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 gem 'github-pages', versions['github-pages']
 
 group :development do
-  gem 'mr_poole', git: 'git@github.com:maxjacobson/mr_poole.git'
+  gem 'mr_poole'
 end
 
 group :jekyll_plugins do
