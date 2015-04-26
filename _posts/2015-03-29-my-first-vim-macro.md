@@ -44,4 +44,7 @@ mine.
 with `h`, which I type all the time in normal mode. It's the left arrow!
 Whenever I type `h` now, it doesn't immediately move left, it hangs a moment
 while it waits to see if I really mean just `h`, or if I'm gonna continue and
-write `hii`. So, I've changed it from `hii` to `,hii` and now I'm happy again.
+write `hii`. So, I've changed it from `hii` to `<Leader>hii` and now I'm happy
+again.
+
+Note: the default Leader character is `\`.
