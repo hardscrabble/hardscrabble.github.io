@@ -3,6 +3,9 @@ title: operators as self expression
 date: 2015-05-26 00:14 EDT
 ---
 
+**NOTE:** this post seems to have a ton of code samples, but it's pretty much
+just the same one over and over with some small variations to play with an idea.
+
 Suppose you were writing a program to help you write a novel, and you start out
 with something like this:
 
