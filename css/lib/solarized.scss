@@ -37,7 +37,13 @@ $green:     #859900;
   .cm { color: $base1; font-style: italic } // Comment.Multiline
   .cp { color: $red; font-weight: bold } // Comment.Preproc
   .cs { color: $base1; font-weight: bold; font-style: italic } // Comment.Special
-  .err { color: $base00; background-color: $red; } // Error
+  .err {
+    color: $base00;
+    // I don't want some gnarly red background!
+    // Because it is mis-identifying some normal code as being an error... so it
+    // looks bad...
+    // background-color: $red;
+  } // Error
   .gd .x { color: $base00; background-color: $magenta; } // Generic.Deleted.Specific
   .gd { color: $base00; background-color: $magenta; } // Generic.Deleted
   .ge { font-style: italic; } // Generic.Emph
