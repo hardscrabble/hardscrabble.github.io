@@ -1,7 +1,6 @@
 ---
 title: gemfiles are ruby files
-layout: post
-date: 2015-06-02
+date: 2015-06-02 00:29 EDT
 ---
 
 A while back I saw this cool blog post: [Stay up to date with the latest github
@@ -22,22 +21,30 @@ add this to your Gemfile:
 gem 'jekyll'
 {% endhighlight %}
 
-But actually, maybe not! You should add this:
+But actually, maybe not!
+
+Consider this intsead:
 
 {% highlight ruby %}
 gem 'github-pages'
 {% endhighlight %}
 
-Which includes the exact version of Jekyll that github pages is using (and [a
-few other things][things]). But...  what about when they upgrade the version of
-Jekyll they're using to compile your site?? Well, they release a new version of
-the github-pages gem, which bumps its Jekyll dependency. So, ideally, before
-pushing to your Jekyll site on github pages, you should know that you're using
-the latest version of the github pages gem.
+This includes the exact version of Jekyll that github pages is using (and [a
+few other things][things]).
+
+That's great, because you know you can preview your website locally and know
+that it will look the same when you deploy it to GitHub pages.
+
+You may be asking: what about when they upgrade the version of Jekyll they're
+using to compile your site?? Well, they release a new version of the
+github-pages gem, which bumps its Jekyll dependency. So, ideally, before pushing
+to your Jekyll site on github pages, you should know that you're using the
+latest version of the github pages gem.
 
 [things]: https://github.com/github/pages-gem/blob/master/lib/github-pages.rb#L9-L31
 
-Here's how you can do that (via Parker Moore's blog):
+Here's how you can do that (so far I'm just summarizing that Parker Moore blog
+post):
 
 {% highlight ruby %}
 require 'json'
@@ -45,6 +52,11 @@ require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 gem 'github-pages', versions['github-pages']
 {% endhighlight %}
+
+Isn't that cool? Now, when you start your local server with `bundle exec jekyll
+serve`, it will confirm that you have the appropriate version of github pages.
+
+Happy ending? Sort of.
 
 I did that a few months ago, and was happy for those months. Then, last
 weekend, I found myself somewhere without internet access and a blog post idea,
