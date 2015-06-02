@@ -1,8 +1,9 @@
 language: ruby
 cache: bundler
 rvm:
-  - 2.1.1
+  - 2.2.2
 before_install:
+  - "gem install bundler"
   - "bundle config build.nokogiri --use-system-libraries"
 script:
   - bin/jekyll build
