@@ -3,6 +3,10 @@ title: operators as self expression
 date: 2015-05-26 00:14 EDT
 ---
 
+**EDIT June**: I've followed-up this post: [order of operations][ooo]
+
+[ooo]: /2015/order-of-operations/
+
 **NOTE:** this post seems to have a ton of code samples, but it's pretty much
 just the same one over and over with some small variations to play with an idea.
 
@@ -181,3 +185,4 @@ There are **so many spaces** on that second line, but it totally works.
 It sucks that the period is necessary for this to be syntactically valid. I
 think. I don't know what the consequences would be of allowing programmers to
 define arbitrary operators. Maybe they're vast?
+
