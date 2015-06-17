@@ -87,17 +87,7 @@ puts a.+(b).+(c)
 # 3
 {% endhighlight %}
 
-Or even more verbosely, like this:
-
-{% highlight ruby %}
-puts a.public_send(:+, b).public_send(:+, c)
-# a
-# b
-# c
-# 3
-{% endhighlight %}
-
-These renditions make it clear that this is a chained sequence of method calls.
+This rendition makes it clear that this is a chained sequence of method calls.
 Let's make it even more clear, by refining the plus method and adding some
 logging:
 
@@ -210,8 +200,8 @@ module MathLogger
     end
 
     def *(other)
-      original_times(other).tap do |sum|
-        puts "#{self} * #{other} = #{sum}"
+      original_times(other).tap do |product|
+        puts "#{self} * #{other} = #{product}"
       end
     end
   end
