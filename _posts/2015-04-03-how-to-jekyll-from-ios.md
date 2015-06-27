@@ -15,7 +15,7 @@ date: 2015-04-03 18:05
     * Install the [Publish Jekyll Post][] workflow I've just created
     * Tap the wrench to see the list of workflows
     * Find the newly installed "Publish Jekyll Post" workflow
-    * We need to configure the workflow with your info. Try running it, and it will complain that you haven't provided a GitHub API access token. It will offer to open Safari on the page where you can create a new access token. Do that, and copy it to your clipboard. You can revoke this token at any time to cut off the workflow.
+    * We need to configure the workflow with your info. Try running it, and it will complain that you haven't provided a GitHub API access token. It will offer to open Safari on the page where you can create a new access token. Do that, and copy it to your clipboard. Note: the only necessary permission is "public_repo", assuming your repo is public, which it almost certainly is. You can revoke this token at any time to cut off the workflow.
     * Return to Editorial
     * Tap the "i" info button for the workflow
     * Tap "Edit Workflow"
