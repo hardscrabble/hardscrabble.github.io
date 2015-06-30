@@ -90,4 +90,4 @@ argument, and the moment you forget a keyword argument, the default will be used
 and the expression will be evaluated for the first time. It's cool that the
 default values are lazily evaluated because it allows for things like this.
 
-Check out the gem: https://github.com/maxjacobson/required_arg
+Check out the gem: <https://github.com/maxjacobson/required_arg>
