@@ -1,7 +1,6 @@
 ---
 title: required keyword arguments in Ruby 2.0.0
 date: 2015-06-29 22:56 EDT
-
 ---
 
 TLDR: I made a gem, [required_arg](https://github.com/maxjacobson/required_arg)
