@@ -1,5 +1,5 @@
 ---
-title: Quick tip: track command history in zsh
+title: "Quick tip: track command history in zsh"
 date: 2015-07-11 18:29 EDT
 ---
 
