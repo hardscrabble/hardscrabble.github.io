@@ -93,13 +93,13 @@ class PieCrust
     @ready = true
   end
 
-  private
-
-  attr_reader :roller, :heater, :photo_sharing_service
-
   def ready?
     @ready
   end
+
+  private
+
+  attr_reader :roller, :heater, :photo_sharing_service
 end
 {% endhighlight %}
 
