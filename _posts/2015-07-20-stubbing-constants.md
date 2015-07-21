@@ -24,7 +24,7 @@ class in a Rails app. In Rails apps, all the classes are available for all the
 other classes to reference and depend on. Maybe it looks like this:
 
 {% highlight ruby %}
-class Crust
+class PieCrust
   def initialize(pounds_of_dough)
     @lbs = pounds_of_dough
     @ready = false
@@ -77,7 +77,7 @@ There's the dependency injection approach, where you might refactor the earlier
 code to look like:
 
 {% highlight ruby %}
-class Crust
+class PieCrust
   def initialize(pounds_of_dough, roller: RollingPin.new, heater: Oven.new, photo_sharing_service: Instagram)
     @lbs = pounds_of_dough
     @roller = roller
