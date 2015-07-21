@@ -81,7 +81,7 @@ class PieCrust
   def initialize(pounds_of_dough, roller: RollingPin.new, heater: Oven.new, photo_sharing_service: Instagram)
     @lbs = pounds_of_dough
     @roller = roller
-    @heater: heater
+    @heater = heater
     @photo_sharing_service = photo_sharing_service
     @ready = false
   end
@@ -119,7 +119,7 @@ RSpec.describe PieCrust do
       expect(pie_crust).to_not be_ready
 
       expect(roller).to receive(:roll_out).with(pie_crust)
-      expect(heater).to receive(:preheat)
+      expect(heater).to receive(:preheat).with_no_arguments
       expect(photo_sharing_service).to receive(:upload).with(pie_crust)
 
       pie_crust.prep
@@ -179,7 +179,7 @@ RSpec.describe PieCrust do
       expect(pie_crust).to_not be_ready
 
       expect(roller).to receive(:roll_out).with(pie_crust)
-      expect(heater).to receive(:preheat)
+      expect(heater).to receive(:preheat).with_no_arguments
       expect(Instagram).to receive(:upload).with(pie_crust)
 
       pie_crust.prep
@@ -190,4 +190,7 @@ RSpec.describe PieCrust do
 end
 {% endhighlight %}
 
-Sooo it got even more prescriptive. How would you test this? I want to know.
+Sooo it got even more prescriptive. But it's a pretty neat way to do a purely
+isolated test without needing to rewrite your code.
+
+How would you test this? I want to know.
