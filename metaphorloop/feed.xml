@@ -34,10 +34,10 @@ layout: null
       {% endif %}
 
       <enclosure url="{{ episode.audio_url }}" length="{{ episode.number_of_bytes }}" type="audio/mpeg" />
-      <guid>{{ site.baseurl }}{{ episode.url }}</guid>
+      <guid>{{ site.url }}{{ episode.url }}</guid>
       <pubDate>{{ episode.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
       <itunes:duration>{{ episode.length_as_text }}</itunes:duration>
-      <link>{{ site.baseurl }}{{ episode.url }}</link>
+      <link>{{ site.url }}{{ episode.url }}</link>
     </item>
   {% endfor %}
 </channel>
