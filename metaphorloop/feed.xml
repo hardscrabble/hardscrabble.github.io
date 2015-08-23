@@ -20,16 +20,15 @@ layout: null
   <itunes:image href="{{ site.metaphorloop_metadata.cover_art }}" />
 
   <itunes:category text="Technology">
-    <itunes:category text="Technology - Software How-To"/>
+    <itunes:category text="Software How-To"/>
   </itunes:category>
 
   {% for episode in site.metaphorloop_episodes %}
     <item>
       <title>{{ episode.title }}</title>
       <itunes:subtitle>{{ episode.title }}</itunes:subtitle>
-      <itunes:summary>{{ episode.summary }}</itunes:summary>
       <itunes:author>{{ site.author }}</itunes:author>
-      <itunes:summary><![CDATA[{{episode.content}}]]</itunes:summary>
+      <itunes:summary><![CDATA[{{episode.content}}]]></itunes:summary>
       {% if episode.custom_art %}
         <itunes:image href="{{ episode.custom_art }}" />
       {% else %}
