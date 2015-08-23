@@ -13,6 +13,7 @@ layout: null
   <itunes:author>{{ site.author }}</itunes:author>
   <itunes:summary>{{ site.metaphorloop_metadata.description }}</itunes:summary>
   <description>{{ site.metaphorloop_metadata.description }}</description>
+	<itunes:explicit>no</itunes:explicit>
   <itunes:owner>
     <itunes:name>{{ site.author }}</itunes:name>
     <itunes:email>{{ site.email }}</itunes:email>
@@ -28,7 +29,7 @@ layout: null
       <title>{{ episode.title }}</title>
       <itunes:subtitle>{{ episode.title }}</itunes:subtitle>
       <itunes:author>{{ site.author }}</itunes:author>
-      <itunes:summary><![CDATA[{{episode.content}}]]></itunes:summary>
+      <itunes:summary>{{ episode.summary }}</itunes:summary>
       {% if episode.custom_art %}
         <itunes:image href="{{ episode.custom_art }}" />
       {% else %}
@@ -36,7 +37,7 @@ layout: null
       {% endif %}
 
       <enclosure url="{{ episode.audio_url }}" length="{{ episode.number_of_bytes }}" type="audio/mpeg" />
-      <pubDate>{{ episode.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
+      <pubDate>{{ episode.date | date: "%a, %d %b %Y %H:%M:%S" }} GMT</pubDate>
       <itunes:duration>{{ episode.length_as_text }}</itunes:duration>
 	    <itunes:explicit>no</itunes:explicit>
 	    <itunes:keywords>programming</itunes:keywords>

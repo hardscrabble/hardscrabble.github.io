@@ -44,6 +44,7 @@ a link to that URL.
 * add a file to _metaphorloop_episodes named, e.g. 4.md for episode 4
 * required attributes in the header:
   * `title`
+  * `summary`
   * `date`
   * `audio_url`
   * `number_of_bytes` -- actually count the bytes of the audio file, e.g. 4000000
