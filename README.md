@@ -48,6 +48,7 @@ a link to that URL.
   * `audio_url`
   * `number_of_bytes` -- actually count the bytes of the audio file, e.g. 4000000
   * `length_as_text` -- e.g. "07:05"
+  * `summary`
 * optional attributes in the header:
   * `custom_art` if an episode should have special art, link it here
 

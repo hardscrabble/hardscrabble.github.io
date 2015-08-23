@@ -1,5 +1,5 @@
 ---
-title: metaphorloop
+title: metaphor loop
 ---
 
 ![metaphor loop]({{ site.baseurl }}img/metaphorloop.png)

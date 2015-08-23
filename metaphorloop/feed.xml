@@ -8,6 +8,7 @@ layout: null
   <title>{{ site.metaphorloop_metadata.title }}</title>
   <link>{{ site.metaphorloop_metadata.url }}</link>
   <language>en-us</language>
+  <copyright>2015 by {{site.author}}</copyright>
   <itunes:subtitle>{{ site.metaphorloop_metadata.subtitle }}</itunes:subtitle>
   <itunes:author>{{ site.author }}</itunes:author>
   <itunes:summary>{{ site.metaphorloop_metadata.description }}</itunes:summary>
@@ -19,12 +20,14 @@ layout: null
   <itunes:image href="{{ site.metaphorloop_metadata.cover_art }}" />
 
   <itunes:category text="Technology">
-    <itunes:category text="Software How-To"/>
+    <itunes:category text="Technology - Software How-To"/>
   </itunes:category>
 
   {% for episode in site.metaphorloop_episodes %}
     <item>
       <title>{{ episode.title }}</title>
+      <itunes:subtitle>{{ episode.title }}</itunes:subtitle>
+      <itunes:summary>{{ episode.summary }}</itunes:summary>
       <itunes:author>{{ site.author }}</itunes:author>
       <itunes:summary><![CDATA[{{episode.content}}]]</itunes:summary>
       {% if episode.custom_art %}
@@ -34,9 +37,12 @@ layout: null
       {% endif %}
 
       <enclosure url="{{ episode.audio_url }}" length="{{ episode.number_of_bytes }}" type="audio/mpeg" />
-      <guid>{{ site.url }}{{ episode.url }}</guid>
       <pubDate>{{ episode.date | date: "%a, %d %b %Y %H:%M:%S %Z" }}</pubDate>
       <itunes:duration>{{ episode.length_as_text }}</itunes:duration>
+	    <itunes:explicit>no</itunes:explicit>
+	    <itunes:keywords>programming</itunes:keywords>
+
+      <guid>{{ site.url }}{{ episode.url }}</guid>
       <link>{{ site.url }}{{ episode.url }}</link>
     </item>
   {% endfor %}
