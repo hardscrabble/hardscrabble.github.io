@@ -37,3 +37,17 @@ date: 1969-10-31
 The `author_url` is optional. If it's filled in, your name in the byline will be
 a link to that URL.
 
+## adding a podcast episode
+
+* record and export an mp3 (the feed assumes mp3)
+* upload it to s3, make public, copy the URL
+* add a file to _metaphorloop_episodes named, e.g. 4.md for episode 4
+* required attributes in the header:
+  * `title`
+  * `date`
+  * `audio_url`
+  * `number_of_bytes` -- actually count the bytes of the audio file, e.g. 4000000
+  * `length_as_text` -- e.g. "07:05"
+* optional attributes in the header:
+  * `custom_art` if an episode should have special art, link it here
+

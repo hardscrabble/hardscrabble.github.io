@@ -1,6 +1,7 @@
-title: hardscrabble
-author: Max Jacobson
-description: the personal website of Max Jacobson, a programmer in New York
+title: "hardscrabble"
+author: "Max Jacobson"
+email: "max@hardscrabble.net"
+description: "the personal website of Max Jacobson, a programmer in New York"
 analytics_id: 'UA-4982721-15'
 
 url: "http://hardscrabble.net"
@@ -8,6 +9,13 @@ baseurl: "/"
 port: 1234
 
 permalink: "/:year/:title"
+
+metaphorloop_metadata:
+  title: "metaphor loop"
+  subtitle: "a podcast about how we think about programming"
+  description: "Listen to Max Jacobson talk to programmers about how they think about programming."
+  url: "http://hardscrabble.net/metaphorloop"
+  cover_art: "https://s3.amazonaws.com/metaphorloop/metaphorloop.png"
 
 defaults:
   -
@@ -22,6 +30,12 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+  -
+    scope:
+      path: ""
+      type: "metaphorloop_episodes"
+    values:
+      layout: "metaphorloop_episode"
 
 exclude:
   - "Gemfile"
@@ -41,3 +55,7 @@ gems:
 poole:
   word_separator: "-"
 
+collections:
+  metaphorloop_episodes:
+    output: true
+    permalink: "/metaphorloop/:name/"

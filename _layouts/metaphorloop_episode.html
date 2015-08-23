@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="metaphorloop-episode">
+  <div class="meta">
+    <div class="title">
+      <h2>
+        {{ page.title }}
+      </h2>
+      <span>An episode of <a href="/metaphorloop">metaphorloop</a></span>
+    </div>
+    <div class="date">
+      {{ page.date | date_to_string }}
+    </div>
+    <span class="source"><a href="https://raw.github.com/hardscrabble/hardscrabble.github.io/master/{{page.path}}">source</a></span>
+  </div>
+
+
+  <div class="episode-details">
+    <audio src="{{page.audio_url}}" controls>
+      Your browser does not support the audio tag.
+    </audio>
+
+    {{ content }}
+  </div>
+
+</div>
+
