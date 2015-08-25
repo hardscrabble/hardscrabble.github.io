@@ -14,10 +14,7 @@ This is a podcast about how we think about programming. There are a lot of ways!
 
 ## feed
 
-Subscribe: [feed.xml](/metaphorloop/feed.xml)
-
-I may add it to iTunes later. In the meantime, podcast apps take RSS feeds,
-right? I recommend [Overcast](http://overcast.fm/) for iOS users.
+Subscribe: [feed.xml](/metaphorloop/feed.xml) or [itunes](https://itunes.apple.com/us/podcast/metaphor-loop/id1033043747)
 
 ## credits
 
