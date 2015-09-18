@@ -43,6 +43,7 @@ exclude:
   - "README.md"
   - "vendor"
   - "bin"
+  - "exe"
   - ".travis.yml"
 
 markdown: kramdown
