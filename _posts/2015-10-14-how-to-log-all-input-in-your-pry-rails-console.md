@@ -54,10 +54,10 @@ end
 Pry.config.input = LoggingReadline.new
 {% endhighlight %}
 
-The important thing for custom input objects is that they input the `readline`
-method. The method takes in a string that holds the current user prompt, and it
-is expected to return a string that holds the next line of Ruby code for Pry to
-evaluate.
+The important thing for custom input objects is that they implement the
+`readline` method. The method takes in a string that holds the current user
+prompt, and it is expected to return a string that holds the next line of Ruby
+code for Pry to evaluate.
 
 If pry is a REPL (read evaluate print loop), the custom input object assumes the
 responsibility of the first letter, and thats' it.
