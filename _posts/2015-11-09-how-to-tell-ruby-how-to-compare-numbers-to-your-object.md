@@ -1,15 +1,13 @@
 ---
 title: how to tell ruby how to compare numbers to your object with coerce
-layout: post
 date: 2015-11-09 00:50 EST
-
 ---
 
 Let's say you have some object that represents some numeric idea:
 
 {% highlight ruby %}
 class CupsOfCoffeePerDay
-  MAXS_LIMIT = 3
+  MY_LIMIT = 3
 
   def initialize(num)
     @num = num
@@ -19,7 +17,7 @@ class CupsOfCoffeePerDay
     @num > other
   end
 
-  def risky?(threshold: MAXS_LIMIT)
+  def risky?(threshold: MY_LIMIT)
     self > threshold
   end
 end
@@ -65,7 +63,7 @@ We could change our implementation to accomodate this use-case:
 
 {% highlight ruby %}
 class CupsOfCoffeePerDay
-  MAXS_LIMIT = 3
+  MY_LIMIT = 3
 
   def initialize(num)
     @num = num
@@ -79,7 +77,7 @@ class CupsOfCoffeePerDay
     end
   end
 
-  def risky?(threshold: MAXS_LIMIT)
+  def risky?(threshold: MY_LIMIT)
     self > threshold
   end
 
@@ -104,7 +102,7 @@ numbers, and it's called `coerce`:
 
 {% highlight ruby %}
 class CupsOfCoffeePerDay
-  MAXS_LIMIT = 3
+  MY_LIMIT = 3
 
   def initialize(num)
     @num = num
@@ -114,7 +112,7 @@ class CupsOfCoffeePerDay
     @num > other
   end
 
-  def risky?(threshold: MAXS_LIMIT)
+  def risky?(threshold: MY_LIMIT)
     self > threshold
   end
 
@@ -224,9 +222,11 @@ def coerce(other)
 end
 {% endhighlight %}
 
-You might expect hell to be raised as an exception -- but nope. Thankfully,
-it's not completely silent: it emits a warning that your exception will no
-longer be rescued in future versions of Ruby. I like that change.
+You might expect hell to be raised as an exception -- but nope. You might think
+that means the `coerce` method wasn't called. It was, it's just kind of unusual
+territory. Thankfully, it's not completely silent: it emits a warning that your
+exception will no longer be rescued in future versions of Ruby. I like that
+change.
 
 So. Now that we know about coerce, our operator methods can be really simple,
 but they can still be used bidirectionally, and we can even feel OK about
@@ -241,13 +241,13 @@ class CupsOfCoffeePerDay
 
   def_delegators "@num", :>, :<, :>=, :<=, :==
 
-  MAXS_LIMIT = 3
+  MY_LIMIT = 3
 
   def initialize(num)
     @num = num
   end
 
-  def risky?(threshold: MAXS_LIMIT)
+  def risky?(threshold: MY_LIMIT)
     self > threshold
   end
 
