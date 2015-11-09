@@ -229,8 +229,9 @@ it's not completely silent: it emits a warning that your exception will no
 longer be rescued in future versions of Ruby. I like that change.
 
 So. Now that we know about coerce, our operator methods can be really simple,
-and we can even feel OK about abstracting them a bit. I kind of like this final
-implementation, which includes all of the operators:
+but they can still be used bidirectionally, and we can even feel OK about
+abstracting them a bit. I kind of like this final implementation, which
+includes all of the operators:
 
 {% highlight ruby %}
 require 'forwardable'
