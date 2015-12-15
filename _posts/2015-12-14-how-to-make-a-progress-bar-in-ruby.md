@@ -63,4 +63,4 @@ like this:
 
 ![barnyard]({{ site.baseurl }}img/2015-12-14-progress-barn.gif)
 
-I'll leave it as an exercise to reader how to write this one.
+I'll leave it as an exercise to the reader how to write this one.
