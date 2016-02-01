@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
+
+if [ ! -z "$TMUX" ]; then
+  tmux rename-window "server"
+fi
+
 bin/jekyll serve --watch --baseurl /  --drafts
