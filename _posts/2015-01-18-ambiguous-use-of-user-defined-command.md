@@ -38,9 +38,9 @@ computer, it won't include my fix.
 **Edit April 2015**: I've sort of solved this problem by no longer typing `:E`,
 and instead adding this line to my vimrc:
 
-{% highlight vim %}
+```vim
 nmap <silent> <Leader>e :Explore<CR>
-{% endhighlight %}
+```
 
 Which lets me type `,e` to jump right to netrw (`,` is my Leader character. By
 default, the Leader character is `\`.)`

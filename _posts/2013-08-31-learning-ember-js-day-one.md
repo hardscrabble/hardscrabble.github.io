@@ -20,7 +20,7 @@ But... *am I?* This release feels like an exciting and right time to dig in. I'v
 Ember provides a starter kit which demonstrates a basic usage. It's a static HTML page that includes all the necessary JavaScript libraries (jQuery, Handlebars, and Ember) and then an `app.js` file for us to do our work in. It starts off looking like this:
 
 
-{% highlight javascript %}
+```javascript
 App = Ember.Application.create();
 
 App.Router.map(function() {
@@ -32,13 +32,13 @@ App.IndexRoute = Ember.Route.extend({
     return ['red', 'yellow', 'blue'];
   }
 });
-{% endhighlight %}
+```
 
 ember starter kit app.js
 
 When you open `index.html` in your browser, you can see those three colors have shown up in a bulleted list. The relevant part of that file looks like this:
 
-{% highlight html %}
+```html
 {% raw %}
 <script type="text/x-handlebars" data-template-name="index">
   <ul>
@@ -48,7 +48,7 @@ When you open `index.html` in your browser, you can see those three colors have 
   </ul>
 </script>
 {% endraw %}
-{% endhighlight %}
+```
 
 template for displaying colors
 
@@ -58,7 +58,7 @@ Cool. I can kinda see how the data shows up here.
 
 I just rewrote that `app.js` as `app.coffee` because I'm that guy:
 
-{% highlight coffeescript %}
+```coffee
 App = Ember.Application.create()
 
 App.Router.map ->
@@ -67,7 +67,7 @@ App.Router.map ->
 App.IndexRoute = Ember.Route.extend
   model: ->
     ['red', 'yellow', 'blue', 'green']
-{% endhighlight %}
+```
 
 coffeescript rewrite (i added a color too)
 
@@ -83,7 +83,7 @@ Did I read this: <http://net.tutsplus.com/tutorials/javascript-ajax/getting-into
 
 I closed all my tabs. I want to just play around. I decided to ditch that array of colors and try using slightly richer data. Here's what I came up with:
 
-{% highlight coffeescript %}
+```coffee
 App = Ember.Application.create()
 
 App.Router.map ->
@@ -103,13 +103,13 @@ App.IndexRoute = Ember.Route.extend
         date:  "2013-06-03"
         body: "Can't wait to start school!"
       ]
-{% endhighlight %}
+```
 
 app.coffee
 
 and
 
-{% highlight html %}
+```html
 {% raw %}
 <script type="text/x-handlebars" data-template-name="index">
   <h2>
@@ -123,7 +123,7 @@ and
   </ul>
 </script>
 {% endraw %}
-{% endhighlight %}
+```
 
 part of index.html
 

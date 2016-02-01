@@ -12,7 +12,7 @@ You can highlight some lines with visual mode and then press `=` and it will fix
 
 Paterson cites this trick as an argument in favor of *not* indenting private methods an extra level, because vim doesn't do that. For example:
 
-{% highlight ruby %}
+```ruby
 # do this:
 class Dog
   def bark
@@ -39,7 +39,7 @@ class Cat
       ["meow", "purr", "idk what else, cats are weird"]
     end
 end
-{% endhighlight %}
+```
 
 I generally do that extra indent but I might stop now :leaves:.
 

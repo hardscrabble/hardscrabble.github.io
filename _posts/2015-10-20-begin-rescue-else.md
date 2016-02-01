@@ -7,7 +7,7 @@ Quick ruby tip kinda post.
 
 Today I learned, this is a valid Ruby program:
 
-{% highlight ruby %}
+```ruby
 begin
   raise if [true, false].sample
 rescue
@@ -15,7 +15,7 @@ rescue
 else
   puts "did not fail"
 end
-{% endhighlight %}
+```
 
 I'm used to using `else` after an `if`, but not after a `rescue`. This is like
 saying "do this thing. if it fails, do this *other* thing. if it *doesn't fail*,

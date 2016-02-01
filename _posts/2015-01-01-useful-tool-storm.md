@@ -11,9 +11,9 @@ addresses. Not gonna happen.
 I've been dealing with this by creating custom aliases. So I put something like
 this in my `~/.bash_profile`:
 
-{% highlight bash %}
+```bash
 alias 'eug'='ssh pair@some.ip.address'
-{% endhighlight %}
+```
 
 Then, whenever I want to connect to Eugene's server so we can pair program, I
 just type `eug` and hit enter, and I'm there. Not bad! It even tab-completes.
@@ -31,9 +31,9 @@ stuff like this.
 
 Storm lets you define aliases to remote servers like this:
 
-{% highlight bash %}
+```bash
 storm add eug pair@some.ip.address
-{% endhighlight %}
+```
 
 Once you do that, you just type `ssh eug` to connect. It has some other helpful
 subcommands like `storm list` to tell you all of your aliases even `storm web`
@@ -45,12 +45,12 @@ Hey, wait a second. Somehow it's hooking into the normal main `ssh` command!
 After some poking around, I found that it's saving the information in
 `~/.ssh/config` as a plain text configuration file that looks like this:
 
-{% highlight text %}
+```
 Host eug
     hostname some.ip.address
     user pair
     port 22
-{% endhighlight %}
+```
 
 And that I could've been using a similarly-structured file all along, and didn't
 really need storm at all!

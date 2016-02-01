@@ -80,7 +80,7 @@ Lol great
 
 The previous chapter recommended writing your own event emitter to see how simple it is. This chapter doesn't say to write your own model code but I want to try writing some JavaScript instead of just taking notes, so I'm doing kind of a combo of both:
 
-{% highlight javascript %}
+```javascript
 var object = {
   attributes: {},
   callbacks: {},
@@ -116,11 +116,11 @@ object.on("changed:name", function() {
 
 object.set("name", "MJ");
 object.set("name", "Maxwell");
-{% endhighlight %}
+```
 
 Here's how I'd write the same in CoffeeScript:
 
-{% highlight coffee %}
+```coffee
 object =
   attributes: {}
   callbacks: {}
@@ -145,7 +145,7 @@ object.on "changed:name", ->
 
 object.set "name", "MJ"
 object.set "name", "Maxwell"
-{% endhighlight %}
+```
 
 I still like CoffeeScript but I'm going to try to use it less. Actually that last line of the `emit` method looks *weird* with the `@` like that. I actually ran both of these thru JSHint and CoffeeLint respectively and it helped me catch some missing semicolons :+1:.
 
@@ -167,18 +167,18 @@ So before I continue reading and learn about the Human JavaScript solution to th
 
 (Writing pure HTML without HAML or Rails' help was surprisingly difficult just then and I'm not sure this is correct, but I'm on a train so I can't really look things up right now.
 
-{% highlight html %}
+```html
 <!-- index.html -->
 <h1>Subscribe to our mailing list</h1>
 <form action="/subscribe" method="POST" id="subscribe">
   <input id="email" type="text" placeholder="youremail@example.com" />
   <input type="submit" />
 </form>
-{% endhighlight %}
+```
 
 We want to validate that the user input looks like an email address so we write a little jQuery:
 
-{% highlight coffee %}
+```coffee
 # home.js.coffee
 $(document).on 'ready', ->
   $('form#subscribe').on 'submit', (event) ->
@@ -186,7 +186,7 @@ $(document).on 'ready', ->
       event.preventDefault()
       alert "According to my terrible regular expression, that is not a valid email!"
       false
-{% endhighlight %}
+```
 
 This code has two event handlers in it -- the first will run when the document is ready, on every page this is included on. It attaches the second event handler to a form with id "subscribe" -- or it tries to. Maybe it doesn't find one, in which case I guess it does nothing. It doesn't throw an exception if it doesn't find the form, it just quietly continues through the code. Let's say you have a mature Rails app with dozens of files like these. On every page load, it's looking for a bunch of stuff that may or may not exist. Browsers are pretty fast, so it's kind of OK, but it's a ton of work that isn't necessary. It's also a potential source of bugs, because what if there's a form with id of 'subscribe' on multiple pages which are totally different? Now you can't submit that one either?
 
@@ -194,12 +194,12 @@ What are your alternatives?
 
 ### add some conditions to each file, for example:
 
-{% highlight coffee %}
+```coffee
 # home.js.coffee
 $ ->
   if $('form#subscribe').length
     # all of your code that should only run on a page which has this form, potentially a lot of code
-{% endhighlight %}
+```
 
 So the code is still evaluated, but if there is a lot of code, you can minimize the excess work.
 
@@ -207,14 +207,14 @@ So the code is still evaluated, but if there is a lot of code, you can minimize 
 
 Instead of having one massive manifest file in `application.js`, which packages all of our JavaScripts into one big file on every page, include the JavaScripts in the view that it's relevant to.
 
-{% highlight haml %}
+```haml
 / form.html.haml
 %h1 Subscribe to our mailing list
 %form{:action => '/subscribe', :method => 'POST'}#subscribe
   %input{:type => 'text', :placeholder => 'youremail@example.com'}#email
   %input{:type => 'submit'}
 = javascript_include_tag 'home'
-{% endhighlight %}
+```
 
 This last approach has some pros and cons. Including that script tag on just the relevant page means that it will only run on that page, but it also means that page will ned to request two different JavaScript assets, instead of the one big one it probably already has cached.
 
@@ -230,7 +230,7 @@ This is a brief chapter discussing 'templatizer', a library created by the autho
 
 I cloned [his sample app](https://github.com/HenrikJoreteg/humanjs-sample-app) and started it, and clicked around. The server log did something interesting:
 
-{% highlight text %}
+```
 [hardscrabble] [humanjs-sample-app] [master branch]
 ⇥ npm start
 
@@ -243,11 +243,11 @@ Setting up watch
 COMPILING
 Started livereload on 35729
 Watching /Users/maxjacobson/src/humanjs-sample-app/public/css/**/*.styl
-{% endhighlight %}
+```
 
 And then...
 
-{% highlight text %}
+```
 [hardscrabble] [humanjs-sample-app] [master branch]
 ⇥ git status
 On branch master
@@ -258,7 +258,7 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
         modified:   client/templates.js
-{% endhighlight%}
+```
 
 What? I didn't modify `client/templates.js`! Just running the app and clicking around regenerates this file, which I guess gets committed and deployed. I'm not even sure what changed. Maybe when I installed the dependencies, I got a newer version of the "templatizer" tool, which compiles the file in a slightly different way.
 

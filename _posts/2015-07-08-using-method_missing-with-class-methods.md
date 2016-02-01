@@ -5,7 +5,7 @@ date: 2015-07-08 01:42 EDT
 
 Ruby's `method_missing` let's you write some weird code:
 
-{% highlight ruby %}
+```ruby
 class Poet
   def initialize
     @words = []
@@ -24,12 +24,12 @@ class Poet
 end
 
 puts Poet.new.why.not.go.for.a.walk?
-{% endhighlight %}
+```
 
 I've seen `method_missing` used to handle unexpected message on instances of a
 class before, but never for class methods. But, like, why not?
 
-{% highlight ruby %}
+```ruby
 class LoudSpeaker
   def self.method_missing(message, *args, &block)
     if [:exclaim, :yodel, :howl, :sob, :beg].include?(message)
@@ -43,6 +43,6 @@ class LoudSpeaker
 end
 
 LoudSpeaker.exclaim "helloooo!"
-{% endhighlight %}
+```
 
 It's just methods, so go for it.

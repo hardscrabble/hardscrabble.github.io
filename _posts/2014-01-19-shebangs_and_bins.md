@@ -9,28 +9,28 @@ OK what's a shebang? I'm going to try to explain my understanding of it step by 
 
 So let's say you write a ruby program that looks like this:
 
-{% highlight ruby %}
+```ruby
 # hello.rb
 puts "hello world"
-{% endhighlight %}
+```
 
 And you run it from the command line by writing `ruby hello.rb` and hitting enter.
 
 Or maybe write basically the same thing in python like this:
 
-{% highlight python %}
+```python
 # hello.py
 print "hello world"
-{% endhighlight %}
+```
 
 And run it from the command line by writing `python hello.py` and hitting enter.
 
 And the same thing in CoffeeScript
 
-{% highlight coffeescript %}
+```coffee
 # hello.coffee
 console.log "hello world"
-{% endhighlight %}
+```
 
 And run it by writing `coffee hello.coffee` and hitting enter.
 
@@ -41,20 +41,20 @@ Three different files are interpreted as three different programming languages b
 
 The file extension isn't really necessary. See:
 
-{% highlight ruby %}
+```ruby
 # hello.sandwich
 puts "hello world"
-{% endhighlight %}
+```
 
 ? This file can be run with `ruby hello.sandwich` and it works totally fine. Probably continue to use conventional file extensions because they signal to your text editors and friends what type of file they are. But I think it's kind of helpful to know that they're not totally necessary or magical.
 
 OK so what if you want to call this program without specifying the interpreter every single time? This is where shebangs come in:
 
-{% highlight ruby %}
+```ruby
 #!/usr/bin/env ruby
 # hello.sandwich
 puts "hello world"
-{% endhighlight %}
+```
 
 Now this is a file with a nonsense file extension but something new: the first line (the shebang) indicates which program is meant to interpret this file. Interestingly, it's not a direct path to that binary file on your file system (which in the case of Ruby programmers who use [rvm](http://rvm.io) to switch between Ruby versions, is often changing -- mine is currently at `/Users/maxjacobson/.rvm/rubies/ruby-2.1.0-p0/bin/ruby` but only because I'm checking out the newly released Ruby 2.1.0), but instead consults your environment and says "hey, I'm looking for something called ruby, who wants to handle this one?"
 
@@ -74,7 +74,7 @@ So, if your `sandwich` file is in a directory that's on your `$PATH`, and it has
 
 OK so that's awesome. But what if I want to write this program:
 
-{% highlight ruby %}
+```ruby
 #!/usr/bin/env sandwich
 # grilled_cheese
 make_sandwich(
@@ -96,7 +96,7 @@ make_sandwich(
     "enjoy"
   ]
 )
-{% endhighlight %}
+```
 
 OK so I put "sandwich" in my shebang instead of a real programming language. What. Haha.
 
@@ -104,17 +104,17 @@ Let's make the `grilled_cheese` file executable and put it in our bin, and then 
 
 Let's edit our sandwich program to get a sense of what it knows about our grilled cheese program.
 
-{% highlight ruby %}
+```ruby
 #!/usr/bin/env ruby
 # sandwich
 puts ARGV.inspect
-{% endhighlight %}
+```
 
 Now when I run `grilled_cheese`, instead of seeing "hello world" I see `["/Users/maxjacobson/bin/grilled_cheese"]`. Ahaa! Just because we invoke the sandwich program from the grilled cheese program doesn't mean we will automatically evaluate the grilled cheese code. We just pass the filename as an argument, much like when we run `ruby hello.rb`. It's a lot like if we ran `sandwich grilled_cheese`.
 
 OK so knowing that, maybe our sandwich file should look something like this:
 
-{% highlight ruby %}
+```ruby
 #!/usr/bin/env ruby
 # sandwich
 
@@ -132,7 +132,7 @@ def make_sandwich(options)
 end
 
 eval File.read(ARGV.first)
-{% endhighlight %}
+```
 
 So, this defines our missing method, takes in the file as an argument, reads the file as a string, and then evaluates the file with `eval`. OK so the only thing I know about eval is that you probably should never use it because it's dangerous af. But maybe this is the kind of context where it makes sense?
 

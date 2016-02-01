@@ -23,7 +23,7 @@ So this code you want to test. What makes it hard to test? Let's say it's a Ruby
 class in a Rails app. In Rails apps, all the classes are available for all the
 other classes to reference and depend on. Maybe it looks like this:
 
-{% highlight ruby %}
+```ruby
 class PieCrust
   def initialize(pounds_of_dough)
     @lbs = pounds_of_dough
@@ -41,7 +41,7 @@ class PieCrust
     @ready
   end
 end
-{% endhighlight %}
+```
 
 (This example is revealing more about my state of mind right now than anything)
 
@@ -76,7 +76,7 @@ What do you do?
 There's the dependency injection approach, where you might refactor the earlier
 code to look like:
 
-{% highlight ruby %}
+```ruby
 class PieCrust
   def initialize(pounds_of_dough, roller: RollingPin.new, heater: Oven.new, photo_sharing_service: Instagram)
     @lbs = pounds_of_dough
@@ -101,13 +101,13 @@ class PieCrust
 
   attr_reader :roller, :heater, :photo_sharing_service
 end
-{% endhighlight %}
+```
 
 Which lets you leave your other application code the same -- it can interact
 with PieCrust the same as it did before, as the default values are totally
 sensible there. But you can now write a test like this:
 
-{% highlight ruby %}
+```ruby
 RSpec.describe PieCrust do
   describe '#prep, #ready' do
     it 'rolls the crust, preheats the oven, and uploads the photo' do
@@ -128,7 +128,7 @@ RSpec.describe PieCrust do
     end
   end
 end
-{% endhighlight %}
+```
 
 I feel like this is OK but it feels like it prescribes and duplicates a lot of
 the stuff that's going on in the application code, which doesn't feel ideal to
@@ -160,7 +160,7 @@ So... "Whaaaat?" You might say.
 
 Here's what the constant-referencing isolation tests would look like:
 
-{% highlight ruby %}
+```ruby
 require "stub_constant"
 StubConstant.klass(:Oven)
 StubConstant.klass(:RollingPin)
@@ -188,7 +188,7 @@ RSpec.describe PieCrust do
     end
   end
 end
-{% endhighlight %}
+```
 
 Sooo it got even more prescriptive. But it's a pretty neat way to do a purely
 isolated test without needing to rewrite your code.

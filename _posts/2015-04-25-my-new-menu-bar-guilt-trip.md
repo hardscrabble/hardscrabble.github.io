@@ -24,7 +24,7 @@ to Ruby because, as much as I enjoy a challenge, parsing dates with the Mac
 
 [date]: https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/date.1.html
 
-{% highlight sh %}
+```sh
 #!/bin/sh
 
 function latestPost {
@@ -42,7 +42,7 @@ function latestPost {
 }
 
 latestPost
-{% endhighlight %}
+```
 
 This is kind of a Frankenstein script (it even has [a little Rails][2] in it)
 but it works so :bowtie:.

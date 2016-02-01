@@ -16,7 +16,7 @@ I'm almost certainly too quick to congratulate myself. It has approximately zero
 
 This is pretty much the whole app:
 
-{% highlight ruby %}
+```ruby
 require 'sinatra'
 require 'kramdown'
 
@@ -37,7 +37,7 @@ end
 get '/css/style.css' do
   scss :style
 end
-{% endhighlight %}
+```
 
 It just checks all the files in a directory called "posts", checks all of the ones with the `.md` file extension, and then renders them all one after the other. That's it!
 

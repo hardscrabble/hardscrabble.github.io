@@ -10,9 +10,9 @@ made up of multiple operations.
 
 Let's say you have this Ruby code:
 
-{% highlight ruby %}
+```ruby
 sum = a + b + c
-{% endhighlight %}
+```
 
 What are a, b, and c? They could be
 
@@ -26,31 +26,31 @@ What are a, b, and c? They could be
 
 Let's look at how option 1 plays out:
 
-{% highlight ruby %}
+```ruby
 a = 1
 b = 1
 c = 1
 puts a + b + c
 # 3
-{% endhighlight %}
+```
 
 So far, so good.
 
 Let's see how option 2 plays out:
 
-{% highlight ruby %}
+```ruby
 def a; 1; end
 def b; 1; end
 def c; 1; end
 puts a + b + c
 # 3
-{% endhighlight %}
+```
 
 Sort of funky-looking, but also sort of straight-forward. Here's the question
 though: if Ruby is calling those 3 methods to get those 3 values, what order are
 they being called in? Let's find out:
 
-{% highlight ruby %}
+```ruby
 def a
   puts "a"
   1
@@ -71,7 +71,7 @@ puts a + b + c
 # b
 # c
 # 3
-{% endhighlight %}
+```
 
 It kind of makes sense. It's just going from left to right, like English.
 
@@ -79,19 +79,19 @@ One cool thing about Ruby is that (almost) everything is an object, and even
 core things like math operations are implemented as methods. This means the
 above could be written like this:
 
-{% highlight ruby %}
+```ruby
 puts a.+(b).+(c)
 # a
 # b
 # c
 # 3
-{% endhighlight %}
+```
 
 This rendition makes it clear that this is a chained sequence of method calls.
 Let's make it even more clear, by refining the plus method and adding some
 logging:
 
-{% highlight ruby %}
+```ruby
 module MathLogger
   refine Fixnum do
     alias_method :original_plus, :+
@@ -128,7 +128,7 @@ puts a.+(b).+(c)
 # c
 # 2 + 1 = 3
 # 3
-{% endhighlight %}
+```
 
 Now it's not as simple as "left to right". We start at the left and call the a
 method. But the next method we call is b, not +. Before we can add two values,
@@ -143,14 +143,14 @@ methods and they would all be evaluated before the + method is called).
 This rule doesn't apply to the defined? method, which ships with Ruby and
 behaves like this:
 
-{% highlight ruby %}
+```ruby
 msg = "Hello"
 defined?(msg) #=> "local-variable"
 OMG           #=> NameError: uninitialized constant OMG
 defined?(OMG) #=> nil
 OMG = 4
 defined?(OMG) #=> "constant"
-{% endhighlight %}
+```
 
 The third line of this excerpt demonstrates that referencing an uninitialized
 constant normally raises a name error, so it would be normal to expect the same
@@ -180,14 +180,14 @@ expressions.
 
 Can Ruby? Let's see:
 
-{% highlight ruby %}
+```ruby
 4 + 3 * 5   #=> 19
-{% endhighlight %}
+```
 
 Well... yeah! Seems right! But let's take a look into the order that methods are
 being called:
 
-{% highlight ruby %}
+```ruby
 module MathLogger
   refine Fixnum do
     alias_method :original_plus, :+
@@ -232,7 +232,7 @@ puts four + three * five
 # 3 * 5 = 15
 # 4 + 15 = 19
 # 19
-{% endhighlight %}
+```
 
 *Interesting!* So, Ruby takes a look at four, takes a look at three, and then
 *skips the addition*, then takes a look at five, and performs the
@@ -242,7 +242,7 @@ the product of three and five.
 That's great! And surely, if all of these operations are just methods, it will
 behave the same when I change it to this?
 
-{% highlight ruby %}
+```ruby
 puts four.+(three).*(five)
 # 4
 # 3
@@ -250,7 +250,7 @@ puts four.+(three).*(five)
 # 5
 # 7 * 5 = 35
 # 35
-{% endhighlight %}
+```
 
 Hm, nope. When we call the methods directly, the order of operations breaks.
 
@@ -259,9 +259,9 @@ calling the + method (and its siblings) but it's doing slightly more than just
 inlining the dots: it's also, more or less, inlining the parentheses, so it
 looks something like this:
 
-{% highlight ruby %}
+```ruby
 puts four.+(three.*(five))
-{% endhighlight %}
+```
 
 How does it choose where to put the parentheses? It has [a precedence table][t]
 which Ruby references when deciding which operations to evaluate before others.

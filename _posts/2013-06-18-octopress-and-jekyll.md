@@ -14,28 +14,28 @@ A scant two months later, in December 2008, GitHub [announced](https://github.co
 
 At that time, Jekyll was at [v0.2.1](https://github.com/mojombo/jekyll/tree/v0.2.1). In order to time travel and try that version of Jekyll on my local machine I ran these commands:
 
-{% highlight bash %}
+```bash
 git clone https://github.com/mojombo/jekyll.git
 cd jekyll
 git checkout v0.2.1
 gem build jekyll.gemspec
 gem install jekyll-0.2.1.gem
 jekyll --version
-{% endhighlight %}
+```
 
 And got a bunch of error messages. Ok. I don't know what's up with these. Let me fast-forward to April 2009 when [they announced](https://github.com/blog/402-github-pages-upgraded-to-jekyll-0-5-0) that GitHub pages was upgraded to use Jekyll v0.5.0. The marquee feature of v0.5.0 is a configuration file.
 
-{% highlight bash %}
+```bash
 git checkout v0.5.0
 gem build jekyll.gemspec
 gem install jekyll-0.5.0.gem
 jekyll --version
 #=> Jekyll 0.5.0
-{% endhighlight %}
+```
 
 OK nice. I'm close to arriving at a point. Imagine being a programmer wanting to start a blog at this point in time and wanting to write in Markdown or Textile and wanting to manage your source files in Git and compile a static site and deploy it on GitHub and encountering this upon running `jekyll --help`:
 
-{% highlight text %}
+```
 
 Jekyll is a blog-aware, static site generator.
 
@@ -56,18 +56,18 @@ Basic Command Line Usage:
         --permalink [TYPE]           Use 'date' (default) for YYYY/MM/DD
         --version                    Display current version
 
-{% endhighlight %}
+```
 
 Alright, cool. Yeah. Ok. Wait where do I start?
 
 **Real blog agenda confession:** I was planning to get stumped here to make a point but actually the README pretty clearly recommends cloning a "proto-site repo" at <https://github.com/mojombo/tpw> and going from there so that's what I'll do now and see where this takes me.
 
-{% highlight bash %}
+```bash
 git clone https://github.com/mojombo/tpw.git
 cd tpw
 git checkout b107ffb6e44fe4f2398b219e254426d3ec302142
 jekyll --server
-{% endhighlight %}
+```
 
 (That SHA is the last commit to that repo as of April 2009 and I feel like a time traveler with secret codez).
 

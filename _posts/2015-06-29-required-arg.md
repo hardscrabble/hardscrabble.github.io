@@ -18,7 +18,7 @@ arguments but not being able to require them.
 
 Here's what you can do in Ruby 2.1:
 
-{% highlight ruby %}
+```ruby
 class Dog
   def initialize(name:)
     @name = name
@@ -27,7 +27,7 @@ end
 
 Dog.new(name: "Milo") #=> #<Dog:0x007fc404df9f10 @name="Milo">
 Dog.new #=> an exception is raised: ArgumentError: missing keyword: name
-{% endhighlight %}
+```
 
 That's great! You don't need to write any additional code, and Ruby will enforce
 that your method is called with the keyword arguments you require. This gives
@@ -37,7 +37,7 @@ method will be called.
 
 Here's what happens when you do the same in Ruby 2.0.0:
 
-{% highlight ruby %}
+```ruby
 class Dog
   def initialize(name:)
     @name = name
@@ -45,7 +45,7 @@ class Dog
 end
 # dog.rb:2: syntax error, unexpected ')'
 # dog.rb:5: syntax error, unexpected keyword_end, expecting end-of-input
-{% endhighlight %}
+```
 
 Syntax error!
 
@@ -54,7 +54,7 @@ Here's what I suggest doing now:
 1. Upgrade to a newer version of Ruby
 1. If you can't, try this:
 
-{% highlight ruby %}
+```ruby
 # gem install required_arg
 require "required_arg"
 
@@ -65,7 +65,7 @@ class Dog
 end
 Dog.new(name: "Milo") #=> #<Dog:0x007fc404df9f10 @name="Milo">
 Dog.new #=> an exception is raised: missing keyword: name (ArgumentError)
-{% endhighlight %}
+```
 
 Close enough!
 
@@ -74,14 +74,14 @@ Ruby 2.0.0, maybe you'll find this useful. Let me know if you do.
 
 Here's the entire source for the gem:
 
-{% highlight ruby %}
+```ruby
 class RequiredArg
   def initialize(name = nil)
     msg = name.nil? ? "missing keyword" : "missing keyword: #{name}"
     raise ArgumentError, msg
   end
 end
-{% endhighlight %}
+```
 
 Pretty simple, and kind of fun. It's just a little cherry bomb class. The moment
 you instantiate it, it blows up. Make it the default value for a keyword

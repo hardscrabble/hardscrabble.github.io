@@ -36,18 +36,18 @@ If you try this and get it working, let me know on twitter at [@maxjacobson](htt
 
 Actually this code totally sucks. It's not at all necessary to use `PROMPT_COMMAND`. You can change this:
 
-{% highlight bash %}
+```bash
 function set_prompt {
   export PS1="[\@] [\W]\n$(~/.emoji.rb) "
 }
 export PROMPT_COMMAND=set_prompt
-{% endhighlight %}
+```
 
 to:
 
-{% highlight bash %}
+```bash
 export PS1="[\@] [\W]\n\$(~/.emoji.rb) "
-{% endhighlight %}
+```
 
 The only breakthrough I had is that `\$(function_name)` runs the function over and over where `$(function_name)` only runs it once. No idea why.
 

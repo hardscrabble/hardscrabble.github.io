@@ -19,7 +19,7 @@ to me as an outside observer.
 I was curious if I would be able to run `./mach build`, and if it would take as
 long on the second run. Instead I got this interesting output:
 
-{% highlight text %}
+```
 0:00.35 /usr/bin/make -f client.mk -s
 0:01.33 
 0:01.33 The CLOBBER file has been updated, indicating that an incremental
@@ -48,7 +48,7 @@ long on the second run. Instead I got this interesting output:
 0:01.33  $ touch /Users/maxjacobson/src/gecko-dev/obj-x86_64-apple-darwin14.3.0/CLOBBER
 0:01.33 make: *** [/Users/maxjacobson/src/gecko-dev/obj-x86_64-apple-darwin14.3.0/CLOBBER] Error 1
 0:01.36 78 compiler warnings present.
-{% endhighlight %}
+```
 
 That's super interesting! Things I learned from this:
 
@@ -65,7 +65,7 @@ I took a look at The CLOBBER file by using my fuzzy file opener to look for a
 file called CLOBBER and found it, in the root-level of the project. It contains
 more details about how to use it:
 
-{% highlight text %}
+```
 # To trigger a clobber replace ALL of the textual description below,
 # giving a bug number and a one line description of why a clobber is
 # required. Modifying this file will make configure check that a
@@ -92,7 +92,7 @@ more details about how to use it:
 
 Bug 1119335 - (DOMString or sequence<DOMString> or ConstrainDOMStringParameters)
 needs binding flush (Bug 1103153).
-{% endhighlight %}
+```
 
 It's probably gratuitous to just copy this whole thing in here, especially when
 the last few lines are designed to change, but it's pretty interesting, and I

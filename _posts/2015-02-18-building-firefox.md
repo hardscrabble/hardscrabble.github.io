@@ -68,16 +68,16 @@ share here anyway the steps I took.
   I paste the following into my terminal to install the prerequisite
   dependencies:
 
-{% highlight text %}
+```
 wget -q https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python bootstrap.py
-{% endhighlight %}
+```
 
 * That [asked me][5] if I was interested in building Firefox for Desktop or
   Android. I answered Desktop, and it started doing stuff, and outputting what
   it was doing, and ultimately (actually this was pretty fast) it said it worked
   and made this suggestion:
 
-{% highlight text %}
+```
 Your system should be ready to build Firefox for Desktop! If you have not already,
 obtain a copy of the source code by running:
 
@@ -86,7 +86,7 @@ obtain a copy of the source code by running:
 Or, if you prefer Git:
 
     git clone https://git.mozilla.org/integration/gecko-dev.git
-{% endhighlight %}
+```
 
 * So I ran the second command, because I prefer git (well, because I know git)
 * And then I waited for like ten minutes? More? I don't know. I had never cloned
@@ -111,11 +111,11 @@ Or, if you prefer Git:
   that long every time I make a change (if I even figure out how to make a
   change). And when it was finished, I saw this output:
 
-{% highlight text %}
+```
 37:56.85 We know it took a while, but your build finally finished successfully!
 To take your build for a test drive, run: |mach run|
 For more information on what to do now, see https://developer.mozilla.org/docs/Developer_Guide/So_You_Just_Built_Firefox
-{% endhighlight %}
+```
 
 * I ran `./mach run` and *like lightning* a bluish moonish earth appears in my
   Mac's dock and Firefox Nightly opened.

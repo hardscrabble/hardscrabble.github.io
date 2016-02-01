@@ -27,21 +27,21 @@ Given that this is my first AppleScript, I'm bizarrely confident that I can figu
 
 No worry! I'll find some clever solution. I open AppleScript Editor and start trying to figure out how to even do any of this.
 
-{% highlight applescript %}
+```applescript
 tell application "FirefoxNightly" # I'm using the nightly build, and I have to specifically say so
   activate # this opens or switches to the application
 end tell
-{% endhighlight %}
+```
 
 ### a digression about running AppleScripts
 
 You can write small things like this in the AppleScript Editor app and run them from there. This is what I was doing while writing the thing and tinkering. But it's not a great interface, really, as far as text editors go. Another option is to use the texteditor of your choice and run it from the terminal by writing `osascript your_file.scpt`. There's something kind of trippy about running something like this, and seeing your operating system react:
 
-{% highlight text %}
+```
 [hardscrabble] [hardscrabble.net] [my-first-applescript branch]
 ⇥ osascript -e 'display alert "hello world"'
 button returned:OK
-{% endhighlight %}
+```
 
 Later on you can use tools like Alfred to run your scripts from anywhere at any time.
 
@@ -51,7 +51,7 @@ So if Firefox doesn't expose anything to us, how can we get the list of tabs ope
 
 After a little more googling I came upon [a comment on Bugzilla](https://bugzilla.mozilla.org/show_bug.cgi?id=516502#c21) which provides a way to get the current page's URL at least. Here's how:
 
-{% highlight applescript %}
+```applescript
 
 tell application "FirefoxNightly"
   activate
@@ -66,7 +66,7 @@ tell application "FirefoxNightly"
 end tell
 
 display alert tabUrl
-{% endhighlight %}
+```
 
 Yikes... AppleScript is interesting because it's an awkward, not fun language but also super powerful if you're a kind of nerdy Mac power user, or maybe even developer who wants to harness the power of GUI applications in their project. Fortunately the next major version of OS X, Yosemite, has a JavaScript API for doing all the same stuff. This might be my last AppleScript too, because of that.
 
@@ -74,7 +74,7 @@ Now that I have the URL I want to do something better than display an alert. Som
 
 OK so I can get the current URL and add a task to OmniFocus. A [little more digging](https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/OmniFocus/OmniFocusAddInboxTask.applescript) and this is what I came up with:
 
-{% highlight applescript %}
+```applescript
 tell application "FirefoxNightly"
   activate
   set taskTitle to name of front window
@@ -94,7 +94,7 @@ tell application "OmniFocus"
     make new inbox task with properties {name:taskTitle, note:taskNote}
   end tell
 end tell
-{% endhighlight %}
+```
 
 It's kind of a dinky version of what I originally wanted to make. It's only for the current tab, and when it's done the quick entry panel is still open (by design: so I can still edit the details).
 

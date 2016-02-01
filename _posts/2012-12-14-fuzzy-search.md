@@ -11,7 +11,7 @@ And you can put a query in quotes if you want it to match all of the words, in t
 
 Here's how I did that (with some stuff paraphrased):
 
-{% highlight ruby %}
+```ruby
 if query =~ /^".+"$/
   query_array = [query.gsub!(/"/,'')]
 else
@@ -24,7 +24,7 @@ query_array.each do |q|
     break
   end
 end
-{% endhighlight %}
+```
 
 So, first I check if the query is in quotes (I'm coming to really love using regular expressions), and if so I remove the quotes and put that whole string thru. If it's not in quotes, I split the string into an array of strings, using a space as the delimeter. Then I go through each post and check it against each item in the array. If the query was in quotes, the array only has one item in it. Once there's a match, I push it thru. The `break` makes it so once a post matches the query, we move on to the next post rather than keep checking other words in the query against it.
 

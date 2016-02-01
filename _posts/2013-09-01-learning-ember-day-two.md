@@ -22,15 +22,15 @@ I made some small progress since then.
 
 At [Mendel's][] recommendation I changed the first line of my CoffeeScript program from:
 
-{% highlight coffeescript %}
+```coffee
 App = Ember.Application.create()
-{% endhighlight %}
+```
 
 to
 
-{% highlight coffeescript %}
+```coffee
 window.App = Ember.Application.create()
-{% endhighlight %}
+```
 
 [Mendel's]: http://mendelk.github.io/
 
@@ -44,19 +44,19 @@ It's cool to see the ways this is different from and similar to rails. It feels 
 
 Here's another example, straight from the video, that surprised me. This is in my route for an individual blog post. It's like a `post#show` action in rails:
 
-{% highlight coffeescript %}
+```coffee
 App.PostRoute = Ember.Route.extend
   model: (params) ->
     posts.findBy 'id', params.post_id
-{% endhighlight %}
+```
 
 This was working in the video but wasn't working for me. I logged the params object and saw that the post_id attribute, which is set by the URL (eg when visiting `/posts/3`, the params object would look like `{post_id: "3"}`), was showing up as a string, not a number. So I tried this:
 
-{% highlight coffeescript %}
+```coffee
 App.PostRoute = Ember.Route.extend
   model: (params) ->
     posts.findBy 'id', parseInt(params.post_id)
-{% endhighlight %}
+```
 
 
 which totally worked.

@@ -22,7 +22,7 @@ So whenever you try to go to a page, the code runs and figures out what the HTML
 Then the last thing I do in the code is run `erb the_html` which sends the freshly-tossed-together html into the "yield" aka the body of the page.
 
 Here I'll just share what my template looks like right now:
-{% highlight html %}
+```html
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -49,13 +49,13 @@ Here I'll just share what my template looks like right now:
 </div>
 </body>
 </html>
-{% endhighlight %}
+```
 
 And I'm pretty happy with this! I have **no** idea if I'm doing things in any kind of best-practice way but it makes sense to me and I can do a couple things with it and I'm pretty happy.
 
 But the one thing I'm kind of not happy with is the problem of indendation. When I'm assembling `the_html`, it's all going into one String. Here's a typical chunk of code:
 
-{% highlight ruby %}
+```ruby
 if post_info[:tags_array].length > 0
   the_html << "<p>Tags:</p>\n"
   the_html << "<ul id=\"the-tags\">\n"
@@ -64,7 +64,7 @@ if post_info[:tags_array].length > 0
   end
   the_html << "</ul>\n"
 end
-{% endhighlight %}
+```
 
 See how I'm manually inserting spaces and new lines (`\n`)? I feel like this is not how it's meant to be.
 

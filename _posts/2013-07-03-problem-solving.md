@@ -23,7 +23,7 @@ I've done a problem like this before at a coding meetup and I remembered how I'd
 
 Mine was probably something like this:
 
-{% highlight ruby %}
+```ruby
 def is_palindrome?(num)
   digits = num.to_s.split("")
   i = 0
@@ -35,22 +35,22 @@ def is_palindrome?(num)
   end
   return true
 end
-{% endhighlight %}
+```
 ugh
 
 And hers was something like this:
 
-{% highlight ruby %}
+```ruby
 def is_palindrome?(num)
   num.to_s == num.to_s.reverse
 end
-{% endhighlight %}
+```
 
 And I was just like *oh*.
 
 So this morning I had a moment of thinking I already knew the hard part of this problem, and then I looked at the tests. Here's the first one:
 
-{% highlight ruby %}
+```ruby
 test 'largest_palindrome_from_single_digit_factors' do
   palindromes = Palindromes.new(max_factor: 9)
   palindromes.generate
@@ -58,7 +58,7 @@ test 'largest_palindrome_from_single_digit_factors' do
   assert_equal 9, largest.value
   assert [[[3, 3], [1, 9]], [[1, 9], [3, 3]]].include? largest.factors
 end
-{% endhighlight %}
+```
 
 first test
 
@@ -66,7 +66,7 @@ Oh there's a lot more going on there.
 
 *But that's fine*, I think, *I'll make a `Palindromes` class, give it a few methods, that's fine, let's do it.* So I started with something like this:
 
-{% highlight ruby %}
+```ruby
 class Palindromes
   def initialize(options)
     max = options[:max_factor]
@@ -98,16 +98,16 @@ class Palindromes
     end
   end
 end
-{% endhighlight %}
+```
 
 first draft
 
 At this point something about the test bubbled to the surface of my mind.
 
-{% highlight ruby %}
+```ruby
 largest = palindromes.largest
 assert_equal 9, largest.value
-{% endhighlight %}
+```
 
 wait what?
 
@@ -119,7 +119,7 @@ OK fine I *guess* palindrome factors are a sufficiently interesting thing that t
 
 I'm going to finish it now, I have to. It's very late. I used to stay up this late. Jeez.
 
-{% highlight ruby %}
+```ruby
 class PalindromeFactors
   attr_accessor :value, :factors
   def initialize(num1, num2)
@@ -159,7 +159,7 @@ class Palindromes
   end
 
 end
-{% endhighlight %}
+```
 
 second draft
 
@@ -170,20 +170,20 @@ It doesn't make them pass.
 Before I knew about proper test-driven development, I did a sort of shake-and-bake version where I manually tested things, and my favorite tool for that is [CodeRunner](http://krillapps.com/coderunner/) which lets me just run little bits of code and see what happens. Kind of like irb/pry but with a GUI. So I copy my code into there without the tests and add this:
 
 
-{% highlight ruby %}
+```ruby
 palindromes = Palindromes.new(max_factor: 9)
 palindromes.generate
 largest = palindromes.largest
 puts palindromes.inspect
-{% endhighlight %}
+```
 
 poking at it
 
 And this is what it printed:
 
-{% highlight ruby %}
+```ruby
 #<Palindromes:0x007f902a10a100 @range=1..9, @palindrome_factors=[#<PalindromeFactors:0x007f902a10a010 @value=1, @factors=[1, 1]>, #<PalindromeFactors:0x007f902a109f48 @value=2, @factors=[1, 2]>, #<PalindromeFactors:0x007f902a109e80 @value=3, @factors=[1, 3]>, #<PalindromeFactors:0x007f902a109db8 @value=4, @factors=[1, 4]>, #<PalindromeFactors:0x007f902a109cf0 @value=5, @factors=[1, 5]>, #<PalindromeFactors:0x007f902a109c28 @value=6, @factors=[1, 6]>, #<PalindromeFactors:0x007f902a109b60 @value=7, @factors=[1, 7]>, #<PalindromeFactors:0x007f902a109a98 @value=8, @factors=[1, 8]>, #<PalindromeFactors:0x007f902a1099d0 @value=9, @factors=[1, 9]>, #<PalindromeFactors:0x007f902a109908 @value=2, @factors=[2, 1]>, #<PalindromeFactors:0x007f902a109840 @value=4, @factors=[2, 2]>, #<PalindromeFactors:0x007f902a109778 @value=6, @factors=[2, 3]>, #<PalindromeFactors:0x007f902a1096b0 @value=8, @factors=[2, 4]>, #<PalindromeFactors:0x007f902a109390 @value=3, @factors=[3, 1]>, #<PalindromeFactors:0x007f902a1092c8 @value=6, @factors=[3, 2]>, #<PalindromeFactors:0x007f902a109200 @value=9, @factors=[3, 3]>, #<PalindromeFactors:0x007f902a04c100 @value=4, @factors=[4, 1]>, #<PalindromeFactors:0x007f902a04be08 @value=8, @factors=[4, 2]>, #<PalindromeFactors:0x007f902a04b098 @value=5, @factors=[5, 1]>, #<PalindromeFactors:0x007f902a04a210 @value=6, @factors=[6, 1]>, #<PalindromeFactors:0x007f902a0494a0 @value=7, @factors=[7, 1]>, #<PalindromeFactors:0x007f902a048708 @value=8, @factors=[8, 1]>, #<PalindromeFactors:0x007f902a112cb0 @value=9, @factors=[9, 1]>]>
-{% endhighlight %}
+```
 
 whoa nelly
 
@@ -191,25 +191,25 @@ I'm *always* surprised by the dumbest things, but that seems really long to me. 
 
 Even though it surprised me, I still don't really see why it's wrong. So I take a look at the first assertion and try to test it
 
-{% highlight ruby %}
+```ruby
 # the assertion:
 # largest = palindromes.largest
 # assert_equal 9, largest.value
 puts largest.value
-{% endhighlight %}
+```
 
 testing first assertion
 
 And it printed: `9`. Hey! That probably passed! Shouldn't it turn like half green or something?
 
 OK fun's over let's look at the next test.
-{% highlight ruby %}
+```ruby
 palindromes = Palindromes.new(max_factor: 9)
 palindromes.generate
 largest = palindromes.largest
 # assert [[[3, 3], [1, 9]], [[1, 9], [3, 3]]].include? largest.factors
 puts largest.factors.inspect
-{% endhighlight %}
+```
 
 testing second assertion
 
@@ -219,7 +219,7 @@ For a moment my nose flares because I think this is a bad test and it's not my f
 
 I want to be clear that at the time of the writing of this sentence I still don't *really* know what's wrong with it but I kind of have a hunch. I'm noticing there are actually way more brackets in that array than I was mentally doing anything with. It's not an array of arrays, it's an array of arrays of arrays! But why? I'm going to just look at it for a moment here:
 
-{% highlight ruby %}
+```ruby
 [
   [
     [3, 3],
@@ -230,7 +230,7 @@ I want to be clear that at the time of the writing of this sentence I still don'
     [3, 3]
   ]
 ]
-{% endhighlight %}
+```
 
 what's the deal with arrays
 
@@ -240,7 +240,7 @@ The test asserts that this array includes the largest palindrome's factors. The 
 
 I made some changes that felt right. I didn't really *think* a lot so much as I just vibed out to the new A Great Big Pile Of Leaves album (which has played through maybe three times in full as I write this post) and typed stuff.
 
-{% highlight ruby %}
+```ruby
 class PalindromeFactors
   attr_accessor :value, :factors
   def initialize(num1, num2)
@@ -292,7 +292,7 @@ class Palindromes
   end
 
 end
-{% endhighlight %}
+```
 
 third draft
 
@@ -302,11 +302,11 @@ When I go back to CodeRunner, where I used to see merely `[9, 1]` I now see: `[[
 
 I change lines 10-13 of the previous example to:
 
-{% highlight ruby %}
+```ruby
 def add_factor(num1, num2)
   @factors << [num1, num2] unless @factors.include? [num2, num1]
 end
-{% endhighlight %}
+```
 
 aha
 

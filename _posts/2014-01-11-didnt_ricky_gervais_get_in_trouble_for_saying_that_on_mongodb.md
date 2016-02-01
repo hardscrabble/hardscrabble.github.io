@@ -22,25 +22,25 @@ Getting started by running these commands:
 
 Then editing my freshly generated models to look like so:
 
-{% highlight ruby %}
+```ruby
 # app/models/task.rb
 class Task < ActiveRecord::Base
   belongs_to :category
 end
-{% endhighlight %}
+```
 
 and
 
-{% highlight ruby %}
+```ruby
 # app/models/category.rb
 class Category < ActiveRecord::Base
   has_many :tasks
 end
-{% endhighlight %}
+```
 
 That should be enough that we can now run `bin/rails console` and create some data:
 
-{% highlight ruby %}
+```ruby
 # we're in the rails console now
 c = Category.new #=> #<Category id: nil, name: nil, created_at: nil, updated_at: nil>
 c.name = "Things to buy" #=> "Things to buy"
@@ -53,7 +53,7 @@ c.save #=> true
 Task.count #=> 1
 c.tasks #=> #<ActiveRecord::Associations::CollectionProxy [#<Task id: 1, name: "Buy some spinach", complete: nil, category_id: 1, created_at: "2014-01-11 22:22:24", updated_at: "2014-01-11 22:22:24">]>
 Task.all.class #=> ActiveRecord::Relation::ActiveRecord_Relation_Task
-{% endhighlight %}
+```
 
 So that whole way works fine. It's nice.
 
@@ -89,10 +89,10 @@ Getting started by running these commands:
 
 Now, before I generate my models I need to indicate that this project is going to use Mongoid. To do this I'm going to add the following to my Gemfile:
 
-{% highlight ruby %}
+```ruby
 # Use MongoDB as the database
 gem "mongoid", "4.0.0.alpha2"
-{% endhighlight %}
+```
 
 I'm using the alpha version of Mongoid 4 because... well, I'm sticking with the basics, so why not?
 
@@ -110,7 +110,7 @@ This is the step in the ActiveRecord version where we ran `bin/rake db:migrate`.
 
 Let's take a look at the model files that were just created for us:
 
-{% highlight ruby %}
+```ruby
 # app/models/task.rb
 class Task
   include Mongoid::Document
@@ -119,11 +119,11 @@ class Task
   field :complete, type: Mongoid::Boolean
   belongs_to :category # actually this line isn't from the generator, I just added it
 end
-{% endhighlight %}
+```
 
 And:
 
-{% highlight ruby %}
+```ruby
 # app/models/category.rb
 class Category
   include Mongoid::Document
@@ -131,7 +131,7 @@ class Category
   field :name, type: String
   has_many :tasks # same as the belongs_to above
 end
-{% endhighlight %}
+```
 
 First kind of interesting difference: instead of your models inheriting functionality from ActiveRecord via subclassing, our models now `include` functionality from the `Mongoid::Document` module. Among other things, this gives the class a `field` method. We use this to define the attributes that this model should have. Unlike ActiveRecord models, which know the attributes they can have by introspecting on their corresponding table in the database[^introspective], Mongoid models typically have a list right in the class definition of the name and type of its attributes. Later, when we call `category.name = "Homework"`, Mongoid is dynamically figuring out what we mean based on our list of fields; it gives categories a `name=` and `name` method. This centralization appeals to me on an organizational level.
 
@@ -141,7 +141,7 @@ And an interesting similarity: `has_many` and `belongs_to` work pretty much exac
 
 So let's try to create some data and see how that goes. Into the `bin/rails console` let's go.
 
-{% highlight ruby %}
+```ruby
 category = Category.new #=> #<Category _id: 52d1d2036d61633a9b000000, created_at: nil, updated_at: nil, name: nil>
 category.name = "Homework" #=> "Homework"
 category.save #=> true
@@ -158,7 +158,7 @@ Task.count #=> 1
 category.tasks.create(name: "Study Rails 4") #=> #<Task _id: 52d1d8596d61633cba040000, created_at: 2014-01-11 23:48:41 UTC, updated_at: 2014-01-11 23:48:41 UTC, name: "Study Rails 4", complete: nil, category_id: BSON::ObjectId('52d1d7696d61633cba010000')>
 Task.count #=> 2
 Task.all.class #=> Mongoid::Criteria
-{% endhighlight %}
+```
 
 First of all: I guess I did have MongoDB installed and running on my system, who knew?
 

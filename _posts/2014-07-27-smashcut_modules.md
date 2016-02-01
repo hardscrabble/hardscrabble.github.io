@@ -16,7 +16,7 @@ Today on a train ride I reorganized the smashcut codebase a bit. The heart of th
 [Parslet]: http://kschiess.github.io/parslet/
 [get started]: http://kschiess.github.io/parslet/get-started.html
 
-{% highlight ruby %}
+```ruby
 require 'parslet'
 
 class Mini < Parslet::Parser
@@ -25,7 +25,7 @@ class Mini < Parslet::Parser
 end
 
 Mini.new.parse("132432")  # => "132432"@0
-{% endhighlight %}
+```
 
 This is a very simple grammar with only one rule in addition to the required root (which names the rule that is expected to come first). If you were to define a grammar for something more complex, like a screenplay or even a programming language, you could expect there to be many, many more rules for defining specific, small things like operator characters and return charactersand then also abstract things like a character's monologue or a program's function.
 
@@ -33,7 +33,7 @@ At some point, your parser class will get quite long. I think this is kind of to
 
 It took some figuring out, but it is possible to compose your parser from modules. That example above could be rewritten like this:
 
-{% highlight ruby %}
+```ruby
 require 'parslet'
 
 module NumberRules
@@ -47,7 +47,7 @@ class Mini < Parslet::Parser
 end
 
 Mini.new.parse("132432")  # => "132432"@0
-{% endhighlight %}
+```
 
 This is pretty nice when you have more than a few rules, and Code Climate rewarded me with a coveted A grade: <https://codeclimate.com/github/maxjacobson/smashcut/compare/0cd1d78b...c2668c0e>... well, for some of the classes anyway.
 

@@ -5,16 +5,16 @@ date: 2015-06-27 15:43 EDT
 
 Why would you write this:
 
-{% highlight ruby %}
+```ruby
 a = 1
 b = 1
-{% endhighlight %}
+```
 
 When you could write:
 
-{% highlight ruby %}
+```ruby
 a = b = 1
-{% endhighlight %}
+```
 
 A few reasons:
 
@@ -27,9 +27,9 @@ A few reasons:
 
 I recently saw code that looked like this, which was disabling some loggers:
 
-{% highlight ruby %}
+```ruby
 Something.logger = OtherThing.logger = nil
-{% endhighlight %}
+```
 
 And I was kind of confused and amazed. I know about this multiple assigning
 syntax, but this looked kind of different. In the earlier example, we were
@@ -38,7 +38,7 @@ setter method instead.
 
 Something like:
 
-{% highlight ruby %}
+```ruby
 class Dog
   attr_reader :name, :family
 
@@ -57,7 +57,7 @@ lola = Dog.new("Lola")
 milo.family = lola.family = "The Jacobsons"
 p [milo, lola]
 # [#<Dog:0x007faf6115b158 @name="Milo", @family="The Jacobsons">, #<Dog:0x007faf6115b108 @name="Lola", @family="The Jacobsons">]
-{% endhighlight %}
+```
 
 This works because Ruby gives you this syntactic sugar when you write a
 `something=` method, it lets you put a space before the `=` when calling the

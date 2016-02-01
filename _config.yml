@@ -47,11 +47,15 @@ exclude:
   - ".travis.yml"
 
 markdown: kramdown
-highlighter: pygments
+
+kramdown:
+    input: GFM
 
 gems:
   - jemoji
   - octopress-debugger
+  - jekyll-gist
+  - jekyll-coffeescript
 
 poole:
   word_separator: "-"

@@ -9,12 +9,12 @@ date: 2015-01-02 11:49
 
 TLDW: add this to your `~/.vimrc`:
 
-{% highlight vim %}
+```vim
 " hide the giant banner at the top of netrw
 let g:netrw_banner=0
 " hide gitignored files from netrw
 let g:netrw_list_hide=netrw_gitignore#Hide()
-{% endhighlight %}
+```
 
 And then use netrw instead of NERDTree.
 

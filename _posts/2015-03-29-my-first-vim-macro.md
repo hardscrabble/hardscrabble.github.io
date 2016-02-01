@@ -18,11 +18,11 @@ middle (a behavior I've seen with snippets in Sublime Text for example).
 
 Here's what it looks like, straight from my vimrc:
 
-{% highlight vim %}
+```vim
   {% raw %}
-    nnoremap hii i{% highlight ruby %}<ESC>o{% endhighlight %}<ESC>O
+    nnoremap hii i```ruby<ESC>o```<ESC>O
   {% endraw %}
-{% endhighlight %}
+```
 
 I'll translate to English:
 

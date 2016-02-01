@@ -56,7 +56,7 @@ Here's the source of the Rails project that serves as a Jekyll API: [maxjacobson
 
 Actually, here's the most-relevant chunk of the workflow, my first python script, somewhat out of context:
 
-{% highlight python %}
+```python
 #coding: utf-8
 import workflow, requests
 
@@ -80,7 +80,7 @@ if response.status_code == 200:
   workflow.set_output("Successfully posted")
 else:
   workflow.set_output("Something went wrong")
-{% endhighlight %}
+```
 
 As I mention in the video, *in theory* I can deploy this app to an actual production environment (note the weird URL if you like) and allow other people to use it. I probably won't.
 

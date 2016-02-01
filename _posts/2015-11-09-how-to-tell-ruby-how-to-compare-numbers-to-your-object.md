@@ -5,7 +5,7 @@ date: 2015-11-09 00:50 EST
 
 Let's say you have some object that represents some numeric idea:
 
-{% highlight ruby %}
+```ruby
 class CupsOfCoffeePerDay
   MY_LIMIT = 3
 
@@ -24,7 +24,7 @@ end
 
 CupsOfCoffeePerDay.new(4).risky? #=> true
 CupsOfCoffeePerDay.new(4) > 5 #=> false
-{% endhighlight %}
+```
 
 This object takes in a number and wraps it, and then extends it with some
 domain-specific logic. Because the object wraps a number, and kind of represents
@@ -36,17 +36,17 @@ to a number -- we only implemented the greater than method, but we could
 do all the other comparisons using the same approach -- *but* it isn't as
 flexible as it could be. Watch what happens when we try to do this:
 
-{% highlight ruby %}
+```ruby
 CupsOfCoffeePerDay.new(4) > CupsOfCoffeePerDay.new(5)
-{% endhighlight %}
+```
 
 I get this error when I run the program:
 
-{% highlight text %}
+```
 /Users/max/src/hardscrabble.net/comparisons.rb:9:in `>': comparison of Fixnum with CupsOfCoffeePerDay failed (ArgumentError)
         from /Users/max/src/hardscrabble.net/comparisons.rb:9:in `>'
         from /Users/max/src/hardscrabble.net/comparisons.rb:23:in `<main>'
-{% endhighlight %}
+```
 
 What's happening here?
 
@@ -61,7 +61,7 @@ cups of coffee per day even means, or which part of it is a number.
 
 We could change our implementation to accomodate this use-case:
 
-{% highlight ruby %}
+```ruby
 class CupsOfCoffeePerDay
   MY_LIMIT = 3
 
@@ -85,7 +85,7 @@ class CupsOfCoffeePerDay
 
   attr_reader :num
 end
-{% endhighlight %}
+```
 
 This is *kind of ok* but not really great. It required that we expose the num
 attribute externally -- by putting the `attr_reader` after `protected`, it isn't
@@ -100,7 +100,7 @@ it's a lot of repretition.
 Turns out Ruby has a nice way to let your custom objects reveal their inner
 numbers, and it's called `coerce`:
 
-{% highlight ruby %}
+```ruby
 class CupsOfCoffeePerDay
   MY_LIMIT = 3
 
@@ -120,7 +120,7 @@ class CupsOfCoffeePerDay
     [other, @num]
   end
 end
-{% endhighlight %}
+```
 
 There's not a ton of documentation about this. I only found it by luck. I was
 looking to understand how Ruby numbers does its comparisons, and I opened up
@@ -129,7 +129,7 @@ looking to understand how Ruby numbers does its comparisons, and I opened up
 [pry]: https://github.com/pry/pry
 [pry-doc]: https://github.com/pry/pry-doc
 
-{% highlight text %}
+```
 $ gem install pry pry-doc
 $ pry
 > 4.pry
@@ -156,7 +156,7 @@ fix_gt(VALUE x, VALUE y)
         return rb_num_coerce_relop(x, y, '>');
     }
 }
-{% endhighlight %}
+```
 
 At this point, I thought *oh no! C!*
 
@@ -180,7 +180,7 @@ source looks like this:
 
 [the ruby source code]: https://github.com/ruby/ruby
 
-{% highlight text %}
+```
 
 VALUE
 rb_num_coerce_bin(VALUE x, VALUE y, ID func)
@@ -188,7 +188,7 @@ rb_num_coerce_bin(VALUE x, VALUE y, ID func)
     do_coerce(&x, &y, TRUE);
     return rb_funcall(x, func, 1, y);
 }
-{% endhighlight %}
+```
 
 What does that do? It looks like it coerces the two types to be the same type,
 and then calls the `>` function on the first one, passing the second one.
@@ -205,22 +205,22 @@ and the first object's value second. So our implementation looks like:
 
 [link to it]: https://github.com/ruby/ruby/blob/f3cafab56a353db969f5e39923bd15712a204c36/numeric.c#L274-L309
 
-{% highlight ruby %}
+```ruby
 def coerce(other)
   [other, @num]
 end
-{% endhighlight %}
+```
 
 One interesting thing to note is that if anything fails within your coerce
 method, the exception will be silently swallowed by `do_coerce`, and then you'll
 get the earlier error about not being able to compare the two objects. If our
 implementation looked like:
 
-{% highlight ruby %}
+```ruby
 def coerce(other)
   raise 'hell'
 end
-{% endhighlight %}
+```
 
 You might expect hell to be raised as an exception -- but nope. You might think
 that means the `coerce` method wasn't called. It was, it's just kind of unusual
@@ -233,7 +233,7 @@ but they can still be used bidirectionally, and we can even feel OK about
 abstracting them a bit. I kind of like this final implementation, which
 includes all of the operators:
 
-{% highlight ruby %}
+```ruby
 require 'forwardable'
 
 class CupsOfCoffeePerDay
@@ -255,4 +255,4 @@ class CupsOfCoffeePerDay
     [other, @num]
   end
 end
-{% endhighlight %}
+```

@@ -38,7 +38,7 @@ of assets that will become a static website. But when you create a new branch,
 it will have all of the code from your open source library, and an entire
 history of commmits. I can imagine doing something like this:
 
-{% highlight text %}
+```
 # create a new branch
 git checkout -b gh-pages
 # delete all of the existing files
@@ -53,7 +53,7 @@ echo 'hello! use my gem!' > index.html
 git add index.html
 git commit -m 'gh-pages init'
 git push origin gh-pages
-{% endhighlight %}
+```
 
 And then I'd wait for GitHub to do its magic and expect to see my great page
 online in a few minutes.
@@ -61,7 +61,7 @@ online in a few minutes.
 It's kind of awkward having a 'BURN IT DOWN' commit, but I didn't know there was
 an alternative. With git extras, that could look more like this:
 
-{% highlight text %}
+```
 # create a new branch WITH NO HISTORY AT ALL
 # NOT ONE COMMIT
 git fresh-branch gh-pages
@@ -71,14 +71,14 @@ echo 'hello! use my gem!' > index.html
 git add index.html
 git commit -m 'gh-pages init'
 git push origin gh-pages
-{% endhighlight %}
+```
 
 How the heck does it work? We can look at the fresh-branch script [online][],
 but I'll include the latest version here for reference:
 
 [online]: https://github.com/tj/git-extras/blob/master/bin/git-fresh-branch
 
-{% highlight bash %}
+```bash
 #!/bin/sh
 
 branch=$1
@@ -88,7 +88,7 @@ test -z $branch && echo "branch required." 1>&2 && exit 1
 git symbolic-ref HEAD refs/heads/$branch
 rm .git/index
 git clean -fdx
-{% endhighlight %}
+```
 
 I guess a lot of the work is being done by [symbolic-ref][].
 

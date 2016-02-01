@@ -28,7 +28,7 @@ After resolving that error I was able to reproduce the crash and see a much more
 
 
 
-{% highlight ruby %}
+```ruby
 def get_embed (vid_site, id)
   if vid_site == :youtube
     url = "http://www.youtube.com/watch?v=#{id}"
@@ -43,11 +43,11 @@ def get_embed (vid_site, id)
     return "<p>Failed to get embed code</p>"
   end
 end
-{% endhighlight %}
+```
 
 And after:
 
-{% highlight ruby %}
+```ruby
 def get_embed (vid_site, id)
   begin
     case vid_site
@@ -65,7 +65,7 @@ def get_embed (vid_site, id)
     "<p>Sorry, couldn't get the embed code for this one. Maybe it doesn't allow embedding? Or maybe it was deleted? Sorry.</p>"
   end
 end
-{% endhighlight %}
+```
 
 (I guess I didn't know about case statements or implicit return values then either.)
 
@@ -75,7 +75,7 @@ It's still not that great honestly. I wish it were more object oriented. I wish 
 
 Layabout needs to ignore bookmarks that it doesn't know how to embed. It also needs clean URLs to reliably lookup their embed codes. Here's an old method which helped with this task:
 
-{% highlight ruby %}
+```ruby
 
 def grok_url (url)
   # TODO support hulu short urls
@@ -102,11 +102,11 @@ def grok_url (url)
   end
   return true, site, id
 end
-{% endhighlight %}
+```
 
 I used it like this:
 
-{% highlight ruby %}
+```ruby
 video_links = Array.new
 if folder_id == :readlater
   all_links = ip.bookmarks_list(:limit => 500)
@@ -126,13 +126,13 @@ all_links.each do |link|
   end
 end
 @videos = video_links
-{% endhighlight %}
+```
 
 Honestly I think this is cool code even though it's not how I'd write it now, because this is what it looks like to make it work with limited knowledge. I didn't know about any fancy iterators. I legit didn't know about object oriented programming. I didn't know it's not necessary to check if a boolean `== true`, but it wasn't hurting anyone! Whenever I'm talking to beginners and see code that doesn't take advantage of less-than-obvious techniques, but works, I'm psyched.
 
 Anyway this is what I changed it to yesterday:
 
-{% highlight ruby %}
+```ruby
 @videos = (if folder_id == :readlater
   ip.bookmarks_list(:limit => 500)
 else
@@ -150,7 +150,7 @@ end).map do |link|
     end
   end
 end.compact
-{% endhighlight %}
+```
 
 I don't even necessarily think that's better, but it satisfies my learned allergy to local variables[^4] and makes me feel cool for using `map` and `tap`.
 

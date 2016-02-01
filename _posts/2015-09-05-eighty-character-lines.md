@@ -23,7 +23,7 @@ I'm totally on board with the short lines train. For me, it only gets tricky
 when dealing with nested stuff (examples to follow) which add a lot of space to
 the left of the first character of code. For example:
 
-{% highlight ruby %}
+```ruby
 module MyGreatGem
   module SomeOtherNamespace
     module OmgAnotherNamespace
@@ -42,7 +42,7 @@ module MyGreatGem
     end
   end
 end
-{% endhighlight %}
+```
 
 Often strings are the first thing to get chopped up, as in that example.
 
@@ -51,7 +51,7 @@ differently to not use many nested namespaces. That's probably not the worst
 idea, honestly, but I'm writing this post to share an interesting style I
 observed in the wild (read: on github) that takes a whole nother approach:
 
-{% highlight ruby %}
+```ruby
 # Excerpted from:
 # https://github.com/net-ssh/net-sftp/blob/ebf5d5380cc533b69b308baa2e396e4a18abc900/lib/net/sftp/operations/dir.rb
 module Net; module SFTP; module Operations
@@ -63,7 +63,7 @@ module Net; module SFTP; module Operations
     end
   end
 end; end; end
-{% endhighlight %}
+```
 
 Huh! That's a style I hadn't seen before. RuboCop has many complaints about it,
 and I don't totally love the style, but it's a very novel and neat way to do it,
@@ -73,7 +73,7 @@ stick to an 80 character limit.
 One possible alternative is to define your namespaced class using this
 shorthand:
 
-{% highlight ruby %}
+```ruby
 class Net::SFTP::Operations::Dir
   attr_reader :sftp
 
@@ -81,7 +81,7 @@ class Net::SFTP::Operations::Dir
     @sftp = sftp
   end
 end
-{% endhighlight %}
+```
 
 If you do that, you get 2 extra characters on each line. Sweet!
 

@@ -13,7 +13,7 @@ just the same one over and over with some small variations to play with an idea.
 Suppose you were writing a program to help you write a novel, and you start out
 with something like this:
 
-{% highlight ruby %}
+```ruby
 class Novel
   def initialize(title)
     @title = title
@@ -29,14 +29,14 @@ end
 
 moby_dick = Novel.new("Moby Dick")
 first_chapter = Chapter.new("Call me Ishmael...")
-{% endhighlight %}
+```
 
 After you write this, you pause, because how are you going to define the
 interface for adding a new chapter to a novel?
 
 Something like this works fine:
 
-{% highlight ruby %}
+```ruby
 class Novel
   def initialize(title)
     @title = title
@@ -61,13 +61,13 @@ end
 moby_dick = Novel.new("Moby Dick")
 moby_dick.add_chapter Chapter.new("Call me Ishmael...")
 moby_dick #=> #<Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#<Chapter:0x007fdabc81c178 @text="Call me Ishmael...">]>
-{% endhighlight %}
+```
 
 Writing methods is good, and that method has a perfectly adequate name. But
 some clever ducks will be dissatisfied by it, because they know there's a more
 fun, or maybe a more expressive way:
 
-{% highlight ruby %}
+```ruby
 class Novel
   def initialize(title)
     @title = title
@@ -92,7 +92,7 @@ end
 moby_dick = Novel.new("Moby Dick")
 moby_dick << Chapter.new("Call me Ishmael...")
 moby_dick #=> #<Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#<Chapter:0x007fdabc81c178 @text="Call me Ishmael...">]>
-{% endhighlight %}
+```
 
 The `<<` "shovel" operator is familiar to most Ruby
 programmers, and chapters are a natural thing to shovel into a novel, so it
@@ -101,7 +101,7 @@ feels kind of natural to use it here.
 `<<` is the idiomatic operator to use, but sometimes I don't want to be
 idiomatic, I want to be weird. Maybe I feel like this version suits me better:
 
-{% highlight ruby %}
+```ruby
 class Novel
   def initialize(title)
     @title = title
@@ -126,7 +126,7 @@ end
 moby_dick = Novel.new("Moby Dick")
 moby_dick <= Chapter.new("Call me Ishmael...")
 moby_dick #=> #<Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#<Chapter:0x007fdabc81c178 @text="Call me Ishmael...">]>
-{% endhighlight %}
+```
 
 For me, `<=` is a more visually stimulating, writerly operator.
 
@@ -138,7 +138,7 @@ acceptable operators[^thelist]. You can't just name your operator whatever. Let'
 
 [^thelist]: [here's](http://stackoverflow.com/a/3331974) a stack overflow post about which operators are overloadable. It may not be up-to-date with Ruby 2, though, so overload at your own risk.
 
-{% highlight ruby %}
+```ruby
 class Novel
   def initialize(title)
     @title = title
@@ -162,23 +162,23 @@ end
 
 moby_dick = Novel.new("Moby Dick")
 moby_dick ✏️ Chapter.new("Call me Ishmael...") #=> undefined method `✏️' for main:Object (NoMethodError)
-{% endhighlight %}
+```
 
 It totally blows up. This works, though:
 
-{% highlight ruby %}
+```ruby
 moby_dick = Novel.new("Moby Dick")
 moby_dick.✏️ Chapter.new("Call me Ishmael...")
 moby_dick #=> #<Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#<Chapter:0x007fdabc81c178 @text="Call me Ishmael...">]>
-{% endhighlight %}
+```
 
 Surprisingly, this does too:
 
-{% highlight ruby %}
+```ruby
 moby_dick = Novel.new("Moby Dick")
 moby_dick . ✏️ Chapter.new("Call me Ishmael...")
 moby_dick #=> #<Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#<Chapter:0x007fdabc81c178 @text="Call me Ishmael...">]>
-{% endhighlight %}
+```
 
 There are **so many spaces** on that second line, but it totally works.
 

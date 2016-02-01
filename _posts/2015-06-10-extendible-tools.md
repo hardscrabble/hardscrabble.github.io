@@ -19,7 +19,7 @@ If you want your own pig command line utility, copy this code to an executable
 file on your `$PATH` called `pig`. Then, try running `pig`. Try running
 `pig oink`.
 
-{% highlight sh %}
+```sh
 #!/usr/bin/env sh
 
 subcommand=$1
@@ -41,4 +41,4 @@ done
 
 echo "$bin is not a pig command"
 exit 1
-{% endhighlight %}
+```

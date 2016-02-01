@@ -28,21 +28,21 @@ There aren't that many HTML tags, and markdown only supports the small subset th
 
 Here's how you make a horizontal rule in markdown: `* * *`[^2]. This becomes the following HTML:
 
-{% highlight html %}
+```html
 <hr>
-{% endhighlight %}
+```
 
 [^2]: or `- - -` or `***` etc
 
 Which typically comes across as a horizontal line, depending on the CSS, and typically is meant to mark a new section. On this blog, in a browser, at this time of writing, it looks like two thin lines on top of one another. The CSS I used for that looks like this:
 
-{% highlight css %}
+```css
 hr {
   padding: 0;
   border: none;
   border-top: medium double #333;
 }
-{% endhighlight %}
+```
 
 **Edit:** Actually, I've already changed it. The horizontal rules outside of the post body are still that, but the ones within post bodies are now stars as described below.
 
@@ -57,31 +57,31 @@ Considering how good hrs are, I don't understand why bloggers like [Shawn Blanc]
 
 They get the appeal of a nice separating line but instead of using an hr, which is easy to make with markdown, which I think they both use, they do this:
 
-{% highlight html %}
+```html
 <div align="center">* * *</div>
-{% endhighlight %}
+```
 
 or:
 
-{% highlight html %}
+```html
 <p style="text-align:center">* * *</p>
-{% endhighlight %}
+```
 
 Both commit the cardinal sin of embedding CSS in the middle of an HTML tag. You're not supposed to do that! Even if you don't want to use an hr, the correct move would be to [separate content and presentation][] by assigning a class and then selecting that class with the CSS, like so:
 
 The HTML:
 
-{% highlight html %}
+```html
 <div class="separator">* * *</div>
-{% endhighlight %}
+```
 
 The CSS:
 
-{% highlight css %}
+```css
 .separator {
   align: center;
 }
-{% endhighlight %}
+```
 
 [separate content and presentation]: http://en.wikipedia.org/wiki/Separation_of_presentation_and_content
 
@@ -119,19 +119,19 @@ So what would that look like?
 
 The HTML:
 
-{% highlight html %}
+```html
 <hr>
-{% endhighlight %}
+```
 
 The CSS:
 
-{% highlight css %}
+```css
 hr {
   height: 13px;
   background: url(hr.png) no-repeat scroll center;
   border: 0;
 }
-{% endhighlight %}
+```
 
 The image could be anything but [here's one][] I just whipped up in pixelmator with a transparent background to play nice with various sites. Keep in mind: the height property corresponds to the image's height, so if you use a different image, adjust accordingly.
 
@@ -145,13 +145,13 @@ Now no images are required at all! I realized while loading the dishes that I ha
 
 The HTML:
 
-{% highlight html %}
+```html
 <hr>
-{% endhighlight %}
+```
 
 The CSS:
 
-{% highlight css %}
+```css
 hr {
   padding: 0;
   margin: 0;
@@ -164,7 +164,7 @@ hr:after {
   position: relative;
   top: -0.5em;
 }
-{% endhighlight %}
+```
 
 This is a thinly-modified take on Harry Robert's Glyph style from that [earlier link (example eight)](http://css-tricks.com/examples/hrs/).
 
@@ -174,7 +174,7 @@ Of course I wanted to experiment and try inserting some other characters in ther
 
 Now my CSS looks like this (and I promise to walk away and stop changing it for a day or two):
 
-{% highlight css %}
+```css
 hr {
   padding: 0;
   margin: 0;
@@ -187,7 +187,7 @@ hr:after {
   position: relative;
   top: -0.5em;
 }
-{% endhighlight %}
+```
 
 If you're like me you're like the fuck is that.
 
@@ -209,7 +209,7 @@ This opens you up to use actual stars (or any other unicode character) instead o
 
 His CSS:
 
-{% highlight css %}
+```css
 hr {
   height: 1px;
   margin: 2em 1em 4em 0;
@@ -218,7 +218,7 @@ hr {
   border-width: 0;
   border-style: dotted;
   }
-{% endhighlight %}
+```
 
 [John Gruber]: http://daringfireball.net/2012/12/google_maps_iphone
 
@@ -230,9 +230,9 @@ I don't really understand how that becomes three pale dots but then I don't real
 
 In the first draft of this post, I had this scattered throughout my paragraphs anywhere you see "hr" or "hrs" above:
 
-{% highlight html %}
+```html
 <code>&lt;hr /&gt;</code>
-{% endhighlight %}
+```
 
 Which is what my markdown processor, Kramdown, generates when I write this:
 

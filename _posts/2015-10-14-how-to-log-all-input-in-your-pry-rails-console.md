@@ -34,7 +34,7 @@ it doesn't get syntax highlighting because it doesn't have a `.rb` file
 extension... I put my configuration in a Rails initializer named
 `config/initializers/pry.rb`, and that works fine too.
 
-{% highlight ruby %}
+```ruby
 class LoggingReadline
   delegate :completion_proc, :completion_proc=, to: Readline
 
@@ -52,7 +52,7 @@ class LoggingReadline
 end
 
 Pry.config.input = LoggingReadline.new
-{% endhighlight %}
+```
 
 The important thing for custom input objects is that they implement the
 `readline` method. The method takes in a string that holds the current user
@@ -70,9 +70,9 @@ input, but first log it to a file before returning it to pry for EPL-ing.*
 
 There's one line that's kind of strange:
 
-{% highlight ruby %}
+```ruby
 delegate :completion_proc, :completion_proc=, to: Readline
-{% endhighlight %}
+```
 
 What's that about?
 
@@ -84,19 +84,19 @@ explain.
 write something, and then press tab. That strategy is a proc object. The default
 one has something to do with irb I guess?
 
-{% highlight text %}
+```
 $ irb
 >> Readline.completion_proc
 => #<Proc:0xb9964ce0@/home/max/.rubies/2.2.3/lib/ruby/2.2.0/irb/completion.rb:37>
-{% endhighlight %}
+```
 
 But! When starting pry, it has a different completion proc!
 
-{% highlight text %}
+```
 $ pry
 [1] pry(main)> Readline.completion_proc
 => #<Proc:0xb8a0c25c@/home/max/.gem/ruby/2.2.3/gems/pry-0.10.2/lib/pry/repl.rb:177>
-{% endhighlight %}
+```
 
 But when you provide a custom input object, pry doesn't replace the completion
 proc on readline because you seem not to even be using it, so why bother? But

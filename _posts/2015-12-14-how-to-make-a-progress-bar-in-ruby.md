@@ -9,14 +9,14 @@ Here's something I learned recently. Let's say you have a program that is going
 to take a long time, and you want to mark the progress over time. You can print
 out some information like this:
 
-{% highlight ruby %}
+```ruby
 tasks = Array.new(1000)
 tasks.each.with_index do |task, index|
   sleep rand(0..0.1) # (something slow)
   percentage = (index + 1) / tasks.count.to_f
   puts "#{(percentage * 100).round(1)}%"
 end
-{% endhighlight %}
+```
 
 Which looks kinda like this:
 
@@ -33,7 +33,7 @@ now think of as "the backspace to the beginning of the line" magic character.
 
 Armed with this knowledge and some clunky math we can write something like this:
 
-{% highlight ruby %}
+```ruby
 begin
   tasks = Array.new(1000)
   tasks.each.with_index do |task, i|
@@ -50,7 +50,7 @@ begin
 rescue Interrupt
   system "say 'I was almost done, jeez'" if RUBY_PLATFORM.include?("darwin")
 end
-{% endhighlight %}
+```
 
 ![progress bar after gif]({{ site.baseurl }}img/2015-12-14-progress-bar-after-gif.gif)
 

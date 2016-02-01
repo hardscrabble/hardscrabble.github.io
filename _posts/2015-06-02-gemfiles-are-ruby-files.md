@@ -17,17 +17,17 @@ A Jekyll site is a Ruby project, and Ruby projects should have a Gemfile
 listing their dependencies. Jekyll is a gem, so you might think that you should
 add this to your Gemfile:
 
-{% highlight ruby %}
+```ruby
 gem 'jekyll'
-{% endhighlight %}
+```
 
 But actually, maybe not!
 
 Consider this intsead:
 
-{% highlight ruby %}
+```ruby
 gem 'github-pages'
-{% endhighlight %}
+```
 
 This includes the exact version of Jekyll that github pages is using (and [a
 few other things][things]).
@@ -46,12 +46,12 @@ latest version of the github pages gem.
 Here's how you can do that (so far I'm just summarizing that Parker Moore blog
 post):
 
-{% highlight ruby %}
+```ruby
 require 'json'
 require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 gem 'github-pages', versions['github-pages']
-{% endhighlight %}
+```
 
 Isn't that cool? Now, when you start your local server with `bundle exec jekyll
 serve`, it will confirm that you have the appropriate version of github pages.
@@ -71,7 +71,7 @@ everything.
 
 Now my Gemfile looks like this:
 
-{% highlight ruby %}
+```ruby
 begin
   require 'json'
   require 'open-uri'
@@ -80,7 +80,7 @@ begin
 rescue SocketError
   gem 'github-pages'
 end
-{% endhighlight %}
+```
 
 Nice! When the network request fails, a `SocketError` is raised, so we're able
 to rescue that error and fallback to any old version of the gem. This might

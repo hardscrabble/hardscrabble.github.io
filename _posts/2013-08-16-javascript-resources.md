@@ -19,13 +19,13 @@ Check out Airbnb's JavaScript style guide on github at [airbnb/javascript](https
 
 I liked this recommendation of theirs:
 
-{% highlight javascript %}
+```javascript
 // bad
 var sidebar = $('.sidebar');
 
 // good
 var $sidebar = $('.sidebar');
-{% endhighlight %}
+```
 
 because, *yeah*, totally, if you're caching a jQuery object why not prefix it with a dollar sign so you remember that's what it is? There's a lot of good stuff like that.
 
@@ -47,17 +47,17 @@ Take a detour into [CoffeeScript](http://coffeescript.org/) with me. The main re
 
 CoffeeScript is kind of confusing at first but I really like it. It's like, why use this. It took me a while to figure out how to use CoffeeScript with jQuery but it's actually super simple, here's a basic example:
 
-{% highlight coffeescript %}
+```coffee
 $(document).ready ->
   $("#shout").on "click", ->
     alert "YO WHAT UP"
-{% endhighlight %}
+```
 
 Which could be written even more compactly as:
 
-{% highlight coffeescript %}
+```coffee
 $ -> $("#shout").on "click", -> alert "YO WHAT UP"
-{% endhighlight %}
+```
 
 Which is kind of ridiculous and unreadable but cool that [it's valid](http://codepen.io/maxjacobson/pen/oisJp)?
 

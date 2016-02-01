@@ -15,17 +15,17 @@ I'm using jQuery to detect when the user has reached the bottom of the page. The
 
 If the user is scrolling, check if the current window height plus the amount of stuff above it is greater than or equal to the total height of the document. This works on the desktop (in the browsers I tested anyway) and on the iPad, but not on my iPod Touch.
 
-{% highlight javascript %}
+```javascript
 $(window).scroll(function() {
   if($(window).scrollTop() + $(window).height() >= $(document).height()) {
     // ...
   }
 });
-{% endhighlight %}
+```
 
 On the web, a nice and easy way to figure out problems like these is to use the console and log some variables. So I found myself adding in some stuff like this:
 
-{% highlight javascript %}
+```javascript
 var scroll_top = $(window).scrollTop();
 var window_height = $(window).height();
 var document_height = $(document).height();
@@ -34,7 +34,7 @@ console.log("scroll top: " + scroll_top);
 console.log("window height: " + window_height);
 console.log("current position: " + current_position);
 console.log("document height: " + document_height);
-{% endhighlight %}
+```
 
 But it's not very easy to access the console on an iOS device, so these messages were getting logged to nowhere.
 

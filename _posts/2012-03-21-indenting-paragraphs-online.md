@@ -22,17 +22,17 @@ And, maybe. More on that later.
 
 First, let's delve into the nitty gritty of formatting for the web. Let's look at the beginning of one of Pierson's paragraphs, in HTML, to see how he accomplished indentation:
 
-{% highlight html %}
+```html
 <p class="body1"><span>            </span>Then I moved[...]</p>
-{% endhighlight %}
+```
 
 Basically, he inserted a bunch of spaces at the beginning of each paragraph. I think a lot of people do it this way. I don't know if this is "wrong" so much as... I think there's a better way. I'm no expert but here's my take on the best way to format indented paragraphs online.
 
 Basically, just add this code anywhere in your post:
 
-{% highlight html %}
+```html
 <style>p+p { text-indent: 2em; margin-top: -1em; }</style>
-{% endhighlight %}
+```
 
 The `text-indent: 2em` part will indent the first line of each non-first paragraph by two ems. An em is basically whatever size the text is. 2em seemed right to me. [Popcorn Fiction](http://www.mulhollandbooks.com/popcornfiction/) uses 3em. You can adjust that figure or replace it with 25px or whatever you want.
 

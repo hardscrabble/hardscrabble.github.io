@@ -15,14 +15,14 @@ I have a few other git aliases that I find helpful. They're on my dotfiles repo 
 
 I want to share my newest one because it's kind of weird and fun. It solves a problem that others *might* have, but I apparently totally do: I often write `git `, don't hit enter, and then go do something else. Then I come back and I write `git st` and hit enter, and I see this output:
 
-{% highlight text %}
+```
 ⇥ git git st
 git: 'git' is not a git command. See 'git --help'.
 
 Did you mean one of these?
         hist
         init
-{% endhighlight %}
+```
 
 I see this probably every day.[^hist]
 

@@ -11,10 +11,10 @@ useful for when your ruby programs need to run shell commands.
 Let's say you want to write a script which prints a summary of the current
 directory. The desired output is:
 
-{% highlight text %}
+```
 There are 213 files in this git repo.
 Last commit: fixed a typo
-{% endhighlight %}
+```
 
 There are two questions we need to ask the shell in order to print this output.
 
@@ -23,34 +23,34 @@ First question: how many files are there in this git repo?
 First answer: we can ask git to list the files in the repo, and pipe the list to
 the word counting command to get the answer:
 
-{% highlight bash %}
+```bash
 git ls-files | wc -l
-{% endhighlight %}
+```
 
 Second question: what is the last commit?
 
 Second answer: we can ask git for the log, limited to the most recent commit,
 and formatted to include just the first line:
 
-{% highlight bash %}
+```bash
 git log -1 --pretty="%s"
-{% endhighlight %}
+```
 
 So far so good, but how do we run these commands from Ruby?
 
 The language provides two ways that I'm aware of:
 
-{% highlight ruby %}
+```ruby
 # backtick style
 `git ls-files | wc -l`
-{% endhighlight %}
+```
 
 Or:
 
-{% highlight ruby %}
+```ruby
 # system style
 system 'git ls-files | wc -l'
-{% endhighlight %}
+```
 
 What is the difference? I don't want to go into all of the nuances (see
 [this SO post for that and more][2]) but I'll share how I think of the
@@ -66,12 +66,12 @@ difference:
 
 So our program might look something like this:
 
-{% highlight ruby %}
+```ruby
 count = `git ls-files`.each_line.count
 message = `git log -1 --pretty="%s"`.chomp
 puts "There are #{count} files in this git repo."
 puts "Last commit: #{message}"
-{% endhighlight %}
+```
 
 And this is *okay*.
 
@@ -83,27 +83,27 @@ can capture the output, but (seemingly) we can't capture the successfulness.
 
 Well, we can, it's just a little awkward:
 
-{% highlight ruby %}
+```ruby
 count = `git ls-files`.each_line.count
 raise 'list failed somehow' unless $?.success?
 message = `git log -1 --pretty="%s"`.chomp
 raise 'message failed somehow' unless $?.success?
 puts "There are #{count} files in this git repo."
 puts "Last commit: #{message}"
-{% endhighlight %}
+```
 
 Which, OK, kind of cool, but what if we want to know *why* it failed?
 
 This is possible:
 
-{% highlight ruby %}
+```ruby
 count_or_failure_reason = `git ls-files 2>&1`.each_line.count
 raise count_or_failure_reason unless $?.success?
 message_or_failure_reason = `git log -1 --pretty="%s" 2>&1`.chomp
 raise message_or_failure_reason unless $?.success?
 puts "There are #{count_or_failure_reason} files in this git repo."
 puts "Last commit: #{message_or_failure_reason}"
-{% endhighlight %}
+```
 
 Let me attempt to explain this. The `2>&1` part means that we want the STDERR
 stream to be directed to the STDOUT stream, so that we'll capture either one
@@ -113,13 +113,13 @@ but still gives us access to the output if it succeeds.
 I found myself doing this in multiple places, so I decided to wrap this pattern
 up in a tiny gem, which allows you to instead write your program like this:
 
-{% highlight ruby %}
+```ruby
 require 'shell_whisperer'
 count = ShellWhisperer.run('git ls-files').each_line.count
 message = ShellWhisperer.run('git log -1 --pretty="%s"').chomp
 puts "There are #{count} files in this git repo."
 puts "Last commit: #{message}"
-{% endhighlight %}
+```
 
 If any of the commands fail, that error message will be re-raised as a
 `ShellWhisperer::CommandFailed` exception, so you can handle that as you please.
