@@ -19,6 +19,15 @@ I added them in these commits, though: [`d06362c`][2] and [`c9d8695`][3].
 The implementation is mostly stolen from other people's dotfiles and is gnarly
 to look at so I'll just share how I use them:
 
+**EDIT February 8, 2016**: I totally changed the implementation: [`6d883df`][7]
+because I would occasionally have a bug with the old helper functions. More
+details in [this issue][8]
+
+[7]: https://github.com/maxjacobson/dotfiles/commit/6d883df5989cedec149be1365a18b2ca1b76a958
+[8]: https://github.com/tmux/tmux/issues/298#issuecomment-181614369
+
+Here's how to use these aliases:
+
 * * *
 
 When I'm not in a tmux session, and I want to see the list of tmux sessions, I
@@ -33,12 +42,6 @@ It auto-chooses a session name based on the current directory's name.
 
 If there's already a session with the name of the current directory, it cleverly
 attaches to that session instead of trying to start a new one with that name.
-
-* * *
-
-If I'm not in a tmux session and I'd like to attach to an existing tmux session,
-I used to run `tmux a -t bl` where `bl` is the first few letters of an existing
-tmux session. Now I run `ta bl`.
 
 * * *
 
