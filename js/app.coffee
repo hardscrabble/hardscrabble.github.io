@@ -1,6 +1,0 @@
----
----
-
-$ ->
-  puts "page ready"
-
