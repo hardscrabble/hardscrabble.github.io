@@ -1,12 +1,14 @@
-.section {
-  text-align: center;
+%section {
   margin: 20px 0;
+  text-align: center;
 }
-.dashed-top {
-  border-top: dashed black 3px;
+
+%dashed-top {
+  border-top: dashed $black 3px;
   padding-top: 20px;
 }
-.dashed-bottom {
-  border-bottom: dashed black 3px;
+
+%dashed-bottom {
+  border-bottom: dashed $black 3px;
   padding-bottom: 20px;
 }

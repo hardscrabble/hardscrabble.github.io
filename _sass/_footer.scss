@@ -1,4 +1,4 @@
 footer {
-  @extend .section;
-  @extend .dashed-top;
+  @extend %section;
+  @extend %dashed-top;
 }
