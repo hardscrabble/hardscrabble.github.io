@@ -13,6 +13,7 @@ end
 
 group :development do
   gem 'mr_poole'
+  gem 'scss_lint'
 end
 
 group :jekyll_plugins do
