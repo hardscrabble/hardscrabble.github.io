@@ -1,9 +1,0 @@
-.post {
-  margin-bottom: 25px;
-  padding: 3px;
-
-  .post-footer {
-    @extend %section;
-    @extend %dashed-top;
-  }
-}

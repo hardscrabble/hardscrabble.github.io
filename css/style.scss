@@ -1,16 +1,10 @@
 ---
 ---
 
-@import 'layout';
-@import 'meta';
 @import 'colors';
-@import 'section';
-@import 'post';
-@import 'metaphorloop';
-@import 'welcome';
-@import 'header';
-@import 'footer';
-@import 'codeblocks';
-@import 'blockquotes';
-@import 'links';
-@import 'images';
+@import 'mixins';
+
+@import 'layout';
+@import 'global';
+
+@import 'posts';

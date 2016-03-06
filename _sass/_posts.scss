@@ -1,0 +1,29 @@
+.posts {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.post {
+  margin-bottom: 25px;
+  padding: 3px;
+
+  .post-footer {
+    @extend %section;
+    @extend %dashed-top;
+  }
+
+  .metadata {
+    .title,
+    .byline {
+      margin-bottom: 5px;
+    }
+  }
+}

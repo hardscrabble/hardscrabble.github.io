@@ -1,0 +1,57 @@
+footer {
+  @extend %section;
+  @extend %dashed-top;
+}
+
+header {
+  @extend %section;
+  @extend %dashed-bottom;
+}
+
+a {
+  color: $green;
+  text-decoration: none;
+
+  &:hover {
+    color: $lightcoral;
+  }
+}
+
+img {
+  max-width: 100%;
+
+  &.emoji {
+    width: auto;
+  }
+}
+
+blockquote {
+  border-left: $black solid 1px;
+  margin-left: 1em;
+  padding-left: 5px;
+}
+
+code {
+  color: $hotpink;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+pre {
+  code {
+    color: $charcoal;
+    display: block;
+    overflow-x: scroll;
+    white-space: pre;
+    word-wrap: normal;
+  }
+}
+
+code,
+pre {
+  font-family: Monaco, monospace;
+}
+
+audio {
+  width: 100%;
+}
