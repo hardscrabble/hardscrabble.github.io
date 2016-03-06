@@ -1,0 +1,24 @@
+code {
+  color: $hotpink;
+  margin: 0 2px;
+  white-space: nowrap;
+}
+
+.highlight {
+  border: 1px dotted black;
+}
+
+pre {
+  code {
+    color: $charcoal;
+    display: block;
+    overflow-x: scroll;
+    white-space: pre;
+    word-wrap: normal;
+  }
+}
+
+code, pre {
+  font-family: Monaco, monospace;
+}
+
