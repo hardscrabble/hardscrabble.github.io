@@ -56,15 +56,16 @@ audio {
   width: 100%;
 }
 
-hr.fancy {
-  padding: 0;
+.fancy {
+  border: 0;
+  color: $black;
   margin: 0;
-  border: none;
+  padding: 0;
   text-align: center;
-  color: black;
-  &:after {
-    content: "⠛ ⠛ ⠛";
+
+  &::after {
+    content: '⠛ ⠛ ⠛';
     position: relative;
-    top: -0.5em;
+    top: -.5em;
   }
 }
