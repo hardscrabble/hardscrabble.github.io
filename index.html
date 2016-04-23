@@ -5,11 +5,14 @@ redirect_from:
 ---
 
 <div class="posts">
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <span class="date">{{ post.date | date_to_string }}</span> &mdash; <a class="title" href="{{ post.url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <table>
+    <tbody>
+      {% for post in site.posts %}
+        <tr>
+          <td class="date">{{ post.date | date_to_string }}</td>
+          <td><a class="title" href="{{ post.url }}">{{ post.title }}</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>

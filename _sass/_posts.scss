@@ -1,16 +1,23 @@
+// index page
 .posts {
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  font-size: font-size: 25px;
+  tr {
+    &:not(:first-child) {
+      border-top: 1px solid $faint;
+    }
+    &:nth-child(even) {
+      background: $lightcoral;
+    }
+    &:nth-child(odd) {
+      background: yellow;
+    }
   }
-
-  li {
-    margin: 0;
-    padding: 0;
+  td {
+    padding: 20px 0;
   }
 }
 
+// show page
 .post {
   margin-bottom: 25px;
   padding: 3px;
