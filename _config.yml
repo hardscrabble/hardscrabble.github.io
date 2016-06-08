@@ -54,7 +54,6 @@ kramdown:
 
 gems:
   - jemoji
-  - octopress-debugger
   - jekyll-gist
   - jekyll-coffeescript
   - jekyll-redirect-from
