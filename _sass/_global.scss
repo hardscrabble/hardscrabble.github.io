@@ -69,3 +69,9 @@ audio {
     top: -.5em;
   }
 }
+
+// WebKit/Blink
+::selection { background: $highlight; }
+
+// Gecko browsers
+::-moz-selection { background: $highlight; }

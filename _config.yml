@@ -45,6 +45,7 @@ exclude:
   - "bin"
   - "exe"
   - ".travis.yml"
+  - ".scss-lint.yml"
 
 markdown: kramdown
 

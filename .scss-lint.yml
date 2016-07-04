@@ -1,0 +1,6 @@
+# Generated this file with `bin/scss-lint _sass --format Config > .scss-lint.yml`
+---
+linters:
+  VendorPrefix:
+    enabled: false
+
