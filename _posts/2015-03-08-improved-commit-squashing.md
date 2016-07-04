@@ -61,7 +61,7 @@ Here's a gif (ignore the part when I got stuck in a dquote confusion please):
 
 [![git fibbing a commit]({{baseurl}}/img/2015-03-08-fib.gif)]({{baseurl}}/img/2015-03-08-fib.gif)
 
-Get it here: <https://github.com/maxjacobson/git-fib>
+Get it here: <https://github.com/maxjacobson/dotfiles/blob/master/bin/git-fib>
 
 I learned with [git-sleep](https://github.com/maxjacobson/git-sleep-gem) that
 scripts whose filename begins with `git-` can be referenced without the hyphen,
