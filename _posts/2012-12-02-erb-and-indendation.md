@@ -22,6 +22,7 @@ So whenever you try to go to a page, the code runs and figures out what the HTML
 Then the last thing I do in the code is run `erb the_html` which sends the freshly-tossed-together html into the "yield" aka the body of the page.
 
 Here I'll just share what my template looks like right now:
+
 ```html
 <!DOCTYPE HTML>
 <html lang="en-US">
