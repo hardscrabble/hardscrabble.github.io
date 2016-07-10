@@ -5,6 +5,8 @@ category: programming
 tags:
 - raganwald
 - coffeescript
+redirect_from:
+  - '/2013/synchronize_our_dictionaries'
 ---
 
 Recently I've been melting the butter stick of my brain against the griddle of Reginald Braithwaite, whose twin books on JavaScript and CoffeeScript as functional programming languages, *JavaScript Allonge* and *CoffeeScript Ristretto* have been tripping me out hard.

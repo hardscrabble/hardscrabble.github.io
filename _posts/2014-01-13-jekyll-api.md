@@ -1,6 +1,8 @@
 ---
 title: updating a jekyll/github blog from the iPad, or anywhere, without touching git
 date: 2014-01-12 0:00
+redirect_from:
+  - '/2014/jekyll_api'
 ---
 
 **UPDATE April 2015:** Here's a much, much better way to do it: <http://www.hardscrabble.net/2015/how-to-jekyll-from-ios/>

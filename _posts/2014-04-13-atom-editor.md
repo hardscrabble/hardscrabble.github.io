@@ -1,6 +1,8 @@
 ---
 title: "Atom Editor"
 date: 2014-04-13 11:58
+redirect_from:
+  - '/2014/atom_editor'
 ---
 
 I tried out [Atom Editor](http://atom.io), the new text editor from GitHub.

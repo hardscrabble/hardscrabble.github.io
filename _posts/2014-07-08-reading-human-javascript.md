@@ -1,6 +1,8 @@
 ---
 title: reading Human JavaScript as a Rails developer who writes SOME CoffeeScript
 date: 2014-07-08 23:07
+redirect_from:
+  - '/2014/reading_human_javascript'
 ---
 
 I'm reading [Human JavaScript][] for free online, right now, and I'm going to take some notes. Yes, this is one of those blog posts that no one reads, but is helpful for the author to write. I'm sorry.

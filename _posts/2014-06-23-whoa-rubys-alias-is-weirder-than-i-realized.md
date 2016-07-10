@@ -1,7 +1,8 @@
 ---
 title: whoa, ruby's alias is weirder than I realized
 date: 2014-06-23 08:01
-
+redirect_from:
+  - '/2014/whoa_rubys_alias_is_weirder_than_i_realized'
 ---
 
 Just saw some ruby code using the `alias` method, and did a quick and routine google to find some examples of how it works, especially as compared to the `alias_method` method.

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+set -e
+
 if [ ! -z "$TMUX" ]; then
   tmux rename-window "server"
 fi
 
+rm -rf _site
+rm -rf .jekyll-metadata
 bin/jekyll serve --watch --baseurl / --drafts --incremental

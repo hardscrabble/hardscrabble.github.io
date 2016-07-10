@@ -1,7 +1,8 @@
 ---
 title: iBooks for Mavericks
 date: 2013-12-09 19:44
-
+redirect_from:
+  - '/2013/ibooks_for_mavericks'
 ---
 
 OS X 10.9 Mavericks brought us an awesome eBook reader for the desktop in iBooks. Since updating, I've gotten into the idea of keeping and managing a library of digital books on my computer, mostly in the open ePub format. I get these books from the excellent [Project Gutenberg](http://www.gutenberg.org/ebooks/search/%3Fsort_order%3Ddownloads) and publishers like [Manning Publications](http://manning.com) (which has taken a bunch of my money recently due to its generous holiday sales).
