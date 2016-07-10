@@ -58,6 +58,7 @@ gems:
   - jekyll-gist
   - jekyll-coffeescript
   - jekyll-redirect-from
+  - jekyll-sitemap
 
 poole:
   word_separator: "-"
