@@ -169,6 +169,6 @@ OK so *functionally* it's almost exactly the same right? But there are some inte
 * the unique id attribute is now called `_id` instead of `id` (this comes from MongoDB, not Mongoid, though Mongoid helpfully aliases `id` to `_id` in case you forget) and is totally long and weird looking
 * that thing where queries are assembled and chainable and not invoked until the last moment is called a "Criteria" and not a "Relation"
 
-These two Rails apps are available here: <https://github.com/maxjacobson/comparing_mongoid_and_active_record>
+These two Rails apps are available here: <https://github.com/hardscrabble/comparing_mongoid_and_active_record>
 
 This is a really brief introduction to the basics of Mongoid. I want to dig in more. My laptop battery is at 6%. More to come.
