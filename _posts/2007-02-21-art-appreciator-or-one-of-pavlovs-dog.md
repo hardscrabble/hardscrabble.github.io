@@ -1,12 +1,8 @@
 ---
 title: Art appreciator or one of Pavlov&rsquo;s dog?
 date: 2007-02-21 12:00 AM
-category: pop culture
 tags:
-- psychology
-- film
 - from the archives
-- music
 ---
 
 In my Psychology class today we talked about Pavlov's dogs, the ones that were conditioned to start drooling at the sound of a bell, because they were trained to associate it with food.

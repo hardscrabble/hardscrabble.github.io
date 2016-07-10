@@ -1,12 +1,6 @@
 ---
 title: writing prose with marked
 date: 2013-01-12 5:32 PM
-category: coding
-tags:
-- css
-- markdown
-- marked
-- writing
 ---
 
 Yesterday I got the urge to write some fiction. This has been a decreasingly frequent urge for me, so I seized on it.

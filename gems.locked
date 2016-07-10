@@ -8,6 +8,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    ansi (1.5.0)
+    ast (2.3.0)
+    coderay (1.1.1)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -18,9 +21,9 @@ GEM
     execjs (2.7.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.10)
+    ffi (1.9.13)
     gemoji (2.1.0)
-    github-pages (85)
+    github-pages (86)
       github-pages-health-check (= 1.1.0)
       jekyll (= 3.1.6)
       jekyll-coffeescript (= 1.0.1)
@@ -38,7 +41,7 @@ GEM
       liquid (= 3.0.6)
       listen (= 3.0.6)
       mercenary (~> 0.3)
-      rouge (= 1.10.1)
+      rouge (= 1.11.1)
       terminal-table (~> 1.4)
     github-pages-health-check (1.1.0)
       addressable (~> 2.3)
@@ -91,6 +94,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     mercenary (0.3.6)
+    method_source (0.8.2)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     mr_poole (0.8.0)
@@ -101,13 +105,23 @@ GEM
       pkg-config (~> 1.1.7)
     octokit (4.3.0)
       sawyer (~> 0.7.0, >= 0.5.3)
+    oga (2.2)
+      ast
+      ruby-ll (~> 2.1)
     pkg-config (1.1.7)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     public_suffix (1.5.3)
     rake (11.1.2)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    rouge (1.10.1)
+    rouge (1.11.1)
+    ruby-ll (2.1.2)
+      ansi
+      ast
     safe_yaml (1.0.4)
     sass (3.4.22)
     sawyer (0.7.0)
@@ -116,6 +130,7 @@ GEM
     scss_lint (0.48.0)
       rake (>= 0.9, < 12)
       sass (~> 3.4.15)
+    slop (3.6.0)
     terminal-table (1.6.0)
     thread_safe (0.3.5)
     typhoeus (0.8.0)
@@ -127,9 +142,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (= 85)
+  github-pages (= 86)
   json
   mr_poole
+  oga
+  pry
   scss_lint
 
 BUNDLED WITH

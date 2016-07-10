@@ -1,12 +1,8 @@
 ---
 title: Story Sizes
 date: 2010-03-14 12:00 AM
-category: pop culture
 tags:
 - from the archives
-- fiction
-- television
-- flash fiction
 ---
 
 If movies are kind of like short stories, and television series are kind of like novels, what's the analog for short films?

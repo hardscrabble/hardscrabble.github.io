@@ -1,13 +1,9 @@
 ---
 title: testing this little devblog thing
 date: 2012-12-01 6:20 AM
-category: coding
 from: beefsteak
 tags:
-- devblog
-- markdown
-- ruby
-- sinatra
+- from the archives
 ---
 
 So it's like 6am and I guess I just made my first mini markdown blog engine.

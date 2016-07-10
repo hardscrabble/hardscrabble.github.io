@@ -1,8 +1,6 @@
 ---
 title: "learning ember.js: day one"
 date: 2013-08-31 21:09
-comments: false
-categories: javascript programming learning ember
 ---
 
 ## the realization

@@ -1,12 +1,8 @@
 ---
 title: "My favorite podcasts of 2011"
 date: 2012-02-07 12:00 AM
-category: pop culture
 tags:
 - from the archives
-- podcasts
-- lists
-- favorites
 ---
 
 Having [casually launched](http://blog.maxjacobson.net/beefsteak/) a podcast myself, I'd like to share some of my favorite podcasts in the full-disclosing interest of laying bare my influences.

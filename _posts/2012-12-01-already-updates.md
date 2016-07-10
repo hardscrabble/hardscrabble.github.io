@@ -1,12 +1,8 @@
 ---
 title: Already with the updates
 date: 2012-12-01 7:36 AM
-category: coding
 tags:
-- devblog
-- ruby
-- sinatra
-- updates
+- from the archives
 ---
 
 **There are already updates** wow I am good.

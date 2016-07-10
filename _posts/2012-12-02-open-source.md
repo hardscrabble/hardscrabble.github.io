@@ -1,14 +1,8 @@
 ---
 title: going open source
 date: 2012-12-02 8:58 PM
-category: coding
 tags:
-- devblog
-- github
-- open source
-- san diego
-- pinboard
-- gems
+- from the archives
 ---
 
 Just for fun I'm sharing [the source code for this blog in full on github](https://github.com/maxjacobson/beefsteak). I don't know if anyone else will or should use this but maybe they'll want to and I won't stop them.

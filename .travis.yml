@@ -9,3 +9,4 @@ before_install:
 script:
   - bin/jekyll build
   - bin/scss-lint _sass
+  - exe/check_links

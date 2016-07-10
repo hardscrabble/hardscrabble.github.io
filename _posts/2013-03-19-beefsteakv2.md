@@ -1,8 +1,6 @@
 ---
 title: "beefsteak v2"
 date: 2013-03-19 05:45 AM
-category: coding
-tags: beefsteak, haml, devblog
 ---
 
 This version of [beefsteak](http://github.com/maxjacobson/beefsteak) is brought to you by Justin Timberlake.

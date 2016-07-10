@@ -1,11 +1,6 @@
 ---
 title: random emoji in prompt
 date: 2013-06-13 7:05 PM
-category: coding
-tags:
-- terminal
-- bash
-- emoji
 ---
 
 So this is fun. Most of us at school have some symbol or emoji in our bash prompts. I've had a little piggie emoji for a few weeks which has served me fine but I'd like to introduce some... *chance* into my life. I want to have a random emoji in my prompt. Originally I wanted a new icon on a per-terminal-session basis but then I decided I wanted a new one *after every command*.

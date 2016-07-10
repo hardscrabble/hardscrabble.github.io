@@ -14,4 +14,6 @@ end
 group :development do
   gem 'mr_poole'
   gem 'scss_lint'
+  gem 'oga'
+  gem 'pry'
 end

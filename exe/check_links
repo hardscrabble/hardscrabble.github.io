@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+
+puts "Removing old _site"
+system("rm -rf _site") || raise("failed to remove _site")
+puts "Starting server"
+system("bin/jekyll serve --detach --port 3500") || raise("failed to start server")
+
+require 'oga'
+# require 'pry'
+require 'open-uri'
+
+class Website
+  def self.visited(url = nil)
+    @visited ||= []
+    @visited << url if url
+    @visited
+  end
+
+  def self.visited?(href)
+    visited.include?(href)
+  end
+
+  def initialize(path)
+    url = "http://localhost:3500#{path}"
+    self.class.visited(url)
+    puts url
+    @html = open(url)
+  end
+
+  # TODO: consider image sources too
+  def explore!
+    return unless page&.html?
+    page.css("a").each do |link|
+      # binding.pry
+      href = link.attribute("href").value
+      if self.class.visited?("http://localhost:3500#{href}")
+        # puts "Already visited #{href}"
+      elsif external?(href)
+        # puts "Not visiting external page: #{href}"
+      else
+        # puts "Gonna keep exploring #{href}"
+        Website.new(href).explore!
+      end
+    end
+  end
+
+  private
+
+  attr_reader :html
+
+  def page
+    Oga.parse_html(html)
+  rescue
+    nil
+  end
+
+  def external?(href)
+    return false if href.start_with?("/")
+    return false if href.start_with?("http://localhost:3500")
+    true
+  end
+end
+
+result = begin
+           Website.new("/").explore!
+           0
+         rescue => e
+           puts e
+           1
+         ensure
+           system("pkill -f jekyll") || raise("failed to stop server")
+         end
+
+exit result

@@ -1,16 +1,8 @@
 ---
 title: Learning new things
 date: 2012-08-26 5:13 PM
-category: coding
 from: maxjacobson.net
 tags:
-- css
-- git
-- github
-- pinboard
-- sass
-- scss
-- wordpress
 - from the archives
 ---
 

@@ -1,13 +1,9 @@
 ---
 title: how do people DM nude photos anyway?
 date: 2012-08-22 11:51 PM
-category: the internet
 from: beefsteak
 tags:
 - from the archives
-- twitter
-- nsfw
-- television
 ---
 
 After the Anthony Weiner storyline on The Newsroom I'm reminded of something I was wondering about back then. How the heck do people even DM nude photos? Or any photos? It's certainly not a feature that Twitter supports and I have a feeling they don't want to start now, lest they be seen as enabling the perverts.

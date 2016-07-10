@@ -1,14 +1,9 @@
 ---
 title: erb and indendation
 date: 2012-12-02 7:53 PM
-category: coding
 from: beefsteak
 tags:
-- erb
-- ruby
-- html
-- indentation
-- sinatra
+- from the archives
 ---
 
 Earlier while sleeping on the plane I had an idea for a method that I want to write.
@@ -29,7 +24,7 @@ Here I'll just share what my template looks like right now:
   <meta charset="UTF-8">
   <title><%= @title.downcase %> - <%= @subtitle.downcase %></title>
   <link href="/css/style.css" rel="stylesheet" />
-  <link rel="alternate" type="application/atom+xml" href="/feed" />
+  <link rel="alternate" type="application/atom+xml" href="/feed.xml" />
   <meta name="author" content="<%= get_author_name %>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="HandheldFriendly" content="true" />
@@ -45,7 +40,7 @@ Here I'll just share what my template looks like right now:
   <input type="text" name="q" placeholder="Search..."> <input type="submit" value="search">
 </form>
 <p><small>This blog running on an as-yet-untitled and unfinished blogging engine created by <a href="http://maxjacobson.net">Max Jacobson</a> on the morning of December 1, 2012. It uses Ruby, Sinatra, and Heroku.</small></p>
-<p><a href="/feed">RSS Feed</a></p>
+<p><a href="/feed.xml">RSS Feed</a></p>
 </div>
 </body>
 </html>

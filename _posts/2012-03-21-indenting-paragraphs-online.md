@@ -2,11 +2,8 @@
 title: 'The easiest way to indent paragraphs online, not that you necessarily should'
 date: 2012-03-21 12:00 AM
 from: jacobsonian I think
-category: the internet
 tags:
-- pop culture
-- youre doing it wrong
-- css
+- from the archives
 ---
 
 Today I read DC Pierson's recent essay [Writing About 2Pac In Los Angeles, A Place It Turns Out He Isn't From](http://dcpierson.tumblr.com/post/19605918654/) and even though I liked reading it a lot, the main thing I've been thinking about since has nothing to do with hip-hop or Los Angeles or writing. It's this: why did he indent his paragraphs?

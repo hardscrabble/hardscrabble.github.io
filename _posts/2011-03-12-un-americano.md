@@ -1,10 +1,8 @@
 ---
 title: Un Americano re Japón y mucho cafe e ansiedad
 date: 2011-03-12 12:00 AM
-category: personal
 from: jacobsonian
 tags:
-- coffee
 - from the archives
 ---
 

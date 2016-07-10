@@ -1,13 +1,6 @@
 ---
 title: the horizontal rule
 date: 2012-12-31 4:29 AM
-category: the internet
-tags:
-- youre doing it wrong
-- css
-- html
-- blogs
-- instapaper
 ---
 
 On a sexier and perhaps better blog, this post title would be a euphemism.
