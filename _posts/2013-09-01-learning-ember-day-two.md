@@ -3,6 +3,7 @@ title: "learning ember.js: day two"
 date: 2013-09-01 23:59
 tags:
 - javascript
+- fucko
 ---
 
 <blockquote class="twitter-tweet"><p>Ok I’m going to try <a href="https://twitter.com/steveklabnik">@steveklabnik</a></p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/statuses/374223697340796928">September 1, 2013</a></blockquote>

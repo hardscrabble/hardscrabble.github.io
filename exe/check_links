@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-puts "Removing old _site"
+# puts "Removing old _site"
 system("rm -rf _site") || raise("failed to remove _site")
-puts "Starting server"
-system("bin/jekyll serve --detach --port 3500") || raise("failed to start server")
+# puts "Starting server"
+system("bin/jekyll serve --detach --port 3500 1>/dev/null") || raise("failed to start server")
 
 require 'oga'
 # require 'pry'
@@ -21,10 +21,10 @@ class Website
   end
 
   def initialize(path)
-    url = "http://localhost:3500#{path}"
-    self.class.visited(url)
-    puts url
-    @html = open(url)
+    @url = "http://localhost:3500#{path}"
+    self.class.visited(@url)
+    # puts url
+    # @html = open(url)
   end
 
   # TODO: consider image sources too
@@ -46,8 +46,13 @@ class Website
 
   private
 
-  attr_reader :html
-
+  def html
+    open(@url)
+  rescue => e
+    puts @url
+    puts e
+    raise e
+  end
   def page
     Oga.parse_html(html)
   rescue
@@ -68,7 +73,7 @@ result = begin
            puts e
            1
          ensure
-           system("pkill -f jekyll") || raise("failed to stop server")
+           system("pkill -f jekyll 1>/dev/null")
          end
 
 exit result
