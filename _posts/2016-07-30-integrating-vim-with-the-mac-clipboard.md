@@ -75,4 +75,6 @@ So yep, I [added](https://github.com/maxjacobson/dotfiles/commit/0d4bd62bef49c46
 * I can yank text from vim and then "command + v" it into other apps.
 * I can copy text from Stack Overflow and then "p" it into vim -- no weird indentation behavior or anything
 
-I may yet switch to neovim or learn about registers, but for now I don't yet need to, and for that I celebrate.
+I may yet switch to neovim[^2] or learn about registers, but for now I don't yet need to, and for that I celebrate.
+
+[^2]: Note that neovim did fix that issue and [it does work now](https://neovim.io/doc/user/provider.html#provider-clipboard).
