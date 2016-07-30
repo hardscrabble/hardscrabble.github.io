@@ -51,7 +51,7 @@ He told me he's using [neovim](https://neovim.io) and it's probably something ne
 I made a note to look into it.
 I'm open to the idea of using neovim instead of regular vim -- I think it's cool that you can [run a terminal inside vim](https://neovim.io/doc/user/nvim_terminal_emulator.html), which makes me wonder if I even need tmux...
 
-One of the first things I found in my research was [a noevim issue from April 2014](https://github.com/neovim/neovim/issues/583) about how some vim configuration was working in vim but not neovim
+One of the first things I found in my research was [a neovim issue from April 2014](https://github.com/neovim/neovim/issues/583) about how some vim configuration was working in vim but not neovim
 
 > ... the follwing works perfectly fine with mainline vim, "y" and "p" work with X clipboard:
 >
