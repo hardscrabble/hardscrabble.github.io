@@ -37,6 +37,13 @@ ready(function () {
 ready(function () {
   var searchBox = document.querySelectorAll('.search input')[0]
   if (!searchBox) { return }
+  var list = document.querySelectorAll('.search-results ul')[0]
+  if (window.location.hash) {
+    searchBox.value = window.location.hash.slice(1)
+    var li = document.createElement('li')
+    li.appendChild(document.createTextNode('Loading...'))
+    list.appendChild(li)
+  }
 
   var request = new window.XMLHttpRequest()
   request.open('GET', '/searchdata.json', true)
@@ -54,8 +61,8 @@ ready(function () {
       }
 
       searchBox.oninput = function () {
-        var list = document.querySelectorAll('.search-results ul')[0]
         while (list.firstChild) { list.removeChild(list.firstChild) }
+        window.location.hash = this.value
         var results = index.search(this.value)
         results.forEach(function (result, i) {
           var post = posts[result.ref]
@@ -68,6 +75,8 @@ ready(function () {
           list.appendChild(li)
         })
       }
+
+      if (searchBox.value) { searchBox.oninput() }
     } else {
       window.alert('Sorry, search is broken. Feel free to let me know.')
     }
