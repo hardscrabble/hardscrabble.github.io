@@ -23,7 +23,7 @@ It also breaks a number of my other vim configurations, such as `jk` being an al
 Pretty annoying.
 
 Copying text out of vim is even more difficult.
-I can use my mouse to highlight the text I want to copy it and then press "command + c" to copy it, but this is pretty awful, too, because it's very easy to accidentally copy things like line numbers (which are just text in the terminal, and your mouse doesn't know to avoid it) or to even copy text from multiple files which you happen to have open side by side in split buffers, such that the code is totally broken when you paste it out again.
+I can use my mouse to highlight the text I want to copy and then press "command + c" to copy it, but this is pretty awful, too, because it's very easy to accidentally copy things like line numbers (which are just text in the terminal, and your mouse doesn't know to avoid it) or to even copy text from multiple files which you happen to have open side by side in split buffers, such that the code is totally broken when you paste it out again.
 
 ![Copying from vim split buffer doesn't work well]({{ site.baseurl }}img/2016-07-30-vim-split-buffer.png)
 
