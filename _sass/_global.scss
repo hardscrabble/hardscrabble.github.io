@@ -25,6 +25,11 @@ img {
   }
 }
 
+figcaption {
+  font-style: italic;
+  font-size: 75%;
+}
+
 blockquote {
   border-left: $black solid 1px;
   margin-left: 1em;
