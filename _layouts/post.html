@@ -11,13 +11,7 @@ layout: default
       </h2>
     </div>
     <div class="byline">
-      {% if page.author and page.author_url %}
-        by <a href="{{ page.author_url }}">{{ page.author }}</a>
-      {% elsif page.author %}
-        by {{ page.author }}
-      {% else %}
-        by {{ site.author }}
-      {% endif %}
+      by <a href='{{site.baseurl}}about'>{{ site.author }}</a>
     </div>
     <div class="date">
       {{ page.date | date_to_string }}
