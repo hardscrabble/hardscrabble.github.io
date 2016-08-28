@@ -22,11 +22,10 @@ ready(function () {
     var currentUrl = window.location.pathname
     if (endsWithSlash(currentUrl)) {
       var suggestion = document.querySelectorAll('.not-found-suggestion')[0]
-      var link = suggestion.querySelectorAll('.not-found-suggestion-url')[0]
-      var newUrl = withoutSlash(currentUrl)
 
-      link.setAttribute('href', newUrl)
-      link.textContent = newUrl
+      setTimeout(function () {
+        window.location = withoutSlash(currentUrl)
+      }, 2000)
 
       suggestion.setAttribute('style', 'display: block')
     }
