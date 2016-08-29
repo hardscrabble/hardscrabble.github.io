@@ -9,5 +9,6 @@ before_install:
   - "npm install -g standard@8.0.0"
 script:
   - exe/build
+  - test $(git diff | wc -l) -eq "0" # make sure the build was already commited
   - bin/scss-lint _sass
   - standard js/*.js
