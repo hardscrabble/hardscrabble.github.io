@@ -10,5 +10,6 @@ before_install:
 script:
   - exe/build
   - test $(git diff | wc -l) -eq "0" # make sure the build was already commited
+  - git diff | cat
   - bin/scss-lint _sass
   - standard js/*.js
