@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>how to tell ruby how to compare numbers to your object with coerce - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        how to tell ruby how to compare numbers to your object with coerce
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      09 Nov 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Let’s say you have some object that represents some numeric idea:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="nc">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="nf">risky?</span> <span class="c1">#=&gt; true</span>
+<span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="c1">#=&gt; false</span>
+</code></pre>
+</div>
+
+<p>This object takes in a number and wraps it, and then extends it with some
+domain-specific logic. Because the object wraps a number, and kind of represents
+a number, you might find yourself wanting to compare it to other numbers,
+whether they’re also wrapped or not.</p>
+
+<p>The above code seems to accomplish that. Our object knows how to compare itself
+to a number – we only implemented the greater than method, but we could
+do all the other comparisons using the same approach – <em>but</em> it isn’t as
+flexible as it could be. Watch what happens when we try to do this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>I get this error when I run the program:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/Users/max/src/hardscrabble.net/comparisons.rb:9:in `&gt;': comparison of Fixnum with CupsOfCoffeePerDay failed (ArgumentError)
+        from /Users/max/src/hardscrabble.net/comparisons.rb:9:in `&gt;'
+        from /Users/max/src/hardscrabble.net/comparisons.rb:23:in `&lt;main&gt;'
+</code></pre>
+</div>
+
+<p>What’s happening here?</p>
+
+<ol>
+  <li>we create two objects</li>
+  <li>we ask one object if it’s greater than the second object</li>
+  <li>our implementation refers to the wrapped number object and asks <em>it</em> if it’s
+greater than this second object</li>
+  <li>the number complains that it doesn’t know how to compare itself to some rando</li>
+</ol>
+
+<p>And, fair enough. From the point of view of the number, it has no idea what
+cups of coffee per day even means, or which part of it is a number.</p>
+
+<p>We could change our implementation to accomodate this use-case:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="nc">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">other</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">CupsOfCoffeePerDay</span><span class="p">)</span>
+      <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span><span class="p">.</span><span class="nf">num</span>
+    <span class="k">else</span>
+      <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+
+  <span class="kp">protected</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:num</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>This is <em>kind of ok</em> but not really great. It required that we expose the num
+attribute externally – by putting the <code class="highlighter-rouge">attr_reader</code> after <code class="highlighter-rouge">protected</code>, it isn’t
+really public, it’s just available for other CupsOfCoffeePerDay objects to call
+– but still, kind of sad that we had to do that, because the object is supposed
+to represent an idea, and the more internals you expose, the farther you get
+from that sort of pure idea and the more you just have some code. Worse still,
+imagine writing that conditional in each of the operator methods… maybe you
+can be clever and abstract the duplicated code to some private method, but like,
+it’s a lot of repretition.</p>
+
+<p>Turns out Ruby has a nice way to let your custom objects reveal their inner
+numbers, and it’s called <code class="highlighter-rouge">coerce</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="nc">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">other</span><span class="p">,</span> <span class="vi">@num</span><span class="p">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>There’s not a ton of documentation about this. I only found it by luck. I was
+looking to understand how Ruby numbers does its comparisons, and I opened up
+<a href="https://github.com/pry/pry">pry</a> (with <a href="https://github.com/pry/pry-doc">pry-doc</a> installed), and started exploring:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install pry pry-doc
+$ pry
+&gt; 4.pry
+(4)&gt; show-source &gt;
+From: numeric.c (C Method):
+Owner: Fixnum
+Visibility: public
+Number of lines: 17
+
+static VALUE
+fix_gt(VALUE x, VALUE y)
+{
+    if (FIXNUM_P(y)) {
+        if (FIX2LONG(x) &gt; FIX2LONG(y)) return Qtrue;
+        return Qfalse;
+    }
+    else if (RB_TYPE_P(y, T_BIGNUM)) {
+        return FIX2INT(rb_big_cmp(rb_int2big(FIX2LONG(x)), y)) &gt; 0 ? Qtrue : Qfalse;
+    }
+    else if (RB_TYPE_P(y, T_FLOAT)) {
+        return rb_integer_float_cmp(x, y) == INT2FIX(1) ? Qtrue : Qfalse;
+    }
+    else {
+        return rb_num_coerce_relop(x, y, '&gt;');
+    }
+}
+</code></pre>
+</div>
+
+<p>At this point, I thought <em>oh no! C!</em></p>
+
+<p>But like, this is so cool: this is the implementation of the greater than method
+in numbers in Ruby, and it’s totally discoverable if you open pry and ask it
+to <code class="highlighter-rouge">show-source</code>.</p>
+
+<p>I don’t really know C, but if I squint, I can tell that this is doing something
+kind of reasonable. It seems to be checking the type of the second value (the
+one you’re comparing the current value to) and doing something different based
+on the type. The final branch of logic is when the type is unknown. Bingo. Our
+CupsOfCoffeePerDay type is definitely unknown. In that case, it calls
+<code class="highlighter-rouge">rb_num_coerce_relop</code>. Unfortunately, when I asked pry to
+<code class="highlighter-rouge">show-source rb_num_coerce_relop</code> it didn’t know how.</p>
+
+<p>Thankfully, it printed the filename this source code can be found in, so I went
+to <a href="https://github.com/ruby/ruby">the ruby source code</a> and searched for a file called <code class="highlighter-rouge">numeric.c</code>. Within
+that, I searched for the rb_num_coerce_relop function. It takes in the two
+objects (the CupsOfCoffeePerDay and the number) and the operator (<code class="highlighter-rouge">&gt;</code>). Its
+source looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+VALUE
+rb_num_coerce_bin(VALUE x, VALUE y, ID func)
+{
+    do_coerce(&amp;x, &amp;y, TRUE);
+    return rb_funcall(x, func, 1, y);
+}
+</code></pre>
+</div>
+
+<p>What does that do? It looks like it coerces the two types to be the same type,
+and then calls the <code class="highlighter-rouge">&gt;</code> function on the first one, passing the second one.
+(Again: squinting).</p>
+
+<p>So <code class="highlighter-rouge">do_coerce</code> is where the interesting part happens. I’ll just <a href="https://github.com/ruby/ruby/blob/f3cafab56a353db969f5e39923bd15712a204c36/numeric.c#L274-L309">link to it</a>
+because it’s pretty long. But the cool thing in it is that it checks if the
+first object implements a <code class="highlighter-rouge">coerce</code> method, and if it does, it does something
+different. So then it becomes a game of figuring out how to write a <code class="highlighter-rouge">coerce</code>
+method and finding out, via stack overflow (of course), that you can add this
+magic <code class="highlighter-rouge">coerce</code> method, and it will take in the second object, and it’s expected
+to return an array of compatible types, with the second object’s value first,
+and the first object’s value second. So our implementation looks like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+  <span class="p">[</span><span class="n">other</span><span class="p">,</span> <span class="vi">@num</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>One interesting thing to note is that if anything fails within your coerce
+method, the exception will be silently swallowed by <code class="highlighter-rouge">do_coerce</code>, and then you’ll
+get the earlier error about not being able to compare the two objects. If our
+implementation looked like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+  <span class="k">raise</span> <span class="s1">'hell'</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>You might expect hell to be raised as an exception – but nope. You might think
+that means the <code class="highlighter-rouge">coerce</code> method wasn’t called. It was, it’s just kind of unusual
+territory. Thankfully, it’s not completely silent: it emits a warning that your
+exception will no longer be rescued in future versions of Ruby. I like that
+change.</p>
+
+<p>So. Now that we know about coerce, our operator methods can be really simple,
+but they can still be used bidirectionally, and we can even feel OK about
+abstracting them a bit. I kind of like this final implementation, which
+includes all of the operators:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'forwardable'</span>
+
+<span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="kp">extend</span> <span class="no">Forwardable</span>
+
+  <span class="n">def_delegators</span> <span class="s2">"@num"</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;</span><span class="p">,</span> <span class="ss">:&lt;</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;=</span><span class="p">,</span> <span class="ss">:&lt;=</span><span class="p">,</span> <span class="ss">:==</span>
+
+  <span class="no">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">other</span><span class="p">,</span> <span class="vi">@num</span><span class="p">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

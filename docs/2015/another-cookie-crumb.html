@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>another cookie crumb - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        another cookie crumb
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      21 Feb 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>In <a href="http://www.hardscrabble.net/2015/building-firefox/">Wednesday’s post about building Firefox from source the other day</a>, I
+mentioned one thing I really liked about the experience of first looking at this
+code base: it kept dropping little hints about what I might need to do next in a
+way that was actually insightful and helpful. For example, after running their
+script which installs dependencies, there was some helpful output pointing me to
+where I could get the code base.</p>
+
+<p>Today I checked in with the project and pulled the change from the last few
+days. There has been a flurry of activity, none of which means much of anything
+to me as an outside observer.</p>
+
+<p>I was curious if I would be able to run <code class="highlighter-rouge">./mach build</code>, and if it would take as
+long on the second run. Instead I got this interesting output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>0:00.35 /usr/bin/make -f client.mk -s
+0:01.33 
+0:01.33 The CLOBBER file has been updated, indicating that an incremental
+0:01.33 build since your last build will probably not work. A full/clobber
+0:01.33 build is required.
+0:01.33 
+0:01.33 The reason for the clobber is:
+0:01.33 
+0:01.33  Bug 1119335 - (DOMString or sequence&lt;DOMString&gt; or ConstrainDOMStringParameters)
+0:01.33  needs binding flush (Bug 1103153).
+0:01.33 
+0:01.33 Clobbering can be performed automatically. However, we didn't
+0:01.33 automatically clobber this time because:
+0:01.33 
+0:01.33   Automatic clobbering is not enabled
+0:01.33   (add "mk_add_options AUTOCLOBBER=1" to your mozconfig).
+0:01.33 
+0:01.33 The easiest and fastest way to clobber is to run:
+0:01.33 
+0:01.33  $ mach clobber
+0:01.33 
+0:01.33 If you know this clobber doesn't apply to you or you're feeling lucky
+0:01.33 -- Well, are ya? -- you can ignore this clobber requirement by
+0:01.33 running:
+0:01.33 
+0:01.33  $ touch /Users/maxjacobson/src/gecko-dev/obj-x86_64-apple-darwin14.3.0/CLOBBER
+0:01.33 make: *** [/Users/maxjacobson/src/gecko-dev/obj-x86_64-apple-darwin14.3.0/CLOBBER] Error 1
+0:01.36 78 compiler warnings present.
+</code></pre>
+</div>
+
+<p>That’s super interesting! Things I learned from this:</p>
+
+<ul>
+  <li>There’s something called “The CLOBBER file” which is some kind of place to
+leave little messages about why someone else will need to do a full build
+after pulling in a change</li>
+  <li>Sometimes it’s possible for mach to do an “incremental build”, which I assume
+wouldn’t take very long</li>
+  <li>There’s a tool for clobbering, which I guess clears away stuff from earlier
+builds, requiring <code class="highlighter-rouge">mach build</code> to do a full, non-incremental build</li>
+  <li>Mozilla people make nerdy movie references</li>
+</ul>
+
+<p>I took a look at The CLOBBER file by using my fuzzy file opener to look for a
+file called CLOBBER and found it, in the root-level of the project. It contains
+more details about how to use it:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># To trigger a clobber replace ALL of the textual description below,
+# giving a bug number and a one line description of why a clobber is
+# required. Modifying this file will make configure check that a
+# clobber has been performed before the build can continue.
+#
+# MERGE NOTE: When merging two branches that require a CLOBBER, you should
+#             merge both CLOBBER descriptions, to ensure that users on
+#             both branches correctly see the clobber warning.
+#
+#                  O   &lt;-- Users coming from both parents need to Clobber
+#               /     \
+#          O               O
+#          |               |
+#          O &lt;-- Clobber   O  &lt;-- Clobber
+#
+# Note: The description below will be part of the error message shown to users.
+#
+# Modifying this file will now automatically clobber the buildbot machines \o/
+#
+
+# Are you updating CLOBBER because you think it's needed for your WebIDL
+# changes to stick? As of bug 928195, this shouldn't be necessary! Please
+# don't change CLOBBER for WebIDL changes any more.
+
+Bug 1119335 - (DOMString or sequence&lt;DOMString&gt; or ConstrainDOMStringParameters)
+needs binding flush (Bug 1103153).
+</code></pre>
+</div>
+
+<p>It’s probably gratuitous to just copy this whole thing in here, especially when
+the last few lines are designed to change, but it’s pretty interesting, and I
+have a weird superstition about linking to files on GitHub, for example, because
+what if that file gets moved and my link goes dead?</p>
+
+<p>This file is like a cache. As long as it stays the same, you can keep building.
+As soon as it changes, you need to clobber before you can build. It seems like a
+clever solution to me (I especially like the detail about combining clobber
+notes so when two people insist on a clobber, they each get the benefit of the
+other’s). You just need to remember when to expire the cache, which leaves a
+little cookie crumb for the next developer to work on the project.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

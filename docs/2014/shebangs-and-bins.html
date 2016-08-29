@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>shebangs and bins - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        shebangs and bins
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      19 Jan 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>I had a thought the other night as I was falling asleep: I guess I could create my own shebang? I asked Siri to remind me later and fell asleep.</p>
+
+<p>OK what’s a shebang? I’m going to try to explain my understanding of it step by step, forgive me if this is obvious or boring.</p>
+
+<p>So let’s say you write a ruby program that looks like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># hello.rb</span>
+<span class="nb">puts</span> <span class="s2">"hello world"</span>
+</code></pre>
+</div>
+
+<p>And you run it from the command line by writing <code class="highlighter-rouge">ruby hello.rb</code> and hitting enter.</p>
+
+<p>Or maybe write basically the same thing in python like this:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># hello.py</span>
+<span class="k">print</span> <span class="s">"hello world"</span>
+</code></pre>
+</div>
+
+<p>And run it from the command line by writing <code class="highlighter-rouge">python hello.py</code> and hitting enter.</p>
+
+<p>And the same thing in CoffeeScript</p>
+
+<div class="language-coffee highlighter-rouge"><pre class="highlight"><code><span class="c1"># hello.coffee</span>
+<span class="nx">console</span><span class="p">.</span><span class="na">log</span> <span class="s">"hello world"</span>
+</code></pre>
+</div>
+
+<p>And run it by writing <code class="highlighter-rouge">coffee hello.coffee</code> and hitting enter.</p>
+
+<p>Three different files are interpreted as three different programming languages by three different intrepreters. We indicate which language it is written in and should be interpreted as in two ways in those examples:</p>
+
+<ol>
+  <li>which command we invoked (<code class="highlighter-rouge">ruby</code>, <code class="highlighter-rouge">python</code>, and <code class="highlighter-rouge">coffee</code>)</li>
+  <li>the file extension (<code class="highlighter-rouge">rb</code>, <code class="highlighter-rouge">py</code>, <code class="highlighter-rouge">coffee</code>)</li>
+</ol>
+
+<p>The file extension isn’t really necessary. See:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># hello.sandwich</span>
+<span class="nb">puts</span> <span class="s2">"hello world"</span>
+</code></pre>
+</div>
+
+<p>? This file can be run with <code class="highlighter-rouge">ruby hello.sandwich</code> and it works totally fine. Probably continue to use conventional file extensions because they signal to your text editors and friends what type of file they are. But I think it’s kind of helpful to know that they’re not totally necessary or magical.</p>
+
+<p>OK so what if you want to call this program without specifying the interpreter every single time? This is where shebangs come in:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="c1"># hello.sandwich</span>
+<span class="nb">puts</span> <span class="s2">"hello world"</span>
+</code></pre>
+</div>
+
+<p>Now this is a file with a nonsense file extension but something new: the first line (the shebang) indicates which program is meant to interpret this file. Interestingly, it’s not a direct path to that binary file on your file system (which in the case of Ruby programmers who use <a href="http://rvm.io">rvm</a> to switch between Ruby versions, is often changing – mine is currently at <code class="highlighter-rouge">/Users/maxjacobson/.rvm/rubies/ruby-2.1.0-p0/bin/ruby</code> but only because I’m checking out the newly released Ruby 2.1.0), but instead consults your environment and says “hey, I’m looking for something called ruby, who wants to handle this one?”</p>
+
+<p>How do you call this file if you don’t specify the interpreter? Basically you just provide a path to the file, like this: <code class="highlighter-rouge">./hello.sandwich</code>. You’ll probably get this error: <code class="highlighter-rouge">bash: ./hello.sandwich: Permission denied</code>. I’m sure there are very good security reasons for this but it’s kind of annoying honestly. You need to run <code class="highlighter-rouge">chmod +x hello.sandwich</code> which transforms the script from a generic text file to an “executable” file. If you do that, now you can run <code class="highlighter-rouge">./hello.sandwich</code> and your program will run thru the ruby interpreter.</p>
+
+<p>What is the <code class="highlighter-rouge">./</code> part? It’s kind of ugly, and it’s the next thing we want to get rid of. It’s a path to the file. The same way you might run <code class="highlighter-rouge">cd ..</code> to change directories up a directory, you can run <code class="highlighter-rouge">cd .</code> to remain in your current directory. I know programming has irrevocably ruined my sense of humor because I now find it funny that you can run <code class="highlighter-rouge">cd ././././././.</code> to remain where you are. So <code class="highlighter-rouge">./hello.sancwich</code> is a path to a file in the current directory.</p>
+
+<p>Let’s actually rename the file to have <em>no</em> file extension (<code class="highlighter-rouge">mv hello.sandwich sandwich</code>) and run it again <code class="highlighter-rouge">./sandwich</code>. Still works. It’s totally possible to run this file without the <code class="highlighter-rouge">./</code>, but we need to put it somewhere special. We need to put it on our <code class="highlighter-rouge">$PATH</code>, which is a list of all of the places on your computer you keep these executable files. To see your <code class="highlighter-rouge">$PATH</code> you can run <code class="highlighter-rouge">echo $PATH</code> and you’ll see them spat out all colon separated. You can move your file to one of those directories or create a new directory, probably located at <code class="highlighter-rouge">~/bin</code> or <code class="highlighter-rouge">~/Dropbox/bin</code> (<a href="http://www.leancrew.com/all-this/2013/05/dropboxbin/">via</a>), and add it to your <code class="highlighter-rouge">$PATH</code>.</p>
+
+<p><code class="highlighter-rouge">$PATH</code> is a global variable in your command line environment and it can be edited like this: <code class="highlighter-rouge">export PATH="whatever"</code> but probably don’t do that because it will totally overwrite the variable in your current terminal session and you won’t have access to any of the executables you depend on and you won’t be able to do anything. The common way to append a directory to your <code class="highlighter-rouge">$PATH</code> is like this: <code class="highlighter-rouge">export PATH=~/bin:$PATH</code>, which sets the variable to <code class="highlighter-rouge">~/bin</code>, a colon, and then everything that used to be in the variable. Perfect. If you want this directory to <em>always</em> be accessible, not just in the current terminal session, you should add that line of code to your <code class="highlighter-rouge">~/.bashrc</code> or <code class="highlighter-rouge">~/.bash_profile</code> file<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and it will be included in every new terminal session.</p>
+
+<p>So, if your <code class="highlighter-rouge">sandwich</code> file is in a directory that’s on your <code class="highlighter-rouge">$PATH</code>, and it has the shebang that specifies its interpreter, you can now run simply <code class="highlighter-rouge">sandwich</code> from <em>anywhere</em> on your computer and it will call that program. It’s kind of amazing how it does it, right? You write the word sandwich, hit enter, and it looks thru a list of directories for a file with that name; when it finds one, it checks its permissions, then looks at the first line to figure out how to interpret the file; that line points to an environment-checking program and passes in the argument “ruby”<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>, which finds the correct ruby interpreter, and then calls it, evaluating the remainder of the program.</p>
+
+<p>OK so that’s awesome. But what if I want to write this program:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env sandwich</span>
+<span class="c1"># grilled_cheese</span>
+<span class="n">make_sandwich</span><span class="p">(</span>
+  <span class="ss">ingredients: </span><span class="p">[</span>
+    <span class="s2">"rye"</span><span class="p">,</span>
+    <span class="s2">"american cheese"</span><span class="p">,</span>
+    <span class="s2">"some sprinkles of gorgonzola"</span><span class="p">,</span>
+    <span class="s2">"maybe some sweet chili sauce"</span><span class="p">,</span>
+    <span class="s2">"butter"</span>
+    <span class="p">],</span>
+  <span class="ss">directions: </span><span class="p">[</span>
+    <span class="s2">"get ingredients"</span><span class="p">,</span>
+    <span class="s2">"assemble a sandwich"</span><span class="p">,</span>
+    <span class="s2">"melt a little butter in a pan"</span><span class="p">,</span>
+    <span class="s2">"put the sandwich in the pan"</span><span class="p">,</span>
+    <span class="s2">"apply some downward pressure"</span><span class="p">,</span>
+    <span class="s2">"flip"</span><span class="p">,</span>
+    <span class="s2">"apply some downward pressure"</span><span class="p">,</span>
+    <span class="s2">"enjoy"</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+</div>
+
+<p>OK so I put “sandwich” in my shebang instead of a real programming language. What. Haha.</p>
+
+<p>Let’s make the <code class="highlighter-rouge">grilled_cheese</code> file executable and put it in our bin, and then run <code class="highlighter-rouge">grilled_cheese</code>. We want to confirm that it’s looking up and finding the sandwich program and running it. When we see “hello world” again, we know it is. But it’s not making a sandwich! But then, how can it? Our code isn’t even being evaluated; if it were, we would probably have an error because the <code class="highlighter-rouge">make_sandwich</code> method is not availabe in the Ruby Standard Library (unfortunately).</p>
+
+<p>Let’s edit our sandwich program to get a sense of what it knows about our grilled cheese program.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="c1"># sandwich</span>
+<span class="nb">puts</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">inspect</span>
+</code></pre>
+</div>
+
+<p>Now when I run <code class="highlighter-rouge">grilled_cheese</code>, instead of seeing “hello world” I see <code class="highlighter-rouge">["/Users/maxjacobson/bin/grilled_cheese"]</code>. Ahaa! Just because we invoke the sandwich program from the grilled cheese program doesn’t mean we will automatically evaluate the grilled cheese code. We just pass the filename as an argument, much like when we run <code class="highlighter-rouge">ruby hello.rb</code>. It’s a lot like if we ran <code class="highlighter-rouge">sandwich grilled_cheese</code>.</p>
+
+<p>OK so knowing that, maybe our sandwich file should look something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="c1"># sandwich</span>
+
+<span class="k">def</span> <span class="nf">make_sandwich</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+  <span class="n">options</span><span class="p">[</span><span class="ss">:ingredients</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">ingredient</span><span class="o">|</span>
+    <span class="nb">print</span> <span class="s2">"Finding </span><span class="si">#{</span><span class="n">ingredient</span><span class="si">}</span><span class="s2">..."</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="nb">print</span> <span class="s2">" done!</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="n">options</span><span class="p">[</span><span class="ss">:directions</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">step</span><span class="o">|</span>
+    <span class="nb">print</span> <span class="s2">"Doing </span><span class="si">#{</span><span class="n">step</span><span class="si">}</span><span class="s2">..."</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="nb">print</span> <span class="s2">" done!</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">eval</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">first</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>So, this defines our missing method, takes in the file as an argument, reads the file as a string, and then evaluates the file with <code class="highlighter-rouge">eval</code>. OK so the only thing I know about eval is that you probably should never use it because it’s dangerous af. But maybe this is the kind of context where it makes sense?</p>
+
+<hr />
+
+<p>I’m sure there are actually practical reasons to use custom-written programs in the shebangs of other custom-written programs and if you think of any please let me know.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Unfortunately still don’t have a really solid understanding of the difference between those. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><code class="highlighter-rouge">env</code> is available to use from the command line as well: try running <code class="highlighter-rouge">env ruby -v</code> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

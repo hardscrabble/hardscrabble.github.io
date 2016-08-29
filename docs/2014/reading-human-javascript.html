@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>reading Human JavaScript as a Rails developer who writes SOME CoffeeScript - hardscrabble</title>
+  <meta content="Max Jacobson" name="author">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/feed.xml" rel="alternate" title="Posts feed" type="application/atom+xml">
+  <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        reading Human JavaScript as a Rails developer who writes SOME CoffeeScript
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href="/about">Max Jacobson</a>
+    </div>
+    <div class="date">
+      08 Jul 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>I’m reading <a href="http://read.humanjavascript.com/">Human JavaScript</a> for free online, right now, and I’m going to take some notes. Yes, this is one of those blog posts that no one reads, but is helpful for the author to write. I’m sorry.</p>
+
+<h3 id="why-am-i-reading-this-book">Why am I reading this book?</h3>
+
+<p>I sorely want to get better at JavaScript. I feel like I know the language pretty well and I know jQuery pretty well but that’s it but I don’t know any of the JavaScript application frameworks and I feel like I should.</p>
+
+<p>Being a Ruby on Rails developer writing CoffeeScript that gets packaged up by the asset pipeline into one big file feels kind of like being on a sidewalk looking thru a trendy restaurant window at couples on Valentine’s Day. I’m feeling that pang of leftouttedness specifically for the sheer organization that applications written for Node.js or Ember.js seem to have access to. It seems like they’re living in the future with their small modules or whatever I don’t even know.</p>
+
+<p>I’ve made a plan. I’m going to learn Backbone.js and then maybe Ember.js. Hopefully I’ll be able to bring some of what I learn to my Rails work.</p>
+
+<p>After bookmarking several other possible resources I saw this blog post via twitter: <a href="https://blog.andyet.com/2014/06/09/no-more-rockstars">No more rockstars – The business case for writing JavaScript as a team</a>. It tells a really amazing story about a product which was developed by one person and then needed to be rewritten as a team, who really struggled because the code was really complicated and only one person understood it. So they told him he wasn’t allowed to work on it anymore, but he could help everyone else. It’s like a feel good movie, right? It’s like School of Rock. Jack Black is surrounded by these talented kids and he brings out the best of them and learns the value of teaching and his ego is sublimated and flowers bloom, or in this case, Human JavaScript bloomed.</p>
+
+<p>Reading that post made me feel like I was in good hands and I could learn from these people. Feeling like I’m in good hands is really essential for me to learn anything.</p>
+
+<h3 id="things-i-learned-from-the-introductionhttpreadhumanjavascriptcomch01-introductionhtml">Things I learned from <a href="http://read.humanjavascript.com/ch01-introduction.html">the introduction</a>:</h3>
+
+<ul>
+  <li>Web apps are apps</li>
+  <li>The browser is an operating system</li>
+  <li>It’s lame to make your user refresh to see new stuff</li>
+  <li>There is a “trap of tightly coupling your application to [a] particular client” which I didn’t even know I was in but totally am</li>
+  <li>Ideally, I’d be able to jump into a JavaScript app and be able to contribute, because I know JavaScript pretty well<sup id="fnref:worry"><a href="#fn:worry" class="footnote">1</a></sup>; but I totally don’t feel like I can do that because I don’t know any frameworks. I’m glad that the book acknowledges this should be a goal</li>
+</ul>
+
+<p>This criterium is interesting to me:</p>
+
+<blockquote>
+  <p>It should be flexible enough to really be able to build anything you want without sending a bunch of unused code to the browser.</p>
+</blockquote>
+
+<p>This is one of my discomforts with the Rails asset pipeline approach to front end code; everything goes, every time, and runs on every page even if it’s not needed, and sometimes even when it’s not needed, causing bugs.</p>
+
+<h3 id="things-i-learned-from-chapter-2-the-big-decisionhttpreadhumanjavascriptcomch02-the-big-decisionhtml">Things I learned from <a href="http://read.humanjavascript.com/ch02-the-big-decision.html">chapter 2: The Big Decision</a>:</h3>
+
+<p>OK so maybe I was wrong that I might be able to bring this back to my Rails work. This page has an amazing code sample, which shows how minimalist a server’s HTML response can be when the client is responsibile for rendering the entire UI. I’m pretty intimidated now because this is so different from what I’m used to.</p>
+
+<p>But I’m convinced that this is a powerful way of thinking about application design because it feels tidy, which I value very much.</p>
+
+<p>I’ve used and been very impressed by <a href="http://talky.io">Talky.io</a>, &amp;Yet’s video conferencing web app, and I can only assume it’s built in a similar way, so I went and viewed source…. and YEP it’s pretty goofy. There’s no <code class="highlighter-rouge">&lt;body&gt;</code> tag.<sup id="fnref:source"><a href="#fn:source" class="footnote">2</a></sup></p>
+
+<h3 id="things-i-learned-from-chapter-3-code-for-humanshttpreadhumanjavascriptcomch03-code-for-humanshtml">Things I learned from <a href="http://read.humanjavascript.com/ch03-code-for-humans.html">chapter 3: Code For Humans</a>:</h3>
+
+<p>I should probably be using a linter<sup id="fnref:linter"><a href="#fn:linter" class="footnote">3</a></sup>. It looks like <a href="http://www.coffeelint.org/">even CoffeeScript</a> has linters. I don’t think I like the idea of having it as a pre-commit hook. Maybe. I kind of think it should be part of a test suite – maybe all of your unit tests pass, but your build fails because you left a <code class="highlighter-rouge">debugger</code> in a coffee file.</p>
+
+<p>I’m glad that Joreteg (the author of the book I’m annotating, whose name I’ve somehow neglected to mention so far) gives a plug for <a href="https://github.com/airbnb/javascript">Airbnb’s JavaScript style guide</a> as it’s a helpful reference I’ve stumbled on in the past and <a href="http://www.hardscrabble.net/2013/javascript-resources/">endorsed in these pages</a>. I should probably re-read that.</p>
+
+<h3 id="things-i-learned-from-chapter-4-organizing-your-codehttpreadhumanjavascriptcomch04-organizing-your-codehtml">Things I learned from <a href="http://read.humanjavascript.com/ch04-organizing-your-code.html">chapter 4: Organizing Your Code</a>:</h3>
+
+<p>This passage is a helpful summary of everything that’s to come:</p>
+
+<blockquote>
+  <p>Essentially, you’ll populate a set of models and collections of these models in memory in the browser. These will store all the application state for your app. These models should be completely oblivious to how they’re used; they merely store state and broadcast their changes. Then you will have views that listen for changes in the models and update the DOM. This core principle of separating your views and your application state is vital when building large apps.</p>
+</blockquote>
+
+<p>Here’s what I do now with Rails apps: If I have a thing, or a set of things, which I want to show to someone, I render what they look like <em>right now</em> and give that to the browser; the browser doesn’t have a model of that thing or set of things, it has the representation of that thing. I may update the representation of that thing, but I have to find it with a jQuery CSS selector, and remember that changing the HTML structure of a page can break that selector.</p>
+
+<p>This chapter also goes into more detail about modules, and using a tool called <a href="https://github.com/substack/node-browserify">browserify</a> to allow use of this module system outside of Node.js, where it’s a native feature, and bringing all that to the browser. I find this pretty appealing because I’ve written JS code that does really mundane things when I could have instead imported some module. I’ve searched <a href="https://www.google.com/search?q=browserify-rails">browserify rails</a> and found a bunch of results and I want to make a priority of exploring this.</p>
+
+<h3 id="things-i-learned-from-chapter-5-eventificationhttpreadhumanjavascriptcomch05-eventificationhtml">Things I learned from <a href="http://read.humanjavascript.com/ch05-eventification.html">chapter 5: Eventification</a>
+</h3>
+
+<p>This chapter introduces some advanced JavaScript code (I think it’s the first time <code class="highlighter-rouge">prototype</code> is brought up). I don’t understand everything that happens in this first example, but the event part makes sense, and events are the focus of this chapter so I’m going to focus on that.</p>
+
+<p>The first part being confusing enables the simplicity of the second part.</p>
+
+<h3 id="things-i-learned-from-chapter-6-modelshttpreadhumanjavascriptcomch06-modelshtml">Things I learned from <a href="http://read.humanjavascript.com/ch06-models.html">chapter 6: Models</a>
+</h3>
+
+<p>This chapter gives some code examples that don’t look too far off of the kind of jQuery code I write. And:</p>
+
+<blockquote>
+  <p>If you continue this same approach, you’re in deep doo doo</p>
+</blockquote>
+
+<p>Lol great</p>
+
+<p>The previous chapter recommended writing your own event emitter to see how simple it is. This chapter doesn’t say to write your own model code but I want to try writing some JavaScript instead of just taking notes, so I’m doing kind of a combo of both:</p>
+
+<div class="language-javascript highlighter-rouge">
+<pre class="highlight"><code><span class="kd">var</span> <span class="nx">object</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">attributes</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="na">callbacks</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="na">get</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">attributes</span><span class="p">[</span><span class="nx">attr</span><span class="p">];</span>
+  <span class="p">},</span>
+  <span class="na">set</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">attr</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">attributes</span><span class="p">[</span><span class="nx">attr</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">"changed:"</span><span class="o">+</span><span class="nx">attr</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">on</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">eventName</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">].</span><span class="nx">push</span><span class="p">(</span><span class="nx">callback</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="na">emit</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">eventName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">])</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">].</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">callback</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">_this</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"Max Jacobson"</span><span class="p">);</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"age"</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"changed:name"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"My new name is: "</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"name"</span><span class="p">));</span>
+<span class="p">});</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"MJ"</span><span class="p">);</span>
+<span class="nx">object</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="s2">"name"</span><span class="p">,</span> <span class="s2">"Maxwell"</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>Here’s how I’d write the same in CoffeeScript:</p>
+
+<div class="language-coffee highlighter-rouge">
+<pre class="highlight"><code><span class="nx">object</span> <span class="o">=</span>
+  <span class="na">attributes</span><span class="o">:</span> <span class="p">{}</span>
+  <span class="na">callbacks</span><span class="o">:</span> <span class="p">{}</span>
+  <span class="na">get</span><span class="o">:</span> <span class="p">(</span><span class="nx">attr</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">attributes</span><span class="p">[</span><span class="nx">attr</span><span class="p">]</span>
+  <span class="na">set</span><span class="o">:</span> <span class="p">(</span><span class="nx">attr</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">attributes</span><span class="p">[</span><span class="nx">attr</span><span class="p">]</span> <span class="o">=</span> <span class="nx">value</span>
+    <span class="vi">@</span><span class="na">emit</span> <span class="s">"changed:</span><span class="si">#{</span><span class="nx">attr</span><span class="si">}</span><span class="s">"</span>
+  <span class="na">on</span><span class="o">:</span> <span class="p">(</span><span class="nx">eventName</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="vi">@</span><span class="na">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">]</span> <span class="o">?=</span> <span class="p">[]</span>
+    <span class="vi">@</span><span class="na">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">].</span><span class="na">push</span> <span class="nx">callback</span>
+  <span class="na">emit</span><span class="o">:</span> <span class="p">(</span><span class="nx">eventName</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="k">if</span> <span class="vi">@</span><span class="na">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">]</span><span class="o">?</span>
+      <span class="vi">@</span><span class="na">callbacks</span><span class="p">[</span><span class="nx">eventName</span><span class="p">].</span><span class="na">forEach</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span>
+        <span class="nx">callback</span><span class="p">.</span><span class="na">apply</span> <span class="err">@</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="na">set</span> <span class="s">"name"</span><span class="p">,</span> <span class="s">"Max Jacobson"</span>
+<span class="nx">object</span><span class="p">.</span><span class="na">set</span> <span class="s">"age"</span><span class="p">,</span> <span class="mi">25</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="na">on</span> <span class="s">"changed:name"</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="na">log</span> <span class="s">"My new name is: </span><span class="si">#{</span> <span class="vi">@</span><span class="na">get</span><span class="p">(</span><span class="s">"name"</span><span class="p">)</span> <span class="si">}</span><span class="s">"</span>
+
+<span class="nx">object</span><span class="p">.</span><span class="na">set</span> <span class="s">"name"</span><span class="p">,</span> <span class="s">"MJ"</span>
+<span class="nx">object</span><span class="p">.</span><span class="na">set</span> <span class="s">"name"</span><span class="p">,</span> <span class="s">"Maxwell"</span>
+</code></pre>
+</div>
+
+<p>I still like CoffeeScript but I’m going to try to use it less. Actually that last line of the <code class="highlighter-rouge">emit</code> method looks <em>weird</em> with the <code class="highlighter-rouge">@</code> like that. I actually ran both of these thru JSHint and CoffeeLint respectively and it helped me catch some missing semicolons <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20" align="absmiddle">.</p>
+
+<p>Joreteg takes a moment to discuss the separation of responsibilities between the server and the client with regard to the data you’re persisting on the server. I’m not sure the knot is untied completely. The example given is a delete button. Not every user has permission to delete, so we may show or hide the button based on who is logged in. But because the DOM is malleable, you have to assume that any user can see that button if they really want to, for example by inspecting element with their browser dev tools and changing properties of existing buttons. So it really <em>can’t</em> be the client’s job to secure that, it has to be the server’s job. But I guess it goes beyond that, and it actually shouldn’t be the responsibility of the client.</p>
+
+<p>This chapter is really long.</p>
+
+<p>I mentioned above that I feel like I pretty much know JavaScript but honestly that’s not that accurate at all. What was I thinking? What I meant is that I know the syntax pretty well. But truth be told I probably only know the syntax pretty well of old-ass JavaScript, not all this new stuff. For example, he’s going into an EcmaScript 5 feature, that objects have <code class="highlighter-rouge">get</code> and <code class="highlighter-rouge">set</code> operators. I never saw that before. And they’re up to EcmaScript 6 now, right?</p>
+
+<p>A lot of the stuff in this chapter seems kind of magical, and I kind of like that JavaScript doesn’t normally seem magical. Actually, that’s not true: a lot of my interactions with jQuery seem magical to me. Like, the way it’s possible to chain several jQuery methods and it keeps returning the thing so you can keep operating on it. The object feels like more than <code class="highlighter-rouge"><span class="p">{}</span></code> with a bunch of properties, it feels like it really <em>models</em> a thing, in that case an element or group of elements on a web page. The models that Joreteg describes here seem like they could genuinely model something like a “user”, because you’re not just setting and getting properties. Or rather, you are, but it’s <em>reacting</em> and <em>behaving</em> based on that stuff. It’s not a dumb box you put things in.</p>
+
+<h3 id="things-i-learned-from-chapter-7-viewshttpreadhumanjavascriptcomch07-viewshtml">Things I learned from <a href="http://read.humanjavascript.com/ch07-views.html">chapter 7: Views</a>
+</h3>
+
+<p>I’m vaguely aware that what Rails calls a “View” isn’t necessarily what everyone else calls a view, and I’m ready to confront that now. I can see that the following chapter is about “templates”, and I think that what I think of as views (erb or haml files, which describe a chunk of HTML with dynamically evaluated bits of code interpolated in them) are actually templates. So what’s a view?</p>
+
+<p>I groused above about my discomfort with sending all of the JavaScript to the browser on every request and then running it on every request. Shortly after writing that, I realized Human JavaScript hadn’t promised anything about sending excess code. But now I can see that it does, in this chapter. talk about <em>running</em> excess code. On top of that, it’s not as bad that it sends the entire application because it will only send it one time, on initial load, and then the user’s interactions with the application won’t need to request the application again, because it’s a “single page application” and only requests exactly what it needs.</p>
+
+<p>So before I continue reading and learn about the Human JavaScript solution to the problem of running excess code, I want to jot down an example of what I’m talking about. Let’s say our homepage has this HTML:</p>
+
+<p>(Writing pure HTML without HAML or Rails’ help was surprisingly difficult just then and I’m not sure this is correct, but I’m on a train so I can’t really look things up right now.</p>
+
+<div class="language-html highlighter-rouge">
+<pre class="highlight"><code><span class="c">&lt;!-- index.html --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Subscribe to our mailing list<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/subscribe"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">id=</span><span class="s">"subscribe"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"youremail@example.com"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre>
+</div>
+
+<p>We want to validate that the user input looks like an email address so we write a little jQuery:</p>
+
+<div class="language-coffee highlighter-rouge">
+<pre class="highlight"><code><span class="c1"># home.js.coffee</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="na">on</span> <span class="s">'ready'</span><span class="p">,</span> <span class="o">-&gt;</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s">'form#subscribe'</span><span class="p">).</span><span class="na">on</span> <span class="s">'submit'</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">-&gt;</span>
+    <span class="k">if</span> <span class="o">not</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="na">find</span><span class="p">(</span><span class="s">'#email'</span><span class="p">).</span><span class="na">val</span><span class="p">().</span><span class="na">match</span> <span class="sr">/\w+\@\w+\.\w+/</span>
+      <span class="nx">event</span><span class="p">.</span><span class="na">preventDefault</span><span class="p">()</span>
+      <span class="nx">alert</span> <span class="s">"According to my terrible regular expression, that is not a valid email!"</span>
+      <span class="no">false</span>
+</code></pre>
+</div>
+
+<p>This code has two event handlers in it – the first will run when the document is ready, on every page this is included on. It attaches the second event handler to a form with id “subscribe” – or it tries to. Maybe it doesn’t find one, in which case I guess it does nothing. It doesn’t throw an exception if it doesn’t find the form, it just quietly continues through the code. Let’s say you have a mature Rails app with dozens of files like these. On every page load, it’s looking for a bunch of stuff that may or may not exist. Browsers are pretty fast, so it’s kind of OK, but it’s a ton of work that isn’t necessary. It’s also a potential source of bugs, because what if there’s a form with id of ‘subscribe’ on multiple pages which are totally different? Now you can’t submit that one either?</p>
+
+<p>What are your alternatives?</p>
+
+<h3 id="add-some-conditions-to-each-file-for-example">add some conditions to each file, for example:</h3>
+
+<div class="language-coffee highlighter-rouge">
+<pre class="highlight"><code><span class="c1"># home.js.coffee</span>
+<span class="nx">$</span> <span class="o">-&gt;</span>
+  <span class="k">if</span> <span class="nx">$</span><span class="p">(</span><span class="s">'form#subscribe'</span><span class="p">).</span><span class="na">length</span>
+    <span class="c1"># all of your code that should only run on a page which has this form, potentially a lot of code</span>
+</code></pre>
+</div>
+
+<p>So the code is still evaluated, but if there is a lot of code, you can minimize the excess work.</p>
+
+<h3 id="javascriptincludetag"><code class="highlighter-rouge">javascript_include_tag</code></h3>
+
+<p>Instead of having one massive manifest file in <code class="highlighter-rouge">application.js</code>, which packages all of our JavaScripts into one big file on every page, include the JavaScripts in the view that it’s relevant to.</p>
+
+<div class="language-haml highlighter-rouge">
+<pre class="highlight"><code><span class="c">/ form.html.haml
+</span><span class="nt">%h1</span> Subscribe to our mailing list
+<span class="nt">%form</span><span class="p">{</span><span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">'/subscribe'</span><span class="p">,</span> <span class="ss">:method</span> <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">}</span><span class="nf">#subscribe</span>
+  <span class="nt">%input</span><span class="p">{</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'text'</span><span class="p">,</span> <span class="ss">:placeholder</span> <span class="o">=&gt;</span> <span class="s1">'youremail@example.com'</span><span class="p">}</span><span class="nf">#email</span>
+  <span class="nt">%input</span><span class="p">{</span><span class="ss">:type</span> <span class="o">=&gt;</span> <span class="s1">'submit'</span><span class="p">}</span>
+<span class="p">=</span> <span class="n">javascript_include_tag</span> <span class="s1">'home'</span>
+</code></pre>
+</div>
+
+<p>This last approach has some pros and cons. Including that script tag on just the relevant page means that it will only run on that page, but it also means that page will ned to request two different JavaScript assets, instead of the one big one it probably already has cached.</p>
+
+<p>The approach that I <em>think</em> Joreteg is espousing is sending all of your JavaScript in one big file, but somehow only attaching the form’s event handler on this page anyway, by being kind of clever somehow. OK now I’m going to read on.</p>
+
+<p>Unfortunately this chapter assumes a lot of knowledge of Backbone views and their limitations. I’m a little lost. Earlier he recommended reading the Backbone documentation for a great introduction to Backbone, and I didn’t. I think I need to go read at least the sectino on views before I proceed with this chapter.</p>
+
+<p>OK so the view is the object that orchestrates what the user sees. It binds model attributes to the page elements and renders templates. It can be responsible for just one instance of a model, or a whole collection. If there’s one view object for one instance of a model, you can take advantage of the events we covered earlier, and wait for that thing to emit a “change” event and re-render that part of the page or do whatever you want.</p>
+
+<h3 id="things-i-learned-from-chapter-8-templatinghttpreadhumanjavascriptcomch08-templatinghtml">Things I learned from <a href="http://read.humanjavascript.com/ch08-templating.html">chapter 8: Templating</a>
+</h3>
+
+<p>This is a brief chapter discussing ‘templatizer’, a library created by the author. It sounds pretty clever. It enables you to use the ‘jade’ templating language (reminds me of haml in its minimalism, and is actually much more minimalist) without your client needing to know anything about jade. It converts your templates to functions which can be called in the browser.</p>
+
+<p>I cloned <a href="https://github.com/HenrikJoreteg/humanjs-sample-app">his sample app</a> and started it, and clicked around. The server log did something interesting:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>[hardscrabble] [humanjs-sample-app] [master branch]
+⇥ npm start
+
+&gt; ampersand-sample@0.0.0 start /Users/maxjacobson/src/humanjs-sample-app
+&gt; node server.js
+
+dev environment detected
+Ampersand Sample is running at: http://localhost:3000 Yep. That's pretty awesome.
+Setting up watch
+COMPILING
+Started livereload on 35729
+Watching /Users/maxjacobson/src/humanjs-sample-app/public/css/**/*.styl
+</code></pre>
+</div>
+
+<p>And then…</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>[hardscrabble] [humanjs-sample-app] [master branch]
+⇥ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+        modified:   client/templates.js
+</code></pre>
+</div>
+
+<p>What? I didn’t modify <code class="highlighter-rouge">client/templates.js</code>! Just running the app and clicking around regenerates this file, which I guess gets committed and deployed. I’m not even sure what changed. Maybe when I installed the dependencies, I got a newer version of the “templatizer” tool, which compiles the file in a slightly different way.</p>
+
+<h3 id="things-i-learned-from-chapter-9-clientside-routinghttpreadhumanjavascriptcomch09-clientside-routinghtml">Things I learned from <a href="http://read.humanjavascript.com/ch09-clientside-routing.html">chapter 9: clientside routing</a>:</h3>
+
+<p>No matter what URL you request, the server does the same thing. Then the browser takes over. Kinda makes sense!</p>
+
+<p>I always forget how fast browsers are. I feel like there should be some kind of flicker as the browser puts together the page you requested. Maybe it just doesn’t show anything until it’s ready to show everything, so it’s not much different.</p>
+
+<h3 id="things-i-learned-from-chapter-10-launch-sequencehttpreadhumanjavascriptcomch10-launch-sequencehtml">Things I learned from <a href="http://read.humanjavascript.com/ch10-launch-sequence.html">chapter 10: launch sequence</a>:</h3>
+
+<p>So I guess Backbone isn’t that different from Rails. You define your routes and pair them with actions (well, functions) to run, and those actions fetch some data and render a view. The main difference is that it happens on the client side. And, it seems, that organizing it all has fewer conventions? But this book provides some suggestions.</p>
+
+<h3 id="things-i-learned-from-chapter-11-testing-and-qahttpreadhumanjavascriptcomch11-testing-and-qahtml">Things I learned from <a href="http://read.humanjavascript.com/ch11-testing-and-QA.html">chapter 11: testing and QA</a>:</h3>
+
+<p>I’m glad this chapter acknowledges that it’s hard to test JavaScript code and I really like the solution they’ve come up with, which leans a bit toward human-operated QA without entirely giving up the dream of automatic testing.</p>
+
+<h3 id="things-i-learned-from-chapter-12-settings-and-configshttpreadhumanjavascriptcomch12-settings-and-configshtml">Things I learned from <a href="http://read.humanjavascript.com/ch12-settings-and-configs.html">chapter 12: settings and configs</a>:</h3>
+
+<p>Rails has a solution for dealing with potentially-sensitive configuration files, and I’m not too surprised to see a similar one here.</p>
+
+<h3 id="things-i-learned-from-chapter-13-caveatshttpreadhumanjavascriptcomch13-caveatshtml">Things I learned from <a href="http://read.humanjavascript.com/ch13-caveats.html">chapter 13: caveats</a>:</h3>
+
+<p>There are commom mistakes that people make when starting with JavaScript and Backbone. I think these explanations make sense but when I actually try building some with Backbone, I look forward to making these exact mistakes anyway <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle">.</p>
+
+<p>Also that I’m kind of breezing thru these last few chapters because I see the end is in sight and I’m excited to try making something.</p>
+
+<h3 id="things-i-learned-from-chapter-14-conclusionhttpreadhumanjavascriptcomch14-conclusionhtml">Things I learned from <a href="http://read.humanjavascript.com/ch14-conclusion.html">chapter 14: conclusion</a>:</h3>
+
+<p>I like that this book was short and sweet.</p>
+
+<p>I like that he asked for feedback, because <a href="https://twitter.com/maxjacobson/status/485427898472759297">I already gave some</a>.</p>
+
+<p>I don’t feel totally prepared to build a front end app but I have a TON more context now. I think I know the next steps for me, which is to read the backbone docs and make something, coming back to reference this when I feel lost.</p>
+
+<p>Maybe I’ll make a website for my rubygem <a href="https://github.com/maxjacobson/film_snob/">film snob</a><sup id="fnref:snob"><a href="#fn:snob" class="footnote">4</a></sup>. I think I’ll stick with Ruby for the server, for now, but I’ll try to keep it REALLY minimal. I made <a href="https://gist.github.com/maxjacobson/9244b99019d4fad3832f">this</a> single file sinatra application to demo film snob to my sister, but maybe I’ll redo it as a backbone app and put it on Heroku and link it from the README? Sounds like a plan <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20" align="absmiddle">.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:worry">
+      <p>I worry that I’ll be humbled by these statements as I continue down this path. I’m already pretty embarrassed by my two posts about learning ember (<a href="http://www.hardscrabble.net/2013/learning-ember-js-day-one/">one</a>, <a href="http://www.hardscrabble.net/2013/learning-ember-day-two/">two</a>) which led nowhere, and this has the potential to be much the same. <a href="#fnref:worry" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:source">
+      <p>Make sure to “View Source” and not “Inspect Element”. Viewing source shows you the HTML returned by the server, inspecting element shows you the current state of the document which <em>does</em> have a body, and was rendered by the client-side JavaScript. <a href="#fnref:source" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:linter">
+      <p>A code-analyzing tool that warns you about code mistakes or poor style <a href="#fnref:linter" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:snob">
+      <p>Which I really need to write about because it’s been a thrill and a hoot to make, largely because some randos helped contribute to it. <a href="#fnref:snob" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href="http://twitter.com/maxjacobson">@maxjacobson</a> or <a href="mailto:max@hardscrabble.net">max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="/js/vendor/lunr.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif"></p></noscript>
+</body>
+</html>

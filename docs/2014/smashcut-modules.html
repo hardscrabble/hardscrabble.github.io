@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>composing a Parslet parser from modules and making code climate happy - hardscrabble</title>
+  <meta content="Max Jacobson" name="author">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/feed.xml" rel="alternate" title="Posts feed" type="application/atom+xml">
+  <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        composing a Parslet parser from modules and making code climate happy
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href="/about">Max Jacobson</a>
+    </div>
+    <div class="date">
+      27 Jul 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>I’m making very slow and intermittent progress on <a href="http://github.com/maxjacobson/smashcut">smashcut</a>, my Fountain screenplay parser written in Ruby. At this rate I’ll have a usable version in a few years or so <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle">. I’m going to talk about it a little bit here and then talk about how a small refactor boosted my Code Climate GPA for the project from 1.9 to 3.56.</p>
+
+<p>(For those who don’t know: <a href="https://codeclimate.com/">Code Climate</a> is a very neat website which analyzes your code and points out improvement areas. They <a href="https://codeclimate.com/github/signup">provide free analysis</a> to open source projects like smashcut and paid analysis of private projects. They also maintain a cool blog about code design and techniques at <a href="http://blog.codeclimate.com/">http://blog.codeclimate.com/</a>.)</p>
+
+<p>Today on a train ride I reorganized the smashcut codebase a bit. The heart of the project is a file called <code class="highlighter-rouge">fountain_parser.rb</code> which describes the <a href="http://en.wikipedia.org/wiki/Parsing_expression_grammar">grammar</a> of a Fountain screenplay as a list of rules. The syntax for defining a rule uses a DSL provided by <a href="http://kschiess.github.io/parslet/">Parslet</a>, a great Ruby gem for exactly this purpose. Here’s the code example from their <a href="http://kschiess.github.io/parslet/get-started.html">get started</a> page:</p>
+
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="nb">require</span> <span class="s1">'parslet'</span>
+
+<span class="k">class</span> <span class="nc">Mini</span> <span class="o">&lt;</span> <span class="no">Parslet</span><span class="o">::</span><span class="no">Parser</span>
+  <span class="n">rule</span><span class="p">(</span><span class="ss">:integer</span><span class="p">)</span> <span class="p">{</span> <span class="n">match</span><span class="p">(</span><span class="s1">'[0-9]'</span><span class="p">).</span><span class="nf">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">root</span><span class="p">(</span><span class="ss">:integer</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="no">Mini</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"132432"</span><span class="p">)</span>  <span class="c1"># =&gt; "132432"@0</span>
+</code></pre>
+</div>
+
+<p>This is a very simple grammar with only one rule in addition to the required root (which names the rule that is expected to come first). If you were to define a grammar for something more complex, like a screenplay or even a programming language, you could expect there to be many, many more rules for defining specific, small things like operator characters and return charactersand then also abstract things like a character’s monologue or a program’s function.</p>
+
+<p>At some point, your parser class will get quite long. I think this is kind of to be expected and not necessarily a bad thing. But it sure hurts your Code Climate GPA, which drops at the sight of long and complex classes. It also balks at code outside of methods, which is I think unfairly punishing to projects using DSL-style libraries.</p>
+
+<p>It took some figuring out, but it is possible to compose your parser from modules. That example above could be rewritten like this:</p>
+
+<div class="language-ruby highlighter-rouge">
+<pre class="highlight"><code><span class="nb">require</span> <span class="s1">'parslet'</span>
+
+<span class="k">module</span> <span class="nn">NumberRules</span>
+  <span class="kp">include</span> <span class="no">Parslet</span>
+  <span class="n">rule</span><span class="p">(</span><span class="ss">:integer</span><span class="p">)</span> <span class="p">{</span> <span class="n">match</span><span class="p">(</span><span class="s1">'[0-9]'</span><span class="p">).</span><span class="nf">repeat</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Mini</span> <span class="o">&lt;</span> <span class="no">Parslet</span><span class="o">::</span><span class="no">Parser</span>
+  <span class="kp">include</span> <span class="no">NumberRules</span>
+  <span class="n">root</span><span class="p">(</span><span class="ss">:integer</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="no">Mini</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"132432"</span><span class="p">)</span>  <span class="c1"># =&gt; "132432"@0</span>
+</code></pre>
+</div>
+
+<p>This is pretty nice when you have more than a few rules, and Code Climate rewarded me with a coveted A grade: <a href="https://codeclimate.com/github/maxjacobson/smashcut/compare/0cd1d78b...c2668c0e">https://codeclimate.com/github/maxjacobson/smashcut/compare/0cd1d78b...c2668c0e</a>… well, for some of the classes anyway.</p>
+
+<p><strong>EDIT 2015-01-08</strong>: Hrmph, that link is dead now. Suffice it to say that the
+changes from <a href="https://github.com/maxjacobson/smashcut/pull/26">this pull request</a> improved the GPA from 1.9 to 3.56.</p>
+
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href="http://twitter.com/maxjacobson">@maxjacobson</a> or <a href="mailto:max@hardscrabble.net">max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="/js/vendor/lunr.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif"></p></noscript>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>An Alfred Workflow for adding the frontmost Firefox tab to OmniFocus with AppleScript - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        An Alfred Workflow for adding the frontmost Firefox tab to OmniFocus with AppleScript
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      13 Jul 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Saw <a href="http://www.macstories.net/linked/tools-to-organize-browser-tabs-for-mac-users/">a link</a> about using tools to take long-lasting tabs out of your browser and put them somewhere useful like Evernote or OmniFocus rather than let them tax your mind and memory. I wanted in.</p>
+
+<p>Sadly, there was only support for Chrome and Safari, not Firefox, which I continue to stubbornly prefer. I assumed at first this was simply a reflection of Firefox not being particularly popular among Mac users<sup id="fnref:stats"><a href="#fn:stats" class="footnote">1</a></sup> and resolved to patch the gap.</p>
+
+<p>In order to interact with your running Mac applications, people often use AppleScript, a kind of strange programming language that comes with Macs and lets you script or automate user tasks. So whenever I want to close a tab without forgetting that it might matter somehow, I have to do these steps manually:</p>
+
+<ul>
+  <li>open the omnifocus quick entry panel with the global hotkey</li>
+  <li>write some kind of task title</li>
+  <li>go back to the browser</li>
+  <li>copy the URL</li>
+  <li>go back to the quick entry panel</li>
+  <li>type <code class="highlighter-rouge">⌘+'</code>, the keyboard shortcut to open the notes field</li>
+  <li>paste the URL</li>
+  <li>type <code class="highlighter-rouge">⌘+'</code> again to return to the title field</li>
+  <li>press enter twice</li>
+</ul>
+
+<p>Imagine having two dozen tabs open and kind of wanting to do that for each of them? Prime candidate for automation!</p>
+
+<p>Given that this is my first AppleScript, I’m bizarrely confident that I can figure this out. I assume I can just ask Firefox for the list of currently open URLs, write some kind of loop, and then send OmniFocus a bunch of messages (in the background maybe) and have it all just work easily. Pretty quickly I learn that, unlike Safari and Chrome, Firefox exposes nothing to AppleScript. It’s scriptable insoafar as every app is scriptable – you can perform user actions like clicking and typing, but it doesn’t expose anything nicely, and Mozilla’s bugtracker has multiple tickets dating back several years of people saying they wish Firefox supported AppleScript without much movement as far as I can tell.</p>
+
+<p>No worry! I’ll find some clever solution. I open AppleScript Editor and start trying to figure out how to even do any of this.</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"FirefoxNightly"</span><span class="w"> </span><span class="c1"># I'm using the nightly build, and I have to specifically say so</span><span class="w">
+  </span><span class="nb">activate</span><span class="w"> </span><span class="c1"># this opens or switches to the application</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+</span></code></pre>
+</div>
+
+<h3 id="a-digression-about-running-applescripts">a digression about running AppleScripts</h3>
+
+<p>You can write small things like this in the AppleScript Editor app and run them from there. This is what I was doing while writing the thing and tinkering. But it’s not a great interface, really, as far as text editors go. Another option is to use the texteditor of your choice and run it from the terminal by writing <code class="highlighter-rouge">osascript your_file.scpt</code>. There’s something kind of trippy about running something like this, and seeing your operating system react:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[hardscrabble] [hardscrabble.net] [my-first-applescript branch]
+⇥ osascript -e 'display alert "hello world"'
+button returned:OK
+</code></pre>
+</div>
+
+<p>Later on you can use tools like Alfred to run your scripts from anywhere at any time.</p>
+
+<h3 id="back-to-struggling-with-this-code">back to struggling with this code</h3>
+
+<p>So if Firefox doesn’t expose anything to us, how can we get the list of tabs open? I went down a few dead ends. I spent several minutes trying to make a bookmarks group of the currently opened tabs, then export the bookmarks, then parse the exported file before I realized I was definitely going the wrong way and I definitely didn’t know how to do parse JSON in AppleScript.</p>
+
+<p>After a little more googling I came upon <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=516502#c21">a comment on Bugzilla</a> which provides a way to get the current page’s URL at least. Here’s how:</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="w">
+</span><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"FirefoxNightly"</span><span class="w">
+  </span><span class="nb">activate</span><span class="w">
+  </span><span class="nb">delay</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c1"># sleeps 2 seconds because idk... it doesn't work otherwise</span><span class="w">
+  </span><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"System Events"</span><span class="w">
+    </span><span class="k">tell</span><span class="w"> </span><span class="nv">process</span><span class="w"> </span><span class="s2">"firefox"</span><span class="w">
+      </span><span class="nv">keystroke</span><span class="w"> </span><span class="s2">"l"</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="p">{</span><span class="nv">command</span><span class="w"> </span><span class="nv">down</span><span class="p">}</span><span class="w"> </span><span class="c1"># ⌘+l is the keyboard shortcut to focus on the address bar</span><span class="w">
+      </span><span class="nv">keystroke</span><span class="w"> </span><span class="s2">"c"</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="p">{</span><span class="nv">command</span><span class="w"> </span><span class="nv">down</span><span class="p">}</span><span class="w"> </span><span class="c1"># ⌘+c copies the current URL to the clipboard</span><span class="w">
+      </span><span class="k">set</span><span class="w"> </span><span class="nv">tabUrl</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="nb">the clipboard</span><span class="w">    </span><span class="c1"># stores the clipboard in a variable</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+
+</span><span class="nb">display alert</span><span class="w"> </span><span class="nv">tabUrl</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Yikes… AppleScript is interesting because it’s an awkward, not fun language but also super powerful if you’re a kind of nerdy Mac power user, or maybe even developer who wants to harness the power of GUI applications in their project. Fortunately the next major version of OS X, Yosemite, has a JavaScript API for doing all the same stuff. This might be my last AppleScript too, because of that.</p>
+
+<p>Now that I have the URL I want to do something better than display an alert. Some googling points me to <a href="http://macsparky.com/blog/2012/8/applescript-omnifocus-tasks">a 2012 MacSparky</a> blog post about AppleScripting with OmniFocus. The language is still awkward (<code class="highlighter-rouge">set theProject to first flattened project where its name = "Finance"</code>), but this is significantly better than Firefox because it exposes an API at all. Since then, there’s been a major 2.0 update to OmniFocus, but I guess they made an effort to maintain consistency because these examples still work. I don’t really blame Mozilla because they’re maintaining applications across every operating sytem that will support them and are very consistent. In fact I wish there existed OmniFocus for Linux but, like, lol. Everyone compromises!</p>
+
+<p>OK so I can get the current URL and add a task to OmniFocus. A <a href="https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/OmniFocus/OmniFocusAddInboxTask.applescript">little more digging</a> and this is what I came up with:</p>
+
+<div class="language-applescript highlighter-rouge"><pre class="highlight"><code><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"FirefoxNightly"</span><span class="w">
+  </span><span class="nb">activate</span><span class="w">
+  </span><span class="k">set</span><span class="w"> </span><span class="nv">taskTitle</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="na">name</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nb">front</span><span class="w"> </span><span class="na">window</span><span class="w">
+
+  </span><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"System Events"</span><span class="w">
+    </span><span class="k">tell</span><span class="w"> </span><span class="nv">process</span><span class="w"> </span><span class="s2">"firefox"</span><span class="w">
+      </span><span class="nv">keystroke</span><span class="w"> </span><span class="s2">"l"</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="p">{</span><span class="nv">command</span><span class="w"> </span><span class="nv">down</span><span class="p">}</span><span class="w">
+      </span><span class="nv">keystroke</span><span class="w"> </span><span class="s2">"c"</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="p">{</span><span class="nv">command</span><span class="w"> </span><span class="nv">down</span><span class="p">}</span><span class="w">
+      </span><span class="k">set</span><span class="w"> </span><span class="nv">taskNote</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">get</span><span class="w"> </span><span class="nb">the clipboard</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+
+</span><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"OmniFocus"</span><span class="w">
+  </span><span class="k">tell</span><span class="w"> </span><span class="nv">quick</span><span class="w"> </span><span class="nv">entry</span><span class="w">
+    </span><span class="nb">open</span><span class="w">
+    </span><span class="nb">make</span><span class="w"> </span><span class="nb">new</span><span class="w"> </span><span class="nv">inbox</span><span class="w"> </span><span class="nv">task</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="na">properties</span><span class="w"> </span><span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="nv">taskTitle</span><span class="p">,</span><span class="w"> </span><span class="nv">note</span><span class="p">:</span><span class="nv">taskNote</span><span class="p">}</span><span class="w">
+  </span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">tell</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>It’s kind of a dinky version of what I originally wanted to make. It’s only for the current tab, and when it’s done the quick entry panel is still open (by design: so I can still edit the details).</p>
+
+<p>I packaged it as <a href="https://github.com/maxjacobson/alfred-workflows/blob/master/Firefox%20tab%20to%20OmniFocus.alfredworkflow">an Alfred Workflow here</a> so I can invoke it from wherever by typing <code class="highlighter-rouge">⌘+space</code> and then just writing <code class="highlighter-rouge">tab</code>.</p>
+
+<p>I wonder if this is useful to other people!</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:stats">
+      <p><a href="http://atp.fm/episodes/73">Recently on the Accidental Tech Podcast</a> I was <a href="https://twitter.com/maxjacobson/status/487583151577763843">surprised</a> to hear the hosts be super harsh to Firefox. <a href="https://twitter.com/gruber/status/487768231927504898">This tweet</a> makes the argument that Firefox isn’t relevant anymore and I don’t really know if that’s true, but I think it <em>should</em> be. <a href="#fnref:stats" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>operators as self expression - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        operators as self expression
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      26 May 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p><strong>EDIT June</strong>: I’ve followed-up this post: <a href="/2015/order-of-operations/">order of operations</a></p>
+
+<p><strong>NOTE:</strong> this post seems to have a ton of code samples, but it’s pretty much
+just the same one over and over with some small variations to play with an idea.</p>
+
+<p>Suppose you were writing a program to help you write a novel, and you start out
+with something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Novel</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="vi">@chapters</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Chapter</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">first_chapter</span> <span class="o">=</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>After you write this, you pause, because how are you going to define the
+interface for adding a new chapter to a novel?</p>
+
+<p>Something like this works fine:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Novel</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="vi">@chapters</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">add_chapter</span><span class="p">(</span><span class="n">chapter</span><span class="p">)</span>
+    <span class="n">chapters</span> <span class="o">&lt;&lt;</span> <span class="n">chapter</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:chapters</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Chapter</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">moby_dick</span><span class="p">.</span><span class="nf">add_chapter</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="c1">#=&gt; #&lt;Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#&lt;Chapter:0x007fdabc81c178 @text="Call me Ishmael..."&gt;]&gt;</span>
+</code></pre>
+</div>
+
+<p>Writing methods is good, and that method has a perfectly adequate name. But
+some clever ducks will be dissatisfied by it, because they know there’s a more
+fun, or maybe a more expressive way:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Novel</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="vi">@chapters</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&lt;&lt;</span><span class="p">(</span><span class="n">chapter</span><span class="p">)</span>
+    <span class="n">chapters</span> <span class="o">&lt;&lt;</span> <span class="n">chapter</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:chapters</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Chapter</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="o">&lt;&lt;</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="c1">#=&gt; #&lt;Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#&lt;Chapter:0x007fdabc81c178 @text="Call me Ishmael..."&gt;]&gt;</span>
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">&lt;&lt;</code> “shovel” operator is familiar to most Ruby
+programmers, and chapters are a natural thing to shovel into a novel, so it
+feels kind of natural to use it here.</p>
+
+<p><code class="highlighter-rouge">&lt;&lt;</code> is the idiomatic operator to use, but sometimes I don’t want to be
+idiomatic, I want to be weird. Maybe I feel like this version suits me better:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Novel</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="vi">@chapters</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&lt;</span><span class="o">=</span><span class="p">(</span><span class="n">chapter</span><span class="p">)</span>
+    <span class="n">chapters</span> <span class="o">&lt;&lt;</span> <span class="n">chapter</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:chapters</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Chapter</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="o">&lt;=</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="c1">#=&gt; #&lt;Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#&lt;Chapter:0x007fdabc81c178 @text="Call me Ishmael..."&gt;]&gt;</span>
+</code></pre>
+</div>
+
+<p>For me, <code class="highlighter-rouge">&lt;=</code> is a more visually stimulating, writerly operator.</p>
+
+<p>I probably shouldn’t do this. It’s a totally weird interface! <code class="highlighter-rouge">&lt;=</code> means “less
+than or equal to”, not append..!</p>
+
+<p>In fact, I’m only allowed to even do that because <code class="highlighter-rouge">&lt;=</code> is on a list of
+acceptable operators<sup id="fnref:thelist"><a href="#fn:thelist" class="footnote">1</a></sup>. You can’t just name your operator whatever. Let’s try:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Novel</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="vi">@title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="vi">@chapters</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="err">✏️</span><span class="p">(</span><span class="n">chapter</span><span class="p">)</span>
+    <span class="n">chapters</span> <span class="o">&lt;&lt;</span> <span class="n">chapter</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:chapters</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Chapter</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="err">✏️</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span> <span class="c1">#=&gt; undefined method `✏️' for main:Object (NoMethodError)</span>
+</code></pre>
+</div>
+
+<p>It totally blows up. This works, though:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">moby_dick</span><span class="o">.</span><span class="err">✏️</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="c1">#=&gt; #&lt;Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#&lt;Chapter:0x007fdabc81c178 @text="Call me Ishmael..."&gt;]&gt;</span>
+</code></pre>
+</div>
+
+<p>Surprisingly, this does too:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">moby_dick</span> <span class="o">=</span> <span class="no">Novel</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Moby Dick"</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="o">.</span> <span class="err">✏️</span> <span class="no">Chapter</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Call me Ishmael..."</span><span class="p">)</span>
+<span class="n">moby_dick</span> <span class="c1">#=&gt; #&lt;Novel:0x007fdabc81c1f0 @title="Moby Dick", @chapters=[#&lt;Chapter:0x007fdabc81c178 @text="Call me Ishmael..."&gt;]&gt;</span>
+</code></pre>
+</div>
+
+<p>There are <strong>so many spaces</strong> on that second line, but it totally works.</p>
+
+<p>It sucks that the period is necessary for this to be syntactically valid. I
+think. I don’t know what the consequences would be of allowing programmers to
+define arbitrary operators. Maybe they’re vast?</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:thelist">
+      <p><a href="http://stackoverflow.com/a/3331974">here’s</a> a stack overflow post about which operators are overloadable. It may not be up-to-date with Ruby 2, though, so overload at your own risk. <a href="#fnref:thelist" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

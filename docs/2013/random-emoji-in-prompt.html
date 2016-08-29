@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>random emoji in prompt - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        random emoji in prompt
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      13 Jun 2013
+    </div>
+  </div>
+
+  <div class="body">
+    <p>So this is fun. Most of us at school have some symbol or emoji in our bash prompts. I’ve had a little piggie emoji for a few weeks which has served me fine but I’d like to introduce some… <em>chance</em> into my life. I want to have a random emoji in my prompt. Originally I wanted a new icon on a per-terminal-session basis but then I decided I wanted a new one <em>after every command</em>.</p>
+
+<p>Here’s a simple Ruby script to print a random emoji from a nice subset of positive ones (no murder weapons or pills or bills)<sup id="fnref:encodingmakesmesad"><a href="#fn:encodingmakesmesad" class="footnote">1</a></sup>:</p>
+
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/5779455.js"> </script>
+
+<p>I have this exact file saved in my home directory. It’s a dotfile (hidden file) because for the most part I don’t want to see it. Maybe there’s a better place to put it.</p>
+
+<p>In order to get the output of that script into my prompt, I need to udpate my <code class="highlighter-rouge">PS1</code> bash variable. In order to refresh it after every command I need to do this weird thing I’ve never done before (this goes in my bash profile):</p>
+
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/5779447.js"> </script>
+
+<p>The <code class="highlighter-rouge">PROMPT_COMMAND</code> variable can be assigned some shell script code to run before every drawing of the prompt. In this case, it’s calling a function called <code class="highlighter-rouge">set_prompt</code>, which runs the Ruby program and interpolates its response into the <code class="highlighter-rouge">PS1</code> variable, so it’s different each time.</p>
+
+<p>In order for the Ruby script to be executable by other code, we need to adjust its permissions. If you don’t do this, you get an error instead of a pig. You can run <code class="highlighter-rouge">chmod a+x ~/.emoji.rb</code>.</p>
+
+<p>I’m happy. I’m gonna keep adding / removing / futzing with my emoji set. The code should work with any number of items in there, so I may go wild. The easiest way to get at them on a Mac is, from any text field, the <strong>Edit</strong> menu, then <strong>Special Characters</strong> (tip <a href="http://blog.samantharadocchia.com/post/52272246893/heres-how-customize-the-command-line-by-adding-emoji">via classmate Samantha Radocchia’s blog</a>).</p>
+
+<p>If you try this and get it working, let me know on twitter at <a href="http://twitter.com/maxjacobson">@maxjacobson</a> #sleaze</p>
+
+<hr />
+
+<h2 id="edit-on-july-4">EDIT on July 4</h2>
+
+<p>Actually this code totally sucks. It’s not at all necessary to use <code class="highlighter-rouge">PROMPT_COMMAND</code>. You can change this:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="k">function </span>set_prompt <span class="o">{</span>
+  <span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[</span><span class="se">\@</span><span class="s2">] [</span><span class="se">\W</span><span class="s2">]</span><span class="se">\n</span><span class="k">$(</span>~/.emoji.rb<span class="k">)</span><span class="s2"> "</span>
+<span class="o">}</span>
+<span class="nb">export </span><span class="nv">PROMPT_COMMAND</span><span class="o">=</span>set_prompt
+</code></pre>
+</div>
+
+<p>to:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">"[</span><span class="se">\@</span><span class="s2">] [</span><span class="se">\W</span><span class="s2">]</span><span class="se">\n\$</span><span class="s2">(~/.emoji.rb) "</span>
+</code></pre>
+</div>
+
+<p>The only breakthrough I had is that <code class="highlighter-rouge">\$(function_name)</code> runs the function over and over where <code class="highlighter-rouge">$(function_name)</code> only runs it once. No idea why.</p>
+
+<p>This fixes the bug where the Terminal wasn’t remembering my current working directory and auto-cd-ing into it when I open a new tab.</p>
+
+<p>It should also be easier to drop this into your current prompt. Just add <code class="highlighter-rouge">\$(~/.emoji.rb)</code> wherever in your <code class="highlighter-rouge">PS1</code> you want it.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:encodingmakesmesad">
+      <p>Note: I’m painfully aware that most of those emoji are probably not showing up for you in your browser right now. I don’t understand what exactly emoji are or how they work enough to try to fix that. If you want to do this you will probably need to re-populate that line with your favorite picks. <a href="#fnref:encodingmakesmesad" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

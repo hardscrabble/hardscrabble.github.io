@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>building firefox for the first time - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        building firefox for the first time
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      18 Feb 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>recently I came across two blog posts:</p>
+
+<ul>
+  <li><a href="http://meowni.ca/posts/chromium-101/">Contributing to Chromium: an illustrated guide</a> by Chrome developer Monica Dinculescu</li>
+  <li><a href="https://msujaws.wordpress.com/2015/02/11/firefox-ui-mentorship-program/">Firefox UI mentorship program</a> by Firefox developer Jared Wein</li>
+</ul>
+
+<p>They kind of tell similar stories. Both Firefox and Chromium<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> are open
+source and welcome contributions from the general public, but both of them are
+probably developed primarily by the companies behind them. These posts are sort
+of encouraging people to consider contributing back to the app they spend most
+of their computer time in and hoping to make it sound more doable and less
+terrifying.</p>
+
+<p>I came away from the Chromium post with a lot of clear and friendly knowledge
+about how I might make a contribution but actually more convinced that I’m not
+qualified to do so, because I don’t know any of the languages she mentioned in
+the post and don’t currently plan to learn them. If I did, I’d know exactly
+where to start and how to proceed.</p>
+
+<p>The firefox blog post was an offer to help mentor a select few through getting
+up and running and making a first few contributions. I thought about it for a
+few minutes while I read the blog post and filed it away in the back of my mind,
+but I was too slow, and the offer has now closed. I thought maybe I could do it
+because having a mentor helps a lot and, from the sounds of it, the front-end of
+Firefox is built using the tools of the web, which I already kind of know and
+work with. From the post:</p>
+
+<blockquote>
+  <p>We will use JavaScript, CSS, and XUL (similar to HTML).</p>
+</blockquote>
+
+<p>Sure.</p>
+
+<p>Also, Firefox is my day-to-day browser, so selfishly I like the idea of
+submitting something that would benefit me. I first got excited about the
+internet in Firefox. I’ve occasionally switched to Chrome and Safari but I
+always come back to Firefox. I don’t know. And I kind of think it’s having a
+moment? Well just someone wrote one blog post about it recently:</p>
+
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>One anecdote
+of switching from Chrome to Firefox: <a href="http://t.co/EBaMDDuyhR">http://t.co/EBaMDDuyhR</a> – Good! We need browser
+diversity to keep the web healthy.</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/566319232346890240">February 13,
+2015</a></blockquote>
+
+<p>I like dhh’s perspective there; sometimes I feel like a browser hipster and like
+I’m the only web developer not using Chrome (I know I’m not) but I do think he’s
+right that it’s important that any one company doesn’t have too strong a hold on
+how the internet works.</p>
+
+<p>So tonight I took the first step and built Firefox locally. It was surprisingly
+easy but also surprisingly time-consuming. If you want to do the same I
+recommend following the <a href="https://developer.mozilla.org/en-US/docs/Simple_Firefox_build">Simple Firefox build</a> instructions but I’m going to
+share here anyway the steps I took.</p>
+
+<ul>
+  <li>Visited that guide</li>
+  <li>Followed that link to <a href="https://developer.mozilla.org/en-US/docs/Simple_Firefox_build/Linux_and_MacOS_build_preparation">Linux and MacOS build preparation</a> which recommended
+I paste the following into my terminal to install the prerequisite
+dependencies:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>wget -q https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py &amp;&amp; python bootstrap.py
+</code></pre>
+</div>
+
+<ul>
+  <li>That <a href="https://twitter.com/maxjacobson/status/567890227693494272">asked me</a> if I was interested in building Firefox for Desktop or
+Android. I answered Desktop, and it started doing stuff, and outputting what
+it was doing, and ultimately (actually this was pretty fast) it said it worked
+and made this suggestion:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Your system should be ready to build Firefox for Desktop! If you have not already,
+obtain a copy of the source code by running:
+
+    hg clone https://hg.mozilla.org/mozilla-central
+
+Or, if you prefer Git:
+
+    git clone https://git.mozilla.org/integration/gecko-dev.git
+</code></pre>
+</div>
+
+<ul>
+  <li>So I ran the second command, because I prefer git (well, because I know git)</li>
+  <li>And then I waited for like ten minutes? More? I don’t know. I had never cloned
+a 7 gigabyte git repo before. It felt new and strange. The <code class="highlighter-rouge">.git</code> directory is
+nearly 6 gigabytes, suggesting the sheer history of the project weighs
+significantly more than the current state of it. The repository has 407088
+commits going back 17 years, 8 years before git existed.</li>
+  <li>After the project finished cloning, I ran <code class="highlighter-rouge">cd gecko-dev</code> and no magical
+incantation appeared giving me the next bread crumb to follow, so I returned
+to the guide.</li>
+  <li>It suggested using Firefox’s <code class="highlighter-rouge">./mach</code> script to build and run the app. This
+felt kind of familiar, kind of like Ruby’s <code class="highlighter-rouge">rake</code>. I tried running just
+<code class="highlighter-rouge">./mach</code> without any arguments and saw that it has a shitload of commands
+including <code class="highlighter-rouge">google</code>, so I ran <code class="highlighter-rouge">./mach google jake and amir</code> (because I was just
+watching Jake and Amir episodes before this flight of fancy overtook me) and
+it opened Firefox to <a href="https://www.google.com/search?q=jake%20and%20amir">https://www.google.com/search?q=jake%20and%20amir</a>,
+which, alright, sure.</li>
+  <li>I ran <code class="highlighter-rouge">./mach build</code> and watched it do a shitload of stuff to build Firefox
+from the source I’d downloaded. I don’t have to estimate how long this took,
+because it output a running timestamp as it did everything. It took 37
+minutes and 56.85 seconds. I guess that’s not bad? I hope I don’t need to wait
+that long every time I make a change (if I even figure out how to make a
+change). And when it was finished, I saw this output:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>37:56.85 We know it took a while, but your build finally finished successfully!
+To take your build for a test drive, run: |mach run|
+For more information on what to do now, see https://developer.mozilla.org/docs/Developer_Guide/So_You_Just_Built_Firefox
+</code></pre>
+</div>
+
+<ul>
+  <li>I ran <code class="highlighter-rouge">./mach run</code> and <em>like lightning</em> a bluish moonish earth appears in my
+Mac’s dock and Firefox Nightly opened.</li>
+  <li>I visited <a href="http://www.hardscrabble.net">hardscrabble.net</a> just kind of vainly to see what my site looks
+like in my freshly baked browser</li>
+  <li>I visited the URL from that last output (sidenote: I really love the trail of
+breadcrumbs this process has been) and found a kind of <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/So_you_just_built_Firefox">hilariously brief</a>
+web page which mainly includes notes on how it should be succinct but also a
+tag indicating it needs more content?</li>
+  <li>I followed the first listed interesting link about how to run Firefox’s tests,
+and before I could overthink what’s about to happen I ran <code class="highlighter-rouge">./mach
+xpcshell-test</code> and the most delightful thing happened, and I think it needs to
+be captured in a video:</li>
+</ul>
+
+<iframe src="//player.vimeo.com/video/119925549?byline=0&amp;portrait=0" width="686" height="386" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<p>I’m sorry this blog post became a bullet point list halfway through. That wasn’t
+really fair.</p>
+
+<p>Probably in the morning I’ll forget I ever wanted to contribute to Firefox but
+hopefully not. I’m on the record now.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Chromium is basically Chrome, but open source. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

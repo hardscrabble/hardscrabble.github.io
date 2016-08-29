@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>gemfiles are ruby files - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        gemfiles are ruby files
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      02 Jun 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>A while back I saw this cool blog post: <a href="https://byparker.com/blog/2014/stay-up-to-date-with-the-latest-github-pages-gem/">Stay up to date with the latest github
+pages gem</a> by Parker Moore, who maintains Jekyll. Jekyll is the static site
+tool that powers <a href="https://pages.github.com/">github pages</a>, but github pages doesn’t necessarily use
+the latest version of Jekyll. If you’re deploying your website to github pages,
+you probably want to make sure your local Jekyll server behaves in the same way
+as the Jekyll that runs on github pages.</p>
+
+<p>A Jekyll site is a Ruby project, and Ruby projects should have a Gemfile
+listing their dependencies. Jekyll is a gem, so you might think that you should
+add this to your Gemfile:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'jekyll'</span>
+</code></pre>
+</div>
+
+<p>But actually, maybe not!</p>
+
+<p>Consider this intsead:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'github-pages'</span>
+</code></pre>
+</div>
+
+<p>This includes the exact version of Jekyll that github pages is using (and <a href="https://github.com/github/pages-gem/blob/master/lib/github-pages.rb#L9-L31">a
+few other things</a>).</p>
+
+<p>That’s great, because you know you can preview your website locally and know
+that it will look the same when you deploy it to GitHub pages.</p>
+
+<p>You may be asking: what about when they upgrade the version of Jekyll they’re
+using to compile your site?? Well, they release a new version of the
+github-pages gem, which bumps its Jekyll dependency. So, ideally, before pushing
+to your Jekyll site on github pages, you should know that you’re using the
+latest version of the github pages gem.</p>
+
+<p>Here’s how you can do that (so far I’m just summarizing that Parker Moore blog
+post):</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'json'</span>
+<span class="nb">require</span> <span class="s1">'open-uri'</span>
+<span class="n">versions</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">'https://pages.github.com/versions.json'</span><span class="p">).</span><span class="nf">read</span><span class="p">)</span>
+<span class="n">gem</span> <span class="s1">'github-pages'</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="s1">'github-pages'</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>Isn’t that cool? Now, when you start your local server with <code class="highlighter-rouge">bundle exec jekyll
+serve</code>, it will confirm that you have the appropriate version of github pages.</p>
+
+<p>Happy ending? Sort of.</p>
+
+<p>I did that a few months ago, and was happy for those months. Then, last
+weekend, I found myself somewhere without internet access and a blog post idea,
+but was sad to see that I was unable to run my local blog server because my
+Gemfile was unable to connect to the internet to confirm it had the latest
+dependencies.</p>
+
+<p>When you’re without internet access, you can’t push changes to your blog
+anyway, so there’s not really any danger of seeing an offline preview of what
+the site looks like without confirming you have the latest versions of
+everything.</p>
+
+<p>Now my Gemfile looks like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">begin</span>
+  <span class="nb">require</span> <span class="s1">'json'</span>
+  <span class="nb">require</span> <span class="s1">'open-uri'</span>
+  <span class="n">versions</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">'https://pages.github.com/versions.json'</span><span class="p">).</span><span class="nf">read</span><span class="p">)</span>
+  <span class="n">gem</span> <span class="s1">'github-pages'</span><span class="p">,</span> <span class="n">versions</span><span class="p">[</span><span class="s1">'github-pages'</span><span class="p">]</span>
+<span class="k">rescue</span> <span class="no">SocketError</span>
+  <span class="n">gem</span> <span class="s1">'github-pages'</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Nice! When the network request fails, a <code class="highlighter-rouge">SocketError</code> is raised, so we’re able
+to rescue that error and fallback to any old version of the gem. This might
+still fail; it assumes that we’ve previously successfully installed <em>a</em> version
+of the gem to fall back to, and that version is cached locally by bundler.</p>
+
+<p>It’s neat that we’re able to use whatever Ruby we want to in our Gemfile, but
+kind of non-obvious because it doesn’t end with <code class="highlighter-rouge">.rb</code>. Well, what if it was
+just called something else? Turns out you can rename your Gemfile to
+gems.rb, and your Gemfile.lock to gems.locked <a href="https://github.com/bundler/bundler/commit/0823e10ea01d36f6bdb764cc8754bda7236737e9">since Bundler
+1.8.0</a>, and this will be the new normal in Bundler 2.0.</p>
+
+<p>Neat! Now my Gemfile looks like the above, but it’s now my gems.rb file.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

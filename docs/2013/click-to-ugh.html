@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>click to ugh - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        click to ugh
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      21 Jan 2013
+    </div>
+  </div>
+
+  <div class="body">
+    <p>It’s time for <a href="http://www.maxjacobson.net/tag/youre-doing-it-wrong">You’re Doing it Wrong</a>, my sometimes series where I complain about blogs whose HTML or CSS bugs me!</p>
+
+<p>Today’s offending blog is The AV Club, which I generally really like and read all the time. Here’s an example post: <a href="http://www.avclub.com/articles/jonathan-coulton-says-glee-ripped-off-his-cover-of,91305/">Jonathan Coulton says Glee ripped off his cover of “Baby God Back”</a>.</p>
+
+<p>How the heck did they come up with this embed code for a YouTube video:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;embed</span> <span class="na">width=</span><span class="s">"425"</span> <span class="na">height=</span><span class="s">"344"</span> <span class="na">type=</span><span class="s">"application/x-shockwave-flash"</span> <span class="na">pluginspage=</span><span class="s">"http://www.macromedia.com/go/getflashplayer"</span> <span class="na">src=</span><span class="s">"http://www.youtube.com/v/Yww4BLjReEk%26hl=en%26fs=1%26rel=0"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>Had they copied the embed code from beneath the YouTube video, they would have gotten this:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"http://www.youtube.com/embed/Yww4BLjReEk"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+</code></pre>
+</div>
+
+<p>I don’t know where The AV Club got their embed code, but exhibit A for it’s outdatedness is the macromedia reference. Try going to that page. Because Macromedia doesn’t exist anymore, you’ll be redirected to Flash’s new owner, Adobe. This post is from three days ago; Adobe acquired Macromedia seven years ago.</p>
+
+<p>Also: every video they embed is given the dimensions 425x344, without regard to the video’s aspect ratio. YouTube’s provided embed code is dimensions-aware and doesn’t introduce unnecessary letterboxing.</p>
+
+<p>So why do I care? The videos still play and it’s pretty much fine I guess. But it screws up <a href="http://hoyois.github.com/safariextensions/clicktoplugin/">ClickToPlugin</a>.</p>
+
+<p>ClickToPlugin is an awesome Safari Extension that blocks plugins like Flash from running until you click on them. It <em>also</em>, when it can, replaces embedded media with a vanilla HTML5 video player. When I typically encounter a YouTube or Vimeo video embedded on a blog, I don’t see their custom Flash player, I see this:</p>
+
+<p><a href="http://d.pr/i/tq6n"><img src="http://d.pr/i/tq6n+" alt="" /></a></p>
+
+<p>This example is from an AbsolutePunk.net post, <a href="http://www.absolutepunk.net/showthread.php?t=3019022">Beyoncé Performs Star Spangled Banner [Video]</a>. It behaves much like a regular, Flash YouTube embed – it doesn’t play until you click the triangle although you have preferences like autoplay or auto-preload – it uses Safari’s implementation of the HTML5 video player. Among the benefits: YouTube hasn’t yet figured out how to include ads in the HTML5 videos, it feels faster, and on youtube.com, videos don’t autoplay so I can open six tabs of Taylor Swift videos without causing a terrible cacophany.</p>
+
+<p>But when I visit that AV Club article, I see this:</p>
+
+<p><a href="http://d.pr/i/Tcpb"><img src="http://d.pr/i/Tcpb+" alt="" /></a></p>
+
+<p>Which is fine, I guess. It’s what I signed up for, using this extension. But c’mon, don’t overthink things and get all fancy, stuff’ll get broken.</p>
+
+<p>(AbsolutePunk is doing something custom too. Its code looks like this:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">align=</span><span class="s">"center"</span><span class="nt">&gt;&lt;object</span> <span class="na">width=</span><span class="s">"472"</span> <span class="na">height=</span><span class="s">"389"</span> <span class="na">bgcolor=</span><span class="s">"#f7f7f7"</span><span class="nt">&gt;&lt;param</span> <span class="na">name=</span><span class="s">"movie"</span> <span class="na">value=</span><span class="s">"http://www.youtube.com/v/Z-DSFrGnQrk&amp;amp;fs=1"</span><span class="nt">&gt;&lt;/param&gt;&lt;param</span> <span class="na">name=</span><span class="s">"allowFullScreen"</span> <span class="na">value=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/param&gt;&lt;param</span> <span class="na">name=</span><span class="s">"wmode"</span> <span class="na">value=</span><span class="s">"transparent"</span><span class="nt">&gt;&lt;/param&gt;&lt;param</span> <span class="na">name=</span><span class="s">"allowscriptaccess"</span> <span class="na">value=</span><span class="s">"always"</span><span class="nt">&gt;&lt;/param&gt;&lt;embed</span> <span class="na">src=</span><span class="s">"http://www.youtube.com/v/Z-DSFrGnQrk&amp;amp;fs=1"</span> <span class="na">type=</span><span class="s">"application/x-shockwave-flash"</span> <span class="na">allowscriptaccess=</span><span class="s">"always"</span> <span class="na">allowfullscreen=</span><span class="s">"true"</span> <span class="na">width=</span><span class="s">"472"</span> <span class="na">height=</span><span class="s">"389"</span> <span class="na">bgcolor=</span><span class="s">"#f7f7f7"</span> <span class="na">wmode=</span><span class="s">"transparent"</span><span class="nt">&gt;&lt;/embed&gt;&lt;/object&gt;&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<p>I don’t really understand that either, but I don’t need to, because it behaves the way I expect it to. It looks like all AbsolutePunk video embeds use the same aspect ratio (472x389) but at least it works with ClickToPlugin.)</p>
+
+<p>On <a href="http://layabout.maxjacobson.net">Layabout</a>, my web app which is embedding videos all day every day, I see this:</p>
+
+<p><a href="http://d.pr/i/XcJU"><img src="http://d.pr/i/XcJU+" alt="" /></a></p>
+
+<p>Look at that aspect ratio – no black bars! And this is all without manually copying and pasting the embed code from YouTube (or Vimeo in that case). These sites support oEmbed, a protocol for taking a URL and supplying an embed code that works.</p>
+
+<p>Unfortunatley it’s not as well-documented as it could be. <a href="https://developer.vimeo.com/apis/oembed">Vimeo’s oEmbed API</a> is better in that regard and supports the most important feature: <code class="highlighter-rouge">maxwidth</code>. I suspect this is at the root of the hardcoded aspect ratios; designers don’t want videos bursting out of their layouts. Vimeo’s page is very useful and clear. YouTube, as far as I can tell, has only provided <a href="http://apiblog.youtube.com/2009/10/oembed-support.html">one brief blog post</a> on the subject.</p>
+
+<p>Maybe that’s the problem?</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

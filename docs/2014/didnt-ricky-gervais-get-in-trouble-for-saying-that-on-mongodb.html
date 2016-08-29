@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Didn't Ricky Gervais get in trouble for saying that? On MongoDB - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        Didn't Ricky Gervais get in trouble for saying that? On MongoDB
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      11 Jan 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Remember when Ricky Gervais got in trouble for using the word “Mong” a lot to mean “stupid” and a lot of people were mad at him because it’s an offensive thing to say? Anyway, I’ve been using MongoDB and Mongoid at work and I sometimes worry that the very name is kind of rude, but other than that I mostly like it.</p>
+
+<p>My only database experience prior to this was with personal / school projects exclusively using SQLite3 and mostly with ActiveRecord as the interface to that database. Not coincidentally, this is the default Rails stack.</p>
+
+<p>I want to make a simple rails project, a To Do List app becase duh, <strong>twice</strong>, once with ActiveRecord and once with Mongoid, and just see what kind of observations I have. OK I’m going to do that now. I’m going to use Rails 4.0.2.</p>
+
+<h2 id="first-with-activerecord">First, with ActiveRecord</h2>
+
+<p>Getting started by running these commands:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">gem install rails</code> – install the latest version of the Ruby on Rails gem</li>
+  <li><code class="highlighter-rouge">rails new todo_list</code> – create a new rails project called “todo_list”</li>
+  <li><code class="highlighter-rouge">cd todo_list</code> – change directories into that new project’s folder</li>
+  <li><code class="highlighter-rouge">bin/rails generate model category name:string</code></li>
+  <li><code class="highlighter-rouge">bin/rails generate model task name:string complete:boolean category_id:integer</code></li>
+  <li><code class="highlighter-rouge">bin/rake db:migrate</code> – to create a database “db/development.sqlite3” and update its schema. We’ll come back to this when we talk about Mongoid because it’s <em>way</em> different.</li>
+</ul>
+
+<p>Then editing my freshly generated models to look like so:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/models/task.rb</span>
+<span class="k">class</span> <span class="nc">Task</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">belongs_to</span> <span class="ss">:category</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>and</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/models/category.rb</span>
+<span class="k">class</span> <span class="nc">Category</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">has_many</span> <span class="ss">:tasks</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>That should be enough that we can now run <code class="highlighter-rouge">bin/rails console</code> and create some data:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># we're in the rails console now</span>
+<span class="n">c</span> <span class="o">=</span> <span class="no">Category</span><span class="p">.</span><span class="nf">new</span> <span class="c1">#=&gt; #&lt;Category id: nil, name: nil, created_at: nil, updated_at: nil&gt;</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"Things to buy"</span> <span class="c1">#=&gt; "Things to buy"</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">save</span> <span class="c1">#=&gt; true</span>
+<span class="n">c</span> <span class="c1">#=&gt; #&lt;Category id: 1, name: "Things to buy", created_at: "2014-01-11 22:10:47", updated_at: "2014-01-11 22:10:47"&gt;</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">tasks</span> <span class="c1">#=&gt; #&lt;ActiveRecord::Associations::CollectionProxy []&gt;</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">tasks</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Buy some spinach"</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Task id: nil, name: "Buy some spinach", complete: nil, category_id: 1, created_at: nil, updated_at: nil&gt;</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 0</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">save</span> <span class="c1">#=&gt; true</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 1</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">tasks</span> <span class="c1">#=&gt; #&lt;ActiveRecord::Associations::CollectionProxy [#&lt;Task id: 1, name: "Buy some spinach", complete: nil, category_id: 1, created_at: "2014-01-11 22:22:24", updated_at: "2014-01-11 22:22:24"&gt;]&gt;</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">class</span> <span class="c1">#=&gt; ActiveRecord::Relation::ActiveRecord_Relation_Task</span>
+</code></pre>
+</div>
+
+<p>So that whole way works fine. It’s nice.</p>
+
+<h2 id="again-with-mongoid">Again, with Mongoid</h2>
+
+<p>The <a href="http://mongoid.org/en/mongoid/docs/installation.html#prerequisites">Mongoid Installation page</a> is kind of intimidating:</p>
+
+<blockquote>
+  <p>There are a few things you need to have in your toolbox before tackling a web application using Mongoid.</p>
+
+  <ul>
+    <li>A good to advanced knowledge of Ruby.</li>
+    <li>Have good knowledge of your web framework if using one.</li>
+    <li>A thorough understanding of MongoDB.</li>
+  </ul>
+
+  <p>This may seem like a “thank you Captain Obvious” moment, however if you believe that you can just hop over to Mongoid because you read a blog post on how cool Ruby and MongoDB were, you are in for a world of pain.</p>
+
+  <p>Mongoid leverages many aspects of the Ruby programming language that are not for beginner use, and sending the core team into a frenzy tracking down a bug for a common Ruby mistake is a waste of our time, and all of the other users of the framework as well.</p>
+</blockquote>
+
+<p>When I started using MongoDB I was kind of freaked because it promised to be so different. But honestly it’s not that different. In a SQL database you need to write your queries using SQL, right? That stuff is so hard to write and inscrutable to read, at least for this blogger. MongoDB queries are written in JavaScript. That’s a major upgrade in my book, even if it were otherwise the same underlying technology. And then, if you’re using Mongoid, you can make another great upgrade by writing your queries in Ruby.</p>
+
+<p>Of the three prerequisite bullet points listed on that page, I think I only disagree with the third one. If you’re completely unfamiliar with MongoDB but fairly familiar with Rails, Ruby, and ActiveRecord I think you can make the leap. That’s what I did. I started out by using Mongoid as if it were ActiveRecord, which is mostly totally possible. Then you can keep exploring the docs and branch out if you want.</p>
+
+<p>One <em>setup</em> prerequisite is that you have MongoDB installed on your system. I think I have it on my laptop. I actually have no idea if I have it. Let’s find out.</p>
+
+<p>Getting started by running these commands:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">gem install rails</code> – install the latest version of the Ruby on Rails gem</li>
+  <li><code class="highlighter-rouge">rails new todo_list --skip-active-record</code> – create a new rails project called “todo_list” <em>without</em> ActiveRecord<sup id="fnref:confession"><a href="#fn:confession" class="footnote">1</a></sup></li>
+  <li><code class="highlighter-rouge">cd todo_list</code> – change directories into that new project’s folder</li>
+</ul>
+
+<p>Now, before I generate my models I need to indicate that this project is going to use Mongoid. To do this I’m going to add the following to my Gemfile:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Use MongoDB as the database</span>
+<span class="n">gem</span> <span class="s2">"mongoid"</span><span class="p">,</span> <span class="s2">"4.0.0.alpha2"</span>
+</code></pre>
+</div>
+
+<p>I’m using the alpha version of Mongoid 4 because… well, I’m sticking with the basics, so why not?</p>
+
+<p>Now let’s continue with these commands:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">bundle install</code> – fetch the Mongoid code from RubyGems for our project</li>
+  <li><code class="highlighter-rouge">bin/rails generate mongoid:config</code> – create a configuration file; this generator didn’t exist a moment ago, I think that’s cool</li>
+  <li><code class="highlighter-rouge">bin/rails generate model category name:string --timestamps</code> – create the category model; <em>almost</em> exactly the same command as before, but using a new Mongoid generator, which doesn’t include created and updated timestamps by default</li>
+  <li><code class="highlighter-rouge">bin/rails generate model task name:string complete:boolean --timestamps</code> – create the task model</li>
+</ul>
+
+<p>This is the step in the ActiveRecord version where we ran <code class="highlighter-rouge">bin/rake db:migrate</code>. We don’t have to do that now. No migration files have been created. The database is flexible. How does that make you feel? If that sounds totally awesome, MongoDB might be for you. If that <a href="https://twitter.com/jcoglan/status/419164746663731202">freaks</a> you <a href="https://twitter.com/jcoglan/status/419165559452749825">out</a>, probably not.</p>
+
+<p>Let’s take a look at the model files that were just created for us:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/models/task.rb</span>
+<span class="k">class</span> <span class="nc">Task</span>
+  <span class="kp">include</span> <span class="no">Mongoid</span><span class="o">::</span><span class="no">Document</span>
+  <span class="kp">include</span> <span class="no">Mongoid</span><span class="o">::</span><span class="no">Timestamps</span>
+  <span class="n">field</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">type: </span><span class="no">String</span>
+  <span class="n">field</span> <span class="ss">:complete</span><span class="p">,</span> <span class="ss">type: </span><span class="no">Mongoid</span><span class="o">::</span><span class="no">Boolean</span>
+  <span class="n">belongs_to</span> <span class="ss">:category</span> <span class="c1"># actually this line isn't from the generator, I just added it</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>And:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/models/category.rb</span>
+<span class="k">class</span> <span class="nc">Category</span>
+  <span class="kp">include</span> <span class="no">Mongoid</span><span class="o">::</span><span class="no">Document</span>
+  <span class="kp">include</span> <span class="no">Mongoid</span><span class="o">::</span><span class="no">Timestamps</span>
+  <span class="n">field</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">type: </span><span class="no">String</span>
+  <span class="n">has_many</span> <span class="ss">:tasks</span> <span class="c1"># same as the belongs_to above</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>First kind of interesting difference: instead of your models inheriting functionality from ActiveRecord via subclassing, our models now <code class="highlighter-rouge">include</code> functionality from the <code class="highlighter-rouge">Mongoid::Document</code> module. Among other things, this gives the class a <code class="highlighter-rouge">field</code> method. We use this to define the attributes that this model should have. Unlike ActiveRecord models, which know the attributes they can have by introspecting on their corresponding table in the database<sup id="fnref:introspective"><a href="#fn:introspective" class="footnote">2</a></sup>, Mongoid models typically have a list right in the class definition of the name and type of its attributes. Later, when we call <code class="highlighter-rouge">category.name = "Homework"</code>, Mongoid is dynamically figuring out what we mean based on our list of fields; it gives categories a <code class="highlighter-rouge">name=</code> and <code class="highlighter-rouge">name</code> method. This centralization appeals to me on an organizational level.</p>
+
+<p>And an interesting similarity: <code class="highlighter-rouge">has_many</code> and <code class="highlighter-rouge">belongs_to</code> work pretty much exactly the same way. If you’re used to thinking relationally, you can use that here too.</p>
+
+<p>So let’s try to create some data and see how that goes. Into the <code class="highlighter-rouge">bin/rails console</code> let’s go.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">category</span> <span class="o">=</span> <span class="no">Category</span><span class="p">.</span><span class="nf">new</span> <span class="c1">#=&gt; #&lt;Category _id: 52d1d2036d61633a9b000000, created_at: nil, updated_at: nil, name: nil&gt;</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"Homework"</span> <span class="c1">#=&gt; "Homework"</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">save</span> <span class="c1">#=&gt; true</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">_id</span> <span class="c1">#=&gt; BSON::ObjectId('52d1d29c6d61633b1b000000')</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">id</span> <span class="c1">#=&gt; BSON::ObjectId('52d1d29c6d61633b1b000000')</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">tasks</span> <span class="c1">#=&gt; []</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">tasks</span><span class="p">.</span><span class="nf">class</span> <span class="c1">#=&gt; Mongoid::Relations::Targets::Enumerable</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">tasks</span><span class="p">.</span><span class="nf">build</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Study Mongoid"</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Task _id: 52d1d62d6d61633c05000000, created_at: nil, updated_at: nil, name: "Study Mongoid", complete: nil, category_id: BSON::ObjectId('52d1d29c6d61633b1b000000')&gt;</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 0</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">save</span> <span class="c1">#=&gt; true</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 0</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">tasks</span><span class="p">.</span><span class="nf">last</span><span class="p">.</span><span class="nf">save</span> <span class="c1">#=&gt; true</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 1</span>
+<span class="n">category</span><span class="p">.</span><span class="nf">tasks</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Study Rails 4"</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Task _id: 52d1d8596d61633cba040000, created_at: 2014-01-11 23:48:41 UTC, updated_at: 2014-01-11 23:48:41 UTC, name: "Study Rails 4", complete: nil, category_id: BSON::ObjectId('52d1d7696d61633cba010000')&gt;</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 2</span>
+<span class="no">Task</span><span class="p">.</span><span class="nf">all</span><span class="p">.</span><span class="nf">class</span> <span class="c1">#=&gt; Mongoid::Criteria</span>
+</code></pre>
+</div>
+
+<p>First of all: I guess I did have MongoDB installed and running on my system, who knew?</p>
+
+<p>OK so <em>functionally</em> it’s almost exactly the same right? But there are some interesting differences:</p>
+
+<ul>
+  <li>the unique id attribute is now called <code class="highlighter-rouge">_id</code> instead of <code class="highlighter-rouge">id</code> (this comes from MongoDB, not Mongoid, though Mongoid helpfully aliases <code class="highlighter-rouge">id</code> to <code class="highlighter-rouge">_id</code> in case you forget) and is totally long and weird looking</li>
+  <li>that thing where queries are assembled and chainable and not invoked until the last moment is called a “Criteria” and not a “Relation”</li>
+</ul>
+
+<p>These two Rails apps are available here: <a href="https://github.com/hardscrabble/comparing_mongoid_and_active_record">https://github.com/hardscrabble/comparing_mongoid_and_active_record</a></p>
+
+<p>This is a really brief introduction to the basics of Mongoid. I want to dig in more. My laptop battery is at 6%. More to come.</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:confession">
+      <p>Confession: On my first attempt at this I skipped this flag and it created the application <em>with</em> ActiveRecord and I was trying to replace it and then I was like, hmm, maybe there’s a better way to do this. Unfortunately, there’s no <code class="highlighter-rouge">rails new --database=mongodb</code> like there’s a <code class="highlighter-rouge">rails new --database=postgresql</code>, among others <a href="#fnref:confession" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:introspective">
+      <p>probably my favorite phrase I learned at Flatiron School was “introspecting on the database” <a href="#fnref:introspective" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

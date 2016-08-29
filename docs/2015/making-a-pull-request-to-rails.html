@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>making a pull request to rails - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        making a pull request to rails
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      14 Jul 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Today I impulsively made <a href="https://github.com/rails/rails/pull/20872">a pull request to Rails</a>, which feels kind of
+like a milestone for me. It’s about two years since I started using Rails at
+the Flatiron School. It’s also been about two years since the method I edited
+was last edited. I feel like there may be a reason and it won’t get merged, but
+who knows? I feel sort of exposed.</p>
+
+<p>This post was helpful for me: <a href="http://www.eileencodes.com/posts/getting-your-local-environment-setup-to-contribute-to-rails">Eileen Codes | Getting Your Local Environment
+Setup to Contribute to Rails</a>.</p>
+
+<p>In order to make a proper contribution, I needed to know that my change didn’t
+break the existing tests, and so I needed to be able to run the tests.</p>
+
+<p>I also wanted to be able to add tests and confirm that they pass. So I <em>really</em>
+needed to be able to run the tests.</p>
+
+<p>I had some trouble configuring my local environment, despite the post
+explaining it well (…databases…), BUT the post mentions
+<a href="https://github.com/rails/rails-dev-box">rails/rails-dev-box</a> which lets you skip a lot of the environment
+configuration by using a preconfigured virtual machine, and that turned out to
+be a god send of a casual aside for me and I’m writing this post largely to
+promote the existence of that project because it’s awesome.</p>
+
+<p>It uses <a href="https://www.vagrantup.com/">vagrant</a> which is kind of magical… I had never used it before and
+it totally blew my mind. It allowed me to have a tmux session with windows like
+I’m used to, with the code open in vim in one tab using all the existing
+configuration from my local Mac machine, and then another tab where my code
+changes were immediately available for running the tests against in the Linux
+virtual machine. It was super seamless and sweet.</p>
+
+<p><a href="/img/2015-07-14-rails.gif">Here’s a four minute long gif of what it looks like</a> – I’m
+refraining from embedding it so you don’t need to download a 4mb image if you
+don’t want to, and so you can open it in a new tab to start at the beginning
+easily if you want to.</p>
+
+<p>I don’t really love my solution and I should probably consider it further, but
+I know the tests are passing, including the new one I added. I think being a
+little sleep deprived lowered my inhibition tonight.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

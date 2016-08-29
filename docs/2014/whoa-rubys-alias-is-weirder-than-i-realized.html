@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>whoa, ruby's alias is weirder than I realized - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        whoa, ruby's alias is weirder than I realized
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      23 Jun 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Just saw some ruby code using the <code class="highlighter-rouge">alias</code> method, and did a quick and routine google to find some examples of how it works, especially as compared to the <code class="highlighter-rouge">alias_method</code> method.</p>
+
+<p><a href="http://andreacfm.com/2012/11/29/ruby-alias-vs-alias-method/">This blog post</a> and some others recommend to use <code class="highlighter-rouge">alias_method</code> over <code class="highlighter-rouge">alias</code> and I’m going to agree, but for different reason: calling <code class="highlighter-rouge">alias</code> looks weird to me.</p>
+
+<p>This looks perfectly normal to me:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Whatever</span>
+  <span class="k">def</span> <span class="nf">whatever</span>
+    <span class="s2">"whatever"</span>
+  <span class="k">end</span>
+
+  <span class="kp">alias_method</span> <span class="ss">:something</span><span class="p">,</span> <span class="ss">:whatever</span>
+<span class="k">end</span>
+
+<span class="no">Whatever</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">whatever</span> <span class="c1">#=&gt; "whatever"</span>
+<span class="no">Whatever</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">something</span> <span class="c1">#=&gt; "whatever"</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">alias_method</code> is a method that takes two arguments and they’re separated by commas. Under the hood I don’t know what it’s doing but that’s never stopped me from calling a method, and I know how to call a method.</p>
+
+<p>This looks goofy to me:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Whatever</span>
+  <span class="k">def</span> <span class="nf">whatever</span>
+    <span class="s2">"whatever"</span>
+  <span class="k">end</span>
+  <span class="k">alias</span> <span class="ss">:something</span> <span class="ss">:whatever</span>
+<span class="k">end</span>
+<span class="no">Whatever</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">whatever</span> <span class="c1">#=&gt; "whatever"</span>
+<span class="no">Whatever</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">something</span> <span class="c1">#=&gt; "whatever"</span>
+</code></pre>
+</div>
+
+<p>What even is that? It looks like we’re calling a method, but the arguments aren’t comma-separated… it feels weird.</p>
+
+<p>I guess this probably isn’t a great reason to prefer one programming technique over another, but for me it’s harder to understand and therefore remember, and what I really like about Ruby is that it’s simple – almost everything is an object or a method, which follow some set of learnable rules.</p>
+
+<p><code class="highlighter-rouge">alias_method</code> is a method; <code class="highlighter-rouge">alias</code> is a <a href="http://ruby-doc.org/docs/keywords/1.9/files/keywords_rb.html#M000007">keyword</a>, like <code class="highlighter-rouge">def</code> or <code class="highlighter-rouge">class</code> and it can be even syntactically weirder:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LowfatKefir</span>
+  <span class="k">def</span> <span class="nf">probiotic?</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+  <span class="k">alias</span> <span class="n">tasty?</span> <span class="n">probiotic?</span>
+<span class="k">end</span>
+<span class="no">LowfatKefir</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tasty?</span> <span class="c1">#=&gt; true</span>
+</code></pre>
+</div>
+
+<p>Not only do you not need to comma-separate the “arguments” to <code class="highlighter-rouge">alias</code>, but they don’t have to be symbols either which feels like another violation of my understanding of how this language works, which is that we use symbols when we want to reference methods without invoking them, because referencing the method always invokes it.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

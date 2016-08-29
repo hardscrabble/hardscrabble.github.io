@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>erb and indendation - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        erb and indendation
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      02 Dec 2012
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Earlier while sleeping on the plane I had an idea for a method that I want to write.</p>
+
+<p>I use erb, not haml, because haml is confusing, and erb looks like HTML which isn’t really confusing anymore.</p>
+
+<p>What I do is I have a <code class="highlighter-rouge">layout.erb</code> file which is the template for the entire site. All the pages look the same because they all use the same template. The only three things that change are the title, subtitle, and yield.</p>
+
+<p>So whenever you try to go to a page, the code runs and figures out what the HTML should be, which I typically put into a String variable called <code class="highlighter-rouge">the_html</code>. Then, depending on what you’re doing, I set the title and subtitle in two global variables, <code class="highlighter-rouge">@title</code> and <code class="highlighter-rouge">@subtitle</code>. These will fill out the <code class="highlighter-rouge">&lt;h1&gt;</code> and <code class="highlighter-rouge">&lt;h2&gt;</code> header tags.</p>
+
+<p>Then the last thing I do in the code is run <code class="highlighter-rouge">erb the_html</code> which sends the freshly-tossed-together html into the “yield” aka the body of the page.</p>
+
+<p>Here I’ll just share what my template looks like right now:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span><span class="err">&lt;</span>%= @title.downcase %&gt; - <span class="err">&lt;</span>%= @subtitle.downcase %&gt;<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"/css/style.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"alternate"</span> <span class="na">type=</span><span class="s">"application/atom+xml"</span> <span class="na">href=</span><span class="s">"/feed"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">"&lt;%= get_author_name %&gt;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"HandheldFriendly"</span> <span class="na">content=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"title"</span><span class="nt">&gt;&lt;a</span> <span class="na">href =</span><span class="s">"/"</span><span class="nt">&gt;</span><span class="err">&lt;</span>%= @title.downcase %&gt;<span class="nt">&lt;/a&gt;&lt;/h1&gt;</span>
+<span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"author"</span><span class="nt">&gt;</span>by <span class="err">&lt;</span>%= get_author_name.downcase %&gt;<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"instapaper_title"</span><span class="nt">&gt;</span><span class="err">&lt;</span>%= @subtitle.downcase %&gt;<span class="nt">&lt;/h2&gt;</span>
+<span class="err">&lt;</span>%= yield %&gt;
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/search"</span> <span class="na">id=</span><span class="s">"searchbox"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"q"</span> <span class="na">placeholder=</span><span class="s">"Search..."</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;p&gt;&lt;small&gt;</span>This blog running on an as-yet-untitled and unfinished blogging engine created by <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://maxjacobson.net"</span><span class="nt">&gt;</span>Max Jacobson<span class="nt">&lt;/a&gt;</span> on the morning of December 1, 2012. It uses Ruby, Sinatra, and Heroku.<span class="nt">&lt;/small&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/feed"</span><span class="nt">&gt;</span>RSS Feed<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+
+<p>And I’m pretty happy with this! I have <strong>no</strong> idea if I’m doing things in any kind of best-practice way but it makes sense to me and I can do a couple things with it and I’m pretty happy.</p>
+
+<p>But the one thing I’m kind of not happy with is the problem of indendation. When I’m assembling <code class="highlighter-rouge">the_html</code>, it’s all going into one String. Here’s a typical chunk of code:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="n">post_info</span><span class="p">[</span><span class="ss">:tags_array</span><span class="p">].</span><span class="nf">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+  <span class="n">the_html</span> <span class="o">&lt;&lt;</span> <span class="s2">"&lt;p&gt;Tags:&lt;/p&gt;</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="n">the_html</span> <span class="o">&lt;&lt;</span> <span class="s2">"&lt;ul id=</span><span class="se">\"</span><span class="s2">the-tags</span><span class="se">\"</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="n">post_info</span><span class="p">[</span><span class="ss">:tags_array</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">tag</span><span class="o">|</span>
+    <span class="n">the_html</span> <span class="o">&lt;&lt;</span> <span class="s2">"  &lt;li&gt;&lt;a href=</span><span class="se">\"</span><span class="s2">/tag/</span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="se">\"</span><span class="s2">&gt;</span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">&lt;/a&gt;&lt;/li&gt;</span><span class="se">\n</span><span class="s2">"</span>
+  <span class="k">end</span>
+  <span class="n">the_html</span> <span class="o">&lt;&lt;</span> <span class="s2">"&lt;/ul&gt;</span><span class="se">\n</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>See how I’m manually inserting spaces and new lines (<code class="highlighter-rouge">\n</code>)? I feel like this is not how it’s meant to be.</p>
+
+<p>So the idea i had earlier today is to not bother with new lines or spaces at all, just throw it all into one flat string, and then pass it through a method at the end for, essentially, “prettifying” it and indenting it properly, and then running erb on that. I don’t know if I want to bite off that problem to solve just yet but I’m starting to want to. But I’m <em>sure</em> there’s an easier way to be doing this.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

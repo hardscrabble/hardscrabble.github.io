@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>git fib, a helpful little script for git commit squashers - hardscrabble</title>
+  <meta content="Max Jacobson" name="author">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/feed.xml" rel="alternate" title="Posts feed" type="application/atom+xml">
+  <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        git fib, a helpful little script for git commit squashers
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href="/about">Max Jacobson</a>
+    </div>
+    <div class="date">
+      08 Mar 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Sometimes I squash git commits. Generally I do this when I’m making a pull
+request which takes some time, and it accumulates a lot of commits, many of
+which were just kind of trying things out. The sum of all the commits adds up to
+one valuable addition, but each one is kind of garbage. Here’s a good post from
+Thoughtbot: <a href="https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history">Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting
+History</a>.</p>
+
+<p>Here’s what it generally looks like when I do it:</p>
+
+<p><a href="/img/2015-03-08-squash.gif"><img src="/img/2015-03-08-squash.gif" alt="squashing a commit"></a></p>
+
+<p>And this works pretty well for me.</p>
+
+<p>Usually.</p>
+
+<p>Sometimes I do a really big squash, where 35 commits become one, which brings me
+to one behavioral detail of squashes that I’ve always found counter-intuitive:
+<strong>squashes always go up</strong>. When you’re in that interactive list of commits, and
+you’re telling each commit what to do, it’s relative to the previous
+chronological commit. When you tell a commit to squash, you’re telling it to
+squash itself into the previous commit. When you tell this to the 34 newest
+commits, you’re making your very first commit absorb all of the changes. That’s
+probably fine, but imagine if those commits took place over the course of 3
+days, or 3 weeks. Each commit has a timestamp of when the work was done, and
+your big, squashed commit has a timestamp of… 3 weeks ago.</p>
+
+<p>That sort of feels wrong to me. When the pull request is merged, the commit will
+sink down in the commit log below all the work that came before it.</p>
+
+<p>Sooo sometimes I find myself taking things into my own hands to fix that. How?
+Well, it’s kind of weird. Changing the last commit’s message is pretty easy: <code class="highlighter-rouge">git
+commit --amend</code>; changing the last commit’s author is pretty easy too: <code class="highlighter-rouge">git
+commit --amend --author="Kimmy Schmidt &lt;kimmy.schmidt@example.com&gt;"</code>.
+But changing the last commit’s timestamp is kind of tricky. As far as I know,
+it’s not built in to git itself, so it takes a few commands to achieve. Here’s
+what I’ve been doing:</p>
+
+<ul>
+  <li>squash all the commits</li>
+  <li>use my mouse to copy and paste the last commit message to the clipboard</li>
+  <li>uncommit the last commit (<code class="highlighter-rouge">git reset HEAD~1</code>)</li>
+  <li>re-stage all the changes (<code class="highlighter-rouge">git add -A</code>)</li>
+  <li>make a fresh commit, pasting in the old commit message (and probably having to
+fix some formatting issues because pasting into vim never works)</li>
+  <li>sometimes I’ll amend the last commit’s author to give someone else credit if
+they did the lion’s share of the work, because this strategy automatically
+uses my git name and email even if the commit we’re trying to time shift was
+created by someone else</li>
+</ul>
+
+<p>Here’s what I do now:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">git fib</code></li>
+</ul>
+
+<p>Here’s a gif (ignore the part when I got stuck in a dquote confusion please):</p>
+
+<p><a href="/img/2015-03-08-fib.gif"><img src="/img/2015-03-08-fib.gif" alt="git fibbing a commit"></a></p>
+
+<p>Get it here: <a href="https://github.com/maxjacobson/dotfiles/blob/master/bin/git-fib">https://github.com/maxjacobson/dotfiles/blob/master/bin/git-fib</a></p>
+
+<p>I learned with <a href="https://github.com/maxjacobson/git-sleep-gem">git-sleep</a> that
+scripts whose filename begins with <code class="highlighter-rouge">git-</code> can be referenced without the hyphen,
+making git a nicely extensible tool. I still think that’s so cool.</p>
+
+<p>I’m pretty proud of this because it’s a kind of gnarly shell script and it works
+a lot better than I expected.</p>
+
+<p>Some things I might do:</p>
+
+<ul>
+  <li>rename it to something that makes more sense</li>
+  <li>put it on homebrew so it’s easier to install</li>
+  <li>suppress more of the git output (not sure, maybe it’s nice to have it?)</li>
+</ul>
+
+<p><img class="emoji" title=":leaves:" alt=":leaves:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f343.png" height="20" width="20" align="absmiddle"></p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href="http://twitter.com/maxjacobson">@maxjacobson</a> or <a href="mailto:max@hardscrabble.net">max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="/js/vendor/lunr.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif"></p></noscript>
+</body>
+</html>
