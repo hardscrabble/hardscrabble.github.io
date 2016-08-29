@@ -1,0 +1,2773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hardscrabble</title>
+    <description>the personal website of Max Jacobson, a programmer in New York</description>
+    <link>http://hardscrabble.net</link>
+    <language>en-us</language>
+    <pubDate>Sun, 21 Aug 2016 18:42:00 EDT</pubDate>
+    <atom:link href="http://hardscrabble.net/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Using git to track git</title>
+        <description><![CDATA[<p>I made a screencast to share a fun idea I had while exploring a bit how git works.</p>
+
+<p>You may know that when you use git to track a project, it creates a hidden <code class="highlighter-rouge">.git</code> directory with some files in it.
+But what actually goes on in there?
+And when do the contents of those files change?</p>
+
+<p>Here’s the idea: I know a tool for tracking the changes to a directory over time, and that tool is git itself!</p>
+
+<p>So in this screencast you can see me try and do that – I initialized a git repository, which created a <code class="highlighter-rouge">.git</code> folder, and then I initialized <em>another</em> git repository within that <code class="highlighter-rouge">.git</code> directory.</p>
+
+<iframe src="https://player.vimeo.com/video/179684267?title=0&amp;byline=0&amp;portrait=0" width="640" height="486" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<p>I still don’t have a really great understanding of how git represents the data, although I’ve read Mary Rose Cook’s very good essay about this topic <a href="https://codewords.recurse.com/issues/two/git-from-the-inside-out">Git From The Inside Out</a>, which does contain those answers (I read it a while ago and forgot the details).</p>
+
+<p>But I feel like I learned a few things thru this little experiment, specifically about <em>when</em> they change.</p>
+]]></description>
+        <pubDate>Sun, 21 Aug 2016 18:42:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2016/git-tracking-git</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/git-tracking-git</guid>
+      </item>
+    
+      <item>
+        <title>jfk</title>
+        <description><![CDATA[<p><em>Note: this is a sort of personal story about a stressful experience. I’m writing it because I want to remember it.</em></p>
+
+<p>Last week I was on vacation in Berlin, and this week I’m jumping back into my work life.
+Both things are great!
+In-between something wasn’t great.</p>
+
+<figure>
+  <img src="/img/2016-08-14-my-airbnb.jpg" alt="My airbnb in Berlin" />
+  <figcaption>My airbnb in Berlin. 9:53</figcaption>
+</figure>
+
+<p>I had a few hours laid over in Copenhagen before my flight into JFK.
+I spent them doing laps around the terminal looking for something vegetarian to eat.
+While walking I listened to a few episodes of the Bike Shed podcast, which I’m a few months behind on.
+Eventually I found and ate some nachos, which I happily ate while reading Squirrel Girl.
+All that, fine.</p>
+
+<p>The flight was uneventful.
+Norwegian Air.
+I got around to watching Carol.
+I probably need to rewatch it on a bigger screen.
+Solid.
+Slept a bit.
+So far so good.</p>
+
+<p>A husky American in a striped polo shirt sat on my right.
+A young Swedish woman slept on my left.
+None of us really talked much, except mild small talk about whether you need to declare spices at customs.
+(She asked me.
+I had no idea, but I said eh, you can probably get away with not mentioning it.
+I think she declared anyway.)
+She told me she’s a student on her way to Arkansas to study abroad, and she’s just transfering in New York.</p>
+
+<p>When we landed, around 8pm, we couldn’t disembark right away.
+The pilot cited weather.
+They played music.
+People kept watching movies and TV.
+I think I didn’t disembark until around 9:40pm.
+I remember joking to the Swedish woman that if it wasn’t for the music, I might be kinda impatient, but with it I’m pretty content.
+The playlist ran out of songs and looped back on itself.
+I only noticed because it was mostly upbeat pop songs, but then also <a href="https://www.youtube.com/watch?v=erqpdc9W8F8">Blue Bucket of Gold</a> by Sufjan Stevens, a very slow and beautiful song about feeling lonely and alienated.
+And I didn’t realize it was Sufjan Stevens (who I really like) until it came on a second time and I laughed at how random that is.
+Then I fell asleep for a bit.</p>
+
+<p>When we did start to disembark, I put on my big black backpack, but then we were asked to sit down again, and I took it off.
+A few minutes later, people started moving again and we flowed off the plane.
+I said “thanks” to the flight attendants, thinking they were probably getting a lot of shit from impatient passengers and strolled down the jet bridge (a term I only learned this week) toward customs.
+I was kind of tired; I’d just been napping with my forehead against a television.
+All I was thinking about was how to get home, weighing the choice of springing for a cab or just taking the train.</p>
+
+<p>But first, customs.
+I got on the end of a long line, putting in my earbuds and selecting <a href="https://www.youtube.com/watch?v=Bdtrgr4LPgY">Hotline Operator</a>, a song which bristles with an impatient energy.
+Because people were impatient, they pressed forward, as though becoming dense would make the line move faster.
+Some others got on the stationary moving sidewalk to move farther ahead in the line.
+I remember thinking it was like people driving on the shoulder of a highway to pass you.
+Without putting a lot of effort into hanging back, I was pretty much at the way back of the line.
+I couldn’t see all the way to the front.
+I started thinking about taking off my heavy backpack with the expectation that I would be standing for a while.
+When I expect to be bored for a while I kind of let my body go into autopilot and let my mind wander for a while, and that’s what I was starting to do.</p>
+
+<p>I’m not sure what exactly snapped me back to reality, but the next thing I knew I was running, and so was everyone else.
+In only a few seconds, hundreds of mostly stationary people facing one way turned and ran the other way, toward me.
+You don’t really question that, you just go.
+You don’t really have another option.
+Not that you’re thinking at all.</p>
+
+<p>The gush of humanity I was swept up in elected to run down a jet bridge.
+There were several abandoned rolling suitcases blocking the path.
+I knew people were charging behind me and were probably going to stumble on them, and I grab one by the handle and run with it in my hands.
+At the entrance to the plane, I set it to the side.
+This is the one good deed I did all night, I think, and I still left a bunch behind.</p>
+
+<p>The Air Korea flight attendants were confused and kind of angry that these people were rushing onto their plane.</p>
+
+<p>“What is happening??” one asked the streaming crowd.</p>
+
+<p>I told her the crowd has panicked and I didn’t know why, but it seemed like maybe there’s a shooter, but I didn’t know.</p>
+
+<p>That seemed like the only explanation.
+People in the front must have seen something and bolted, understandably.
+What else could it be?
+No one needed to say it – we all knew, right away.
+And people did start saying it.</p>
+
+<p>I felt incredibly alert.
+I would notice later my mouth was dry as a bone.</p>
+
+<p>I paused in first class and moved into a seat to get my bearings.
+Some came panting, others crying onto the plane, everyone flowing into the back as though for a takeoff.
+I saw a woman calling for her son; they were separated in the chaos.
+“What does he look like?”, someone asked.
+“He’s ten years old”, she said.
+I saw another mother holding her young, sobbing son to her stomach and telling him, “It’s okay. It’s okay.”
+I wrote a text to my family:</p>
+
+<blockquote>
+  <p>I’m safe.
+There was a a panic at the airport.
+Crowd ran.
+I’m sitting on an airplane right now.
+Different one than I disembarked from.
+Followed running crowd.
+No signal.
+Not sure if this will send.
+Writing at 22:07 ET
+Will update.
+I am safe</p>
+</blockquote>
+
+<p>I see now that it went through ten minutes later.</p>
+
+<p>I wasn’t sure how safe I was.
+Even on the plane, I felt exposed and at risk.
+I was tempted to move to the right side of the plane to be just a little farther from the terminal.
+But I needed to send that.</p>
+
+<p>I saw the Swedish woman, shocked, move into the back of the plane, and I joined her in a seat.</p>
+
+<p>“What the fuck is going on?” I asked, and she didn’t reply.</p>
+
+<p>Somehow, for some reason, the flight attendants communicated to us that it was time for us to get off the plane.
+I don’t recall if we were instructed to go back down the jet bridge.
+I don’t recall if the plane was becoming full of people.
+What happened next is that people started opening the emergency exits.
+Maybe that’s why.
+They couldn’t manage to open the emergency exit in the rear of the plane.
+I recall seeing some kind of component hanging by a wire, and a flight attendant poking at it like, “well, this one isn’t opening”.
+“Stay calm”, an elderly woman urged everyone.</p>
+
+<p>The mid-plane emergency exits were both open, and the one on the left (facing the terminal) had a slide going down to the tarmac.
+The one on the right had no slide, it was just open twenty something feet above the hard ground.
+One flight attendaant stood spread-eagle in front of it to make sure people knew not to go that way.
+Another stood by the slide, metering us out, telling us when to go.
+The two women shouted to each other in Korean over the din.</p>
+
+<p>Ahead of me, people were sliding down to the tarmac and jogging around a corner of the terminal.
+I jumped, slid, and hit the ground running after them.
+I passed a man taking shelter in a corner behind what might have been gas tanks, and I was tempted to join him, but I ran on with the bigger group.</p>
+
+<p>Around the corner, we reached a barbed-wire fence.
+I assume the idea is to make it harder to access the tarmac, but in the moment many people felt trapped.
+I saw some people pushing a bright yellow dumpster toward the fence, with the idea that they could use it to jump the fence.</p>
+
+<p>I took several photos from this point on, nearly all of which came out blurry beyond interpretation.</p>
+
+<figure>
+  <img src="/img/2016-08-14-22.19-corner-dumpster.jpg" alt="The crowd and dumpster in the corner" />
+  <figcaption>The crowd and dumpster in the corner. 22:19</figcaption>
+</figure>
+
+<p>My sister texted me:</p>
+
+<blockquote>
+  <p>Max?</p>
+</blockquote>
+
+<p>The rest of my family was in London, and sleeping, but Gaby was awake.
+I told her I was safe and to tell me if there’s anything in the news about JFK.
+Then I fired off a tweet:</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I am at JFK airport. I am safe. Something is happening. Please text or mention if you know what. Crowd is panicking</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/765011277186031616">August 15, 2016</a></blockquote>
+
+<p>I sent tweets intermittently for the rest of the night, most of which have typos because I wrote them quickly while afraid.</p>
+
+<p>People weren’t sure what to do.
+Personally, my plan was to stay put and wait for a hero.
+I think some others probably felt the same way.
+Opinions varied on where was safest to physically stand.
+There was a large, open garage (I think that’s what you’d call it, although I don’t recall seeing any vehicles), which some stood within.
+This seemed like a good idea in the event that attackers came around the corner.
+Others seemed suspicious that attackers might come from inside the garage, and stood vigilant, eyes darting between the garage and the tarmac.</p>
+
+<p>Around this point a policeman came and told us to follow him around the corner back toward the customs area, where there are more police.
+When he saw the people pushing the dumpster he shouted after them, something like, “You are NOT going to do that.”
+A woman asked him what the plan was, said she wouldn’t go unless there was a plan.
+He made the point that he was going to walk us there, and what, is he going to willfully put himself in danger?
+This argument, an appeal to a relatable self-preservation, seemed to make sense to the crowd.</p>
+
+<p>We started cautiously walking.</p>
+
+<figure>
+  <img src="/img/2016-08-14-22.28-overpass.jpg" alt="The crowd under an overpass" />
+  <figcaption>The crowd inching under an overpass toward customs. 22:28</figcaption>
+</figure>
+
+<p>We were all hugely reluctant to move back in the direction of airplane and customs.
+As we inched forward I saw silhouettes of figures in the windows of the terminal, some walking, some standing and watching us.
+I didn’t know what to make of that.
+A child let out a screaming cry, and everyone immediately turned to run back toward the corner, which had somehow started to feel safe, and not worth leaving.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Crowd is still and then turns to run like a herd. &quot;It was just a child&#39;s scream&quot; no need to run someone says</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/765013552411410437">August 15, 2016</a></blockquote>
+
+<p>I saw a woman was running barefoot.</p>
+
+<p>“I’m faster this way”, she said.</p>
+
+<p>Gaby:</p>
+
+<blockquote>
+  <p>Something at terminal 1 and 8</p>
+
+  <p>They are bringing in bomb squad</p>
+
+  <p>What is your battery %</p>
+
+  <p>If you feel safe please save battery</p>
+
+  <p>They haven’t found shooter or anyone injured as of now</p>
+</blockquote>
+
+<p>Me:</p>
+
+<blockquote>
+  <p>100%. I feel safe right now</p>
+
+  <p>Battery pack baby</p>
+</blockquote>
+
+<p>Slowly the policeman and some other airport staffers coaxed us back toward customs, and two doors which went directly from the tarmac into the big open room.
+People were very reluctant to enter.
+I had the sense that the room must be safe if I’m being told to enter it, and I went in.</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">People reluctant to go inside but I&#39;m in and so are many. Air conditioned. Noisy chatter</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/765014717614153732">August 15, 2016</a></blockquote>
+
+<p>Inside, I was shocked to find that there were already dozens of people queueing in an orderly fashion to go through customs.
+I couldn’t see if anyone was actually at the desks to process them.
+Beyond the desks, the airport seemed well-lit and deserted.</p>
+
+<p>I didn’t feel safe getting on the line; I’d seen this crowd turn into a stampede in seconds.
+I stood near the doors and tweeted this:</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Until further notice I am more afraid of the crowd being inside and panicking ahain</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/765015993546661889">August 15, 2016</a></blockquote>
+
+<p>And a few minutes later, it happened.
+Something spooked the crowd and they bolted for the doors, feeling safer on the tarmac.
+I think they believed an active shooter must have still been in the terminal, even though some semblance of order was beginning to form…
+Outside I tweeted this (compare the timestamp to the previous one):</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Crowd panicked and ran outside. Pipe of people at doorway. Outside again</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/765016110991339520">August 15, 2016</a></blockquote>
+
+<p>I meant “pile”, not pipe.
+Here’s what I saw:</p>
+
+<figure>
+  <img src="/img/2016-08-14-22.41-pile.jpg" alt="People struggling to leave customs" />
+  <figcaption>People struggling to leave customs, and one tarmac staffer helping a fallen person get up. 22:41</figcaption>
+</figure>
+
+<p>At this point I saw people were starting to move way in the opposite direction of customs, to the far edge of the tarmac.
+I saw why: there were 2 shuttle buses there, and people were getting on them.
+I walked under an airplane toward the buses.</p>
+
+<figure>
+  <img src="/img/2016-08-14-22.46-under-airplane.jpg" alt="View of airplane from below" />
+  <figcaption>I made my way under an airplane. 22:46</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/2016-08-14-22.47-buses.jpg" alt="Buses in the distance" />
+  <figcaption>I made my way toward these buses. 22:47</figcaption>
+</figure>
+
+<p>A crowd formed here, hopeful.
+We’re getting outta here.
+The two buses became full and left.
+I have no idea where they went.
+We waited, hopeful that more would come.</p>
+
+<p>I took the opportunity to update Gaby, tweet a few updates, and search for any news.
+My twitter feed was full of people talking about the Olympics and or the election.
+I remember feeling slightly stunned that the whole world wasn’t talking about me.
+Every minute or two I got notifications of people sharing or replying to my tweet updates.
+Some folks mentioned or direct messaged me asking questions and providing updates from police scanners and news reports.
+No one knew anything.
+One BBC reporter mentioned me asking if I wanted to do an interview when I feel safe; a reporter from a talk radio show asked me if I could confirm that shots were fired.</p>
+
+<p>I felt the need to offer this update:</p>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Just to repeat the point, I didn&#39;t personally observe any guns or packages, just panicked crowds, and I ran with them. Still feel safe</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/765020584170381312">August 15, 2016</a></blockquote>
+
+<p>I didn’t know if there was a shooting or not.
+I wanted to believe there hadn’t been.
+I knew there was a lot of confusion both among the passengers on the tarmac and among the people replying to my tweets.
+I couldn’t clear away the confusion but I wanted to emphasize to anyone who was following the story not to assume the worst.</p>
+
+<p>After more than 20 minutes of standing restlessly and comparing confused notes with each other, three more buses arrived.
+I got on the last bus.
+The last person to board the bus before the door closed was a young guy who reminded me of my 20 year old cousin Eric from Georgia.
+He asked if I knew anything.
+Said his phone died.
+Said he got separated from his sister.</p>
+
+<p>“How old is she?” I asked</p>
+
+<p>“Nineteen”, he said.</p>
+
+<p>Nearby a guy in a Panini Express shirt told us he was working when his boss suddenly turned and ran without saying anything.
+The next thing he saw was a traveler crawling behind the counter for shelter.</p>
+
+<p>We waited on the bus for about ten minutes when an airport staffer boarded in the front and cheerfully, loudly gave us directions.</p>
+
+<p>“Alright, here’s what we’re gonna do”, he projected.
+“We’re going to exit the front of the bus and follow [muffled muffled].
+OK? Do you understand? Who understands?”</p>
+
+<p>He spoke with the cadence of a DJ trying to get the party started.
+I had missed some of what he said, but I still felt kind of compelled to echo back, “I understand!”
+This was the clearest instructions I heard all night.
+Give that guy a medal.</p>
+
+<p>The bus was packed, and there was a second exit in the back.
+A woman shouted out to the bus driver, “Back door!”
+The kind of thing you might shout on a city bus on a normal day, when the door hasn’t opened.
+I couldn’t help but wonder if the front door was somehow safer than the back door, and that was why we were being told explicitly to exit through the front door.</p>
+
+<p>Upon exiting I followed a stream of people back toward customs.
+The crowd was much bigger now than before, and much calmer.
+There were more police.
+At some point a fire truck showed up.
+People started to relax, breath, sit.</p>
+
+<figure>
+  <img src="/img/2016-08-14-23.28-crowd.jpg" alt="Gathering crowd on tarmac" />
+  <figcaption>Gathering crowd on tarmac. 23:28</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/2016-08-14-23.31-torn-shirt.jpg" alt="Crowd including man with torn shirt" />
+  <figcaption>Man with torn shirt in crowd. 23:31</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/2016-08-14-23.39-prayer.jpg" alt="Woman in crowd prays" />
+  <figcaption>Woman in crowd was praying to herself. 23:39</figcaption>
+</figure>
+
+<p>I noticed my dad has replied to me:</p>
+
+<p>Dad (23:19, 5:19 in London):</p>
+
+<blockquote>
+  <p>Just got up to pee.
+Any new updates?
+News at 15 minutes ago says unconfirmed reports of gun shots at terminal 8 &amp; 1 (yours)</p>
+</blockquote>
+
+<p>I told him where I was and that it was much calmer now.</p>
+
+<p>Dad:</p>
+
+<blockquote>
+  <p>Be patient &amp; be a calming influence.
+See if anyone is alone &amp; nervous</p>
+</blockquote>
+
+<p>Me:</p>
+
+<blockquote>
+  <p>Yep</p>
+</blockquote>
+
+<p>I pictured my mom sleeping and my dad glued to his phone.</p>
+
+<p>The Swedish woman approached me.</p>
+
+<p>“Hey”, she said.</p>
+
+<p>I was shocked and very relieved to see a familar face.
+I had been traveling alone on my vacation and kind of reveling in the freedom to do whatever I wanted at any time.
+But during this incident I wasn’t myself, wasn’t independent, I was just alone, an unindividuated animal in a suspicious herd.
+We shared a water bottle she got from a fireman.
+I started to feel like a human again.</p>
+
+<p>She missed her transfer to Arkansas and was on the phone with her friend in New York to see if she could stay there.</p>
+
+<p>Many people sat down.
+I realized I felt safe enough to sit down.</p>
+
+<p>Soon we started queueing toward customs and I felt safe getting in line.
+A young woman stood with us for a while, seemingly wanting not to be alone.</p>
+
+<p>We parted ways inside, and I went through customs.
+I think it was quiet.
+The kiosk was working, and I punched in that I wasn’t planning to declare any food, spices, or anything.
+I was glad I held onto my backpack as I dug my passport out.</p>
+
+<p>The young southern man from the bus was ahead of me in line.</p>
+
+<p>“I found her”, he said, indicating his nineteen year old sister.</p>
+
+<p>It took me a moment to register who he was and figure out what to say.</p>
+
+<p>“I’m really glad to see that”, I finally said.</p>
+
+<p>The police officer checked my passport and barely glanced at my customs slip.</p>
+
+<p>“You’re okay”, he said, and stamped my passport.</p>
+
+<p>As I exited baggage claim, I was met by a huge group of people waiting for the long-overdue terminal 1 arrivals, and felt momentarily like they were all there just for me, just to tell me I had been brave and I could rest now.</p>
+
+<figure>
+  <img src="/img/2016-08-15-00.27-welcome.jpg" alt="Crowd at arrivals" />
+  <figcaption>Crowd at arrivals. 00:27</figcaption>
+</figure>
+
+<p>I felt destabilized by how normal operations were on this side of the terminal, when it had been such fright and chaos on the tarmac.</p>
+
+<p>There was <em>no question</em> I was taking a taxi.
+I waited for a while and ended up sharing one with three other people.
+The dispatcher was long gone, so the drivers were free to negotiate whatever prices they wanted.
+No problem.</p>
+
+<p>On the drive home, we compared notes.
+A guy my age sat in the front seat, and a mother and teenaged daughter sat with me in the back.
+The news was saying it was all a false alarm and that there was no evidence of a shooter or a bomb or anything.
+The daughter said something about how scary the night had been for her, and her mother made the point, “We were never actually in danger at any point.”</p>
+
+<p>When I eventually found my way to my bed (around 2:30) and closed my eyes, I felt waves of cold energy coursing through my limbs.</p>
+
+<hr class="fancy" />
+
+<p>If you’re curious for another experience of this night, read this article: <a href="http://nymag.com/daily/intelligencer/2016/08/the-terrifying-jfk-airport-shooting-that-wasnt.html">Scenes From the Terrifying, Already Forgotten JFK Airport Shooting That Wasn’t</a> which captured a lot of what I felt and am feeling and also filled in some details for me.</p>
+
+<p>This passage jumped out like a lightning bolt:</p>
+
+<blockquote>
+  <p>The fact that there had been, actually, nothing to panic about was an enormous relief, of course. But it made things all the more eerie the next morning, when we woke up feeling like survivors of a ghost trauma, a minor local-news story. For several hours, we were in the flood of panic and chaos of an ongoing act of terror. There’s no other way to describe it. That it was an overreaction almost doesn’t matter; in fact, that is how terrorism works.</p>
+</blockquote>
+
+<p>Reading it made me feel some amount of relieved and want to write something myself.</p>
+]]></description>
+        <pubDate>Wed, 17 Aug 2016 01:46:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2016/jfk</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/jfk</guid>
+      </item>
+    
+      <item>
+        <title>integrating vim with the mac clipboard</title>
+        <description><![CDATA[<p>Using terminal text editors has a lot of advantages, but for a while the biggest disadvantage I’ve felt as a vim user is that it’s kind of hard to interact with the system clipboard.
+I’m aware that there’s a concept called “registers” which are something like multiple clipboards that you can copy and paste from, and one of them is the system clipboard, and the others are all virtual, or something like this, but I haven’t taken the time to really learn how those work yet.</p>
+
+<p>If I want to copy a helpful code snippet from Stack Overflow into vim and I copy it to the mac clipboard, and then press “command + v” to paste it into vim, the indentation gets totally screwed up.
+This is becuse vim is trying to help.
+It doesn’t know that I just pasted, it thinks that I was suddenly just typing <em>super super fast</em> and each newline character I “typed” caused it to helpfully auto-indent the appropriate amount.
+When I actually am typing, this is helpful.
+But when I’m pasting, it’s kind of annoying.</p>
+
+<p><img src="/img/2016-07-30-vim-bad-paste.png" alt="Pasting into vim doesn't work well" /></p>
+
+<p>(You can see in this example that not only is the indentation screwed up, but also there is an extra <code class="highlighter-rouge">end</code> which <a href="https://github.com/tpope/vim-endwise">vim-endwise</a> helpfully tried to auto-insert)</p>
+
+<p>The workaround I’ve used for a while is to always run <code class="highlighter-rouge">:set paste</code> before I paste, and then <code class="highlighter-rouge">:set nopaste</code> afterward.
+This mode doesn’t auto-indent.
+It also breaks a number of my other vim configurations, such as <code class="highlighter-rouge">jk</code> being an alias for the escape key.</p>
+
+<p>Pretty annoying.</p>
+
+<p>Copying text out of vim is even more difficult.
+I can use my mouse to highlight the text I want to copy and then press “command + c” to copy it, but this is pretty awful, too, because it’s very easy to accidentally copy things like line numbers (which are just text in the terminal, and your mouse doesn’t know to avoid it) or to even copy text from multiple files which you happen to have open side by side in split buffers, such that the code is totally broken when you paste it out again.</p>
+
+<p><img src="/img/2016-07-30-vim-split-buffer.png" alt="Copying from vim split buffer doesn't work well" /></p>
+
+<p>My workaround for this is even worse! I generally close my splits, turn off line numbers (<code class="highlighter-rouge">:set nonumber</code>) and sometimes make my font smaller so I can fit the whole lines on my screen and select the text and copy it.
+When I do this, I generally pick up a bunch of trailing whitespace that wasn’t there in the source code.
+It totally stinks.</p>
+
+<p>Sometimes I will just open the file in <a href="https://atom.io">Atom</a> so I can copy text in a sane way.</p>
+
+<p>Other times I will run <code class="highlighter-rouge">:! cat % | pbcopy</code> to “shell out” to a bash command and copy the entire contents of the file to the clipboard.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>OK.
+So obviously that sucks, right?
+That’s just some context for how I’ve been doing things.
+I meant to look into a better technique and never got to it.</p>
+
+<p>The other day at work I saw my coworker Will very seamlessly copy some text out of vim and paste it into Slack.</p>
+
+<p>Scandalized, I asked him how he had done that.
+He told me he’s using <a href="https://neovim.io">neovim</a> and it’s probably something neovim does.</p>
+
+<p>I made a note to look into it.
+I’m open to the idea of using neovim instead of regular vim – I think it’s cool that you can <a href="https://neovim.io/doc/user/nvim_terminal_emulator.html">run a terminal inside vim</a>, which makes me wonder if I even need tmux…</p>
+
+<p>One of the first things I found in my research was <a href="https://github.com/neovim/neovim/issues/583">a neovim issue from April 2014</a> about how some vim configuration was working in vim but not neovim</p>
+
+<blockquote>
+  <p>… the follwing works perfectly fine with mainline vim, “y” and “p” work with X clipboard:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>set clipboard=unnamedplus
+</code></pre>
+  </div>
+
+  <p>but not for neovim.</p>
+
+  <p>I’ve tried setting it to:</p>
+
+  <div class="highlighter-rouge"><pre class="highlight"><code>set clipboard=unnamed
+</code></pre>
+  </div>
+
+  <p>still works in vim, but not neovim.</p>
+</blockquote>
+
+<p>Hm. Wait. Does this mean vim already supports clipboard integration this whole time and no one told me!?</p>
+
+<p>Indeed, yes, and this is why I’m writing this blog post to tell you.
+I feel like there’s a good chance you already knew.</p>
+
+<p>So yep, I <a href="https://github.com/maxjacobson/dotfiles/commit/0d4bd62bef49c4607e6e4349f16ae24a3be5949b">added</a> that second config option to my .vimrc and now it works great:</p>
+
+<ul>
+  <li>I can yank text from vim and then “command + v” it into other apps.</li>
+  <li>I can copy text from Stack Overflow and then “p” it into vim – no weird indentation behavior or anything</li>
+</ul>
+
+<p>I may yet switch to neovim<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> or learn about registers, but for now I don’t yet need to, and for that I celebrate.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>The <code class="highlighter-rouge">!</code> means to run a bash command; the <code class="highlighter-rouge">%</code> will expand to refer to the file name; <code class="highlighter-rouge">pbcopy</code> is a mac thing for piping data to your clipboard. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Note that neovim did fix that issue and <a href="https://neovim.io/doc/user/provider.html#provider-clipboard">it does work now</a>. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></description>
+        <pubDate>Sat, 30 Jul 2016 18:25:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2016/integrating-vim-with-the-mac-clipboard</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/integrating-vim-with-the-mac-clipboard</guid>
+      </item>
+    
+      <item>
+        <title>the first useful thing I wrote in Rust</title>
+        <description><![CDATA[<p>I’ve been interested in the <a href="https://www.rust-lang.org">Rust programming language</a> for a while, but it wasn’t until this week that I wrote something in it which I found useful.</p>
+
+<p>Let’s rewind.
+I like to have a random, nice emoji in my shell prompt.
+It’s just to add a little flair to the proceedings, some color.
+The emoji don’t <a href="http://maximomussini.com/posts/bash-git-prompt/">mean anything</a>, they’re just for fun.</p>
+
+<p>My shell prompt is <a href="https://github.com/maxjacobson/dotfiles/blob/c3ca325eb27173046bb504327f7a30613416c5f8/.zsh-customizations/terrorhawk.zsh-theme#L23">set like this</a>:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">PROMPT</span><span class="o">=</span><span class="s2">"%F{grey}%C%f </span><span class="se">\$</span><span class="s2">(random_nice_emoji) </span><span class="se">\$</span><span class="s2">(git_prompt) "</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">random_nice_emoji</code> is a command line program on my PATH.
+<code class="highlighter-rouge">git_prompt</code> is a shell function.
+The <code class="highlighter-rouge">\$(...)</code> syntax means that the program or function should be called each time the prompt is drawn, not just once when you first open your terminal.</p>
+
+<p>I could have written <code class="highlighter-rouge">random_nice_emoji</code> as a shell function if I could figure out how to use shell arays, but I could not.</p>
+
+<p>Instead I wrote it as a simple ruby script:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+
+<span class="nb">print</span> <span class="sx">%w(
+  🐖
+  😅
+  🌸
+  🐙
+  🎑
+  🖌
+  ☕
+  📊
+  🐋
+  🌈
+  ✨
+)</span><span class="p">.</span><span class="nf">sample</span>
+</code></pre>
+</div>
+
+<p>And my prompt looks like this:</p>
+
+<p><img src="/img/2016-06-09-prompt.png" alt="my prompt, where each line includes a random fun emoji" /></p>
+
+<p>But over time I noticed that it was kind of….. slow.
+And I started to wonder if maybe my fun affectation was worth it.
+Some benchmarking suggests that this program takes about a tenth of a second to run.
+That’s not a lot, really.
+But we can do better.</p>
+
+<p>Maybe the shell function would be much faster, but yea, still don’t know how to use shell arrays.</p>
+
+<p>So let’s try writing this little script as a Rust program – Rust is supposed to be fast!</p>
+
+<p>To make a new command line program in Rust, you can <a href="http://doc.crates.io/#lets-get-started">use Cargo</a> to scaffold the project:</p>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>cargo new random_nice_emoji --bin
+</code></pre>
+</div>
+
+<p>The <code class="highlighter-rouge">--bin</code> part means that it will be a command line program.
+Without it, I think the idea is that you’re making a package which will be used in an application.</p>
+
+<p>That command crates a directory called <code class="highlighter-rouge">random_nice_emoji</code>, and within that there is a file <code class="highlighter-rouge">src/main.rs</code> which is where you put your code which should run when the command line program is invoked.</p>
+
+<p>Here’s what I came up with (I’m really new to Rust so this isn’t necessarily good code):</p>
+
+<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="k">extern</span> <span class="n">crate</span> <span class="n">rand</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">rand</span><span class="p">::</span><span class="nn">distributions</span><span class="p">::{</span><span class="n">IndependentSample</span><span class="p">,</span> <span class="n">Range</span><span class="p">};</span>
+
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// cool, friendly emoji that look fine against a black terminal background</span>
+    <span class="k">let</span> <span class="n">list</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span><span class="s">"🐖"</span><span class="p">,</span> <span class="s">"😅"</span><span class="p">,</span> <span class="s">"🌸"</span><span class="p">,</span> <span class="s">"🐙"</span><span class="p">,</span> <span class="s">"🎑"</span><span class="p">,</span> <span class="s">"🖌"</span><span class="p">,</span> <span class="s">"☕"</span><span class="p">,</span> <span class="s">"📊"</span><span class="p">,</span> <span class="s">"🐋"</span><span class="p">,</span> <span class="s">"🌈"</span><span class="p">,</span>
+                    <span class="s">"✨"</span><span class="p">];</span>
+    <span class="k">let</span> <span class="n">between</span> <span class="o">=</span> <span class="nn">Range</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">list</span><span class="nf">.len</span><span class="p">());</span>
+    <span class="k">let</span> <span class="k">mut</span> <span class="n">rng</span> <span class="o">=</span> <span class="nn">rand</span><span class="p">::</span><span class="nf">thread_rng</span><span class="p">();</span>
+    <span class="k">let</span> <span class="n">index</span> <span class="o">=</span> <span class="n">between</span><span class="nf">.ind_sample</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">rng</span><span class="p">);</span>
+    <span class="k">let</span> <span class="n">emoji</span> <span class="o">=</span> <span class="n">list</span><span class="p">[</span><span class="n">index</span><span class="p">];</span>
+    <span class="nd">print!</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">emoji</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>I couldn’t find a super-simple <code class="highlighter-rouge">sample</code> method, so I did my best to adapt the example from <a href="https://doc.rust-lang.org/rand/rand/index.html">the docs for the rand crate</a> to achieve that behavior.</p>
+
+<p>You can install it yourself with <code class="highlighter-rouge">cargo install random_nice_emoji</code>.
+Maybe I shouldn’t have released it because it’s not generally useful – but it’s very convenient for me so I can install it on multiple computers, for example.</p>
+
+<p>And this one usually finishes in 0.006 seconds – 16 times faster.
+And it was maybe 5 times harder to write?
+I’m hopeful that if I get better at Rust, that will go down.</p>
+
+<p>If you’re into Ruby and intrigured by Rust, I recommend checking out <a href="http://blog.skylight.io/introducing-helix/">this Helix project</a> which makes it easy to embed Rust code in Ruby projects to ease performance hot spots.
+I haven’t used Helix yet, but that talk does a really great job of explaining the idea and was really inspiring to me.</p>
+]]></description>
+        <pubDate>Thu, 09 Jun 2016 01:27:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2016/the-first-useful-thing-i-wrote-in-rust</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/the-first-useful-thing-i-wrote-in-rust</guid>
+      </item>
+    
+      <item>
+        <title>Fun method names in Ruby</title>
+        <description><![CDATA[<p>One thing I like about Ruby is that you can use a little punctuation in your method names, which can help you write expressions that read like nice sentences:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">delete_user</span> <span class="n">user</span> <span class="k">unless</span> <span class="n">user</span><span class="p">.</span><span class="nf">special?</span>
+</code></pre>
+</div>
+
+<p>Kind of fun.</p>
+
+<p>I knew a guy who liked to use these question mark methods in conjunction with the ternary operator to write code that reads like a panicked friend:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">user</span><span class="p">.</span><span class="nf">special?</span><span class="p">?</span> <span class="n">protect</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="p">:</span> <span class="n">delete</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>The double question mark always makes me smile, which makes me wonder…
+Can I just define a method with double question marks right in the method signature?
+Like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span>
+  <span class="k">def</span> <span class="nf">special?</span><span class="p">?</span>
+    <span class="nb">name</span> <span class="o">==</span> <span class="s1">'Max'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Turns out: nope.
+That’s a syntax error.
+Not valid Ruby code.</p>
+
+<p>Well…
+OK.
+But this is Ruby, so there’s not just one way to do a thing.
+There’s another way to define a method…
+Let’s try this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="n">define_method</span><span class="p">(</span><span class="s2">"special??"</span><span class="p">)</span> <span class="k">do</span>
+    <span class="vi">@name</span> <span class="o">==</span> <span class="s1">'Max'</span>
+  <span class="k">end</span>
+
+  <span class="n">define_method</span><span class="p">(</span><span class="s2">"multi
+                line
+                method
+                name??"</span><span class="p">)</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="s2">"sure, why not?"</span>
+  <span class="k">end</span>
+
+  <span class="n">define_method</span><span class="p">(</span><span class="s2">"!?"</span><span class="p">)</span> <span class="k">do</span>
+    <span class="s2">"‼"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Max"</span><span class="p">)</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">public_send</span><span class="p">(</span><span class="s2">"special??"</span><span class="p">)</span> <span class="c1">#=&gt; true</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">public_send</span><span class="p">(</span><span class="s2">"!?"</span><span class="p">)</span> <span class="c1">#=&gt; "‼"</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">public_methods</span><span class="p">(</span><span class="kp">false</span><span class="p">)</span> <span class="c1">#=&gt; [:"special??", :"multi\n                line\n                method\n                name??", :"!?"]</span>
+</code></pre>
+</div>
+
+<p>Haha that works!</p>
+
+<p>OK it’s not as satisfying calling the methods with <code class="highlighter-rouge">public_send</code>, but as far as I know, it’s the only syntactically-correct way to call these methods.</p>
+]]></description>
+        <pubDate>Wed, 08 Jun 2016 01:43:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2016/fun-method-names</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/fun-method-names</guid>
+      </item>
+    
+      <item>
+        <title>Articulating my Vegetarianism</title>
+        <description><![CDATA[<p><em>note: this is going to be sort of personal and self-indulgent and I’m mostly writing it for myself to work out some ideas and make some decisions</em></p>
+
+<p>I’m writing this from vacation, in Mumbai.
+Last year, I googled “best vegetarian cities” and Mumbai was near the top.
+New York City, where I live, was also near the top.
+It’s not a shock – New York has many specialty restaurants that focus on vegetarians and vegans, and almost any restaurant has something for me.
+But after spending a few days in Mumbai, I think it’s truer here.</p>
+
+<p>In software, we sometimes talk about “sensible defaults”.
+If you’re going to provide options to your user to change the behavior of your app, the default behavior should probably make sense for the majority of users.
+I don’t <em>think</em> the majority of Mumbaikers are vegetarian, actually, but the nomenclature suggests it.
+It manifests like this:</p>
+
+<ul>
+  <li>FourSquare tips like “best place for non-veg in the city”.</li>
+  <li>Restaurant servers asking “veg or non-veg?”</li>
+  <li>Restaurant signs indicating that a place is “pure veg” (which I think means it’s suited for <a href="https://en.wikipedia.org/wiki/Jain_vegetarianism">Jain vegetarians</a>)</li>
+</ul>
+
+<p>I like that the “non” is attached to “veg” and not “meat”.</p>
+
+<hr class="fancy" />
+
+<p>If you become a vegetarian, people will want to know why.
+I’ve been a vegetarian for a little over three years, and I often struggle to come up with a good answer.
+This dissatisfies people, myself included.</p>
+
+<p>The truthful answer is that <strong>I’m a vegetarian today because I was a vegetarian yesterday and for no other conscious reason</strong>.
+This of course raises a few questions:</p>
+
+<ol>
+  <li><a href="#why-did-i-start-eating-vegetarian">why did I start eating vegetarian?</a></li>
+  <li><a href="#what-do-i-like-about-eating-vegetarian">what do I like about eating vegetarian?</a></li>
+  <li><a href="#what-do-i-do-next">what do I do next?</a></li>
+</ol>
+
+<h2 id="why-did-i-start-eating-vegetarian">1. Why did I start eating vegetarian?</h2>
+
+<p>In February 2013 my toe hurt.
+I thought maybe it was broken.
+I had a vague memory of stubbing it badly while walking in the snow.
+There were drinks involved.</p>
+
+<p>The doctor x-rayed me and said it looked fine.
+No broken toe or anything.</p>
+
+<p>“You probably have gout” (I paraphrase).</p>
+
+<p>Gout, as I understood it, is a form of arthritis.
+If your diet is too purine-rich, uric acid causes crystallization in your joints, which can be painful or uncomfortable.
+(This is probably not a fully accurate definition of gout – I’m writing without WiFi currently and going from memory from a conversation 3 years ago)
+He took some blood to assess the levels of uric acid and gave me a cheat sheet of foods to avoid.</p>
+
+<p>He didn’t tell me to become vegetarian.
+He told me to moderate my levels of purine by limiting my consumption of specific foods to lower levels.
+The list was kind of surprising to me: I recall spinach and oatmeal being on the no-fly list.
+There were specific amounts of red meat I was recommended to eat in a week, limited to a few ounces.
+Similarly for other meat, maybe a little more generous.</p>
+
+<p>I’ve never been a very conscientious eater.
+I still don’t feel like I understand the basics of nutrition.
+I wasn’t excited to memorize a list of foods to eat or to buy a kitchen scale.
+I decided to try eating vegetarian for a few weeks and see if the toe pain went away.</p>
+
+<p>It did.</p>
+
+<p>Curiously, the blood test showed normal levels of uric acid.
+<a href="https://en.wikipedia.org/wiki/Gout#Blood_tests">I might’ve had it, anyway</a> although I may never know.</p>
+
+<p>I think in the first few weeks I was just superstitious and didn’t want the toe pain to return.
+It was very inconvenient!
+I could barely walk.</p>
+
+<p>And then it became a habit and I forgot about stopping.</p>
+
+<hr class="fancy" />
+
+<p>In the interim, I’ve bought a few books about veg* eating, but I think I’ve only finished one: Eat &amp; Run.
+It’s a very inspiring memoir about a vegan ultra-marathoner.
+This dude runs 100+ miles at a time powered by smoothies, salads, and black bean burritos.
+He makes a very persuasive case for veganism as an ideal diet for some kinds of athletic pursuits.
+I’m not an athlete, but I do encounter people who insist that they “could never be vegetarian” because their gym regimen requires amounts of protein which would be impossible, inconvenient, impractical, or unaffordable to attain through a plant-based diet.
+They’re probably right, I don’t know their life.
+One takeaway from the book I took away is that most Americans are consuming too much protein.
+I like to share that when people worry about my protein.</p>
+
+<p>People worry about my protein all the time.
+“But how do you get your protein?”
+People need to know.
+I’ll tell ya: I don’t worry about it.
+I’m still not a very conscientious eater, and I feel pretty much fine.
+I think I feel a little better than before, but I don’t really remember.</p>
+
+<p>(This post continues not to be medical advice.)</p>
+
+<h2 id="what-do-i-like-about-eating-vegetarian">2. What do I like about eating vegetarian?</h2>
+
+<p>There are a few benefits I’ve picked up on, which I’ll enumerate now, as they occur to me.</p>
+
+<h3 id="easier-decision-making">Easier decision making</h3>
+
+<p>Some people talk about clothing this way: <em>I wear the same thing every day so I have one fewer decision to make each day.</em>
+I haven’t heard people talk about food in the same way, but I think it’s similar.
+I have the personality where I feel compelled to read the whole menu before I make a decision, lest I make the mistake of overlooking something I might like.
+Have you ever been to a diner?
+These menus are an astonishment.
+I can get thru a menu much quicker when I can skip all of the non-veg items.
+No more “please, come to me last”; I know what I’m ordering.</p>
+
+<h3 id="no-more-storing-and-cooking-meat">No more storing and cooking meat</h3>
+
+<p>I used to try to cook meat.
+I was real bad at it.
+I couldn’t make a burger without setting off the smoke alarm or undercooking it.
+I couldn’t defrost a chicken breast without accidentally cooking it a bit, which I found kind of gross at the time but pushed down.
+I didn’t really enjoy handling raw meat – it’s kind of slimy and sticky, right?
+I don’t really remember, and maybe it’s grown more ghoulish with distance.</p>
+
+<h3 id="no-more-gristle-no-more-veins-no-more-bones">No more gristle, no more veins, no more bones</h3>
+
+<p>It’s been a long time since I’ve taken a bite and felt a surprising popping resistance in my mouth.
+I used to secret unpleasant, gristly bites into napkins.
+I used to worry I wasn’t effective at extracting as much meat as I could from a bone.
+I used to avoid eating veins.
+No more!</p>
+
+<h3 id="physical-comfort">Physical comfort</h3>
+
+<p>Meat sits like a lump in your stomach in a way that vegetables don’t.
+Restaurants sometimes serve these giant sandwiches, burgers, steaks…
+And I would eat the whole thing, and it would just sit there.
+Look, I don’t want to go into too much detail about gastro-intestinal scenarios.
+But let’s just say it’s harder to cause problems when you skip all that stuff.</p>
+
+<h3 id="moral-correctness">Moral correctness</h3>
+
+<p>This is a touchy one.
+When a meat eater asks me why I’m vegetarian, what they really seem to mean is: <em>do you think I’m an asshole?</em>
+I don’t think you’re an asshole.
+But I do think it’s morally correct to avoid eating meat.</p>
+
+<p>I don’t think it’s majorly evil.
+But I think it’s <em>kind of wrong</em>.</p>
+
+<p>I don’t feel strongly enough to try and convince others to give up meat.
+But I do take a small amount of pleasure in feeling like I’m doing the right thing, <strong>the same feeling I get when I recycle</strong>.
+That’s the moral level I put it at.
+It’s a nice thing to do.</p>
+
+<p>I ate meat for 24 years and didn’t eat meat for 3 years.
+I think of it like I’m offsetting some damage, paying off some debt.
+If I take that thought to its conclusion, I should remain vegetarian for another 21 years, after which point I would be in the black and could start eating meat again guilt free.</p>
+
+<p>That’s not necessarily the plan, by the way.</p>
+
+<h3 id="having-a-label-for-my-diet">Having a label for my diet</h3>
+
+<p>There are many diets. I’ll list a few (summarized crudely):</p>
+
+<ol>
+  <li>Omnivore – I’ll eat anything</li>
+  <li>Kosher/Halal – I’ll eat anything except a few specific things</li>
+  <li>Vegetarian – I’ll eat anything except an animal</li>
+  <li>Pescaterian – Vegetarian, except I’ll eat seafood</li>
+  <li>[?????] – I’ll eat anything except red meat</li>
+  <li>Vegan – I’ll eat anything unless an animal was involved</li>
+  <li>Jain vegetarianism – I’ll eat anything except animals, eggs, and vegetables which grow in the ground</li>
+</ol>
+
+<p>Before I stopped eating meat I didn’t belong in any of these categories and I was kind of embarrassed about it.
+Not a deep burning shame or anything, but I had a hard time explaining it, and I was put into some uncomfortable situations.
+My diet was something like: “Inverse Pescatarian – I’ll eat anything except seafood… or mushrooms… or green olives… or solid tomatoes… or a few other things”.
+Not great!
+I’m very proud and happy that I fit into a group now, called vegetarian.
+People understand it and people have been mostly happy to accommodate what they can understand.</p>
+
+<p>And, happily, I’ve expanded to fill the space I entered and have come to appreciate many or most of the vegetables I used to discriminate against.</p>
+
+<p>If I were to start eating meat again, I think I would need to eat seafood as well, or I wouldn’t belong to a group anymore.</p>
+
+<h2 id="what-do-i-do-next">3. What do I do next?</h2>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">What does it mean if you’re a vegetarian but every night you have vivid dreams of eating meat?</p>&mdash; Max Jacobson (@maxjacobson) <a href="https://twitter.com/maxjacobson/status/713525209907728385">March 26, 2016</a></blockquote>
+
+<p>I’m writing this out because recently I’ve been tempted to eat meat again and I wanted to explore the idea.</p>
+
+<p>Here are my temptations, as they occur to me:</p>
+
+<ul>
+  <li>Shake Shack burger</li>
+  <li>McDonald’s burger</li>
+  <li>Wendy’s burger</li>
+  <li>Most other burgers</li>
+  <li>sliced pastrami – specifically in a pastrami reuben from a specific deli in Vermont near where I lived senior year of college</li>
+  <li>boneless spare ribs at literally any takeout Chinese restaurant</li>
+  <li>pork belly bao at Baohaus</li>
+  <li>Chicken Parmesan at an Italian restaurant near where I grew up</li>
+  <li>Lamb … in some context?
+ I forget when I ate lamb.
+ Maybe it was goat?
+ Something kind of tough and rich.</li>
+</ul>
+
+<p>My mouth is watering as I think about these.
+But it passes pretty quickly.</p>
+
+<p>I fear if I started eating meat again, even slowly and carefully, I would shortly be subsumed by it.</p>
+
+<p>And I really have no desire to start eating seafood.</p>
+
+<p>And no real reason.</p>
+
+<p>Well, it ain’t broke.</p>
+]]></description>
+        <pubDate>Tue, 05 Apr 2016 08:55:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2016/articulating-my-vegetarianism</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/articulating-my-vegetarianism</guid>
+      </item>
+    
+      <item>
+        <title>how to run shell commands from ruby if you care about their output or if they failed</title>
+        <description><![CDATA[<p>Recently I made a new gem called <a href="https://rubygems.org/gems/shell_whisperer">shell whisperer</a> which you might find
+useful for when your ruby programs need to run shell commands.</p>
+
+<p>Let’s say you want to write a script which prints a summary of the current
+directory. The desired output is:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>There are 213 files in this git repo.
+Last commit: fixed a typo
+</code></pre>
+</div>
+
+<p>There are two questions we need to ask the shell in order to print this output.</p>
+
+<p>First question: how many files are there in this git repo?</p>
+
+<p>First answer: we can ask git to list the files in the repo, and pipe the list to
+the word counting command to get the answer:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git ls-files | wc -l
+</code></pre>
+</div>
+
+<p>Second question: what is the last commit?</p>
+
+<p>Second answer: we can ask git for the log, limited to the most recent commit,
+and formatted to include just the first line:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git log -1 --pretty<span class="o">=</span><span class="s2">"%s"</span>
+</code></pre>
+</div>
+
+<p>So far so good, but how do we run these commands from Ruby?</p>
+
+<p>The language provides two ways that I’m aware of:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># backtick style</span>
+<span class="sb">`git ls-files | wc -l`</span>
+</code></pre>
+</div>
+
+<p>Or:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># system style</span>
+<span class="nb">system</span> <span class="s1">'git ls-files | wc -l'</span>
+</code></pre>
+</div>
+
+<p>What is the difference? I don’t want to go into all of the nuances (see
+<a href="http://stackoverflow.com/a/18623297">this SO post for that and more</a>) but I’ll share how I think of the
+difference:</p>
+
+<ol>
+  <li>if you use the backtick (`) style, the return value is whatever was output by
+the command – but only STDOUT, not STDERR, so you’ll miss error messages</li>
+  <li>if you use the system style, the output from the command will go to STDOUT,
+as if you had run <code class="highlighter-rouge">puts</code> and output some text, and the return value will
+signify whether the command failed or not</li>
+</ol>
+
+<p>So our program might look something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="sb">`git ls-files`</span><span class="p">.</span><span class="nf">each_line</span><span class="p">.</span><span class="nf">count</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sb">`git log -1 --pretty="%s"`</span><span class="p">.</span><span class="nf">chomp</span>
+<span class="nb">puts</span> <span class="s2">"There are </span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> files in this git repo."</span>
+<span class="nb">puts</span> <span class="s2">"Last commit: </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>And this is <em>okay</em>.</p>
+
+<p>The issue becomes: well, what do you if you care that the command might fail?
+The system style allowed for checking the return value to see whether it
+succeeded or failed, but there’s a reason we’re not using the system style: we
+care about capturing the output of the command. So with the backtick style, we
+can capture the output, but (seemingly) we can’t capture the successfulness.</p>
+
+<p>Well, we can, it’s just a little awkward:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="sb">`git ls-files`</span><span class="p">.</span><span class="nf">each_line</span><span class="p">.</span><span class="nf">count</span>
+<span class="k">raise</span> <span class="s1">'list failed somehow'</span> <span class="k">unless</span> <span class="vg">$?</span><span class="p">.</span><span class="nf">success?</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sb">`git log -1 --pretty="%s"`</span><span class="p">.</span><span class="nf">chomp</span>
+<span class="k">raise</span> <span class="s1">'message failed somehow'</span> <span class="k">unless</span> <span class="vg">$?</span><span class="p">.</span><span class="nf">success?</span>
+<span class="nb">puts</span> <span class="s2">"There are </span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> files in this git repo."</span>
+<span class="nb">puts</span> <span class="s2">"Last commit: </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>Which, OK, kind of cool, but what if we want to know <em>why</em> it failed?</p>
+
+<p>This is possible:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count_or_failure_reason</span> <span class="o">=</span> <span class="sb">`git ls-files 2&gt;&amp;1`</span><span class="p">.</span><span class="nf">each_line</span><span class="p">.</span><span class="nf">count</span>
+<span class="k">raise</span> <span class="n">count_or_failure_reason</span> <span class="k">unless</span> <span class="vg">$?</span><span class="p">.</span><span class="nf">success?</span>
+<span class="n">message_or_failure_reason</span> <span class="o">=</span> <span class="sb">`git log -1 --pretty="%s" 2&gt;&amp;1`</span><span class="p">.</span><span class="nf">chomp</span>
+<span class="k">raise</span> <span class="n">message_or_failure_reason</span> <span class="k">unless</span> <span class="vg">$?</span><span class="p">.</span><span class="nf">success?</span>
+<span class="nb">puts</span> <span class="s2">"There are </span><span class="si">#{</span><span class="n">count_or_failure_reason</span><span class="si">}</span><span class="s2"> files in this git repo."</span>
+<span class="nb">puts</span> <span class="s2">"Last commit: </span><span class="si">#{</span><span class="n">message_or_failure_reason</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>Let me attempt to explain this. The <code class="highlighter-rouge">2&gt;&amp;1</code> part means that we want the STDERR
+stream to be directed to the STDOUT stream, so that we’ll capture either one
+(or both). This gives us access to the reason the command failed, if it failed,
+but still gives us access to the output if it succeeds.</p>
+
+<p>I found myself doing this in multiple places, so I decided to wrap this pattern
+up in a tiny gem, which allows you to instead write your program like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'shell_whisperer'</span>
+<span class="n">count</span> <span class="o">=</span> <span class="no">ShellWhisperer</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="s1">'git ls-files'</span><span class="p">).</span><span class="nf">each_line</span><span class="p">.</span><span class="nf">count</span>
+<span class="n">message</span> <span class="o">=</span> <span class="no">ShellWhisperer</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="s1">'git log -1 --pretty="%s"'</span><span class="p">).</span><span class="nf">chomp</span>
+<span class="nb">puts</span> <span class="s2">"There are </span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> files in this git repo."</span>
+<span class="nb">puts</span> <span class="s2">"Last commit: </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>If any of the commands fail, that error message will be re-raised as a
+<code class="highlighter-rouge">ShellWhisperer::CommandFailed</code> exception, so you can handle that as you please.</p>
+
+<p>The node.js community seems to be all about tiny modules, and I think that idea
+is very cool, and I’m hoping to find more opportunities to do that with Ruby.</p>
+]]></description>
+        <pubDate>Sun, 31 Jan 2016 17:02:00 EST</pubDate>
+        <link>http://hardscrabble.net/2016/shell-whisperer</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2016/shell-whisperer</guid>
+      </item>
+    
+      <item>
+        <title>how to re-draw the line you just printed in Ruby, like to make a progress bar</title>
+        <description><![CDATA[<p>Here’s something I learned recently. Let’s say you have a program that is going
+to take a long time, and you want to mark the progress over time. You can print
+out some information like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">tasks</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">tasks</span><span class="p">.</span><span class="nf">each</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="p">,</span> <span class="n">index</span><span class="o">|</span>
+  <span class="nb">sleep</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># (something slow)</span>
+  <span class="n">percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">tasks</span><span class="p">.</span><span class="nf">count</span><span class="p">.</span><span class="nf">to_f</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="p">(</span><span class="n">percentage</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nf">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">%"</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Which looks kinda like this:</p>
+
+<p><img src="/img/2015-12-14-progress-bar-before-picture.png" alt="progress bar before picture" /></p>
+
+<p>Which is, let’s say, serviceable, but not, let’s say, beautiful. It stinks that
+it printed out all those lines when it didn’t really need to. I would rather it
+had sort of animated while it went. But how is this done?</p>
+
+<p>This is one of those questions that’s itched at the back of my mind for a while
+and which, when I finally googled it, was a bit disappointing. It’s just another
+unix escape character, like <code class="highlighter-rouge">\n</code> (which prints a new line). It’s <code class="highlighter-rouge">\r</code>, which I
+now think of as “the backspace to the beginning of the line” magic character.</p>
+
+<p>Armed with this knowledge and some clunky math we can write something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">begin</span>
+  <span class="n">tasks</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+  <span class="n">tasks</span><span class="p">.</span><span class="nf">each</span><span class="p">.</span><span class="nf">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">task</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+    <span class="n">width</span> <span class="o">=</span> <span class="sb">`tput cols`</span><span class="p">.</span><span class="nf">to_i</span>
+    <span class="nb">sleep</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># (something slow)</span>
+    <span class="n">percentage</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">tasks</span><span class="p">.</span><span class="nf">count</span><span class="p">.</span><span class="nf">to_f</span>
+    <span class="n">summary</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="p">(</span><span class="n">percentage</span> <span class="o">*</span> <span class="mi">100</span><span class="p">).</span><span class="nf">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">% "</span><span class="p">.</span><span class="nf">rjust</span><span class="p">(</span><span class="s2">"100.0% "</span><span class="p">.</span><span class="nf">length</span><span class="p">)</span>
+    <span class="n">remaining_chars_for_progress_bar</span> <span class="o">=</span> <span class="n">width</span> <span class="o">-</span> <span class="n">summary</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">2</span>
+    <span class="n">chunks</span> <span class="o">=</span> <span class="p">(</span><span class="n">percentage</span> <span class="o">*</span> <span class="n">remaining_chars_for_progress_bar</span><span class="p">).</span><span class="nf">ceil</span>
+    <span class="n">spaces</span> <span class="o">=</span> <span class="n">remaining_chars_for_progress_bar</span> <span class="o">-</span> <span class="n">chunks</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\r</span><span class="si">#{</span><span class="n">summary</span><span class="si">}</span><span class="s2">[</span><span class="si">#{</span> <span class="s1">'#'</span> <span class="o">*</span> <span class="n">chunks</span> <span class="si">}#{</span><span class="s1">' '</span> <span class="o">*</span> <span class="n">spaces</span><span class="si">}</span><span class="s2">]"</span>
+    <span class="nb">print</span> <span class="n">bar</span>
+  <span class="k">end</span>
+<span class="k">rescue</span> <span class="no">Interrupt</span>
+  <span class="nb">system</span> <span class="s2">"say 'I was almost done, jeez'"</span> <span class="k">if</span> <span class="no">RUBY_PLATFORM</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="s2">"darwin"</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p><img src="/img/2015-12-14-progress-bar-after-gif.gif" alt="progress bar after gif" /></p>
+
+<p>Probably you shouldn’t use this – there’s a very nice gem called
+<a href="https://github.com/jfelchner/ruby-progressbar">ruby-progressbar</a> which will work across platforms and lets you customize
+some things. But it’s nice information to have, because now you can do things
+like this:</p>
+
+<p><img src="/img/2015-12-14-progress-barn.gif" alt="barnyard" /></p>
+
+<p>I’ll leave it as an exercise to the reader how to write this one.</p>
+]]></description>
+        <pubDate>Mon, 14 Dec 2015 22:53:00 EST</pubDate>
+        <link>http://hardscrabble.net/2015/how-to-make-a-progress-bar-in-ruby</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/how-to-make-a-progress-bar-in-ruby</guid>
+      </item>
+    
+      <item>
+        <title>how to tell ruby how to compare numbers to your object with coerce</title>
+        <description><![CDATA[<p>Let’s say you have some object that represents some numeric idea:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="nc">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="nf">risky?</span> <span class="c1">#=&gt; true</span>
+<span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="c1">#=&gt; false</span>
+</code></pre>
+</div>
+
+<p>This object takes in a number and wraps it, and then extends it with some
+domain-specific logic. Because the object wraps a number, and kind of represents
+a number, you might find yourself wanting to compare it to other numbers,
+whether they’re also wrapped or not.</p>
+
+<p>The above code seems to accomplish that. Our object knows how to compare itself
+to a number – we only implemented the greater than method, but we could
+do all the other comparisons using the same approach – <em>but</em> it isn’t as
+flexible as it could be. Watch what happens when we try to do this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="no">CupsOfCoffeePerDay</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>I get this error when I run the program:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/Users/max/src/hardscrabble.net/comparisons.rb:9:in `&gt;': comparison of Fixnum with CupsOfCoffeePerDay failed (ArgumentError)
+        from /Users/max/src/hardscrabble.net/comparisons.rb:9:in `&gt;'
+        from /Users/max/src/hardscrabble.net/comparisons.rb:23:in `&lt;main&gt;'
+</code></pre>
+</div>
+
+<p>What’s happening here?</p>
+
+<ol>
+  <li>we create two objects</li>
+  <li>we ask one object if it’s greater than the second object</li>
+  <li>our implementation refers to the wrapped number object and asks <em>it</em> if it’s
+greater than this second object</li>
+  <li>the number complains that it doesn’t know how to compare itself to some rando</li>
+</ol>
+
+<p>And, fair enough. From the point of view of the number, it has no idea what
+cups of coffee per day even means, or which part of it is a number.</p>
+
+<p>We could change our implementation to accomodate this use-case:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="nc">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">other</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">CupsOfCoffeePerDay</span><span class="p">)</span>
+      <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span><span class="p">.</span><span class="nf">num</span>
+    <span class="k">else</span>
+      <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+
+  <span class="kp">protected</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:num</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>This is <em>kind of ok</em> but not really great. It required that we expose the num
+attribute externally – by putting the <code class="highlighter-rouge">attr_reader</code> after <code class="highlighter-rouge">protected</code>, it isn’t
+really public, it’s just available for other CupsOfCoffeePerDay objects to call
+– but still, kind of sad that we had to do that, because the object is supposed
+to represent an idea, and the more internals you expose, the farther you get
+from that sort of pure idea and the more you just have some code. Worse still,
+imagine writing that conditional in each of the operator methods… maybe you
+can be clever and abstract the duplicated code to some private method, but like,
+it’s a lot of repretition.</p>
+
+<p>Turns out Ruby has a nice way to let your custom objects reveal their inner
+numbers, and it’s called <code class="highlighter-rouge">coerce</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="nc">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">&gt;</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">&gt;</span> <span class="n">other</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">other</span><span class="p">,</span> <span class="vi">@num</span><span class="p">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>There’s not a ton of documentation about this. I only found it by luck. I was
+looking to understand how Ruby numbers does its comparisons, and I opened up
+<a href="https://github.com/pry/pry">pry</a> (with <a href="https://github.com/pry/pry-doc">pry-doc</a> installed), and started exploring:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install pry pry-doc
+$ pry
+&gt; 4.pry
+(4)&gt; show-source &gt;
+From: numeric.c (C Method):
+Owner: Fixnum
+Visibility: public
+Number of lines: 17
+
+static VALUE
+fix_gt(VALUE x, VALUE y)
+{
+    if (FIXNUM_P(y)) {
+        if (FIX2LONG(x) &gt; FIX2LONG(y)) return Qtrue;
+        return Qfalse;
+    }
+    else if (RB_TYPE_P(y, T_BIGNUM)) {
+        return FIX2INT(rb_big_cmp(rb_int2big(FIX2LONG(x)), y)) &gt; 0 ? Qtrue : Qfalse;
+    }
+    else if (RB_TYPE_P(y, T_FLOAT)) {
+        return rb_integer_float_cmp(x, y) == INT2FIX(1) ? Qtrue : Qfalse;
+    }
+    else {
+        return rb_num_coerce_relop(x, y, '&gt;');
+    }
+}
+</code></pre>
+</div>
+
+<p>At this point, I thought <em>oh no! C!</em></p>
+
+<p>But like, this is so cool: this is the implementation of the greater than method
+in numbers in Ruby, and it’s totally discoverable if you open pry and ask it
+to <code class="highlighter-rouge">show-source</code>.</p>
+
+<p>I don’t really know C, but if I squint, I can tell that this is doing something
+kind of reasonable. It seems to be checking the type of the second value (the
+one you’re comparing the current value to) and doing something different based
+on the type. The final branch of logic is when the type is unknown. Bingo. Our
+CupsOfCoffeePerDay type is definitely unknown. In that case, it calls
+<code class="highlighter-rouge">rb_num_coerce_relop</code>. Unfortunately, when I asked pry to
+<code class="highlighter-rouge">show-source rb_num_coerce_relop</code> it didn’t know how.</p>
+
+<p>Thankfully, it printed the filename this source code can be found in, so I went
+to <a href="https://github.com/ruby/ruby">the ruby source code</a> and searched for a file called <code class="highlighter-rouge">numeric.c</code>. Within
+that, I searched for the rb_num_coerce_relop function. It takes in the two
+objects (the CupsOfCoffeePerDay and the number) and the operator (<code class="highlighter-rouge">&gt;</code>). Its
+source looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+VALUE
+rb_num_coerce_bin(VALUE x, VALUE y, ID func)
+{
+    do_coerce(&amp;x, &amp;y, TRUE);
+    return rb_funcall(x, func, 1, y);
+}
+</code></pre>
+</div>
+
+<p>What does that do? It looks like it coerces the two types to be the same type,
+and then calls the <code class="highlighter-rouge">&gt;</code> function on the first one, passing the second one.
+(Again: squinting).</p>
+
+<p>So <code class="highlighter-rouge">do_coerce</code> is where the interesting part happens. I’ll just <a href="https://github.com/ruby/ruby/blob/f3cafab56a353db969f5e39923bd15712a204c36/numeric.c#L274-L309">link to it</a>
+because it’s pretty long. But the cool thing in it is that it checks if the
+first object implements a <code class="highlighter-rouge">coerce</code> method, and if it does, it does something
+different. So then it becomes a game of figuring out how to write a <code class="highlighter-rouge">coerce</code>
+method and finding out, via stack overflow (of course), that you can add this
+magic <code class="highlighter-rouge">coerce</code> method, and it will take in the second object, and it’s expected
+to return an array of compatible types, with the second object’s value first,
+and the first object’s value second. So our implementation looks like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+  <span class="p">[</span><span class="n">other</span><span class="p">,</span> <span class="vi">@num</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>One interesting thing to note is that if anything fails within your coerce
+method, the exception will be silently swallowed by <code class="highlighter-rouge">do_coerce</code>, and then you’ll
+get the earlier error about not being able to compare the two objects. If our
+implementation looked like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+  <span class="k">raise</span> <span class="s1">'hell'</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>You might expect hell to be raised as an exception – but nope. You might think
+that means the <code class="highlighter-rouge">coerce</code> method wasn’t called. It was, it’s just kind of unusual
+territory. Thankfully, it’s not completely silent: it emits a warning that your
+exception will no longer be rescued in future versions of Ruby. I like that
+change.</p>
+
+<p>So. Now that we know about coerce, our operator methods can be really simple,
+but they can still be used bidirectionally, and we can even feel OK about
+abstracting them a bit. I kind of like this final implementation, which
+includes all of the operators:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'forwardable'</span>
+
+<span class="k">class</span> <span class="nc">CupsOfCoffeePerDay</span>
+  <span class="kp">extend</span> <span class="no">Forwardable</span>
+
+  <span class="n">def_delegators</span> <span class="s2">"@num"</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;</span><span class="p">,</span> <span class="ss">:&lt;</span><span class="p">,</span> <span class="p">:</span><span class="o">&gt;=</span><span class="p">,</span> <span class="ss">:&lt;=</span><span class="p">,</span> <span class="ss">:==</span>
+
+  <span class="no">MY_LIMIT</span> <span class="o">=</span> <span class="mi">3</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="vi">@num</span> <span class="o">=</span> <span class="n">num</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">risky?</span><span class="p">(</span><span class="ss">threshold: </span><span class="no">MY_LIMIT</span><span class="p">)</span>
+    <span class="nb">self</span> <span class="o">&gt;</span> <span class="n">threshold</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">coerce</span><span class="p">(</span><span class="n">other</span><span class="p">)</span>
+    <span class="p">[</span><span class="n">other</span><span class="p">,</span> <span class="vi">@num</span><span class="p">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+]]></description>
+        <pubDate>Mon, 09 Nov 2015 00:50:00 EST</pubDate>
+        <link>http://hardscrabble.net/2015/how-to-tell-ruby-how-to-compare-numbers-to-your-object</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/how-to-tell-ruby-how-to-compare-numbers-to-your-object</guid>
+      </item>
+    
+      <item>
+        <title>begin rescue else</title>
+        <description><![CDATA[<p>Quick ruby tip kinda post.</p>
+
+<p>Today I learned, this is a valid Ruby program:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">begin</span>
+  <span class="k">raise</span> <span class="k">if</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">].</span><span class="nf">sample</span>
+<span class="k">rescue</span>
+  <span class="nb">puts</span> <span class="s2">"failed"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"did not fail"</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>I’m used to using <code class="highlighter-rouge">else</code> after an <code class="highlighter-rouge">if</code>, but not after a <code class="highlighter-rouge">rescue</code>. This is like
+saying “do this thing. if it fails, do this <em>other</em> thing. if it <em>doesn’t fail</em>,
+do this <strong><em>other, other</em></strong> thing.</p>
+
+<p>Huh!</p>
+
+<p>(Via <a href="https://github.com/rails/rails/blob/0d216d1add9eaaddfc0b02813ccf08fd22910859/activesupport/lib/active_support/dependencies.rb#L760-L767">rails</a>)</p>
+
+]]></description>
+        <pubDate>Tue, 20 Oct 2015 23:28:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/begin-rescue-else</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/begin-rescue-else</guid>
+      </item>
+    
+      <item>
+        <title>how to log all input in your pry rails console</title>
+        <description><![CDATA[<p>Many Rubyists use and love the <a href="https://github.com/pry/pry">pry</a> gem for adding breakpoints to their
+programs and inspecting objects. Super useful. Some others use the <a href="https://github.com/rweng/pry-rails">pry-rails</a>
+gem to use the pry REPL in place of irb for the rails console.</p>
+
+<p>Let’s say you want to log all of the activity that occurs in your rails console.
+This could be a nice security thing. Maybe you’re just nostalgic for old times.</p>
+
+<p>Pry has something called an “<a href="https://github.com/pry/pry/wiki/Customization-and-configuration#Config_input">input object</a>”, which you can override in your
+configuration. The object’s responsibility is to feed ruby code to Pry, line by
+line. By default, it uses the [Readling module][]. I don’t know a <em>ton</em> about
+readline, but I gather that it’s wrapping some standard unix program, which
+means it sort of <em>feels</em> natural. For example, you can input Control+l and it
+will clear the screen; <code class="highlighter-rouge">gets.chomp</code> doesn’t do that kind of thing.</p>
+
+<p>So, Readline is great. We want to use it. We just kind of want to wrap it. SO
+let’s see what that looks like.</p>
+
+<p>First: where do we actually put our configuration?</p>
+
+<p>You can put a <code class="highlighter-rouge">.pryrc</code> file in the root of your project. You can even put Ruby
+code in that file. I think that’s the official way to do it. But I don’t know…
+it doesn’t get syntax highlighting because it doesn’t have a <code class="highlighter-rouge">.rb</code> file
+extension… I put my configuration in a Rails initializer named
+<code class="highlighter-rouge">config/initializers/pry.rb</code>, and that works fine too.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoggingReadline</span>
+  <span class="n">delegate</span> <span class="ss">:completion_proc</span><span class="p">,</span> <span class="ss">:completion_proc</span><span class="o">=</span><span class="p">,</span> <span class="ss">to: </span><span class="no">Readline</span>
+
+  <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="no">Readline</span><span class="p">.</span><span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">user_input</span><span class="o">|</span>
+      <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">logger</span>
+    <span class="vi">@logger</span> <span class="o">||=</span> <span class="no">Logger</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'log/console.log'</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Pry</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">input</span> <span class="o">=</span> <span class="no">LoggingReadline</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+</div>
+
+<p>The important thing for custom input objects is that they implement the
+<code class="highlighter-rouge">readline</code> method. The method takes in a string that holds the current user
+prompt, and it is expected to return a string that holds the next line of Ruby
+code for Pry to evaluate.</p>
+
+<p>If pry is a REPL (read evaluate print loop), the custom input object assumes the
+responsibility of the first letter, and thats’ it.</p>
+
+<p>It doesn’t strictly need to ask the user for input. It could just return some
+nonsense.</p>
+
+<p>But, this one does. We can summarize what it does as: <em>ask the dev for a line of
+input, but first log it to a file before returning it to pry for EPL-ing.</em></p>
+
+<p>There’s one line that’s kind of strange:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">delegate</span> <span class="ss">:completion_proc</span><span class="p">,</span> <span class="ss">:completion_proc</span><span class="o">=</span><span class="p">,</span> <span class="ss">to: </span><span class="no">Readline</span>
+</code></pre>
+</div>
+
+<p>What’s that about?</p>
+
+<p>Well, I’ve learned, it’s just kind of a necessary thing to make sure your custom
+input object seamlessly behaves like the default pry input behavior. Let me
+explain.</p>
+
+<p><code class="highlighter-rouge">Readline</code>, by default, has some strategy for tab completing when you start to
+write something, and then press tab. That strategy is a proc object. The default
+one has something to do with irb I guess?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ irb
+&gt;&gt; Readline.completion_proc
+=&gt; #&lt;Proc:0xb9964ce0@/home/max/.rubies/2.2.3/lib/ruby/2.2.0/irb/completion.rb:37&gt;
+</code></pre>
+</div>
+
+<p>But! When starting pry, it has a different completion proc!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pry
+[1] pry(main)&gt; Readline.completion_proc
+=&gt; #&lt;Proc:0xb8a0c25c@/home/max/.gem/ruby/2.2.3/gems/pry-0.10.2/lib/pry/repl.rb:177&gt;
+</code></pre>
+</div>
+
+<p>But when you provide a custom input object, pry doesn’t replace the completion
+proc on readline because you seem not to even be using it, so why bother? But
+in this case we totally are using it, we’re just wrapping it.</p>
+
+<p>At first, I thought this was a bug with Pry, and I opened an issue to complain
+about it, but while writing this blog post I realized that it’s kind of not a
+bug, and this delegation approach is probably fine.</p>
+]]></description>
+        <pubDate>Wed, 14 Oct 2015 00:15:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/how-to-log-all-input-in-your-pry-rails-console</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/how-to-log-all-input-in-your-pry-rails-console</guid>
+      </item>
+    
+      <item>
+        <title>fake tools</title>
+        <description><![CDATA[<p>Last week, Flatiron School launched a new online learning program called “Learn
+Verified”. The launch was accompanied by <a href="http://blog.flatironschool.com/introducing-learn-a-new-type-of-online-learning-platform/">a letter</a> from the founders, Avi
+and Adam. This section jumped out to me:</p>
+
+<blockquote>
+  <h1 id="real-tools">Real Tools</h1>
+
+  <p>You can’t learn real skills with fake tools. As much as you can learn in a
+simulation, you can’t become a competent surgeon without picking up a scalpel
+or pilot without stepping into an airplane. Yet, online learning platforms
+today teach people using in-browser, simulated coding tools (often referred to
+as REPLs) and multiple choice quizzes which, while helpful, can never bring a
+student to the level of competency required of a professional software
+engineer.</p>
+
+  <p>Learn requires students to use the same tools and workflows that
+professional software engineers use on the job. From the start, students work
+in their terminals using git-based workflows. They’re taught to master the
+craft using the tools of the trade.</p>
+</blockquote>
+
+<p>On <a href="/metaphorloop/2/">the most recent episode of metaphor loop</a>, we talked about the
+different styles of learning. One of them was <a href="https://en.wikipedia.org/wiki/Kinesthetic_learning">kinesthetic learning</a>, which
+we can say is like “hands on” learning. I hadn’t heard the term until Vaidehi
+told me about it and I realized I identified with it. I think kinesthetic
+learners are the same ones who will identify with Learn Verified’s emphasis on
+using “real tools”, because they’ll get to get their hands on the material
+they’re learning in a more direct, free-to-explore way. That market of learners
+has been underserved by the existing solutions, and I wonder if Flatiron will
+be able to pull off an online learning environment just for them.</p>
+
+<p>I do kind of chafe at the idea that “you can’t learn real skills with fake
+tools”, though. It feels like a pretty inflammatory position to take. I’m
+reminded of Lost’s great “<a href="https://www.youtube.com/watch?v=eYmnzbLmCPk">Don’t tell me what I can’t do!</a>” catchphrase.
+Aren’t some people different from other people? And not to be all metaphysical
+here, but aren’t all tools kind of fake tools? Where do you draw the line? idk.</p>
+
+]]></description>
+        <pubDate>Sun, 11 Oct 2015 12:07:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/fake-tools</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/fake-tools</guid>
+      </item>
+    
+      <item>
+        <title>participate in society</title>
+        <description><![CDATA[<p>If there’s one piece of advice I feel comfortable giving, it’s this: participate
+in society. Find it in your introverted self to <em>join in</em>.</p>
+
+<p>When you hear vaguely that you ought to be using zsh instead of bash, but when
+you try it you’re not sure why it’s better, <em>stick with it</em>. When you hear that
+oh-my-zsh is a good way to manage your zsh configuration and you think the name
+is dumb and don’t want to use it, <em>get over yourself</em>, because months later
+you’ll find yourself desperately googling to see if anyone else has is using
+zsh in tmux on el capitan and experiencing a weird behavior where
+option-backspace isn’t working (it’s supposed to delete backwards a full word),
+but only when in tmux, and you can’t really find anything, just throw out your
+zsh configuration and use the thing that people use. You won’t regret it.</p>
+
+<p>Anyway, that’s just my one piece of advice.</p>
+]]></description>
+        <pubDate>Sat, 03 Oct 2015 00:00:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/participate-in-society</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/participate-in-society</guid>
+      </item>
+    
+      <item>
+        <title>announcing metaphor loop</title>
+        <description><![CDATA[<p>Last month I started a podcast but I didn’t really publicize it because I wasn’t
+sure I was going to keep doing it. I put it on this site, hidden down in the
+footer, and I put it on iTunes, and I tweeted a few cryptic things like:</p>
+
+<blockquote class="twitter-tweet" lang="en">
+  <p lang="en" dir="ltr">
+    there’s a slight chance I’m editing a podcast
+    <a href="http://t.co/TGoacn3LCj">pic.twitter.com/TGoacn3LCj</a>
+  </p>
+  &mdash; Max Jacobson (@maxjacobson)
+  <a href="https://twitter.com/maxjacobson/status/635488531251601409">
+    August 23, 2015
+  </a>
+</blockquote>
+
+<p>Today I released the second episode, which makes it real enough that I’m ready
+to share it.</p>
+
+<h2 id="metaphor-loop">metaphor loop</h2>
+
+<p><a href="/metaphorloop"><img src="/img/metaphorloop.png" alt="metaphor loop" /></a></p>
+
+<p><em>(Click on the art to visit the show homepage, which has subscription links)</em></p>
+
+<p>It’s about “how we think about programming”. I started out with an agenda,
+which was to argue that figurative language is the best tool for teaching code,
+or something like that, and I’m finding that I’m not sure what I think anymore,
+but I’m excited to keep exploring the ways people build understanding by
+interviewing programmers about what goes on in their heads.</p>
+
+<p>The <a href="/metaphorloop/1">first episode</a> was an interview with my old friend Corey Mendell. I
+had a really good time recording and editing it and the few people I shared it
+with seemed to like it too. I was immediately addicted.</p>
+
+<p>I don’t think I have it in me to do it on a weekly basis like a lot of podcasts.
+Today I’m sharing <a href="/metaphorloop/2">the second episode</a>, approximately a month after the
+first. So, monthly? Maybe.</p>
+
+<p>This one features <a href="http://vaidehijoshi.github.io/">Vaidehi Joshi</a> who I don’t
+even really know, but whose blog I really like. I’m happy with how this one
+turned out and think you’ll like it.</p>
+
+<h2 id="a-few-details">a few details</h2>
+
+<p>I’m not planning to have ads. I want this to be a fun, pure endeavor that makes
+no money. I’m not tracking subscriber counts or anything like that. I don’t
+want to know.</p>
+
+<p>I’m licensing it under a creative commons license, because</p>
+
+<ol>
+  <li>why not?</li>
+  <li>I wanted to include some CC-licensed music, and it had a “share-alike” clause</li>
+  <li>so why not?</li>
+</ol>
+
+<p>By the way: part of the reason I made this is that I really like listening to
+podcasts and my ego would often hear them and think “why don’t they invite me
+on?” One thing I’m realizing is that inviting people on is kind of hard,
+because you don’t know if they’ll want to do it and maybe they’ll think it’s
+dumb? So: <strong>if you listen to some episodes and think you’d like to be on the
+show, let me know</strong>, and we’ll at least have a phone call and if it feels like
+a show, it’ll be a show.</p>
+
+<p><a href="http://hardscrabble.net/metaphorloop">hardscrabble.net/metaphorloop</a></p>
+]]></description>
+        <pubDate>Fri, 18 Sep 2015 12:07:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/announcing-metaphorloop</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/announcing-metaphorloop</guid>
+      </item>
+    
+      <item>
+        <title>pro tip open firefox tabs in background</title>
+        <description><![CDATA[<p>One good thing to know if you’re a firefox person: visit <code class="highlighter-rouge">about:config</code> and poke
+around, configuring things.</p>
+
+<p>Here’s what happened today: I was watching a youtube video while browsing
+Twitter via <a href="http://tapbots.com/tweetbot/mac/">Tweetbot</a>. I clicked a link,
+which opened a new tab, pushing my video into the background. I diligently
+clicked the video’s tab to bring it back to the foreground so I could continue
+passively watching it while browsing twitter.</p>
+
+<p>Then I clicked another link, and instinctively clicked the video’s tab to bring
+it back into the foreground again.</p>
+
+<p>By the third time I did this, I realized I really wished there was a setting to
+automatically open tabs in the background. I tried googling it, but wasn’t
+really finding anything. So I checked <code class="highlighter-rouge">about:config</code> and searched through for
+“background”. The screen is a list of every configuration you can control.
+Many of them are boolean attributes, which can be toggled by simply double
+clicking the attribute.</p>
+
+<p>I saw one, <code class="highlighter-rouge">browser.tabs.loadDivertedInBackground;false</code> and thought “hmm,
+maybe?” At this point, I’m not certain there’s even a configuration that does
+this, but I try toggling it… and … click a link from a tweet… and…</p>
+
+<p>It did what I wanted. Sweet.</p>
+]]></description>
+        <pubDate>Tue, 08 Sep 2015 22:20:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/pro-tip-open-firefox-tabs-in-background</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/pro-tip-open-firefox-tabs-in-background</guid>
+      </item>
+    
+      <item>
+        <title>eighty character lines</title>
+        <description><![CDATA[<p>Last month we talked about <a href="/2015/rubocop">RuboCop</a>, which analyzes your Ruby code and
+nitpicks it. One of its most difficult to follow suggestions is to keep your
+lines of code no longer than 80 characters.</p>
+
+<p>The creator of rubocop, bbatsov, explained his perspective <a href="http://batsov.com/articles/2013/06/26/the-elements-of-style-in-ruby-number-1-maximum-line-length/">on his
+blog</a>:</p>
+
+<blockquote>
+  <p>We should definitely have a limit – that’s beyond any doubt. It’s common
+knowledge that humans read much faster vertically, than horizontally. Try to
+read the source code of something with 200-character lines and you’ll come to
+acknowledge that.</p>
+</blockquote>
+
+<p>I’m totally on board with the short lines train. For me, it only gets tricky
+when dealing with nested stuff (examples to follow) which add a lot of space to
+the left of the first character of code. For example:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">MyGreatGem</span>
+  <span class="k">module</span> <span class="nn">SomeOtherNamespace</span>
+    <span class="k">module</span> <span class="nn">OmgAnotherNamespace</span>
+      <span class="k">module</span> <span class="nn">LolYeahOneMore</span>
+        <span class="k">class</span> <span class="nc">SomethingGreat</span>
+          <span class="k">class</span> <span class="nc">SomethingOk</span>
+            <span class="k">class</span> <span class="nc">MyGreatClass</span>
+              <span class="k">def</span> <span class="nf">initialize</span>
+                <span class="nb">puts</span> <span class="s2">"OMG I only have 64 characters to express something on "</span> <span class="p">\</span>
+                     <span class="s2">"this line! And now it's more like 'these lines' haha"</span>
+              <span class="k">end</span>
+            <span class="k">end</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Often strings are the first thing to get chopped up, as in that example.</p>
+
+<p>The only approach I thought of to deal with that is to organize my code
+differently to not use many nested namespaces. That’s probably not the worst
+idea, honestly, but I’m writing this post to share an interesting style I
+observed in the wild (read: on github) that takes a whole nother approach:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Excerpted from:</span>
+<span class="c1"># https://github.com/net-ssh/net-sftp/blob/ebf5d5380cc533b69b308baa2e396e4a18abc900/lib/net/sftp/operations/dir.rb</span>
+<span class="k">module</span> <span class="nn">Net</span><span class="p">;</span> <span class="k">module</span> <span class="nn">SFTP</span><span class="p">;</span> <span class="k">module</span> <span class="nn">Operations</span>
+  <span class="k">class</span> <span class="nc">Dir</span>
+    <span class="kp">attr_reader</span> <span class="ss">:sftp</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">sftp</span><span class="p">)</span>
+      <span class="vi">@sftp</span> <span class="o">=</span> <span class="n">sftp</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span><span class="p">;</span> <span class="k">end</span><span class="p">;</span> <span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Huh! That’s a style I hadn’t seen before. RuboCop has many complaints about it,
+and I don’t totally love the style, but it’s a very novel and neat way to do it,
+and it certainly frees up columns to spend on your code if you’re planning to
+stick to an 80 character limit.</p>
+
+<p>One possible alternative is to define your namespaced class using this
+shorthand:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Net</span><span class="o">::</span><span class="no">SFTP</span><span class="o">::</span><span class="no">Operations</span><span class="o">::</span><span class="no">Dir</span>
+  <span class="kp">attr_reader</span> <span class="ss">:sftp</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">sftp</span><span class="p">)</span>
+    <span class="vi">@sftp</span> <span class="o">=</span> <span class="n">sftp</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>If you do that, you get 2 extra characters on each line. Sweet!</p>
+
+<p>One problem: it sort of doesn’t work, at least not in the same way.</p>
+
+<p>If you just look at that example, and imagine that you’re the Ruby interpreter
+trying to figure out what this code means, how are you supposed to know whether
+<code class="highlighter-rouge">Net</code>, <code class="highlighter-rouge">SFTP</code>, and <code class="highlighter-rouge">Operations</code> are supposed to be classes or modules? You have
+to <em>already know</em> by them being previously defined. If they haven’t been defined
+yet, you are well within your right to raise a <code class="highlighter-rouge">RuntimeException</code> to complain
+that this constant hasn’t been defined yet, rather than try to guess.</p>
+
+<p>Both of the earlier longhand examples were explicitly explaining what the type
+of each namespace constant is. That pattern works whether you’re defining the
+module or class in that moment, or “opening” a previously defined module or
+class to add something new to it. This shorthand, while optimal for line length,
+only works when opening previously defined constants.</p>
+
+<p>One downside of this approach is that, by relying on all of the namespaces being
+predefined, it becomes harder to test this class in isolation (it’s probably
+possible to do it through <a href="/2015/stubbing-constants/">some gnarly stubbing</a> but, harder). You’re
+also introducing some requirements about the order in which the files from your
+code need to be loaded, which feels kind of fragile.</p>
+
+<p>One <em>possible</em> upside comes to mind. When you follow the typical pattern of
+writing out all the namespace modules and classes, you introduce some room for
+error: what if in one file you write <code class="highlighter-rouge">class Operations</code> by mistake (instead of
+<code class="highlighter-rouge">module Operations</code>)? You’ll get an error. That’s not too bad, honestly.</p>
+
+<p>I think 80 is usually enough but if you’re doing too many contortions to stay
+in that box, try like 90 or 100, you’re still a good person.</p>
+]]></description>
+        <pubDate>Sat, 05 Sep 2015 23:29:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/eighty-character-lines</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/eighty-character-lines</guid>
+      </item>
+    
+      <item>
+        <title>why I think RuboCop is so cool, and how to contribute to it</title>
+        <description><![CDATA[<h2 id="rubocop-as-compiler">RuboCop as compiler</h2>
+
+<p>Ruby is not a compiled language.</p>
+
+<p>You can write code which has obvious flaws and Ruby will run it and then it will
+fail at runtime. For example:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="s2">"hello world"</span>
+<span class="nb">puts</span> <span class="n">hello</span> <span class="n">world</span>
+</code></pre>
+</div>
+
+<p>That produces this output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ruby lol.rb
+hello world
+/Users/max/Desktop/lol.rb:2:in `&lt;main&gt;': undefined local variable or method `world' for main:Object (NameError)
+</code></pre>
+</div>
+
+<p>Some other languages wouldn’t even run that program. For example, the same code
+in Go:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="s">"fmt"</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">)</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">hello_world</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Running that produces this output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ go run lol.go
+# command-line-arguments
+./lol.go:7: undefined: hello_world
+</code></pre>
+</div>
+
+<p>But Ruby can’t run anything. Look at this bullshit:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="s2">"hello world"</span>
+
+<span class="k">def</span> <span class="nf">lol</span>
+  <span class="nb">puts</span> <span class="s2">"lol world"</span>
+
+<span class="n">lol</span>
+</code></pre>
+</div>
+
+<p>Running that produces this output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ruby lol.rb
+/Users/max/Desktop/lol.rb:7: syntax error, unexpected end-of-input, expecting keyword_end
+</code></pre>
+</div>
+
+<p>Notice: it doesn’t even output “hello world”; it just straight-up fails to run.
+You might say it doesn’t compile.</p>
+
+<p>Ruby actually has a command line flag for checking the syntactic-correctness of
+a program:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ruby -c lol.rb
+/Users/max/Desktop/lol.rb:7: syntax error, unexpected end-of-input, expecting keyword_end
+$ ruby -c ok_program.rb
+Syntax OK
+</code></pre>
+</div>
+
+<p>This is useful, but only to a point. It means your programs will usually run,
+but you’ll have more errors at runtime than you would writing in a language like
+Go (for example).</p>
+
+<p>I barely know Go, but in the small exposure I’ve had, I’ve really enjoyed how
+nit-picky the compiler is. For example, this program:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="s">"fmt"</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">msg</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"Hello world"</span><span class="x">
+	</span><span class="n">other_msg</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"lol world"</span><span class="x">
+	</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Running it produces this output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># command-line-arguments
+./lol.go:7: other_msg declared and not used
+</code></pre>
+</div>
+
+<p>What! I can’t run my program because I declared a variable but then didn’t use
+it?? Who cares?? Go cares! And I kind of do too, now. Why have it if you don’t
+need it? Go kind of forces you to write really intention-revealing code and to
+clean up anything which might obscure your intentions. That’s great.</p>
+
+<p>Ruby doesn’t care as much about that.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">msg</span> <span class="o">=</span> <span class="s1">'hello world'</span>
+<span class="n">other_msg</span> <span class="o">=</span> <span class="s1">'lol world'</span>
+<span class="nb">puts</span> <span class="n">msg</span>
+</code></pre>
+</div>
+
+<p>That’s fine:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ruby -c lol.rb
+Syntax OK
+$ ruby lol.rb
+hello world
+</code></pre>
+</div>
+
+<p>So now your code has this random unused variable. It’s not <em>really</em> hurting
+anyone or anything. In theory it has a performance impact, as it’s allocating
+an object you don’t really need it to, and if this code is run a ton that could
+matter. But more importantly, I think, it’s just clutter. When people come
+across this code in the future they won’t know why it’s there, but they might
+assume it’s there for a reason, and they’ll mentally mark this area of the code
+base as kind of strange and unknowable.</p>
+
+<p><a href="https://github.com/bbatsov/rubocop">RuboCop</a> is a gem which can help bring Ruby
+closer toward Go levels of nit-pickiness, and I’m a huge fan of it. I recommend
+including it in your Ruby projects and running it alongside your tests to
+enforce adherence to its rules (“cops” in its parlance).</p>
+
+<p>Running that same ruby program through RuboCop produces this output (note: you
+have to <code class="highlighter-rouge">gem install rubocop</code> first):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ rubocop lol.rb
+Inspecting 1 file
+W
+
+Offenses:
+
+lol.rb:2:1: W: Useless assignment to variable - other.
+other = 'lol world'
+^^^^^
+
+1 file inspected, 1 offense detected
+</code></pre>
+</div>
+
+<p>Awesome! Now we know our code contains some offense and might be confusing our
+collaborators, and we know exactly where to make the change.</p>
+
+<hr />
+
+<h2 id="rubocop-as-code-style-nit-picker">RuboCop as code style nit picker</h2>
+
+<p>RuboCop is also very opinionated about code style. For example, it will complain
+if you aren’t consistent about using single or double quotes, or if you aren’t
+consistent about using two spaces for indentation, or if you leave spaces at the
+end of your lines.</p>
+
+<p>I recommend configuring it to your taste and to not feel guilty about disabling
+cops which you don’t find valuable. As a tool, it adheres to the “strong
+opinions, weakly held” mantra: it’s very easy to bribe this cop into changing
+its opinions by adding a simple yml file to the root of your project.</p>
+
+<p>The Go compiler isn’t picky about things like code style, but Go ships with a
+secondary, optional tool called <a href="https://golang.org/cmd/gofmt/">gofmt</a> which is extraordinarily opinionated:
+it straight-up rewrites your code to follow Go style conventions.</p>
+
+<p>Similarly, many RuboCop cops are auto-correctable. Consider this program a
+“before picture”:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="ss">:name</span><span class="p">)</span>
+    
+    <span class="vi">@name</span><span class="o">=</span><span class="nb">name</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">milo</span> <span class="o">=</span> <span class="no">Dog</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Milo"</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">milo</span>
+
+
+</code></pre>
+</div>
+
+<p>Kind of ugly looking, but it’s syntactically valid:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ruby -v
+ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-darwin14.3.0]
+$ ruby -c lol.rb
+Syntax OK
+$ ruby lol.rb
+#&lt;Dog:0x007fbe64207a40 @name="Milo"&gt;
+</code></pre>
+</div>
+
+<p>So let’s try autocorrecting it:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ rubocop lol.rb --auto-correct
+Inspecting 1 file
+W
+
+Offenses:
+
+lol.rb:1:1: C: Missing top-level class documentation comment.
+class Dog
+^^^^^
+lol.rb:2:1: C: [Corrected] Extra empty line detected at class body beginning.
+lol.rb:2:23: W: Circular argument reference - name.
+  def initialize(name:name)
+                      ^^^^
+lol.rb:3:1: C: [Corrected] Extra empty line detected at method body beginning.
+lol.rb:3:1: C: [Corrected] Trailing whitespace detected.
+lol.rb:4:1: C: [Corrected] Trailing whitespace detected.
+lol.rb:4:5: W: end at 4, 4 is not aligned with def at 2, 2.
+    end
+    ^^^
+lol.rb:4:10: C: [Corrected] Surrounding space missing for operator =.
+    @name=name
+         ^
+lol.rb:5:10: C: [Corrected] Surrounding space missing for operator =.
+    @name=name
+         ^
+lol.rb:8:22: C: [Corrected] Prefer single-quoted strings when you don't need string interpolation or special symbols.
+milo = Dog.new(name: "Milo")
+                     ^^^^^^
+lol.rb:9:22: C: [Corrected] Prefer single-quoted strings when you don't need string interpolation or special symbols.
+milo = Dog.new(name: "Milo")
+                     ^^^^^^
+lol.rb:10:1: C: [Corrected] 2 trailing blank lines detected.
+lol.rb:11:1: C: [Corrected] 2 trailing blank lines detected.
+
+1 file inspected, 13 offenses detected, 10 offenses corrected
+</code></pre>
+</div>
+
+<p>Afterwards, the program looks like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="ss">:name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">milo</span> <span class="o">=</span> <span class="no">Dog</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Milo'</span><span class="p">)</span>
+<span class="nb">p</span> <span class="n">milo</span>
+</code></pre>
+</div>
+
+<p>It’s not perfect. I’m surprised it didn’t autocorrect the indentation on the
+first <code class="highlighter-rouge">end</code>. But it’s neat that it did as much as it did.</p>
+
+<p><strong>EDIT</strong>: I opened <a href="https://github.com/bbatsov/rubocop/issues/2125">an issue</a> about this surprise and it turns out they don’t
+want to autocorrect that unless you really opt in.</p>
+
+<p>In the past, I’ve written about how <a href="/2015/ruby-keyword-arguments-arent-obvious/">Ruby Keyword Arguments aren’t Obvious</a>,
+and mentioned “circular argument references” as a mistake I had to learn not to
+make. In an attempt to give back to others like me, I submitted <a href="https://github.com/bbatsov/rubocop/pull/2070">a pull
+request</a> which adds a cop to RuboCop that checks for the presence of those
+circular argument references and warns you about them. This is particularly
+useful on Ruby 2.0.0 and Ruby 2.1, which don’t emit warnings about their
+presence as Ruby 2.2 does.</p>
+
+<hr />
+
+<h2 id="contributing-to-rubocop">contributing to RuboCop</h2>
+
+<p>Contributing to RuboCop is somewhat intimidating because, as you might imagine,
+its code base has very high standards. It also seems like it ought to be very
+complicated, because the project needs to be able to statically analyze code
+in order to complain about it.</p>
+
+<p>Fortunately, the maintainers are very clear and quick in their feedback, and
+happy to merge things which seem useful. And the code base has many examples of
+how to write a cop. A cop is a class which inherits from <code class="highlighter-rouge">RuboCop::Cop::Cop</code>.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rubocop'</span>
+<span class="nb">require</span> <span class="s1">'active_support/all'</span>
+<span class="no">RuboCop</span><span class="o">::</span><span class="no">Cop</span><span class="o">::</span><span class="no">Cop</span><span class="p">.</span><span class="nf">subclasses</span><span class="p">.</span><span class="nf">count</span> <span class="c1">#=&gt; 226</span>
+<span class="c1"># (required active support for the subclasses method, which I love)</span>
+</code></pre>
+</div>
+
+<p>Once you subclass <code class="highlighter-rouge">Cop</code>, your class will be on duty and RuboCop will ask it if
+it’s offended by the code it’s analyzing. You just need to tell it which types
+of code you care about. RuboCop thinks of Ruby code as a tree of nested nodes,
+each having a type. For example, when you assign a local variable, RuboCop sees
+that as a node whose type is <code class="highlighter-rouge">:lvasgn</code>. Let’s say you wanted to write a cop
+where local variables aren’t allowed to be named “harold”. You would write that
+like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># encoding: utf-8</span>
+
+<span class="k">module</span> <span class="nn">RuboCop</span>
+  <span class="k">module</span> <span class="nn">Cop</span>
+    <span class="k">module</span> <span class="nn">Lint</span>
+      <span class="k">class</span> <span class="nc">Harold</span> <span class="o">&lt;</span> <span class="no">Cop</span>
+        <span class="k">def</span> <span class="nf">on_lvasgn</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+          <span class="n">local_variable_name</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="o">*</span><span class="n">node</span>
+          <span class="k">return</span> <span class="k">unless</span> <span class="n">local_variable_name</span> <span class="o">==</span> <span class="ss">:harold</span>
+          <span class="n">add_offense</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="ss">:expression</span><span class="p">,</span> <span class="s1">'Do not name local variables harold'</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>The trickiest bit is learning how RuboCop “sees” code as nodes and learning what
+the different parts are called. That comes from looking through the existing
+examples and experimenting. It’s fun, I recommend it. I added <a href="https://github.com/bbatsov/rubocop/pull/2078">one other cop</a>
+on a bored evening, about discouraging option hashes.</p>
+
+<hr />
+
+<h2 id="rubocop-as-teacher">RuboCop as teacher</h2>
+
+<p>This summer, I coordinated a group of 5 developer interns at work. I helped pick
+them out, so I knew they were all very bright but not super experienced with
+Ruby. We asked them to study a bit and follow the <a href="https://www.railstutorial.org/book">Rails Tutorial Book</a>
+before starting to help get them on the same page, but we didn’t expect them to
+know Ruby conventions or best practices.</p>
+
+<p>From the beginning, their project had RuboCop linting their code, with zero
+configuration. I warned them, “you’re going to hate this”. On their last week,
+I asked them if it was helpful, and they all said yes, but that it was often
+very annoying. Some of them liked it more than others. One even made <a href="https://github.com/bbatsov/rubocop/pull/2085">a
+contribution</a> to RuboCop fixing an issue in the cop I added. They produced a
+very interesting code base. Superficially, it’s immaculate. They picked up a few
+tricks from RuboCop suggestions. More than one cited <a href="https://github.com/bbatsov/rubocop/blob/master/lib/rubocop/cop/style/guard_clause.rb">guard clauses</a> as a
+thing they wouldn’t know about otherwise.</p>
+
+<p>The class length maximum (100 lines) and the method length maximum (10 lines)
+were both unhelpful. They’re meant to guide you toward following the single
+responsibility principle, but if it’s not something you’ve internalized, it just
+sort of makes you stuck and frustrated.</p>
+
+<p>I came to think of RuboCop (and, later, <a href="http://www.coffeelint.org/">coffeelint</a> and <a href="https://github.com/brigade/scss-lint">scss-lint</a>) as
+an automated layer of mentorship filtering out some potential questions that
+didn’t need to reach the human layer, so that layer could be reserved for more
+interesting problems and discussions.</p>
+
+<hr />
+
+<h2 id="rubocop-as-totalitarian-police-state">RuboCop as totalitarian police state?</h2>
+
+<p>I do think of programming as a creative outlet, but don’t worry about linters
+inhibiting your creativity; think of it like a poetic form with strict rules,
+like the sonnet. There’s something very satisfying about consistency, right?</p>
+]]></description>
+        <pubDate>Sun, 09 Aug 2015 15:27:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/rubocop</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/rubocop</guid>
+      </item>
+    
+      <item>
+        <title>some helpful tmux aliases</title>
+        <description><![CDATA[<p>tmux is <a href="http://www.hardscrabble.net/2015/terminal-multiplexing/">still</a> an essential tool in my development workflow. Today I’m
+writing to share a few aliases/helper functions I’ve recently added to <a href="https://github.com/maxjacobson/dotfiles">my
+dotfiles</a>. Those change all the time so I’m hesitant to link to the files
+which the helper aliases and functions currently live in.</p>
+
+<p>I added them in these commits, though: <a href="https://github.com/maxjacobson/dotfiles/commit/4f6169f012030a831b579047e5f15ff17ec06716"><code class="highlighter-rouge">d06362c</code></a> and <a href="https://github.com/maxjacobson/dotfiles/commit/c9d869555b7e8c14319ecf71fd5e8e5befc6e1b8"><code class="highlighter-rouge">c9d8695</code></a>.</p>
+
+<p>The implementation is mostly stolen from other people’s dotfiles and is gnarly
+to look at so I’ll just share how I use them:</p>
+
+<p><strong>EDIT February 8, 2016</strong>: I totally changed the implementation: <a href="https://github.com/maxjacobson/dotfiles/commit/6d883df5989cedec149be1365a18b2ca1b76a958"><code class="highlighter-rouge">6d883df</code></a>
+because I would occasionally have a bug with the old helper functions. More
+details in <a href="https://github.com/tmux/tmux/issues/298#issuecomment-181614369">this issue</a></p>
+
+<p>Here’s how to use these aliases:</p>
+
+<hr />
+
+<p>When I’m not in a tmux session, and I want to see the list of tmux sessions, I
+used to run <code class="highlighter-rouge">tmux ls</code>. Now I run <code class="highlighter-rouge">tl</code>.</p>
+
+<hr />
+
+<p>When I’m not in a tmux session and I’d like to start a new one, I used to run
+<code class="highlighter-rouge">tmux new -s blog</code> (where <code class="highlighter-rouge">blog</code> is the name of the new session). Now I run <code class="highlighter-rouge">t</code>.</p>
+
+<p>It auto-chooses a session name based on the current directory’s name.</p>
+
+<p>If there’s already a session with the name of the current directory, it cleverly
+attaches to that session instead of trying to start a new one with that name.</p>
+
+<hr />
+
+<p>If I’m not in a tmux session and I’d like to attach to any existing tmux
+session, and I don’t particularly care which one because I’m planning to go into
+the session switcher anyway (<code class="highlighter-rouge">C-b s</code>), I used to run <code class="highlighter-rouge">tmux a</code>. Now I run <code class="highlighter-rouge">ta</code>.</p>
+]]></description>
+        <pubDate>Sat, 01 Aug 2015 19:59:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/some-helpful-tmux-aliases</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/some-helpful-tmux-aliases</guid>
+      </item>
+    
+      <item>
+        <title>stubbing constants in ruby tests</title>
+        <description><![CDATA[<p>Let’s say you have some code that doesn’t have tests and you want to add tests.
+Because the code wasn’t written with tests in mind, it might be hard to write
+tests for it.</p>
+
+<p>Last year, DHH wrote a blog post called <a href="http://david.heinemeierhansson.com/2014/test-induced-design-damage.html">Test-induced design damage</a> which
+argued that code “written with tests in mind” (quoting myself from the previous
+paragraph, not his post) isn’t necessarily better than code written with other
+goals in mind, and can often be worse.</p>
+
+<p>When I’ve attempted TDD, I’ve had times when I felt like it helped me write nice
+code and times where I think I went too far like if you’re rolling out some
+dough to make a pie crust but you’re watching TV and you end up spreading it out
+until it covers the whole counter.</p>
+
+<p>So this code you want to test. What makes it hard to test? Let’s say it’s a Ruby
+class in a Rails app. In Rails apps, all the classes are available for all the
+other classes to reference and depend on. Maybe it looks like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PieCrust</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">pounds_of_dough</span><span class="p">)</span>
+    <span class="vi">@lbs</span> <span class="o">=</span> <span class="n">pounds_of_dough</span>
+    <span class="vi">@ready</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">prep</span>
+    <span class="no">RollingPin</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">roll_out</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="no">Oven</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">preheat</span>
+    <span class="no">Instagram</span><span class="p">.</span><span class="nf">upload</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="vi">@ready</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">ready?</span>
+    <span class="vi">@ready</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>(This example is revealing more about my state of mind right now than anything)</p>
+
+<p>But like, look at this thing. How do we write a test that covers all that? And
+what if we want “fast tests”?</p>
+
+<p>(Note: a lot of people really want their tests to run fast. For TDD enthusiasts,
+this allows a tight feedback loop between when you write the failing test to
+when you write the code which makes the test pass. They kind of expect to do
+that over and over and over and don’t want to wait for more than an instant. I
+don’t think they’re wrong to want that although I am personally often OK with
+waiting for longer than an instant.)</p>
+
+<p>(Other people want their tests to run fast as a general principle, like they
+want their cars to go fast or their legs to.)</p>
+
+<p>Let’s say there are a couple hundred classes in your app and a bunch of
+initializers which run whenever your Rails application is loaded and none of
+them are strictly necessary for you to feel confident that your <code class="highlighter-rouge">PieCrust</code> class
+is behaving properly. All you want to know is that calling the <code class="highlighter-rouge">prep</code> method
+rolls out the crust, preheats the oven, and uploads the pie crust to instagram.</p>
+
+<p>You already know that all those things work as long as you call them properly
+because you have unit tests for those classes demonstrating how to call them
+properly. You can see that here they’re being called properly, so you don’t feel
+the need to <em>actually</em> load the rolling pin code, or the oven code, or the
+instagram code. And you <em>really</em> don’t want to upload something to instagram
+every time you run your tests.</p>
+
+<p>What do you do?</p>
+
+<p>There’s the dependency injection approach, where you might refactor the earlier
+code to look like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PieCrust</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">pounds_of_dough</span><span class="p">,</span> <span class="ss">roller: </span><span class="no">RollingPin</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="ss">heater: </span><span class="no">Oven</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="ss">photo_sharing_service: </span><span class="no">Instagram</span><span class="p">)</span>
+    <span class="vi">@lbs</span> <span class="o">=</span> <span class="n">pounds_of_dough</span>
+    <span class="vi">@roller</span> <span class="o">=</span> <span class="n">roller</span>
+    <span class="vi">@heater</span> <span class="o">=</span> <span class="n">heater</span>
+    <span class="vi">@photo_sharing_service</span> <span class="o">=</span> <span class="n">photo_sharing_service</span>
+    <span class="vi">@ready</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">prep</span>
+    <span class="n">roller</span><span class="p">.</span><span class="nf">roll_out</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="n">heater</span><span class="p">.</span><span class="nf">preheat</span>
+    <span class="n">photo_sharing_service</span><span class="p">.</span><span class="nf">upload</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="vi">@ready</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">ready?</span>
+    <span class="vi">@ready</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="kp">attr_reader</span> <span class="ss">:roller</span><span class="p">,</span> <span class="ss">:heater</span><span class="p">,</span> <span class="ss">:photo_sharing_service</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Which lets you leave your other application code the same – it can interact
+with PieCrust the same as it did before, as the default values are totally
+sensible there. But you can now write a test like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">PieCrust</span> <span class="k">do</span>
+  <span class="n">describe</span> <span class="s1">'#prep, #ready'</span> <span class="k">do</span>
+    <span class="n">it</span> <span class="s1">'rolls the crust, preheats the oven, and uploads the photo'</span> <span class="k">do</span>
+      <span class="n">roller</span> <span class="o">=</span> <span class="n">double</span>
+      <span class="n">heater</span> <span class="o">=</span> <span class="n">double</span>
+      <span class="n">photo_sharing_service</span> <span class="o">=</span> <span class="n">double</span>
+
+      <span class="n">pie_crust</span> <span class="o">=</span> <span class="no">PieCrust</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="ss">roller: </span><span class="n">roller</span><span class="p">,</span> <span class="ss">heater: </span><span class="n">heater</span><span class="p">,</span> <span class="ss">photo_sharing_service: </span><span class="n">photo_sharing_service</span><span class="p">)</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">).</span><span class="nf">to_not</span> <span class="n">be_ready</span>
+
+      <span class="n">expect</span><span class="p">(</span><span class="n">roller</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:roll_out</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">)</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">heater</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:preheat</span><span class="p">).</span><span class="nf">with_no_arguments</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">photo_sharing_service</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:upload</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">)</span>
+
+      <span class="n">pie_crust</span><span class="p">.</span><span class="nf">prep</span>
+
+      <span class="n">expect</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">).</span><span class="nf">to</span> <span class="n">be_ready</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>I feel like this is OK but it feels like it prescribes and duplicates a lot of
+the stuff that’s going on in the application code, which doesn’t feel ideal to
+me but also feels kind of fine.</p>
+
+<p>Is there any other way? There is. I learned this one from my brilliant coworker
+<a href="http://github.com/elmassimo/">Máximo Mussini</a>. While looking through a gem he
+made (<a href="https://github.com/ElMassimo/journeyman">Journeyman</a>, a lightweight replacement to FactoryGirl), I discovered
+some super interesting code, and without his blessing I extracted it out into
+a gem which I may use to help me write tests in the future. That gem is called
+<a href="https://github.com/maxjacobson/stub_constant">stub_constant</a>, and using it, I would revert that code to the first version,
+avoiding the arguably awkward dependency injection.</p>
+
+<p>You might be assuming: OK, so if you don’t inject the constants, you must load
+the entire application environment, because you’re going to be depending on
+those dependencies. Or like, maybe you don’t load the entire application
+environment, but you must at least load the code which defines those 3
+constants, right?</p>
+
+<p>Nope! Doing that is usually really difficult, because once you load the files
+which define those constants, those files are probably referencing other
+constants, so you need to load the files which define <em>those</em> constants and now
+you might as well just load the whole thing…</p>
+
+<p>So… “Whaaaat?” You might say.</p>
+
+<p>Here’s what the constant-referencing isolation tests would look like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"stub_constant"</span>
+<span class="no">StubConstant</span><span class="p">.</span><span class="nf">klass</span><span class="p">(</span><span class="ss">:Oven</span><span class="p">)</span>
+<span class="no">StubConstant</span><span class="p">.</span><span class="nf">klass</span><span class="p">(</span><span class="ss">:RollingPin</span><span class="p">)</span>
+<span class="no">StubConstant</span><span class="p">.</span><span class="nf">module</span><span class="p">(</span><span class="ss">:Instagram</span><span class="p">)</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">PieCrust</span> <span class="k">do</span>
+  <span class="n">describe</span> <span class="s1">'#prep, #ready?'</span> <span class="k">do</span>
+    <span class="n">it</span> <span class="s1">'rolls the crust, preheats the oven, and uploads the photo'</span> <span class="k">do</span>
+      <span class="n">roller</span> <span class="o">=</span> <span class="n">double</span>
+      <span class="n">expect</span><span class="p">(</span><span class="no">RollingPin</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:new</span><span class="p">).</span><span class="nf">with_no_arguments</span><span class="p">.</span><span class="nf">and_return</span><span class="p">(</span><span class="n">roller</span><span class="p">)</span>
+
+      <span class="n">heater</span> <span class="o">=</span> <span class="n">double</span>
+      <span class="n">expect</span><span class="p">(</span><span class="no">Oven</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:new</span><span class="p">).</span><span class="nf">with_no_arguments</span><span class="p">.</span><span class="nf">and_return</span><span class="p">(</span><span class="n">heater</span><span class="p">)</span>
+
+      <span class="n">pie_crust</span> <span class="o">=</span> <span class="no">PieCrust</span><span class="p">.</span><span class="nf">new</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">).</span><span class="nf">to_not</span> <span class="n">be_ready</span>
+
+      <span class="n">expect</span><span class="p">(</span><span class="n">roller</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:roll_out</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">)</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">heater</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:preheat</span><span class="p">).</span><span class="nf">with_no_arguments</span>
+      <span class="n">expect</span><span class="p">(</span><span class="no">Instagram</span><span class="p">).</span><span class="nf">to</span> <span class="n">receive</span><span class="p">(</span><span class="ss">:upload</span><span class="p">).</span><span class="nf">with</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">)</span>
+
+      <span class="n">pie_crust</span><span class="p">.</span><span class="nf">prep</span>
+
+      <span class="n">expect</span><span class="p">(</span><span class="n">pie_crust</span><span class="p">).</span><span class="nf">to</span> <span class="n">be_ready</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Sooo it got even more prescriptive. But it’s a pretty neat way to do a purely
+isolated test without needing to rewrite your code.</p>
+
+<p>How would you test this? I want to know.</p>
+]]></description>
+        <pubDate>Mon, 20 Jul 2015 23:38:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/stubbing-constants</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/stubbing-constants</guid>
+      </item>
+    
+      <item>
+        <title>making a pull request to rails</title>
+        <description><![CDATA[<p>Today I impulsively made <a href="https://github.com/rails/rails/pull/20872">a pull request to Rails</a>, which feels kind of
+like a milestone for me. It’s about two years since I started using Rails at
+the Flatiron School. It’s also been about two years since the method I edited
+was last edited. I feel like there may be a reason and it won’t get merged, but
+who knows? I feel sort of exposed.</p>
+
+<p>This post was helpful for me: <a href="http://www.eileencodes.com/posts/getting-your-local-environment-setup-to-contribute-to-rails">Eileen Codes | Getting Your Local Environment
+Setup to Contribute to Rails</a>.</p>
+
+<p>In order to make a proper contribution, I needed to know that my change didn’t
+break the existing tests, and so I needed to be able to run the tests.</p>
+
+<p>I also wanted to be able to add tests and confirm that they pass. So I <em>really</em>
+needed to be able to run the tests.</p>
+
+<p>I had some trouble configuring my local environment, despite the post
+explaining it well (…databases…), BUT the post mentions
+<a href="https://github.com/rails/rails-dev-box">rails/rails-dev-box</a> which lets you skip a lot of the environment
+configuration by using a preconfigured virtual machine, and that turned out to
+be a god send of a casual aside for me and I’m writing this post largely to
+promote the existence of that project because it’s awesome.</p>
+
+<p>It uses <a href="https://www.vagrantup.com/">vagrant</a> which is kind of magical… I had never used it before and
+it totally blew my mind. It allowed me to have a tmux session with windows like
+I’m used to, with the code open in vim in one tab using all the existing
+configuration from my local Mac machine, and then another tab where my code
+changes were immediately available for running the tests against in the Linux
+virtual machine. It was super seamless and sweet.</p>
+
+<p><a href="/img/2015-07-14-rails.gif">Here’s a four minute long gif of what it looks like</a> – I’m
+refraining from embedding it so you don’t need to download a 4mb image if you
+don’t want to, and so you can open it in a new tab to start at the beginning
+easily if you want to.</p>
+
+<p>I don’t really love my solution and I should probably consider it further, but
+I know the tests are passing, including the new one I added. I think being a
+little sleep deprived lowered my inhibition tonight.</p>
+]]></description>
+        <pubDate>Tue, 14 Jul 2015 01:47:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/making-a-pull-request-to-rails</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/making-a-pull-request-to-rails</guid>
+      </item>
+    
+      <item>
+        <title>Quick tip: track command history in zsh</title>
+        <description><![CDATA[<p>I switched from bash to zsh a few months ago and it’s been mostly sweet. I
+noticed that it wasn’t tracking my command history, so I did a little googling
+and got it working by adding these commands to my <code class="highlighter-rouge">~/.zshrc</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export HISTFILE=~/.zsh_history
+export SAVEHIST=1000
+</code></pre>
+</div>
+
+<p>I picked 1000 kind of randomly; a bigger number would probably be fine or nice.</p>
+
+]]></description>
+        <pubDate>Sat, 11 Jul 2015 18:29:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/quick-tip-track-command-history-in-zsh</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/quick-tip-track-command-history-in-zsh</guid>
+      </item>
+    
+      <item>
+        <title>using method_missing with class methods in Ruby</title>
+        <description><![CDATA[<p>Ruby’s <code class="highlighter-rouge">method_missing</code> let’s you write some weird code:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Poet</span>
+  <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="vi">@words</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">method_missing</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="vi">@words</span> <span class="o">&lt;&lt;</span> <span class="n">message</span>
+    <span class="n">message</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">end_with?</span><span class="p">(</span><span class="s2">"?"</span><span class="p">)</span> <span class="p">?</span> <span class="n">sentence</span> <span class="p">:</span> <span class="nb">self</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">sentence</span>
+    <span class="vi">@words</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="no">Poet</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">why</span><span class="p">.</span><span class="nf">not</span><span class="p">.</span><span class="nf">go</span><span class="p">.</span><span class="nf">for</span><span class="p">.</span><span class="nf">a</span><span class="p">.</span><span class="nf">walk?</span>
+</code></pre>
+</div>
+
+<p>I’ve seen <code class="highlighter-rouge">method_missing</code> used to handle unexpected message on instances of a
+class before, but never for class methods. But, like, why not?</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoudSpeaker</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_missing</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">[</span><span class="ss">:exclaim</span><span class="p">,</span> <span class="ss">:yodel</span><span class="p">,</span> <span class="ss">:howl</span><span class="p">,</span> <span class="ss">:sob</span><span class="p">,</span> <span class="ss">:beg</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="n">args</span><span class="p">.</span><span class="nf">first</span>
+    <span class="k">else</span>
+      <span class="c1"># we don't want to handle this missing method, we want Ruby to raise the</span>
+      <span class="c1"># NoMethodError it ought to</span>
+      <span class="k">super</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">LoudSpeaker</span><span class="p">.</span><span class="nf">exclaim</span> <span class="s2">"helloooo!"</span>
+</code></pre>
+</div>
+
+<p>It’s just methods, so go for it.</p>
+]]></description>
+        <pubDate>Wed, 08 Jul 2015 01:42:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/using-method_missing-with-class-methods</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/using-method_missing-with-class-methods</guid>
+      </item>
+    
+      <item>
+        <title>todo_lint: a new ruby gem to help prevent comments from stagnating</title>
+        <description><![CDATA[<p>I made another gem! Here it is: <a href="https://github.com/maxjacobson/todo_lint">https://github.com/maxjacobson/todo_lint</a></p>
+
+<p>Last week, I wrote about <a href="/2015/required-arg/">required_arg</a>, my new gem for
+adding required keyword arguments to Ruby 2.0.0. I actually made that, quickly,
+while making this one, which took several hours longer.</p>
+
+<p>What does it do?</p>
+
+<p>It analyzes your code and warns you about <code class="highlighter-rouge">TODO</code> comments. You can run the
+script automatically as part of your continuous integration (CI) build process,
+and it will fail your build if your TODOs are troublesome. It suggests a
+workflow whereby your TODO comments must be annotated with a due date, and that
+due date must be in the future. So you can write little notes to self in your
+code, but you cannot forget them, because one day your build will start
+failing. At that point, you can do what you’ll do; maybe you’ll snooze the todo
+due date into the future; maybe you’ll pull the idea out into your feature/ bug
+tracker; maybe you’ll just delete it in acknowledgment that you’re never gonna
+do it. Up to you.</p>
+
+<p>It’s going to be very annoying, and hopefully that will be a good thing.</p>
+
+<p>Adding it to a Ruby project is pretty simple. Here’s what it looks like to add
+it to a gem: <a href="https://github.com/maxjacobson/film_snob/pull/85">https://github.com/maxjacobson/film_snob/pull/85</a></p>
+
+<p>At work, I’m coordinating a gaggle of interns working on a new project, and I
+asked them to be guinea pigs for me and include this gem in their project and
+CI workflow. They obliged, but unfortunately it <strong>immediately didn’t work at
+all</strong>. I didn’t realize it, but our CI service was bundling all dependencies
+into the same folder as the app, and then todo_lint was checking every file
+from every Ruby dependency for todos. We don’t want to check all those files,
+because they’re out of our control. I realized we would need some kind of
+configuration to allow excluding by folder or maybe even pattern, so I jotted
+it down in <a href="https://github.com/maxjacobson/todo_lint/issues/6">a GitHub issue</a>
+and told the intern to forget about it; the guinea pig was dead!</p>
+
+<p>Or … was it? Awesomely, she took the time to make a pull request to todo_lint,
+making it user-configurable; specifically, users can now exclude file patterns
+like <code class="highlighter-rouge">vendor/**</code>. Excellent! The guinea pig lives.</p>
+
+<p>If you’d like to help improve the project, take a look at <a href="https://github.com/maxjacobson/todo_lint/issues">the remaining open
+issues</a> and feel free to claim
+one or add your own. I want my projects to be friendly toward contributors.
+Awesomely, bundler now suggests including <a href="coc">a code of conduct</a> when you
+create a skeleton gem with, eg, <code class="highlighter-rouge">bundle gem todo_lint</code>, and I’ll do my best to
+uphold that.</p>
+
+<p>Join me in being a scold. It’s fun.</p>
+]]></description>
+        <pubDate>Wed, 08 Jul 2015 01:15:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/todo-lint</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/todo-lint</guid>
+      </item>
+    
+      <item>
+        <title>required keyword arguments in Ruby 2.0.0</title>
+        <description><![CDATA[<p>TLDR: I made a gem, <a href="https://github.com/maxjacobson/required_arg">required_arg</a>
+which offers a workflow for requiring keyword arguments in Ruby 2.0.0, which
+doesn’t support them on the language level.</p>
+
+<p>In March, we <a href="/2015/ruby-keyword-arguments-arent-obvious/">looked at</a> Ruby keyword arguments, and noted a curious tension.</p>
+
+<p>Sometimes you want to use keyword arguments, and you don’t want to come up with
+a default value for that keyword. You kind of want to require the keyword. You
+can in Ruby 2.1+, but Ruby 2.0.0 is in the awkward position of <em>having</em> keyword
+arguments but not being able to require them.</p>
+
+<p>Here’s what you can do in Ruby 2.1:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">:)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Dog</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Milo"</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Dog:0x007fc404df9f10 @name="Milo"&gt;</span>
+<span class="no">Dog</span><span class="p">.</span><span class="nf">new</span> <span class="c1">#=&gt; an exception is raised: ArgumentError: missing keyword: name</span>
+</code></pre>
+</div>
+
+<p>That’s great! You don’t need to write any additional code, and Ruby will enforce
+that your method is called with the keyword arguments you require. This gives
+you flexibility to design interfaces which take advantage of the flexibility and
+clarity of keyword arguments, but still establish some expectations for how the
+method will be called.</p>
+
+<p>Here’s what happens when you do the same in Ruby 2.0.0:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">:)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="c1"># dog.rb:2: syntax error, unexpected ')'</span>
+<span class="c1"># dog.rb:5: syntax error, unexpected keyword_end, expecting end-of-input</span>
+</code></pre>
+</div>
+
+<p>Syntax error!</p>
+
+<p>Here’s what I suggest doing now:</p>
+
+<ol>
+  <li>Upgrade to a newer version of Ruby</li>
+  <li>If you can’t, try this:</li>
+</ol>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># gem install required_arg</span>
+<span class="nb">require</span> <span class="s2">"required_arg"</span>
+
+<span class="k">class</span> <span class="nc">Dog</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">name: </span><span class="no">RequiredArg</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:name</span><span class="p">))</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="no">Dog</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Milo"</span><span class="p">)</span> <span class="c1">#=&gt; #&lt;Dog:0x007fc404df9f10 @name="Milo"&gt;</span>
+<span class="no">Dog</span><span class="p">.</span><span class="nf">new</span> <span class="c1">#=&gt; an exception is raised: missing keyword: name (ArgumentError)</span>
+</code></pre>
+</div>
+
+<p>Close enough!</p>
+
+<p>If your app is stuck on Ruby 2.0.0 or you’re making a library which supports
+Ruby 2.0.0, maybe you’ll find this useful. Let me know if you do.</p>
+
+<p>Here’s the entire source for the gem:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RequiredArg</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="nb">name</span><span class="p">.</span><span class="nf">nil?</span> <span class="p">?</span> <span class="s2">"missing keyword"</span> <span class="p">:</span> <span class="s2">"missing keyword: </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="n">msg</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Pretty simple, and kind of fun. It’s just a little cherry bomb class. The moment
+you instantiate it, it blows up. Make it the default value for a keyword
+argument, and the moment you forget a keyword argument, the default will be used
+and the expression will be evaluated for the first time. It’s cool that the
+default values are lazily evaluated because it allows for things like this.</p>
+
+<p>Check out the gem: <a href="https://github.com/maxjacobson/required_arg">https://github.com/maxjacobson/required_arg</a></p>
+]]></description>
+        <pubDate>Mon, 29 Jun 2015 22:56:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/required-arg</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/required-arg</guid>
+      </item>
+    
+      <item>
+        <title>assigning values to multiple variables in one line</title>
+        <description><![CDATA[<p>Why would you write this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre>
+</div>
+
+<p>When you could write:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre>
+</div>
+
+<p>A few reasons:</p>
+
+<ol>
+  <li>Maybe you don’t know about this syntax</li>
+  <li>Maybe you don’t mind writing out two lines</li>
+  <li>Maybe you’re concerned about having two references to the same data, as
+explained <a href="http://stackoverflow.com/a/2929722">in this StackOverflow</a> post</li>
+</ol>
+
+<p>I recently saw code that looked like this, which was disabling some loggers:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Something</span><span class="p">.</span><span class="nf">logger</span> <span class="o">=</span> <span class="no">OtherThing</span><span class="p">.</span><span class="nf">logger</span> <span class="o">=</span> <span class="kp">nil</span>
+</code></pre>
+</div>
+
+<p>And I was kind of confused and amazed. I know about this multiple assigning
+syntax, but this looked kind of different. In the earlier example, we were
+assigning a value to a simple local variable, but in this case we were calling a
+setter method instead.</p>
+
+<p>Something like:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span>
+  <span class="kp">attr_reader</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:family</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">family</span><span class="o">=</span><span class="p">(</span><span class="n">family_name</span><span class="p">)</span>
+    <span class="vi">@family</span> <span class="o">=</span> <span class="n">family_name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">milo</span> <span class="o">=</span> <span class="no">Dog</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Milo"</span><span class="p">)</span>
+<span class="n">lola</span> <span class="o">=</span> <span class="no">Dog</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Lola"</span><span class="p">)</span>
+
+<span class="n">milo</span><span class="p">.</span><span class="nf">family</span> <span class="o">=</span> <span class="n">lola</span><span class="p">.</span><span class="nf">family</span> <span class="o">=</span> <span class="s2">"The Jacobsons"</span>
+<span class="nb">p</span> <span class="p">[</span><span class="n">milo</span><span class="p">,</span> <span class="n">lola</span><span class="p">]</span>
+<span class="c1"># [#&lt;Dog:0x007faf6115b158 @name="Milo", @family="The Jacobsons"&gt;, #&lt;Dog:0x007faf6115b108 @name="Lola", @family="The Jacobsons"&gt;]</span>
+</code></pre>
+</div>
+
+<p>This works because Ruby gives you this syntactic sugar when you write a
+<code class="highlighter-rouge">something=</code> method, it lets you put a space before the <code class="highlighter-rouge">=</code> when calling the
+method. And that applies in this context too. Kind of neat.</p>
+]]></description>
+        <pubDate>Sat, 27 Jun 2015 15:43:00 EDT</pubDate>
+        <link>http://hardscrabble.net/2015/assigning-values-to-multiple-variables-in-one-line</link>
+        <guid isPermaLink="true">http://hardscrabble.net/2015/assigning-values-to-multiple-variables-in-one-line</guid>
+      </item>
+    
+  </channel>
+</rss>
+

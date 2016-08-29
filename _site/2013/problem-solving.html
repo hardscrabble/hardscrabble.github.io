@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>all the thoughts that went through my head while trying to pass the first test in the test suite of a warm up exercise this morning before coffee and then again this evening after painkillers - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        all the thoughts that went through my head while trying to pass the first test in the test suite of a warm up exercise this morning before coffee and then again this evening after painkillers
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      03 Jul 2013
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Recently at school we’ve been doing code exercises to warm up in the morning. We’re given contained problems to solve with code. Problems that would be possible to solve without code but tedious or prohibitively time-consuming. Sometimes we move on to lecture before I can solve one and it haunts me all day.</p>
+
+<p>Here’s this morning’s:</p>
+
+<blockquote>
+  <h3 id="palindrome-product">Palindrome Product</h3>
+
+  <p>A palindromic number reads the same both ways.</p>
+
+  <p>The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 x 99.</p>
+
+  <p>Write a program that can detect palindrome products in a given range.</p>
+</blockquote>
+
+<p>The specifics of what this means were ostensibly made more clear by a provided test-suite.</p>
+
+<p>I’ve done a problem like this before at a coding meetup and I remembered how I’d wrestled with it for minutes and got it working and then seen someone else’s impossibly elegant solution and felt inspired.</p>
+
+<p>Mine was probably something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_palindrome?</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+  <span class="n">digits</span> <span class="o">=</span> <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">digits</span><span class="p">.</span><span class="nf">length</span>
+    <span class="k">if</span> <span class="n">digits</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">digits</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">return</span> <span class="kp">false</span>
+    <span class="k">end</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">end</span>
+  <span class="k">return</span> <span class="kp">true</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+<p>ugh</p>
+
+<p>And hers was something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_palindrome?</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+  <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">==</span> <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">reverse</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>And I was just like <em>oh</em>.</p>
+
+<p>So this morning I had a moment of thinking I already knew the hard part of this problem, and then I looked at the tests. Here’s the first one:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">test</span> <span class="s1">'largest_palindrome_from_single_digit_factors'</span> <span class="k">do</span>
+  <span class="n">palindromes</span> <span class="o">=</span> <span class="no">Palindromes</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">max_factor: </span><span class="mi">9</span><span class="p">)</span>
+  <span class="n">palindromes</span><span class="p">.</span><span class="nf">generate</span>
+  <span class="n">largest</span> <span class="o">=</span> <span class="n">palindromes</span><span class="p">.</span><span class="nf">largest</span>
+  <span class="n">assert_equal</span> <span class="mi">9</span><span class="p">,</span> <span class="n">largest</span><span class="p">.</span><span class="nf">value</span>
+  <span class="n">assert</span> <span class="p">[[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]].</span><span class="nf">include?</span> <span class="n">largest</span><span class="p">.</span><span class="nf">factors</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>first test</p>
+
+<p>Oh there’s a lot more going on there.</p>
+
+<p><em>But that’s fine</em>, I think, <em>I’ll make a <code class="highlighter-rouge">Palindromes</code> class, give it a few methods, that’s fine, let’s do it.</em> So I started with something like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Palindromes</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:max_factor</span><span class="p">]</span>
+    <span class="c1"># then I decided the range would begin at 1 mainly because it has to start somewhere and the test's assertion seemed to suggest 1</span>
+    <span class="n">min</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="vi">@range</span> <span class="o">=</span> <span class="n">min</span><span class="p">.</span><span class="nf">.</span><span class="n">max</span>
+
+    <span class="c1"># At this point I sort of paused to think about what to do next and Kristen noticed I stopped typing and said something about how I should host a show called "Max Factor" and I laughed.</span>
+  <span class="k">end</span>
+
+  <span class="c1"># this felt as good a place as any to write that ace method I had in my back pocket</span>
+  <span class="k">def</span> <span class="nf">is_palindrome?</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">==</span> <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">reverse</span>
+  <span class="k">end</span>
+
+  <span class="c1"># then I was like uhh I guess I need a generate method</span>
+  <span class="c1"># what does that even mean though</span>
+  <span class="k">def</span> <span class="nf">generate</span>
+    <span class="vi">@range</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num1</span><span class="o">|</span>
+      <span class="vi">@range</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num2</span><span class="o">|</span>
+        <span class="c1"># what if I like... iterate over the range twice nested like this</span>
+        <span class="c1"># this looks too ugly to be right but I think maybe...</span>
+        <span class="k">if</span> <span class="n">is_palindrome?</span><span class="p">(</span><span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span><span class="p">)</span>
+          <span class="p">[</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">]</span> <span class="c1"># I know I have to do something with this array</span>
+          <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>  <span class="c1"># And also their product maybe?</span>
+          <span class="c1"># but what</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>first draft</p>
+
+<p>At this point something about the test bubbled to the surface of my mind.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">largest</span> <span class="o">=</span> <span class="n">palindromes</span><span class="p">.</span><span class="nf">largest</span>
+<span class="n">assert_equal</span> <span class="mi">9</span><span class="p">,</span> <span class="n">largest</span><span class="p">.</span><span class="nf">value</span>
+</code></pre>
+</div>
+
+<p>wait what?</p>
+
+<p>Wait, <em>what the what</em> is the <code class="highlighter-rouge">largest</code> method returning that it has a <code class="highlighter-rouge">value</code> method?</p>
+
+<p>Damnit Jeff do we have to create another class?</p>
+
+<p>OK fine I <em>guess</em> palindrome factors are a sufficiently interesting thing that they should be their own class. I kind of reached a point in the <code class="highlighter-rouge">generate</code> method where I had some data I didn’t know what to do with, and that makes some sense as a place to put it, so I started rewriting… and ran out of time.</p>
+
+<p>I’m going to finish it now, I have to. It’s very late. I used to stay up this late. Jeez.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PalindromeFactors</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:value</span><span class="p">,</span> <span class="ss">:factors</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+    <span class="vi">@value</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+    <span class="vi">@factors</span> <span class="o">=</span> <span class="p">[</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">]</span>
+  <span class="k">end</span>
+  <span class="c1"># that should maybe be enough for now?</span>
+  <span class="c1"># the value will be a palindrome</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Palindromes</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:max_factor</span><span class="p">]</span>
+    <span class="n">min</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="vi">@range</span> <span class="o">=</span> <span class="n">min</span><span class="p">.</span><span class="nf">.</span><span class="n">max</span>
+    <span class="c1"># so let's keep track of the factors whose product is a palindrome</span>
+    <span class="vi">@palindrome_factors</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">is_palindrome?</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">==</span> <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">reverse</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">generate</span>
+    <span class="vi">@range</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num1</span><span class="o">|</span>
+      <span class="vi">@range</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num2</span><span class="o">|</span>
+        <span class="k">if</span> <span class="n">is_palindrome?</span><span class="p">(</span><span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span><span class="p">)</span>
+          <span class="c1"># create the new object and shovel it into the array</span>
+          <span class="vi">@palindrome_factors</span> <span class="o">&lt;&lt;</span> <span class="no">PalindromeFactors</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">largest</span>
+    <span class="vi">@palindrome_factors</span><span class="p">.</span><span class="nf">sort_by</span><span class="p">{</span> <span class="o">|</span><span class="n">pf</span><span class="o">|</span> <span class="n">pf</span><span class="p">.</span><span class="nf">value</span> <span class="p">}.</span><span class="nf">last</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>second draft</p>
+
+<p>Up until this point, running the tests hasn’t felt worth doing, because I didn’t even have the methods it’s trying to call. But now I do. <em>And maybe it’ll even pass.</em></p>
+
+<p>It doesn’t make them pass.</p>
+
+<p>Before I knew about proper test-driven development, I did a sort of shake-and-bake version where I manually tested things, and my favorite tool for that is <a href="http://krillapps.com/coderunner/">CodeRunner</a> which lets me just run little bits of code and see what happens. Kind of like irb/pry but with a GUI. So I copy my code into there without the tests and add this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">palindromes</span> <span class="o">=</span> <span class="no">Palindromes</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">max_factor: </span><span class="mi">9</span><span class="p">)</span>
+<span class="n">palindromes</span><span class="p">.</span><span class="nf">generate</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="n">palindromes</span><span class="p">.</span><span class="nf">largest</span>
+<span class="nb">puts</span> <span class="n">palindromes</span><span class="p">.</span><span class="nf">inspect</span>
+</code></pre>
+</div>
+
+<p>poking at it</p>
+
+<p>And this is what it printed:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#&lt;Palindromes:0x007f902a10a100 @range=1..9, @palindrome_factors=[#&lt;PalindromeFactors:0x007f902a10a010 @value=1, @factors=[1, 1]&gt;, #&lt;PalindromeFactors:0x007f902a109f48 @value=2, @factors=[1, 2]&gt;, #&lt;PalindromeFactors:0x007f902a109e80 @value=3, @factors=[1, 3]&gt;, #&lt;PalindromeFactors:0x007f902a109db8 @value=4, @factors=[1, 4]&gt;, #&lt;PalindromeFactors:0x007f902a109cf0 @value=5, @factors=[1, 5]&gt;, #&lt;PalindromeFactors:0x007f902a109c28 @value=6, @factors=[1, 6]&gt;, #&lt;PalindromeFactors:0x007f902a109b60 @value=7, @factors=[1, 7]&gt;, #&lt;PalindromeFactors:0x007f902a109a98 @value=8, @factors=[1, 8]&gt;, #&lt;PalindromeFactors:0x007f902a1099d0 @value=9, @factors=[1, 9]&gt;, #&lt;PalindromeFactors:0x007f902a109908 @value=2, @factors=[2, 1]&gt;, #&lt;PalindromeFactors:0x007f902a109840 @value=4, @factors=[2, 2]&gt;, #&lt;PalindromeFactors:0x007f902a109778 @value=6, @factors=[2, 3]&gt;, #&lt;PalindromeFactors:0x007f902a1096b0 @value=8, @factors=[2, 4]&gt;, #&lt;PalindromeFactors:0x007f902a109390 @value=3, @factors=[3, 1]&gt;, #&lt;PalindromeFactors:0x007f902a1092c8 @value=6, @factors=[3, 2]&gt;, #&lt;PalindromeFactors:0x007f902a109200 @value=9, @factors=[3, 3]&gt;, #&lt;PalindromeFactors:0x007f902a04c100 @value=4, @factors=[4, 1]&gt;, #&lt;PalindromeFactors:0x007f902a04be08 @value=8, @factors=[4, 2]&gt;, #&lt;PalindromeFactors:0x007f902a04b098 @value=5, @factors=[5, 1]&gt;, #&lt;PalindromeFactors:0x007f902a04a210 @value=6, @factors=[6, 1]&gt;, #&lt;PalindromeFactors:0x007f902a0494a0 @value=7, @factors=[7, 1]&gt;, #&lt;PalindromeFactors:0x007f902a048708 @value=8, @factors=[8, 1]&gt;, #&lt;PalindromeFactors:0x007f902a112cb0 @value=9, @factors=[9, 1]&gt;]&gt;</span>
+</code></pre>
+</div>
+
+<p>whoa nelly</p>
+
+<p>I’m <em>always</em> surprised by the dumbest things, but that seems really long to me. That’s not even <em>every</em> permutation of <code class="highlighter-rouge">1..9</code>, it’s just the ones whose product is a palindrome.</p>
+
+<p>Even though it surprised me, I still don’t really see why it’s wrong. So I take a look at the first assertion and try to test it</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># the assertion:</span>
+<span class="c1"># largest = palindromes.largest</span>
+<span class="c1"># assert_equal 9, largest.value</span>
+<span class="nb">puts</span> <span class="n">largest</span><span class="p">.</span><span class="nf">value</span>
+</code></pre>
+</div>
+
+<p>testing first assertion</p>
+
+<p>And it printed: <code class="highlighter-rouge">9</code>. Hey! That probably passed! Shouldn’t it turn like half green or something?</p>
+
+<p>OK fun’s over let’s look at the next test.
+<code class="highlighter-rouge">ruby
+palindromes = Palindromes.new(max_factor: 9)
+palindromes.generate
+largest = palindromes.largest
+# assert [[[3, 3], [1, 9]], [[1, 9], [3, 3]]].include? largest.factors
+puts largest.factors.inspect
+</code></p>
+
+<p>testing second assertion</p>
+
+<p>And it printed: <code class="highlighter-rouge">[9, 1]</code>.</p>
+
+<p>For a moment my nose flares because I think this is a bad test and it’s not my fault. Of course it’s not my fault my <code class="highlighter-rouge">largest</code> method returns the two digits in one order and the test is expecting them in the other order! The way multiplication works, the order doesn’t matter! It should just include <code class="highlighter-rouge">[9,1]</code> in that list so my answer will be right! I want to just edit my answer into to the list of acceptable answers.</p>
+
+<p>I want to be clear that at the time of the writing of this sentence I still don’t <em>really</em> know what’s wrong with it but I kind of have a hunch. I’m noticing there are actually way more brackets in that array than I was mentally doing anything with. It’s not an array of arrays, it’s an array of arrays of arrays! But why? I’m going to just look at it for a moment here:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">[</span>
+  <span class="p">[</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+  <span class="p">],</span>
+  <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+  <span class="p">]</span>
+<span class="p">]</span>
+</code></pre>
+</div>
+
+<p>what’s the deal with arrays</p>
+
+<p>So maybe the order of nine and one matters later, but it’s <em>not</em> why I failed this test.</p>
+
+<p>The test asserts that this array includes the largest palindrome’s factors. The largest value is nine – I got that part! – but there are two in-range pairs of numbers that multiply to form nine, and I’m not currently doing anything to group those together. The test is accounting for those two sets of pairs to be grouped in either order, but it wants <em>both</em>. Okay. Now I know.</p>
+
+<p>I made some changes that felt right. I didn’t really <em>think</em> a lot so much as I just vibed out to the new A Great Big Pile Of Leaves album (which has played through maybe three times in full as I write this post) and typed stuff.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PalindromeFactors</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:value</span><span class="p">,</span> <span class="ss">:factors</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+    <span class="vi">@value</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+    <span class="c1"># let's wrap our factors array in an envelope array in case there are multiple ways to arrive at this palindrome</span>
+    <span class="vi">@factors</span> <span class="o">=</span> <span class="p">[[</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">]]</span>
+  <span class="k">end</span>
+
+  <span class="c1"># and make a method to allow these objects to be updated post hoc</span>
+  <span class="k">def</span> <span class="nf">add_factor</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+    <span class="vi">@factors</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">]</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Palindromes</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="n">max</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:max_factor</span><span class="p">]</span>
+    <span class="n">min</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="vi">@range</span> <span class="o">=</span> <span class="n">min</span><span class="p">.</span><span class="nf">.</span><span class="n">max</span>
+    <span class="c1"># so let's keep track of the factors whose product is a palindrome</span>
+    <span class="vi">@palindrome_factors</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">is_palindrome?</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">==</span> <span class="n">num</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">reverse</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">generate</span>
+    <span class="vi">@range</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num1</span><span class="o">|</span>
+      <span class="vi">@range</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">num2</span><span class="o">|</span>
+        <span class="c1"># let's stash this product in a variable because we'll be using it a few times</span>
+        <span class="n">product</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+        <span class="k">if</span> <span class="n">is_palindrome?</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+          <span class="c1"># let's check if we've already found this palindrome</span>
+          <span class="n">already_found</span> <span class="o">=</span> <span class="vi">@palindrome_factors</span><span class="p">.</span><span class="nf">find</span><span class="p">{</span> <span class="o">|</span><span class="n">pf</span><span class="o">|</span> <span class="n">pf</span><span class="p">.</span><span class="nf">value</span> <span class="o">==</span> <span class="n">product</span> <span class="p">}</span>
+          <span class="k">if</span> <span class="n">already_found</span>
+            <span class="n">already_found</span><span class="p">.</span><span class="nf">add_factor</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+          <span class="k">else</span>
+            <span class="vi">@palindrome_factors</span> <span class="o">&lt;&lt;</span> <span class="no">PalindromeFactors</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">largest</span>
+    <span class="vi">@palindrome_factors</span><span class="p">.</span><span class="nf">sort_by</span><span class="p">{</span> <span class="o">|</span><span class="n">pf</span><span class="o">|</span> <span class="n">pf</span><span class="p">.</span><span class="nf">value</span> <span class="p">}.</span><span class="nf">last</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>third draft</p>
+
+<p>Allow me to be absolutely clear: this still does not pass the tests but I’m starting to feel a momentum and a full glass of milk happiness in my head because mysteries are unraveling before me.</p>
+
+<p>When I go back to CodeRunner, where I used to see merely <code class="highlighter-rouge">[9, 1]</code> I now see: <code class="highlighter-rouge">[[1, 9], [3, 3], [9, 1]]</code> and I know what to do.</p>
+
+<p>I change lines 10-13 of the previous example to:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_factor</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
+  <span class="vi">@factors</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">]</span> <span class="k">unless</span> <span class="vi">@factors</span><span class="p">.</span><span class="nf">include?</span> <span class="p">[</span><span class="n">num2</span><span class="p">,</span> <span class="n">num1</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>aha</p>
+
+<p>and run the tests and it passes and I should be weeping happily right now.</p>
+
+<p>After passing the first test it only takes about 30 seconds to get the rest to pass. <a href="https://gist.github.com/maxjacobson/5916168">Here’s my final solution on gist</a>. It’s out of the scope of this post.</p>
+
+<hr />
+
+<p>Later in the day, Carlos remarked that he sometimes leaves his body while doing yoga. I asked if the same is true for programming but I think I already knew how I felt about that.</p>
+
+<p>I find problems like this very satisfying in that same disassociative, mind-clearing way. When I first start, my mind is moving too fast and I make too many assumptions and just start doing things and that’s probably fine because that’s how I find out what shape it is. I’m reminded of this Steven King quote on writing from <em>On Writing</em> (<a href="http://www.jmreep.com/juvenilia/?p=315">via</a>):</p>
+
+<blockquote>
+  <p>Stories are found things, like fossils in the ground. . . . Stories aren’t souvenir tee-shirts or GameBoys. Stories are relics, part of an undiscovered pre-existing world. The writer’s job is to use the tools in his or her toolbox to get as much of each one out of the ground intact as possible. Sometimes the fossil you uncover is small; a seashell. Sometimes it’s enormous, a Tyrannosaurus Rex with all those gigantic ribs and grinning teeth. Either way, short story or thousand-page whopper of a novel, the techniques of excavation remain basically the same.</p>
+
+  <p>No matter how good you are, no matter how much experience you have, it’s probably impossible to get the entire fossil out of the ground without a few breaks and losses. To get even most of it, the shovel must give way to more delicate tools: airhose, palm-pick, perhaps even a toothbrush.</p>
+</blockquote>
+
+<p><em>Right??</em> What a beautiful, humble reframing of what makes great creative work: no, you’re not some genius coming up with profound, original ideas; you’re just digging, and gently, and hoping that if you just keep trying stuff, you’ll find something.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

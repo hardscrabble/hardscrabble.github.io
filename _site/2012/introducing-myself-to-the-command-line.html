@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Introducing myself to the command line - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        Introducing myself to the command line
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      26 Feb 2012
+    </div>
+  </div>
+
+  <div class="body">
+    <p>I never really understood how to use the command line. I kind of got it in principle but not in practice.</p>
+
+<p>So I taught myself the basics by reading <a href="http://cli.learncodethehardway.org/">this mini- book on Learn Code The Hard Way</a>. It’s awesome. The book is an alpha release and may have some errors but I didn’t spot any. Would I, though?</p>
+
+<p>Here are my thoughts and notes I jotted down while learning this. It’s fairly stream of conscious and certainly less accurate or helpful than the aforelinked mini-book. If you’d like to learn it along with me, maybe this could possibly be useful to you. It’s a little different on a Windows computer, but if you’re on a Mac or Linux computer, this should all work for you too.</p>
+
+<hr />
+
+<p>I wonder how much stuff I’m gonna have to memorize.</p>
+
+<p>I’m in the terminal! I’m in Terminal!</p>
+
+<p>I’m learning bash. Apparently my nerd friends will tell me to learn zsh instead. I wonder if my actual nerd friends would.</p>
+
+<p>Ok I think I get the whole <code class="highlighter-rouge">cd</code> and <code class="highlighter-rouge">..</code> thing. If you’re in a directory you can <code class="highlighter-rouge">cd</code> into any subdirectory or <code class="highlighter-rouge">cd ..</code> to go back one. From the downloads directory I can <code class="highlighter-rouge">cd ../documents</code> to get to the documents folder. That goes up one and then back down into another.</p>
+
+<p>I wonder if up and down are the right words to use there. In the Finder I think of it more as left and right, in the column view.</p>
+
+<p>So far basically all I’m doing is making folders and moving through them. Loving it.</p>
+
+<p>Whoa, I just deleted john! john was a directory I made. <code class="highlighter-rouge">rmdir john</code> is deadly.</p>
+
+<p>At this point, the guide is saying if I want to I can take a break and come back tomorrow. It thinks I’m weak. I can do this.</p>
+
+<p>I like that I can <a href="http://cli.learncodethehardway.org/book/cli-crash-coursech8.html">do</a> <code class="highlighter-rouge">mkdir -p i/like/icecream</code> and it’ll make <em>all three</em> of those folders from scratch.</p>
+
+<p>I wonder if I <code class="highlighter-rouge">rmdir i</code>, if it’ll remove all the subfolders too. Ohh cool, it won’t let me. That’s nice.</p>
+
+<p>It’s kind of weird that when I <code class="highlighter-rouge">rmdir something</code>, it doesn’t go to the trash, it’s just <em>gone</em>.</p>
+
+<p><code class="highlighter-rouge">pushd</code> and <code class="highlighter-rouge">popd</code> are kind of baking my noodle (as <a href="#deadlinktooldpodcastinterviewiwthcorey">Corey likes to say</a>. Is this like the popping and locking of the programming world? Maybe I should take a break.</p>
+
+<p>OK so you’re in a directory. You <code class="highlighter-rouge">pushd to/a/folder</code> and now you’re there, but you sort of bookmarked where you were. If you want to go back there you <code class="highlighter-rouge">popd</code>. If you push somewhere, then push somewhere else, then <code class="highlighter-rouge">pushd</code> over and over you can cycle back and forth between them. If you <code class="highlighter-rouge">popd</code> over and over you can go back through the stack (from most recent to least recent I think?) of your <code class="highlighter-rouge">pushd</code>s.</p>
+
+<p>I love <code class="highlighter-rouge">putting things in code brackets</code> it’s really easy in Markdown/Calepin. I might be misusing it.</p>
+
+<p>Ahh and the stack isn’t hidden! That’s what’s printed/returned when you <code class="highlighter-rouge">pushd</code>. I think I’m wrapping my head around this. Not sure if I’ve explained it well or anything, though.</p>
+
+<p>I’m up to chapter nine. I just made an empty text file by writing <code class="highlighter-rouge">touch iamcool.txt</code>. Hey, <a href="http://cli.learncodethehardway.org/book/cli-crash-coursech9.html#x15-460009">your words</a>.</p>
+
+<p>I just wrote <code class="highlighter-rouge">touch butts.mp3</code> and it made a song called Butts that I’m gonna be sending out to radio stations first thing tomorrow.</p>
+
+<p>Ok so if I want to make a copy of iamcool.txt called awesome.txt it’s as easy as writing <code class="highlighter-rouge">cp iamcool.txt awesome.txt</code>! Okay! (In fact I am getting tired).</p>
+
+<p>I’m slowly piecing together that <code class="highlighter-rouge">-r</code> does… well, something. I don’t know. If I <code class="highlighter-rouge">mkdir afolder</code>, I can then <code class="highlighter-rouge">cp -r afolder ~/Desktop</code> to make a copy of that folder on my desktop. But to copy awesome.txt to my desktop I just write <code class="highlighter-rouge">cp awesome.txt ~/Desktop</code>. So that <code class="highlighter-rouge">-r</code> I guess makes it work for a directory.</p>
+
+<p>Hmm so now I’m moving files. But it sounds like renaming to me. <code class="highlighter-rouge">mv awesome.txt lame.txt</code> will basically rename it from awesome to lame. I suppose it’s moving the data from one file to a new one? Like, when you die your soul leaves your body and enters a baby just as it’s being born? If you believe in a very literal, specific form of reincarnation?</p>
+
+<p>I know how to open a file in vim, and I even know how to do some basic vim commands, but I have no idea how to save a file and exit vim.</p>
+
+<p>Ok I took a break. It’s two days later from when I started this. I’m happy that I still remember the commands I’ve learned this far.</p>
+
+<p>I don’t know how to delete files but I can sort of do it by renaming one file into something else that exists, and it basically disappears I think.</p>
+
+<p>I can also move a file from one folder into another folder with this. <code class="highlighter-rouge">mv hello.txt afolder/hello.txt</code> moves that file into the folder (though it doesn’t create the folder). So it’s moving <em>and</em> renaming.</p>
+
+<p>Hmm.</p>
+
+<p>Okay so now I’m using the <code class="highlighter-rouge">less</code> command to view the contents of text files. it seems to work just fine. I press <code class="highlighter-rouge">q</code> to exit. If it’s a long document I can page through it with <code class="highlighter-rouge">w</code> (up) or <code class="highlighter-rouge">space</code> (down), one page-worth at a time. Got it.</p>
+
+<p>I can read markdown files in the terminal pretty nicely. I’m gonna navigated to my Calepin folder and open up this draft file. <code class="highlighter-rouge">cd ../Dropbox/Apps/Calepin</code>, <code class="highlighter-rouge">ls</code>, <code class="highlighter-rouge">less cli.md</code> wow there it is! Ha! This is fun.</p>
+
+<p>I just whipped up <a href="http://cl.ly/2q1b430A3t1a1q1y0U1V">a background image</a> for my terminal. I wish it could tile and not just stretch. Looks good as long as I don’t resize the window.</p>
+
+<p>Now I’m <code class="highlighter-rouge">cat</code>ting things. That just sort of displays the contents of the text file in a slightly different way than <code class="highlighter-rouge">less</code>. <em>So</em> exciting.</p>
+
+<p>Oh thank goodness <code class="highlighter-rouge">rm</code> exists. I didn’t like that other way of deleting files.</p>
+
+<p>OK so I can <code class="highlighter-rouge">rm hello.txt</code> to delete it but I can’t use <code class="highlighter-rouge">rm</code> to delete a folder (that’s what <code class="highlighter-rouge">rmdir</code> is for). Oh wait, I can, I just have to do some weird business. <code class="highlighter-rouge">rm -rf folder</code> works. <em>Yoosh</em> how do I remember that? Wait a moment. <code class="highlighter-rouge">rm -rf</code> can delete folder even if they have stuff in them. That one ups <code class="highlighter-rouge">rmdir</code>. This is “recursive deleting”.</p>
+
+<p>I like this possibly self-delusional quote <a href="http://cli.learncodethehardway.org/book/cli-crash-coursech15.html">from the mini-book</a>:</p>
+
+<blockquote>
+  <p>Now we get to the cool part of the command line: redirection.</p>
+</blockquote>
+
+<p>I kinda knew about the <code class="highlighter-rouge">|</code> but not the <code class="highlighter-rouge">&lt;</code> or <code class="highlighter-rouge">&gt;</code>.</p>
+
+<p>Oh! <a href="http://www.secretgeometry.com/apps/cathode/">This</a> is fun.</p>
+
+<p>I just had a breakthrough wherein I learned how to save and close from vim, so I’ve just been playing in that for a little while. It’s <code class="highlighter-rouge">:wq</code>! So simple!</p>
+
+<p>Ok, wildcard matching… ya yah.</p>
+
+<p>Ex, <code class="highlighter-rouge">ls *.txt</code> will list only the text files. that’s handy. This command surprised me: <code class="highlighter-rouge">cat *.txt &gt; bigfile.txt</code> took all of the txt files and combined them into one new one, which it also created. Then <code class="highlighter-rouge">rm *.txt</code> removed all of the txt files. That’s vicious.</p>
+
+<p>Ok so this is a fun thing. I just realized I can open <em>tabs</em> in the Terminal! So I’m gonna write this post in one tab and learn things in another. Whoa. Although the switch-tab shortcut is kind of unwieldy (command-shift-] or [). I can learn it.</p>
+
+<p>So I can run a command like <code class="highlighter-rouge">grep hello *.txt</code> and it’ll find the string “hello” in all the txt files and then return a list of all of the lines from all of the txt files that have that string in them. Useful. And if I want, I can pipe that to <code class="highlighter-rouge">less</code> and it’ll be the same thing, but easier to flip through (with space and w).</p>
+
+<p>I thought I was done when I reached the section on <code class="highlighter-rouge">man</code>, which looks up the manual for any given command, but there’s a whole nother section. Great. I can handle some more knowledge.</p>
+
+<p>I’m up to chapter 21. <em>Weeks</em> have elapsed. I’m not sure exactly what I just did and I can only hope it wasn’t bad. one of the thrills of using the command line is that I can completely destroy my whole computer at any point by writing the wrong thing.</p>
+
+<p>In <a href="http://cli.learncodethehardway.org/book/cli-crash-coursech21.html#x30-9700021">this chapter</a> I “looked at my environment” and then set a variable and then printed out the variable. But where is this variable? In my environment? I feel like I don’t want it to be there anymore but don’t know how to get it out. Environmentalism! (I actually <code class="highlighter-rouge">echo</code>‘d it, not print. For what it’s worth.)</p>
+
+<p>Now it wants me to research online “how you change your PATH for your computer” and do it all in the terminal. I think I’m just gonna skip this one.</p>
+
+<p>Ah! Chapter 22 to the rescue. <code class="highlighter-rouge">unset</code> will flush that variable. Cool. I’m so relieved. I wonder if I can <code class="highlighter-rouge">unset</code> something important. That would be very unpsetting.</p>
+
+<p>“You have completed the crash course. At this point you should be a barely capable shell user.” – Nice. I feel that way. It feels pretty great.</p>
+
+<p>The conclusion links to <a href="http://www.gnu.org/software/bash/manual/bashref.html">this</a> official bash reference. Also <a href="http://cli.learncodethehardway.org/bash_cheat_sheet.pdf">this cheat sheet</a>. Maybe I’ll tackle those next.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

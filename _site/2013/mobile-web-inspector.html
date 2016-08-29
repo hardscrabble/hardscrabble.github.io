@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>using mobile web inspector - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        using mobile web inspector
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      15 Jan 2013
+    </div>
+  </div>
+
+  <div class="body">
+    <p>I’ve just figured out why infinite scrolling wasn’t working on Layabout on my iPod Touch.</p>
+
+<p>I’m using jQuery to detect when the user has reached the bottom of the page. There’s no hardcoded event for that, so you have to do some math using the methods that are given. It goes something like this:</p>
+
+<p>If the user is scrolling, check if the current window height plus the amount of stuff above it is greater than or equal to the total height of the document. This works on the desktop (in the browsers I tested anyway) and on the iPad, but not on my iPod Touch.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">()</span> <span class="o">+</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">height</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">height</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>On the web, a nice and easy way to figure out problems like these is to use the console and log some variables. So I found myself adding in some stuff like this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">scroll_top</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">scrollTop</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">window_height</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">window</span><span class="p">).</span><span class="nx">height</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">document_height</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">height</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">current_position</span> <span class="o">=</span> <span class="nx">scroll_top</span> <span class="o">+</span> <span class="nx">window_height</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"scroll top: "</span> <span class="o">+</span> <span class="nx">scroll_top</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"window height: "</span> <span class="o">+</span> <span class="nx">window_height</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"current position: "</span> <span class="o">+</span> <span class="nx">current_position</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"document height: "</span> <span class="o">+</span> <span class="nx">document_height</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<p>But it’s not very easy to access the console on an iOS device, so these messages were getting logged to nowhere.</p>
+
+<p>Long story short I followed <a href="http://webdesign.tutsplus.com/tutorials/workflow-tutorials/quick-tip-using-web-inspector-to-debug-mobile-safari/">these instructions</a> and managed to get access to the info I needed. Here’s what the page logged at the bottom of a page:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>scroll top: 41628
+window height: 1360
+current position: 42988
+document height: 43173
+</code></pre>
+</div>
+
+<p>Huh! No wonder further pages weren’t loading, we were never (by this logic) truly reaching the end of the page!</p>
+
+<p>So, to fix it, I just changed the logic to add 200 pixels of wiggle room, so now it triggers when you get near the bottom of the page rather than hitting it exactly.</p>
+
+<p>So it works and I’m happy. But before we wrap things up too tightly, let’s try to figure out what’s going on here.</p>
+
+<p>Let’s look at some numbers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">thing</th>
+      <th style="text-align: left">pixels amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><a href="http://d.pr/i/VZr6">5th gen iPod Touch screen height</a></td>
+      <td style="text-align: left">1136</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Window height as logged by Mobile Safari (<code class="highlighter-rouge">$(window).height()</code>)</td>
+      <td style="text-align: left">1360</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">The difference between those two</td>
+      <td style="text-align: left">224</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>What’s the deal with that? Maybe it’s a points-and-pixels thing beyond my comprehension, but this feels kinda wrong to me. Is it possibly a bug in Mobile Safari? Why else would the window height be bigger than the total height of the screen? I expected the opposite; the window height should be less than the screen height, considering that the window doesn’t include browser chrome like the navigation bar along the bottom and sometimes (at the top of pages) the title and address bar.</p>
+
+<p>Let’s revisit the numbers from the earlier log example:</p>
+
+<p>(<em>Note: other than window height, these values would be different on a longer or shorter page</em>)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">thing</th>
+      <th style="text-align: left">value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">scroll top</td>
+      <td style="text-align: left">41628</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">window height</td>
+      <td style="text-align: left">1360</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">current position</td>
+      <td style="text-align: left">42988</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">document height</td>
+      <td style="text-align: left">43173</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">difference between those last two</td>
+      <td style="text-align: left">185</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So if I’m right that Mobile Safari is mis-reporting its height by 224 pixels, how come my earlier logic was falling short by 185 pixels? I think that difference (39 pixels) must be the height of the navigation toolbar?</p>
+
+<p>Maybe!</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

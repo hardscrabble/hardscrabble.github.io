@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>eighty character lines - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        eighty character lines
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      05 Sep 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Last month we talked about <a href="/2015/rubocop">RuboCop</a>, which analyzes your Ruby code and
+nitpicks it. One of its most difficult to follow suggestions is to keep your
+lines of code no longer than 80 characters.</p>
+
+<p>The creator of rubocop, bbatsov, explained his perspective <a href="http://batsov.com/articles/2013/06/26/the-elements-of-style-in-ruby-number-1-maximum-line-length/">on his
+blog</a>:</p>
+
+<blockquote>
+  <p>We should definitely have a limit – that’s beyond any doubt. It’s common
+knowledge that humans read much faster vertically, than horizontally. Try to
+read the source code of something with 200-character lines and you’ll come to
+acknowledge that.</p>
+</blockquote>
+
+<p>I’m totally on board with the short lines train. For me, it only gets tricky
+when dealing with nested stuff (examples to follow) which add a lot of space to
+the left of the first character of code. For example:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">MyGreatGem</span>
+  <span class="k">module</span> <span class="nn">SomeOtherNamespace</span>
+    <span class="k">module</span> <span class="nn">OmgAnotherNamespace</span>
+      <span class="k">module</span> <span class="nn">LolYeahOneMore</span>
+        <span class="k">class</span> <span class="nc">SomethingGreat</span>
+          <span class="k">class</span> <span class="nc">SomethingOk</span>
+            <span class="k">class</span> <span class="nc">MyGreatClass</span>
+              <span class="k">def</span> <span class="nf">initialize</span>
+                <span class="nb">puts</span> <span class="s2">"OMG I only have 64 characters to express something on "</span> <span class="p">\</span>
+                     <span class="s2">"this line! And now it's more like 'these lines' haha"</span>
+              <span class="k">end</span>
+            <span class="k">end</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Often strings are the first thing to get chopped up, as in that example.</p>
+
+<p>The only approach I thought of to deal with that is to organize my code
+differently to not use many nested namespaces. That’s probably not the worst
+idea, honestly, but I’m writing this post to share an interesting style I
+observed in the wild (read: on github) that takes a whole nother approach:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Excerpted from:</span>
+<span class="c1"># https://github.com/net-ssh/net-sftp/blob/ebf5d5380cc533b69b308baa2e396e4a18abc900/lib/net/sftp/operations/dir.rb</span>
+<span class="k">module</span> <span class="nn">Net</span><span class="p">;</span> <span class="k">module</span> <span class="nn">SFTP</span><span class="p">;</span> <span class="k">module</span> <span class="nn">Operations</span>
+  <span class="k">class</span> <span class="nc">Dir</span>
+    <span class="kp">attr_reader</span> <span class="ss">:sftp</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">sftp</span><span class="p">)</span>
+      <span class="vi">@sftp</span> <span class="o">=</span> <span class="n">sftp</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span><span class="p">;</span> <span class="k">end</span><span class="p">;</span> <span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Huh! That’s a style I hadn’t seen before. RuboCop has many complaints about it,
+and I don’t totally love the style, but it’s a very novel and neat way to do it,
+and it certainly frees up columns to spend on your code if you’re planning to
+stick to an 80 character limit.</p>
+
+<p>One possible alternative is to define your namespaced class using this
+shorthand:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Net</span><span class="o">::</span><span class="no">SFTP</span><span class="o">::</span><span class="no">Operations</span><span class="o">::</span><span class="no">Dir</span>
+  <span class="kp">attr_reader</span> <span class="ss">:sftp</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">sftp</span><span class="p">)</span>
+    <span class="vi">@sftp</span> <span class="o">=</span> <span class="n">sftp</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>If you do that, you get 2 extra characters on each line. Sweet!</p>
+
+<p>One problem: it sort of doesn’t work, at least not in the same way.</p>
+
+<p>If you just look at that example, and imagine that you’re the Ruby interpreter
+trying to figure out what this code means, how are you supposed to know whether
+<code class="highlighter-rouge">Net</code>, <code class="highlighter-rouge">SFTP</code>, and <code class="highlighter-rouge">Operations</code> are supposed to be classes or modules? You have
+to <em>already know</em> by them being previously defined. If they haven’t been defined
+yet, you are well within your right to raise a <code class="highlighter-rouge">RuntimeException</code> to complain
+that this constant hasn’t been defined yet, rather than try to guess.</p>
+
+<p>Both of the earlier longhand examples were explicitly explaining what the type
+of each namespace constant is. That pattern works whether you’re defining the
+module or class in that moment, or “opening” a previously defined module or
+class to add something new to it. This shorthand, while optimal for line length,
+only works when opening previously defined constants.</p>
+
+<p>One downside of this approach is that, by relying on all of the namespaces being
+predefined, it becomes harder to test this class in isolation (it’s probably
+possible to do it through <a href="/2015/stubbing-constants/">some gnarly stubbing</a> but, harder). You’re
+also introducing some requirements about the order in which the files from your
+code need to be loaded, which feels kind of fragile.</p>
+
+<p>One <em>possible</em> upside comes to mind. When you follow the typical pattern of
+writing out all the namespace modules and classes, you introduce some room for
+error: what if in one file you write <code class="highlighter-rouge">class Operations</code> by mistake (instead of
+<code class="highlighter-rouge">module Operations</code>)? You’ll get an error. That’s not too bad, honestly.</p>
+
+<p>I think 80 is usually enough but if you’re doing too many contortions to stay
+in that box, try like 90 or 100, you’re still a good person.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

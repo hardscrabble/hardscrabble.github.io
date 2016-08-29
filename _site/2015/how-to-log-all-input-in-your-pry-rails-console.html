@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>how to log all input in your pry rails console - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        how to log all input in your pry rails console
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      14 Oct 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Many Rubyists use and love the <a href="https://github.com/pry/pry">pry</a> gem for adding breakpoints to their
+programs and inspecting objects. Super useful. Some others use the <a href="https://github.com/rweng/pry-rails">pry-rails</a>
+gem to use the pry REPL in place of irb for the rails console.</p>
+
+<p>Let’s say you want to log all of the activity that occurs in your rails console.
+This could be a nice security thing. Maybe you’re just nostalgic for old times.</p>
+
+<p>Pry has something called an “<a href="https://github.com/pry/pry/wiki/Customization-and-configuration#Config_input">input object</a>”, which you can override in your
+configuration. The object’s responsibility is to feed ruby code to Pry, line by
+line. By default, it uses the [Readling module][]. I don’t know a <em>ton</em> about
+readline, but I gather that it’s wrapping some standard unix program, which
+means it sort of <em>feels</em> natural. For example, you can input Control+l and it
+will clear the screen; <code class="highlighter-rouge">gets.chomp</code> doesn’t do that kind of thing.</p>
+
+<p>So, Readline is great. We want to use it. We just kind of want to wrap it. SO
+let’s see what that looks like.</p>
+
+<p>First: where do we actually put our configuration?</p>
+
+<p>You can put a <code class="highlighter-rouge">.pryrc</code> file in the root of your project. You can even put Ruby
+code in that file. I think that’s the official way to do it. But I don’t know…
+it doesn’t get syntax highlighting because it doesn’t have a <code class="highlighter-rouge">.rb</code> file
+extension… I put my configuration in a Rails initializer named
+<code class="highlighter-rouge">config/initializers/pry.rb</code>, and that works fine too.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">LoggingReadline</span>
+  <span class="n">delegate</span> <span class="ss">:completion_proc</span><span class="p">,</span> <span class="ss">:completion_proc</span><span class="o">=</span><span class="p">,</span> <span class="ss">to: </span><span class="no">Readline</span>
+
+  <span class="k">def</span> <span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="no">Readline</span><span class="p">.</span><span class="nf">readline</span><span class="p">(</span><span class="n">prompt</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">user_input</span><span class="o">|</span>
+      <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">logger</span>
+    <span class="vi">@logger</span> <span class="o">||=</span> <span class="no">Logger</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'log/console.log'</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Pry</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">input</span> <span class="o">=</span> <span class="no">LoggingReadline</span><span class="p">.</span><span class="nf">new</span>
+</code></pre>
+</div>
+
+<p>The important thing for custom input objects is that they implement the
+<code class="highlighter-rouge">readline</code> method. The method takes in a string that holds the current user
+prompt, and it is expected to return a string that holds the next line of Ruby
+code for Pry to evaluate.</p>
+
+<p>If pry is a REPL (read evaluate print loop), the custom input object assumes the
+responsibility of the first letter, and thats’ it.</p>
+
+<p>It doesn’t strictly need to ask the user for input. It could just return some
+nonsense.</p>
+
+<p>But, this one does. We can summarize what it does as: <em>ask the dev for a line of
+input, but first log it to a file before returning it to pry for EPL-ing.</em></p>
+
+<p>There’s one line that’s kind of strange:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">delegate</span> <span class="ss">:completion_proc</span><span class="p">,</span> <span class="ss">:completion_proc</span><span class="o">=</span><span class="p">,</span> <span class="ss">to: </span><span class="no">Readline</span>
+</code></pre>
+</div>
+
+<p>What’s that about?</p>
+
+<p>Well, I’ve learned, it’s just kind of a necessary thing to make sure your custom
+input object seamlessly behaves like the default pry input behavior. Let me
+explain.</p>
+
+<p><code class="highlighter-rouge">Readline</code>, by default, has some strategy for tab completing when you start to
+write something, and then press tab. That strategy is a proc object. The default
+one has something to do with irb I guess?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ irb
+&gt;&gt; Readline.completion_proc
+=&gt; #&lt;Proc:0xb9964ce0@/home/max/.rubies/2.2.3/lib/ruby/2.2.0/irb/completion.rb:37&gt;
+</code></pre>
+</div>
+
+<p>But! When starting pry, it has a different completion proc!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pry
+[1] pry(main)&gt; Readline.completion_proc
+=&gt; #&lt;Proc:0xb8a0c25c@/home/max/.gem/ruby/2.2.3/gems/pry-0.10.2/lib/pry/repl.rb:177&gt;
+</code></pre>
+</div>
+
+<p>But when you provide a custom input object, pry doesn’t replace the completion
+proc on readline because you seem not to even be using it, so why bother? But
+in this case we totally are using it, we’re just wrapping it.</p>
+
+<p>At first, I thought this was a bug with Pry, and I opened an issue to complain
+about it, but while writing this blog post I realized that it’s kind of not a
+bug, and this delegation approach is probably fine.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

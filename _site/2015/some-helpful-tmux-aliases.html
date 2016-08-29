@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>some helpful tmux aliases - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        some helpful tmux aliases
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      01 Aug 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>tmux is <a href="http://www.hardscrabble.net/2015/terminal-multiplexing/">still</a> an essential tool in my development workflow. Today I’m
+writing to share a few aliases/helper functions I’ve recently added to <a href="https://github.com/maxjacobson/dotfiles">my
+dotfiles</a>. Those change all the time so I’m hesitant to link to the files
+which the helper aliases and functions currently live in.</p>
+
+<p>I added them in these commits, though: <a href="https://github.com/maxjacobson/dotfiles/commit/4f6169f012030a831b579047e5f15ff17ec06716"><code class="highlighter-rouge">d06362c</code></a> and <a href="https://github.com/maxjacobson/dotfiles/commit/c9d869555b7e8c14319ecf71fd5e8e5befc6e1b8"><code class="highlighter-rouge">c9d8695</code></a>.</p>
+
+<p>The implementation is mostly stolen from other people’s dotfiles and is gnarly
+to look at so I’ll just share how I use them:</p>
+
+<p><strong>EDIT February 8, 2016</strong>: I totally changed the implementation: <a href="https://github.com/maxjacobson/dotfiles/commit/6d883df5989cedec149be1365a18b2ca1b76a958"><code class="highlighter-rouge">6d883df</code></a>
+because I would occasionally have a bug with the old helper functions. More
+details in <a href="https://github.com/tmux/tmux/issues/298#issuecomment-181614369">this issue</a></p>
+
+<p>Here’s how to use these aliases:</p>
+
+<hr />
+
+<p>When I’m not in a tmux session, and I want to see the list of tmux sessions, I
+used to run <code class="highlighter-rouge">tmux ls</code>. Now I run <code class="highlighter-rouge">tl</code>.</p>
+
+<hr />
+
+<p>When I’m not in a tmux session and I’d like to start a new one, I used to run
+<code class="highlighter-rouge">tmux new -s blog</code> (where <code class="highlighter-rouge">blog</code> is the name of the new session). Now I run <code class="highlighter-rouge">t</code>.</p>
+
+<p>It auto-chooses a session name based on the current directory’s name.</p>
+
+<p>If there’s already a session with the name of the current directory, it cleverly
+attaches to that session instead of trying to start a new one with that name.</p>
+
+<hr />
+
+<p>If I’m not in a tmux session and I’d like to attach to any existing tmux
+session, and I don’t particularly care which one because I’m planning to go into
+the session switcher anyway (<code class="highlighter-rouge">C-b s</code>), I used to run <code class="highlighter-rouge">tmux a</code>. Now I run <code class="highlighter-rouge">ta</code>.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

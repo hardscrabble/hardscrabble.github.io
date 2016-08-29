@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>the cop and the hound - hardscrabble</title>
+  <meta content="Max Jacobson" name="author">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/feed.xml" rel="alternate" title="Posts feed" type="application/atom+xml">
+  <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        the cop and the hound
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href="/about">Max Jacobson</a>
+    </div>
+    <div class="date">
+      28 Sep 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>As a rails developer I keep hearing about Thoughtbot’s cool projects. A fairly recent one is <a href="https://houndci.com/">Hound</a>, a tool that comments on your GitHub pull requests and points out code style violations. I think consistent style is a nice ideal to strive for, so I want something like this.</p>
+
+<p>Setting up Hound is easy, but it only reviews the code that is added in a pull request, not the existing code base. Which, in theory, is fine. Except, if you’re the kind of obsessive compulsive who wants a style guide, it’s probably not.</p>
+
+<p>So I managed to make Hound review the full code base but it took some tricky git branching and pull requesting. So I made a screeny<sup id="fnref:screeny"><a href="#fn:screeny" class="footnote">1</a></sup> to share:</p>
+
+<iframe src="//player.vimeo.com/video/107315271" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="http://vimeo.com/107315271">Setting up Hound CI to comment on my full code base</a> from <a href="http://vimeo.com/maxjacobson">Max Jacobson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<p>I didn’t want this video to be too long, so I stopped when I managed to get the full codebase analyzed. But here’s my plan to continue:</p>
+
+<ol>
+  <li>I’ll need to learn how to configure Hound to more accurately reflect my tastes. Under the hood it uses <a href="https://github.com/bbatsov/rubocop">rubocop</a>, pre-configured with Thoughtbot’s style rules. I’ll add my own configuration and push again, which will hopefully refresh the comments.</li>
+  <li>Then I’ll fix all the code style violations and keep pushing them up until all of the comments go away. Then I’ll merge the second pull request. At that point my first pull request will (hopefully) have a diff that shows exactly what I want: new configuration and style fixes.</li>
+  <li>I’ll squash that branch to have just one commit and merge it.</li>
+  <li>Then I’ll merge that pull request into master and be nicely set up for a future of consistent style.</li>
+</ol>
+
+<h2 id="configuring-rubocop">1. configuring rubocop</h2>
+
+<p>These are <a href="https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml">the default “cops” for rubocop</a>. If I were starting fresh with rubocop (and not using Hound), I would start with this configuration file and start disabling specific cops. In fact, this is exactly what Hound does. <a href="https://github.com/thoughtbot/hound/blob/master/config/style_guides/ruby.yml">Their tweaks are available</a> because Hound is open source.</p>
+
+<p>Here’s what I came up with: <a href="https://github.com/maxjacobson/film_snob/blob/hound-it-up/.rubocop.yml">https://github.com/maxjacobson/film_snob/blob/hound-it-up/.rubocop.yml</a> (if that link is dead, it’s probably because I merged the PR and deleted the branch, in which case the file can be access <a href="https://github.com/maxjacobson/film_snob/blob/master/.rubocop.yml">here</a>).</p>
+
+<p>Maybe I’ll change it over time but it seems good right now.</p>
+
+<h2 id="fixing-all-the-violations">2. fixing all the violations</h2>
+
+<p>Done: <a href="https://github.com/maxjacobson/film_snob/pull/46">https://github.com/maxjacobson/film_snob/pull/46</a></p>
+
+<p>Being consistent feels good <img class="emoji" title=":smile:" alt=":smile:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f604.png" height="20" width="20" align="absmiddle">.</p>
+
+<p>It’s actually not that hard to use rubocop directly without Hound. I also added rubocop to my Travis CI configuration, so even if I didn’t have Hound, pull requests would consider style guide violations, because the build would fail. There’s no commenting, which decreases the visibility. But it’s OK because Hound double-comments if you push the same problem twice, so maybe the comments aren’t that great? It’s also <em>much</em> more strict. If you have an 81 character line, it’s a complete no go, the build fails, you can’t merge that.</p>
+
+<p>I’ll try that.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:screeny">
+      <p>I call them screenies because the app I use to make screenies is called <a href="http://screenyapp.com/">Screeny</a> <a href="#fnref:screeny" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href="http://twitter.com/maxjacobson">@maxjacobson</a> or <a href="mailto:max@hardscrabble.net">max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="/js/vendor/lunr.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif"></p></noscript>
+</body>
+</html>

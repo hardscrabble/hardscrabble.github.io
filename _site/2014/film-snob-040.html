@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>film snob 0.4.0 - hardscrabble</title>
+  <meta content="Max Jacobson" name="author">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/feed.xml" rel="alternate" title="Posts feed" type="application/atom+xml">
+  <link href="/img/favicon.ico" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        film snob 0.4.0
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href="/about">Max Jacobson</a>
+    </div>
+    <div class="date">
+      06 Dec 2014
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Today I’m happy to release film snob v0.4.0.</p>
+
+<p>I first wrote about film snob <a href="http://www.hardscrabble.net/2014/refactoring_old_code/">in April</a>, when I extracted it from my old web
+app <a href="http://layabout.tv">Layabout</a>.</p>
+
+<p>None of the changes add new functionality, so maybe it was wrong to call this a
+minor release. They also don’t fix any bugs. <a href="https://github.com/maxjacobson/film_snob/compare/v0.3.13...v0.4.0">They’re all</a> to do with making
+small stylistic changes that make the code easier to read or more consistent. I
+haven’t been releasing those changes because I haven’t been sure what the point
+is – why release an update that doesn’t change anything?</p>
+
+<p>If someone is using film snob, and it’s not behaving how they expect, they might
+check the source code to help them understand and debug their problem. With that
+scenario in mind, I definitely want to release these changes.</p>
+
+<p>Also, today I merged <a href="https://github.com/maxjacobson/film_snob/pull/56">an awesome pull request</a> which renames a method and
+emits a deprecation warning for the old method name. Thanks to <a href="https://github.com/wilchandler">Wil Chandler</a>
+for making that change.</p>
+
+<p>Ever since <a href="https://github.com/davydovanton">Anton Davydov</a> <a href="https://github.com/maxjacobson/film_snob/pull/29">added</a> support for embedding photos and
+videos from Instagram, it’s been kind of weird that one of the main public
+interfaces for film snob has been the <code class="highlighter-rouge">watchable?</code> method. Instagram photos
+aren’t really watchable, right? They’re look-at-able, I suppose, but not
+watchable. Soon we’ll be adding support for embedding Rdio playlists &amp; songs
+too, and it’ll be even more semantically unsettling.</p>
+
+<p>The experience now looks something like this:</p>
+
+<div class="highlighter-rouge">
+<pre class="highlight"><code>15:22:33 tralfamadore-5 hardscrabble.net:master
+⇥ irb
+&gt;&gt; require 'film_snob'
+=&gt; true
+&gt;&gt; FilmSnob.new('http://instagram.com/p/sw4RThIctq/').watchable?
+WARNING: #watchable? is deprecated and will be removed in v1.0.0. Please use #embeddable? instead.
+=&gt; true
+&gt;&gt; FilmSnob.new('http://instagram.com/p/sw4RThIctq/').embeddable?
+=&gt; true
+</code></pre>
+</div>
+
+<p>Embeddable feels more right to me.</p>
+
+<p>So even though there’s no new functionality, there is more clarity, and maybe
+clarity counts as a feature? <img class="emoji" title=":leaves:" alt=":leaves:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f343.png" height="20" width="20" align="absmiddle"></p>
+
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href="http://twitter.com/maxjacobson">@maxjacobson</a> or <a href="mailto:max@hardscrabble.net">max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="/js/vendor/lunr.min.js"></script>
+<script src="/js/app.js"></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif"></p></noscript>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>ruby keyword arguments aren't obvious - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        ruby keyword arguments aren't obvious
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      29 Mar 2015
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Since Ruby 2.0, methods can be defined with keyword arguments instead of the
+traditional ordinal arguments. I really like them. But they’re not obvious. I
+find myself thinking, maybe too often, “wait, how the hell do these work?”</p>
+
+<p>This post is a stream of consciousness exploration through the things about
+keyword arguments that confuse or confused me or people I know. Wading through
+this post might help you emerge with a firmer understanding of how to use them.
+I hope it makes sense if you read it. Please let me know. I want to write about
+a thing I find confusing in a way that honors that confusion but is also clear
+and readable, which maybe isn’t a thing I can do.</p>
+
+<p>Let’s start with an example of keyword arguments working as-advertised:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="n">from</span><span class="p">:,</span> <span class="n">to</span><span class="p">:,</span> <span class="n">subject</span><span class="p">:,</span> <span class="n">body</span><span class="p">:)</span>
+  <span class="s2">"From: </span><span class="si">#{</span><span class="n">from</span><span class="si">}</span><span class="se">\n</span><span class="s2">To: </span><span class="si">#{</span><span class="n">to</span><span class="si">}</span><span class="se">\n</span><span class="s2">Subject: </span><span class="si">#{</span><span class="n">subject</span><span class="si">}</span><span class="se">\n\n</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>That’s a kind of strange method that takes a few required keyword arguments and
+makes a string from them. I like using keyword arguments here because now you
+can call the method however you like, as long as you provide all of the
+keywords; the order doesn’t matter, and it’s clear which one is which.</p>
+
+<p>So, for example, here’s a perfectly valid way to call that method (note the
+order has changed):</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">email</span><span class="p">(</span>
+  <span class="ss">subject: </span><span class="s2">"Thanks!"</span><span class="p">,</span>
+  <span class="ss">from: </span><span class="s2">"Max"</span><span class="p">,</span>
+  <span class="ss">to: </span><span class="s2">"Susan"</span><span class="p">,</span>
+  <span class="ss">body: </span><span class="s2">"The soup was great!"</span>
+<span class="p">)</span>
+</code></pre>
+</div>
+
+<p>We’re able to use required keyword arguments in Ruby 2.1 and forward. What if
+your app is using Ruby 2.0.0? You’d still like to reap the clarity benefits of
+keyword arguments, but now you must provide a default value for every keyword.
+What default makes sense for an email? I’m not sure. I guess you can do this?</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="ss">from: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">to: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">subject: </span><span class="kp">nil</span><span class="p">,</span> <span class="ss">body: </span><span class="kp">nil</span><span class="p">)</span>
+  <span class="k">raise</span> <span class="no">ArgumentError</span> <span class="k">if</span> <span class="p">[</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">body</span><span class="p">].</span><span class="nf">any?</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:nil?</span><span class="p">)</span>
+  <span class="s2">"From: </span><span class="si">#{</span><span class="n">from</span><span class="si">}</span><span class="se">\n</span><span class="s2">To: </span><span class="si">#{</span><span class="n">to</span><span class="si">}</span><span class="se">\n</span><span class="s2">Subject: </span><span class="si">#{</span><span class="n">subject</span><span class="si">}</span><span class="se">\n\n</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Which kind of simulates the behavior of Ruby 2.1 required keyword arguments.
+But it’s not great, because sometimes nil is actually a value that you want to
+be providing. So maybe you do something heavier, like this?</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AbsentArgument</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">email</span><span class="p">(</span><span class="ss">from: </span><span class="no">AbsentArgument</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="ss">to: </span><span class="no">AbsentArgument</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="ss">subject: </span><span class="no">AbsentArgument</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="ss">body: </span><span class="no">AbsentArgument</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span>
+  <span class="k">raise</span> <span class="no">ArgumentError</span> <span class="k">if</span> <span class="p">[</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">subject</span><span class="p">,</span> <span class="n">body</span><span class="p">].</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="n">arg</span><span class="o">|</span> <span class="n">arg</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">AbsentArgument</span><span class="p">)</span> <span class="p">}</span>
+  <span class="s2">"From: </span><span class="si">#{</span><span class="n">from</span><span class="si">}</span><span class="se">\n</span><span class="s2">To: </span><span class="si">#{</span><span class="n">to</span><span class="si">}</span><span class="se">\n</span><span class="s2">Subject: </span><span class="si">#{</span><span class="n">subject</span><span class="si">}</span><span class="se">\n\n</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>Which is kind of clunky-looking but maybe more explicit?</p>
+
+<p>Let’s be happy required keyword arguments are an official thing now and not
+worry about that and just hope we can all always use Ruby 2.1 or newer.</p>
+
+<p>Keyword arguments kind of look like hashes. Are they hashes? I don’t know. You
+can use hashes with them:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">arguments</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">from: </span><span class="s2">"Max"</span><span class="p">,</span>
+  <span class="ss">to: </span><span class="s2">"Beth"</span><span class="p">,</span>
+  <span class="ss">subject: </span><span class="s2">"Thanks!"</span><span class="p">,</span>
+  <span class="ss">body: </span><span class="s2">"Your soup was great!"</span>
+<span class="p">}</span>
+<span class="n">email</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>That works. That <code class="highlighter-rouge">**</code> coerces the hash into keyword arguments, kind of like the
+<code class="highlighter-rouge">*</code> coerces an array into ordinal arguments:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a_number</span><span class="p">,</span> <span class="n">another_number</span><span class="p">)</span>
+  <span class="n">a_number</span> <span class="o">+</span> <span class="n">another_number</span>
+<span class="k">end</span>
+
+<span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">sum</span><span class="p">(</span><span class="o">*</span><span class="n">nums</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Except, the <code class="highlighter-rouge">**</code> isn’t actually necessary, this works fine too:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">arguments</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">from: </span><span class="s2">"Max"</span><span class="p">,</span>
+  <span class="ss">to: </span><span class="s2">"Beth"</span><span class="p">,</span>
+  <span class="ss">subject: </span><span class="s2">"Thanks!"</span><span class="p">,</span>
+  <span class="ss">body: </span><span class="s2">"Your soup was great!"</span>
+<span class="p">}</span>
+<span class="n">email</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>So I guess they don’t do anything there?</p>
+
+<p>OK so when you are calling a method you can use a pre-existing hash for the
+keyword arguments. What about when you’re defining a method? This probably
+won’t work but I just don’t know because it doesn’t feel obvious. Let’s try.</p>
+
+<p>Here’s our new example method, which works fine:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">stir_fry</span><span class="p">(</span><span class="ss">ingredients: </span><span class="p">[],</span> <span class="ss">heat: </span><span class="mi">100</span><span class="p">)</span>
+  <span class="n">heat</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+    <span class="n">ingredients</span> <span class="o">=</span> <span class="n">ingredients</span><span class="p">.</span><span class="nf">shuffle</span>
+  <span class="k">end</span>
+  <span class="n">ingredients</span>
+<span class="k">end</span>
+
+<span class="n">stir_fry</span><span class="p">(</span><span class="ss">ingredients: </span><span class="p">[</span><span class="s1">'broccoli'</span><span class="p">,</span> <span class="s1">'peppers'</span><span class="p">,</span> <span class="s1">'tofu'</span><span class="p">],</span> <span class="ss">heat: </span><span class="mi">45</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>So let’s try to define the method again, but this time let’s use a hash.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">arguments</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">ingredients: </span><span class="p">[],</span>
+  <span class="ss">heat: </span><span class="mi">100</span>
+<span class="p">}</span>
+<span class="k">def</span> <span class="nf">stir_fry</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span>
+  <span class="n">heat</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+    <span class="n">ingredients</span> <span class="o">=</span> <span class="n">ingredients</span><span class="p">.</span><span class="nf">shuffle</span>
+  <span class="k">end</span>
+  <span class="n">ingredients</span>
+<span class="k">end</span>
+
+<span class="n">stir_fry</span><span class="p">(</span><span class="ss">ingredients: </span><span class="p">[</span><span class="s1">'broccoli'</span><span class="p">,</span> <span class="s1">'peppers'</span><span class="p">,</span> <span class="s1">'tofu'</span><span class="p">],</span> <span class="ss">heat: </span><span class="mi">45</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Do you think it works? It doesn’t work at all. I’m sorry.</p>
+
+<p>Wait, so what even is the <code class="highlighter-rouge">**</code> thing? Let’s review <code class="highlighter-rouge">*</code> again; I showed above
+how to use it to coerce an array into ordinal arguments when calling a method,
+but it can also be used in a method definition to indicate that a method takes
+an arbitrary number of arguments:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">)</span>
+  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="n">numbers</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span> <span class="p">}</span>
+  <span class="n">total</span>
+<span class="k">end</span>
+
+<span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">sum</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>We can do something like that with <code class="highlighter-rouge">**</code> to indicate that we want to catch all
+unrecognized keyword arguments into an object:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">stir_fry</span><span class="p">(</span><span class="ss">ingredients: </span><span class="p">[],</span> <span class="ss">heat: </span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+  <span class="n">heat</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+    <span class="n">ingredients</span> <span class="o">=</span> <span class="n">ingredients</span><span class="p">.</span><span class="nf">shuffle</span>
+  <span class="k">end</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">sauce</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:sauce</span><span class="p">])</span>
+    <span class="n">ingredients</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">sauce</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="n">ingredients</span>
+<span class="k">end</span>
+
+<span class="n">stir_fry</span><span class="p">(</span><span class="ss">ingredients: </span><span class="p">[</span><span class="s1">'broccoli'</span><span class="p">,</span> <span class="s1">'peppers'</span><span class="p">,</span> <span class="s1">'tofu'</span><span class="p">],</span> <span class="ss">sauce: </span><span class="s2">"teriyaki"</span><span class="p">,</span> <span class="ss">heat: </span><span class="mi">45</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>In that example, sauce is an optional keyword that isn’t defined in the method
+definition. Normally if we provide sauce, and sauce wasn’t specifically
+expected, that will cause an error, so this is kind of a cool way to say: “I
+don’t care what keyword values you throw at me! I’ll just make a hash out of
+the ones I don’t recognize”. It doesn’t even care that sauce came in the middle
+of the expected keyword arguments. This is pretty similar to the convention in
+ordinal method definitions where the last argument is called options and it has
+a default value of an empty hash, but when you do that, the order really
+matters:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">ordinal_stir_fry</span><span class="p">(</span><span class="n">ingredients</span><span class="p">,</span> <span class="n">heat</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{})</span>
+  <span class="n">heat</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+    <span class="n">ingredients</span> <span class="o">=</span> <span class="n">ingredients</span><span class="p">.</span><span class="nf">shuffle</span>
+  <span class="k">end</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">sauce</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:sauce</span><span class="p">])</span>
+    <span class="n">ingredients</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">sauce</span><span class="p">)</span>
+  <span class="k">end</span>
+  <span class="n">ingredients</span>
+<span class="k">end</span>
+
+<span class="n">ordinal_stir_fry</span><span class="p">([</span><span class="s2">"potato"</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="ss">sauce: </span><span class="s1">'Catsup'</span><span class="p">)</span> <span class="c1"># This one works</span>
+<span class="n">ordinal_stir_fry</span><span class="p">([</span><span class="s2">"shoe"</span><span class="p">],</span> <span class="p">{</span><span class="ss">sauce: </span><span class="s1">'Water'</span><span class="p">},</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># This one doesn't</span>
+</code></pre>
+</div>
+
+<p>What is even happening there? The curly braces become necessary to avoid a
+syntax error, and then the method receives the wrong values in the wrong names.
+But, looking at it, I think it’s clear that something is a little bit off,
+because the second parameter looks different from the third; it kind of feels
+like the hash belongs at the end, because that’s such a strong convention for
+ordinally-defined Ruby methods.</p>
+
+<p>The <code class="highlighter-rouge">**options</code> example is neat but again, it’s not obvious. When looking at
+it, you don’t know which of the keyword arguments are specifically expected and
+which ones will land in the greedy <code class="highlighter-rouge">**options</code> bucket. You have to reference
+the method definition, just like with stinky ordinal methods.</p>
+
+<p>Let’s look at default values in some more detail. It seems clear; you can
+provide a default value, which will be used when the method is called without
+that keyword value provided. What happens when you provide nil?</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Fish</span>
+  <span class="kp">attr_reader</span> <span class="ss">:breed</span><span class="p">,</span> <span class="ss">:color</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">breed: </span><span class="s2">"Koi"</span><span class="p">,</span> <span class="ss">color: </span><span class="s2">"Yellow"</span><span class="p">)</span>
+    <span class="vi">@breed</span> <span class="o">=</span> <span class="n">breed</span>
+    <span class="vi">@color</span> <span class="o">=</span> <span class="n">color</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">fish</span> <span class="o">=</span> <span class="no">Fish</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">color: </span><span class="kp">nil</span><span class="p">)</span>
+<span class="n">fish</span><span class="p">.</span><span class="nf">breed</span> <span class="c1">#=&gt; "Koi"</span>
+<span class="n">fish</span><span class="p">.</span><span class="nf">color</span> <span class="c1">#=&gt; ????????</span>
+</code></pre>
+</div>
+
+<p>What do you <em>feel like</em> it should be? I guess it should be nil, because that’s
+the value you provided for that keyword, and yes that’s right, it’s nil. That
+works for me, but I know it’s not obvious because I found myself trying to
+defend this behavior to a friend recently, who was sad that it didn’t behave as
+his intuition desired, that a nil value would be replaced by the default value.
+To console him I attempted to write some code that would satisfy his
+expectations, and I came up with this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AbsentArgument</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Fish</span>
+  <span class="kp">attr_reader</span> <span class="ss">:breed</span><span class="p">,</span> <span class="ss">:color</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">breed: </span><span class="no">AbsentArgument</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span> <span class="ss">color: </span><span class="no">AbsentArgument</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span>
+    <span class="vi">@breed</span> <span class="o">=</span> <span class="n">validate</span><span class="p">(</span><span class="n">breed</span><span class="p">,</span> <span class="ss">default: </span><span class="s2">"Koi"</span><span class="p">)</span>
+    <span class="vi">@color</span> <span class="o">=</span> <span class="n">validate</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="ss">default: </span><span class="s2">"Yellow"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">default</span><span class="p">:)</span>
+    <span class="k">if</span> <span class="n">value</span><span class="p">.</span><span class="nf">is_a?</span><span class="p">(</span><span class="no">AbsentArgument</span><span class="p">)</span> <span class="o">||</span> <span class="n">value</span><span class="p">.</span><span class="nf">nil?</span>
+      <span class="n">default</span>
+    <span class="k">else</span>
+      <span class="n">value</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+<span class="n">fish</span> <span class="o">=</span> <span class="no">Fish</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">color: </span><span class="kp">nil</span><span class="p">)</span>
+<span class="n">fish</span><span class="p">.</span><span class="nf">breed</span> <span class="c1">#=&gt; "Koi"</span>
+<span class="n">fish</span><span class="p">.</span><span class="nf">color</span> <span class="c1">#=&gt; "Yellow"</span>
+</code></pre>
+</div>
+
+<p>So if you want that behavior you basically can’t use Ruby keyword argument
+default values, because default values don’t work that way.</p>
+
+<p>Oh, here’s another thing. I thing I only realized this this month, that I had
+been doing this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Disease</span>
+  <span class="kp">attr_reader</span> <span class="ss">:name</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">name: </span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">gout</span> <span class="o">=</span> <span class="no">Disease</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">name: </span><span class="s2">"Gout"</span><span class="p">)</span>
+<span class="n">gout</span><span class="p">.</span><span class="nf">name</span> <span class="c1">#=&gt; "Gout"</span>
+<span class="n">rando</span> <span class="o">=</span> <span class="no">Disease</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">gout</span><span class="p">.</span><span class="nf">name</span> <span class="c1">#=&gt; nil</span>
+</code></pre>
+</div>
+
+<p>This was fulfilling the behavior I guess I wanted: when I provide a name, it
+should use that name; when I don’t provide a name, the name should be nil. It
+was working without error, and I’m not sure where I picked up the pattern of
+writing keyword arguments this way, but it actually totally makes no sense! If
+I wanted the default value to be nil, why not just write it like this?</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Disease</span>
+  <span class="kp">attr_reader</span> <span class="ss">:name</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">name: </span><span class="kp">nil</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>What was even happening in that earlier example? Well, when I wasn’t providing
+a name value, it was calling the <code class="highlighter-rouge">name</code> method which was only available because
+I had added the <code class="highlighter-rouge">attr_reader</code> for name, and that method was returning nil, so
+nil was being assigned to the <code class="highlighter-rouge">@name</code> instance variable. I had no idea that’s
+what was happening, I just thought that I was writing the boilerplate necessary
+to achieve that behavior. That feels kind of dangerous; maybe you don’t realize
+that your default values can call methods, and you’re calling a method that
+doesn’t exist? For example:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Furniture</span>
+  <span class="kp">attr_reader</span> <span class="ss">:color</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="ss">kind: </span><span class="n">kind</span><span class="p">,</span> <span class="ss">color: </span><span class="n">color</span><span class="p">)</span>
+    <span class="vi">@kind</span> <span class="o">=</span> <span class="n">kind</span>
+    <span class="vi">@color</span> <span class="o">=</span> <span class="n">color</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">description</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="vi">@color</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="vi">@kind</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">couch</span> <span class="o">=</span> <span class="no">Furniture</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">kind: </span><span class="s2">"Couch"</span><span class="p">,</span> <span class="ss">color: </span><span class="s2">"Grey"</span><span class="p">)</span>
+<span class="n">couch</span><span class="p">.</span><span class="nf">description</span> <span class="c1">#=&gt; "Grey Couch"</span>
+</code></pre>
+</div>
+
+<p>You could have tests for this code and ship it to production and never realize
+that a bug hides within it. As long as you always provide a <code class="highlighter-rouge">kind</code> keyword
+value, you’ll never face it and it will work properly, because it will never
+attempt to call the <code class="highlighter-rouge">kind</code> method… which doesn’t exist.</p>
+
+<p>So, to make it blow up, simply omit the kind keyword value:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Furniture</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">color: </span><span class="s2">"Red"</span><span class="p">)</span>
+<span class="c1"># undefined local variable or method `kind' for #&lt;Furniture:0x00000101110a38&gt; (NameError)</span>
+</code></pre>
+</div>
+
+<p>Sinister!</p>
+
+<p>Happily, I’m noticing now that Ruby 2.2.1 actually warns you when you write
+code like this. 2.0.0 does not, which is where I’ve been happily making
+this mistake for many months.</p>
+
+<p>The warning:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">candy</span><span class="p">(</span><span class="ss">flavor: </span><span class="n">flavor</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="c1"># warning: circular argument reference - flavor</span>
+</code></pre>
+</div>
+
+<p>What about when you combine ordinal arguments with keyword arguments? You can.
+Is it obvious how that should work? Not to me. Let’s take a look.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">stir_fry</span><span class="p">(</span><span class="n">servings</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">zest</span><span class="p">,</span> <span class="ss">ingredients: </span><span class="p">[],</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+  <span class="n">dish</span> <span class="o">=</span> <span class="p">(</span><span class="n">ingredients</span> <span class="o">*</span> <span class="n">servings</span><span class="p">)</span>
+  <span class="n">zest</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+    <span class="n">dish</span> <span class="o">=</span> <span class="n">dish</span><span class="p">.</span><span class="nf">shuffle</span>
+  <span class="k">end</span>
+  <span class="n">dish</span>
+<span class="k">end</span>
+
+<span class="n">stir_fry</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="ss">ingredients: </span><span class="p">[</span><span class="s2">"pepper"</span><span class="p">,</span> <span class="s2">"seitan"</span><span class="p">],</span> <span class="ss">sauce: </span><span class="s2">"fancy"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>What the hell is happening there? Maybe it’s clear to you. it’s not to me. The
+first two arguments are ordinal, and the first one has a default value. So Ruby
+compares the arguments we provide when we call the method to the arguments in
+the method definition, and sees that we provided what looks like one ordinal
+value, and a few keyword values, so the one ordinal value must be <code class="highlighter-rouge">zest</code>,
+because <code class="highlighter-rouge">servings</code> has a default value and <code class="highlighter-rouge">zest</code> does not (Ruby here is
+smarter than I realized).</p>
+
+<p>It kind of feels like Ruby is going to let us make this method definition more
+confusing, for example by moving the keyword arguments before the ordinal
+arguments, but it actually won’t let you. It will raise a syntax error:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># syntax error:</span>
+<span class="k">def</span> <span class="nf">shenanigans</span><span class="p">(</span><span class="ss">amp: </span><span class="mi">11</span><span class="p">,</span> <span class="n">guitar</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1"># if it were a valid method definition, I guess you would call it like this:</span>
+<span class="n">shenanigans</span><span class="p">(</span><span class="ss">amp: </span><span class="mi">5</span><span class="p">,</span> <span class="s2">"Fender"</span><span class="p">)</span>
+<span class="c1"># or, omitting the non-required parameter</span>
+<span class="n">shenanigans</span><span class="p">(</span><span class="s2">"Martin"</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>For me it wasn’t obvious that this wouldn’t be allowed, but I’m glad it’s not,
+because reading those method calls feels kind of backwards.</p>
+
+<p>Similarly:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># not a syntax error:</span>
+<span class="k">def</span> <span class="nf">shenanigans</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="o">*</span><span class="n">outfits</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">shenanigans</span><span class="p">(</span><span class="s2">"Orange"</span><span class="p">,</span> <span class="s2">"Leotard"</span><span class="p">,</span> <span class="s2">"Leather Jacket"</span><span class="p">,</span> <span class="ss">at: </span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">)</span>
+
+<span class="c1"># but this is a syntax error:</span>
+<span class="k">def</span> <span class="nf">shenanigans</span><span class="p">(</span><span class="n">amp</span><span class="p">,</span> <span class="ss">style: </span><span class="s2">"flamenco"</span><span class="p">,</span> <span class="o">*</span><span class="n">outfits</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>That one also fails because it tries to put some ordinal arguments (the
+<code class="highlighter-rouge">*outfits</code> bit) after some keyword arguments.</p>
+
+<p>Well, I think that’s everything I can think of. Good luck out there.</p>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

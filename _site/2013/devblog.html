@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>devblog - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        devblog
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      19 Mar 2013
+    </div>
+  </div>
+
+  <div class="body">
+    <p><strong>Note:</strong> When I was first learning Ruby in late 2012, I made a small web app called “beefsteak” to act as my blog.
+I wrote several posts on that blog while I was exploring and adding features.
+I’ve since migrated my personal blog away from beefsteak and to Octopress, and then Jekyll.
+I decided to collapse those posts into one post because I think they’re kind of confusing now that they’re on a Jekyll site.
+I’m writing this note on July 10th, 2016.
+By the time you’re reading this, who knows what the blog is running on…</p>
+
+<h2 id="testing-this-little-devblog-thing">testing this little devblog thing</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p>So it’s like 6am and I guess I just made my first mini markdown blog engine.</p>
+
+<p>I’m almost certainly too quick to congratulate myself. It has approximately zero features but it’s succeeding at putting HTML on the screen and I call that a win.</p>
+
+<p>This is pretty much the whole app:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sinatra'</span>
+<span class="nb">require</span> <span class="s1">'kramdown'</span>
+
+<span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
+  <span class="vi">@title</span> <span class="o">=</span> <span class="s2">"devblog - max jacobson"</span>
+  <span class="n">the_html</span> <span class="o">=</span> <span class="no">String</span><span class="p">.</span><span class="nf">new</span>
+  <span class="n">the_html</span> <span class="o">&lt;&lt;</span> <span class="s2">"&lt;h1&gt;</span><span class="si">#{</span><span class="vi">@title</span><span class="si">}</span><span class="s2">&lt;/h1&gt;</span><span class="se">\n\n</span><span class="s2">&lt;hr /&gt;"</span>
+  <span class="n">posts</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">entries</span><span class="p">(</span><span class="s2">"posts"</span><span class="p">)</span>
+  <span class="n">posts</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">filename</span><span class="o">|</span>
+    <span class="k">if</span> <span class="n">filename</span> <span class="o">=~</span> <span class="sr">/.md/</span>
+      <span class="n">the_text</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="s2">"posts/"</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span>
+      <span class="n">the_html</span> <span class="o">&lt;&lt;</span> <span class="no">Kramdown</span><span class="o">::</span><span class="no">Document</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">the_text</span><span class="p">).</span><span class="nf">to_html</span> <span class="o">+</span> <span class="s2">"&lt;hr /&gt;"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="n">erb</span> <span class="n">the_html</span>
+<span class="k">end</span>
+
+<span class="n">get</span> <span class="s1">'/css/style.css'</span> <span class="k">do</span>
+  <span class="n">scss</span> <span class="ss">:style</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>It just checks all the files in a directory called “posts”, checks all of the ones with the <code class="highlighter-rouge">.md</code> file extension, and then renders them all one after the other. That’s it!</p>
+
+<p>I wrote this in just a minute or two so I’ll be sure to add more blog-like features to this. Maybe design it up a bit. That mention of sass is more or less for show.</p>
+
+<p>I feel smart right now so I’m comfortable admitting that I’d love to use Jekyll but just can’t figure out how the hell it works.</p>
+
+<p>This is <em>not</em> one of those smartly static sites. It generates each page as you load it. Probably pretty fast, but still, not <strong>smart</strong>-smart.</p>
+
+<h2 id="already-with-the-updates">Already with the updates</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p><strong>There are already updates</strong> wow I am good.</p>
+
+<p>Things I’ve added in the last small amount of time:</p>
+
+<ul>
+  <li>a <code class="highlighter-rouge">config.rb</code> file for helper methods that get the blog title and subtitle
+    <ul>
+      <li>so nothing in the main app file, <code class="highlighter-rouge">web.rb</code> is hardcoded and theoretically someone else could use this</li>
+    </ul>
+  </li>
+  <li>permalinks based on the file name</li>
+  <li>option to see the markdown source of any page with a little link at the bottom. (alternately just add the <code class="highlighter-rouge">.md</code> to any page)</li>
+  <li>some <em>small</em> amount of style, mainly to do with displaying codeblocks
+    <ul>
+      <li>incidentally, I’m treating markdown source as “code”</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Here’s what the <code class="highlighter-rouge">tree</code> of my project directory looks like right now:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[~/Dropbox/Sites/devblog] [maxjacobson] [07:41 AM]
+ϡ tree
+.
+├── Gemfile
+├── Gemfile.lock
+├── Procfile
+├── config.rb
+├── posts
+│   ├── 2012-12-01-already-updates.md
+│   ├── 2012-12-01-gem-anxiety.md
+│   └── 2012-12-01-the-first-post.md
+├── views
+│   ├── layout.erb
+│   └── style.scss
+└── web.rb
+
+2 directories, 10 files
+</code></pre>
+</div>
+
+<p>Off topic, but: I learned how to customize my bash prompt earlier today and that’s what it looks like.</p>
+
+<h2 id="added-sorting">added sorting</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p>I have added sorting and so I believe the posts on the homepage will be in the proper order. Kewl.</p>
+
+<h2 id="did-i-just-implement-search-in-like-5-minutes">did i just implement search in like 5 minutes?</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p>I’m not sure but I think I just implemented search like it was no big deal.</p>
+
+<p>It works well and fast but only because there are so few posts, I assume. I’m not searching the whole internet here or anything, but I do kinda feel like <strong>I Am Google</strong> or something.</p>
+
+<p>That’s a theme for this system: it will get worse the more I use it. I’m kinda excited to ruin it.</p>
+
+<h2 id="man-sorting-is-hard-when-you-use-the-twelve-hour-clock">man, sorting is hard when you use the twelve hour clock</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p>I have a <a href="http://smilesoftware.com/TextExpander/index.html">TextExpander</a> snippet for quickly inserting the current time. I write <code class="highlighter-rouge">ttime</code> and it inserts, say, 10:43 PM. In that format. If it were an hour earlier, it would say 9:43 PM. No leading zero.</p>
+
+<p>This is what was screwing up my sorting method.</p>
+
+<p>I want posts to be sorted based on both date and time, so if there are multiple posts in a day they’ll show up in the right order instead of just alphabetically.</p>
+
+<p>I could have just written those leading zeros manually or I could’ve just used a twenty-four hour clock, but I like my snippet how it is and want my code to come to me rather than the other way around.</p>
+
+<p>So I’ll share my method because I’m sure in as little as a month I’ll find it embarrassing and that’s very fun for me, being embarrassed.</p>
+
+<p>The argument for this method, <code class="highlighter-rouge">to_sort</code>, is an array of hashes that stores all of the posts.</p>
+
+<p>Each hash looks like this:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:text</span><span class="o">=&gt;</span><span class="s2">"the body of the post (in markdown) would go here, but it would be long so I'm leaving it out"</span><span class="p">,</span>
+  <span class="ss">:title</span><span class="o">=&gt;</span><span class="s2">"Introducing myself to the command line"</span><span class="p">,</span>
+  <span class="ss">:date</span><span class="o">=&gt;</span><span class="s2">"2012-02-26"</span><span class="p">,</span>
+  <span class="ss">:time</span><span class="o">=&gt;</span><span class="s2">"12:00 PM"</span><span class="p">,</span>
+  <span class="ss">:category</span><span class="o">=&gt;</span><span class="s2">"coding"</span><span class="p">,</span>
+  <span class="ss">:tags_array</span><span class="o">=&gt;</span><span class="p">[</span><span class="s2">"command-line"</span><span class="p">,</span> <span class="s2">"learning"</span><span class="p">],</span>
+  <span class="ss">:filename</span><span class="o">=&gt;</span><span class="s2">"2012-02-26-introducing-myself-to-the-command-line"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>And the method takes the info, specifically the date and time, and adds an additional parameter, <code class="highlighter-rouge">:sorter</code>, and then sorts the array based on that value of each hash, and returns the sorted array.</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sort_posts</span> <span class="p">(</span><span class="n">to_sort</span><span class="p">)</span>
+  <span class="n">to_sort</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+    <span class="n">the_date</span> <span class="o">=</span> <span class="n">post</span><span class="p">[</span><span class="ss">:date</span><span class="p">]</span>
+    <span class="n">the_time</span> <span class="o">=</span> <span class="n">post</span><span class="p">[</span><span class="ss">:time</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/AM|am/</span>
+      <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/^[0-9]:/</span> <span class="c1"># aka ONE digit before the colon</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"0"</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |AM|am/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |AM|am/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/PM|pm/</span>
+      <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/12:/</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">the_time</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |PM|pm/</span><span class="p">,</span><span class="s1">''</span><span class="p">)).</span><span class="nf">to_i</span><span class="p">).</span><span class="nf">to_s</span>
+      <span class="k">else</span>
+        <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/^[0-9]:/</span> <span class="c1"># aka ONE digit before the colon</span>
+          <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">(((</span><span class="s2">"0"</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |PM|pm/</span><span class="p">,</span><span class="s1">''</span><span class="p">)).</span><span class="nf">to_i</span> <span class="o">+</span> <span class="mi">1200</span><span class="p">).</span><span class="nf">to_s</span>
+        <span class="k">else</span>
+          <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">the_time</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |PM|pm/</span><span class="p">,</span><span class="s1">''</span><span class="p">)).</span><span class="nf">to_i</span> <span class="o">+</span> <span class="mi">1200</span><span class="p">).</span><span class="nf">to_s</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">post</span><span class="p">[</span><span class="ss">:sorter</span><span class="p">]</span> <span class="o">=</span> <span class="n">sorter</span><span class="p">.</span><span class="nf">to_i</span>
+  <span class="k">end</span>
+  <span class="n">to_sort</span><span class="p">.</span><span class="nf">sort!</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">|</span> <span class="n">b</span><span class="p">[</span><span class="ss">:sorter</span><span class="p">]</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span><span class="p">[</span><span class="ss">:sorter</span><span class="p">]}</span>
+  <span class="k">return</span> <span class="n">to_sort</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>So that’s that.</p>
+
+<p><strong>Edit (2012-12-02, 10:58 AM):</strong> There’s a bug in there! posts at 12:15am would sort newer than posts at 1:15am becuase twelve is a higher number than one. So I added some conditioanls to treat 12 like zero. Updated code below:</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">sort_posts</span> <span class="p">(</span><span class="n">to_sort</span><span class="p">)</span>
+  <span class="n">to_sort</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">post</span><span class="o">|</span>
+    <span class="n">the_date</span> <span class="o">=</span> <span class="n">post</span><span class="p">[</span><span class="ss">:date</span><span class="p">]</span>
+    <span class="n">the_time</span> <span class="o">=</span> <span class="n">post</span><span class="p">[</span><span class="ss">:time</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/AM|am/</span>
+      <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/^[0-9]:/</span> <span class="c1"># aka ONE digit before the colon</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"0"</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |AM|am/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+      <span class="k">elsif</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/^12:/</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s2">"00"</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |AM|am|12/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |AM|am/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/PM|pm/</span>
+      <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/12:/</span>
+        <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">the_time</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |PM|pm/</span><span class="p">,</span><span class="s1">''</span><span class="p">)).</span><span class="nf">to_i</span><span class="p">).</span><span class="nf">to_s</span>
+      <span class="k">else</span>
+        <span class="k">if</span> <span class="n">the_time</span> <span class="o">=~</span> <span class="sr">/^[0-9]:/</span> <span class="c1"># aka ONE digit before the colon</span>
+          <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">(((</span><span class="s2">"0"</span> <span class="o">+</span> <span class="n">the_time</span><span class="p">).</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |PM|pm/</span><span class="p">,</span><span class="s1">''</span><span class="p">)).</span><span class="nf">to_i</span> <span class="o">+</span> <span class="mi">1200</span><span class="p">).</span><span class="nf">to_s</span>
+        <span class="k">else</span>
+          <span class="n">sorter</span> <span class="o">=</span> <span class="n">the_date</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/-/</span><span class="p">,</span><span class="s1">''</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">the_time</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/:| |PM|pm/</span><span class="p">,</span><span class="s1">''</span><span class="p">)).</span><span class="nf">to_i</span> <span class="o">+</span> <span class="mi">1200</span><span class="p">).</span><span class="nf">to_s</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">post</span><span class="p">[</span><span class="ss">:sorter</span><span class="p">]</span> <span class="o">=</span> <span class="n">sorter</span><span class="p">.</span><span class="nf">to_i</span>
+  <span class="k">end</span>
+
+  <span class="n">to_sort</span><span class="p">.</span><span class="nf">sort!</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">|</span> <span class="n">b</span><span class="p">[</span><span class="ss">:sorter</span><span class="p">]</span> <span class="o">&lt;=&gt;</span> <span class="n">a</span><span class="p">[</span><span class="ss">:sorter</span><span class="p">]}</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>SEE?? Embarrassing. I love it. I’m sure there’s an easier way to do this. But it’s interesting, I think, that an idea (“hmm, i want to sort by both date and time, so why don’t I make a <code class="highlighter-rouge">:sorter</code> variable that takes those two strings and combines them into one an integer that represents when it was posted”) morphs and grows into this 28 line mess. I guess it’s time to refactor.</p>
+
+<h2 id="categories-and-tags">categories and tags</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p>I added some functionality for categories and tags. The difference between categories and tags, in my implementation, is that there can only be one category, but there can be a bunch of tags.</p>
+
+<p>So be generous with your tags.</p>
+
+<p>You can use spaces in your categories and tags and they’ll be converted to hyphens. They’re comma-delimited.</p>
+
+<p>You can see the tags at the bottom of this post and you’ll see some hyphens. but if you look at the markdown source, you’ll see some spaces.</p>
+
+<p>(You can see the markdown source by clicking the link at the bottom of each post or by simply replacing the <code class="highlighter-rouge">/</code> with <code class="highlighter-rouge">.md</code> at the end of a post url)</p>
+
+<h2 id="rss-is-hard-to-implement-and-irsquom-not-sure-irsquom-doing-it-right">RSS is hard to implement and I’m not sure I’m doing it right</h2>
+
+<p><em>Originally posted December 1, 2012</em></p>
+
+<p>I’m pretty sure I’m not doing this right but I’ve added an RSS feed so that’s fun, enjoy.</p>
+
+<p>It’s available at <a href="/feed">/feed</a> and ever time that “file” is queried, the sinatra app will generate an up-to-the-minute accurate feed, including all of the posts.</p>
+
+<p>I don’t necessarily recommend subscribing because I might change where it’s located soon. Right now the blog is online at <code class="highlighter-rouge">http://devblog.maxjacobson.net</code> but I may move it to <code class="highlighter-rouge">blog.</code> or <code class="highlighter-rouge">beef.</code> or <code class="highlighter-rouge">beefsteak.</code> or something else entirely.</p>
+
+<h2 id="going-open-source">going open source</h2>
+
+<p><em>Originally posted December 2, 2012</em></p>
+
+<p>Just for fun I’m sharing <a href="https://github.com/maxjacobson/beefsteak">the source code for this blog in full on github</a>. I don’t know if anyone else will or should use this but maybe they’ll want to and I won’t stop them.</p>
+
+<p>It’s surprisingly easy having two remote destinations for this code (heroku, where my blog is hosted, and now github where the source code is hosted). I make changes, commit them, push to one, then push to the other. Easy peasy.</p>
+
+<p>If someone else wants to use it, they’ll have to delete my stuff and replace it with their stuff. I’m not giving them a blank slate. Because I’m not sure how to maintain two separate versions like that. But they’ll figure it out, I think.</p>
+
+<p>I guess I’ve been planning to do this, because I’ve refrained from hardcoding my information (name, blog title, etc) into the code. Instead it’s in a separate <code class="highlighter-rouge">config.rb</code> file (which you can <a href="https://github.com/maxjacobson/beefsteak/blob/master/config.rb">see on github</a>).</p>
+
+<p>I’m cold on this balcony in San Diego. I am proud that I made this in like two days. I will keep working on it. A small part of me just got a tingling urge to hurl my laptop down into the parking lot like it’s my punk rock guitar.</p>
+
+<p>I’m worried that it will be a whole hassle if I ever want to change the address of this blog. I already kinda feel limited by “devblog”.</p>
+
+<p>Right now my Top Level website, <a href="http://maxjacobson.net">http://maxjacobson.net</a> is mostly just a front for my Pinboard public links. maybe I’ll merge that idea into this one and put the whole thing at that address. I glanced over <a href="https://rubygems.org/gems/pinboard">the Pinboard gem</a> and I could probably whip something up myself instead of using the <a href="http://pinboard.in/resources/linkroll">linkroll widget</a>. That would give me some more flexibility to display multimedia stuff, <a href="http://layabout.maxjacobson.net">Layabout</a>-style and do some more color-coding without having to use jquery like I’m currently doing to emphasize posts with the <code class="highlighter-rouge">max_jacobson</code> tag.</p>
+
+<p>I’m just daydreaming here.</p>
+
+<h2 id="some-new-features-here">some new features here</h2>
+
+<p><em>Originally posted December 13, 2012</em></p>
+
+<p>Things I’ve added to beefsteak tonight:</p>
+
+<h3 id="more-feeds">more feeds</h3>
+
+<p>Like, for individual categories, tags, and search queries. Try clicking on a tag/cat or searching something, and you’ll see a link to the feed at the bottom.</p>
+
+<p>A fun one might be: <a href="http://devblog.maxjacobson.net/tag/gush/feed">http://devblog.maxjacobson.net/tag/gush/feed</a> or <a href="http://devblog.maxjacobson.net/search/confess/feed">http://devblog.maxjacobson.net/search/confess/feed</a> if you like me at my gushiest or most confessional.</p>
+
+<h3 id="pages">pages</h3>
+
+<p>My about page is now at <a href="http://devblog.maxjacobson.net/~about">http://devblog.maxjacobson.net/~about</a>. I made another one mostly to test what it looked like with two. It doesn’t look great.</p>
+
+<p>You can view the markdown source of pages the same as posts. Just add the <code class="highlighter-rouge">.md</code> suffix or click the link at the bottom. I don’t know why I offer this. It doesn’t work amazingly. In some posts with code, I see underscores disappear. It’s weird.</p>
+
+<h3 id="favicon-and-apple-touch-icon">favicon and apple touch icon</h3>
+
+<p>I just threw in some all-black-errything squares for now. I figure if anyone else uses this they can replace with something they like.</p>
+
+<hr />
+
+<p>Here’s what the tree for this site looks like right now:</p>
+
+<p>(notice the new pages directory, mostly)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[~/Dropbox/Sites/devblog] [max] [08:23 PM]
+ ϡ tree
+.
+├── config.rb
+├── Gemfile
+├── Gemfile.lock
+├── helpers.rb
+├── pages
+│   ├── about.md
+│   └── projects.md
+├── posts
+│   ├── 2011-03-12-un-americano.md
+│   ├── 2012-02-26-introducing-myself-to-the-command-line.md
+│   ├── 2012-08-26-favblogging.md
+│   ├── 2012-12-01-added-sorting.md
+│   ├── 2012-12-01-already-updates.md
+│   ├── 2012-12-01-categories-and-tags.md
+│   ├── 2012-12-01-gem-anxiety.md
+│   ├── 2012-12-01-sleep.md
+│   ├── 2012-12-01-sorting.md
+│   ├── 2012-12-01-the-first-post.md
+│   ├── 2012-12-02-erb-and-indendation.md
+│   ├── 2012-12-02-on-an-airplane.md
+│   ├── 2012-12-02-open-source.md
+│   ├── 2012-12-02-RSS-is-hard.md
+│   ├── 2012-12-02-search.md
+│   ├── 2012-12-04-seal-attack.md
+│   └── 2012-12-13-meetups.md
+├── Procfile
+├── public
+│   └── img
+
+│       ├── 2012-12-04-seal-1.jpg
+│       ├── 2012-12-04-seal-2.jpg
+│       ├── 2012-12-04-seal-3.jpg
+│       ├── apple-touch-icon.png
+│       └── favicon.ico
+├── README.md
+├── views
+│   ├── 404.erb
+│   ├── 500.erb
+│   ├── layout.erb
+│   └── style.scss
+└── web.rb
+
+5 directories, 35 files
+</code></pre>
+</div>
+
+<h1 id="fuzzy-search">fuzzy search</h1>
+
+<p><em>Originally posted December 14, 2012</em></p>
+
+<p>I just made the search a little smarter on this blog. I think. I made it so that when you search a multi-word query, it’ll include posts that match any of the words, not just posts that match <em>all</em> of the words. They’re sorted chronologically, not based on relevance.</p>
+
+<p>And you can put a query in quotes if you want it to match all of the words, in that order.</p>
+
+<p>Here’s how I did that (with some stuff paraphrased):</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="n">query</span> <span class="o">=~</span> <span class="sr">/^".+"$/</span>
+  <span class="n">query_array</span> <span class="o">=</span> <span class="p">[</span><span class="n">query</span><span class="p">.</span><span class="nf">gsub!</span><span class="p">(</span><span class="sr">/"/</span><span class="p">,</span><span class="s1">''</span><span class="p">)]</span>
+<span class="k">else</span>
+  <span class="n">query_array</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+<span class="k">end</span>
+<span class="c1"># ... each post |the_text|</span>
+<span class="n">query_array</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">q</span><span class="o">|</span>
+  <span class="k">if</span> <span class="n">the_text</span> <span class="o">=~</span> <span class="no">Regexp</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+    <span class="c1"># then include the post</span>
+    <span class="k">break</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>So, first I check if the query is in quotes (I’m coming to really love using regular expressions), and if so I remove the quotes and put that whole string thru. If it’s not in quotes, I split the string into an array of strings, using a space as the delimeter. Then I go through each post and check it against each item in the array. If the query was in quotes, the array only has one item in it. Once there’s a match, I push it thru. The <code class="highlighter-rouge">break</code> makes it so once a post matches the query, we move on to the next post rather than keep checking other words in the query against it.</p>
+
+<p>I wonder if I should allow single quotes too. Note to self, allow single quotes.</p>
+
+<p>I wonder what new bugs I just introduced.</p>
+
+<h2 id="heave-ho">heave ho</h2>
+
+<p><em>Originally posted December 22, 2012</em></p>
+
+<p>So I am happy enough with beefsteak that I am moving this to my proper homepage, <a href="http://www.maxjacobson.net">http://www.maxjacobson.net</a>.</p>
+
+<p>That space was mainly occupied by my pinboard public links, and I’ve integrated those into beefsteak now.</p>
+
+<p>I considered integrating a pinboard gem but for now I’m sticking with the same old linkroll widget I’ve been using. It’s not super flexible but it has an important feature <a href="https://rubygems.org/gems/pinboard">the main pinboard gem</a> lacks: a distinction between private and public links. It’s not that I have such private stuff in there, it’s just that I have <em>so much</em> stuff in there. As <a href="http://www.maxjacobson.net/2012-08-26-favblogging">previously described</a> I use <a href="https://ifttt.com">IFTTT</a> to send all kinds of stuff automatically, and then I occasionally make a small minority of those links public. And maybe there’s some private stuff in there.</p>
+
+<p>Who is sleepier than I? No one is.</p>
+
+<p>The project is still mostly useable by other people, I think. The only thing is <a href="/js/app.js">the small jquery script</a> that modifies the DOM so that links with the tag <code class="highlighter-rouge">max_jacobson</code> are made red. I tweaked it so it lets you specify what that tag will be, but it’s not working. I’m going to fix that later, <em>maybe</em>.</p>
+
+<p>I create links just to kill them at this point. Old feeds and links have a short shelf life.</p>
+
+<h2 id="beefsteak-v2">beefsteak v2</h2>
+
+<p><em>Originally posted March 19, 2013</em></p>
+
+<p>This version of <a href="http://github.com/maxjacobson/beefsteak">beefsteak</a> is brought to you by Justin Timberlake.</p>
+
+<p>I put his new album on repeat eleven or twelve hours ago and starting working.</p>
+
+<p>I realized people might be looking at my GitHub and realized I was embarrassed of the way this blog worked. In the few months from the last update, I learned a lot. I hope I’ll be embarrassed of this in a few months.</p>
+
+<p>Heck I already kind of am.<sup id="fnref:shame"><a href="#fn:shame" class="footnote">1</a></sup></p>
+
+<p>The first several posts I wrote for this blog were, naturally, about this blog and the process of building it and excitement of discovery. A lot of it is really dumb but I’m leaving it.</p>
+
+<p>So here’s what’s new:</p>
+
+<ul>
+  <li>syntax highlighting for code blocks, using my fav colorscheme, cobalt</li>
+  <li>switched from erb to haml – now writing far less HTML by hand</li>
+  <li>appending <code class="highlighter-rouge">.md</code> to posts or pages takes you to a text file instead of embedding within a page, which displayed poorly (missing underscores for some reason)</li>
+  <li>some (goofy?) animations on page loads. It picks randomly from a list</li>
+  <li>oh, and when you click to see a footnote, the right one will wiggle. see? <sup id="fnref:wiggle"><a href="#fn:wiggle" class="footnote">2</a></sup></li>
+  <li>much better config file; in case anyone besides me uses this system, it should be relatively easy for them to plug in their info and start blogging</li>
+</ul>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:shame">
+      <p>or will be in the morning, anyway <a href="#fnref:shame" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:wiggle">
+      <p>and now I’ve just made it so the return button makes the source from within the blog wiggle, too. I want to learn to write my own CSS3 animations. Right now I’m leaning heavily on <a href="http://daneden.me/animate">Dan Eden</a>. <a href="#fnref:wiggle" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+

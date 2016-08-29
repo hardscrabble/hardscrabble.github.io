@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+
+<channel>
+  <title>metaphor loop</title>
+  <link>http://hardscrabble.net/metaphorloop</link>
+  <language>en-us</language>
+  <copyright>2015 by Max Jacobson</copyright>
+  <itunes:subtitle>a podcast about how we think about programming</itunes:subtitle>
+  <itunes:author>Max Jacobson</itunes:author>
+  <itunes:summary>Listen to Max Jacobson talk to programmers about how they think about programming.</itunes:summary>
+  <description>Listen to Max Jacobson talk to programmers about how they think about programming.</description>
+	<itunes:explicit>no</itunes:explicit>
+  <itunes:owner>
+    <itunes:name>Max Jacobson</itunes:name>
+    <itunes:email>max@hardscrabble.net</itunes:email>
+  </itunes:owner>
+  <itunes:image href="https://s3.amazonaws.com/metaphorloop/metaphorloop.png" />
+
+  <itunes:category text="Technology">
+    <itunes:category text="Software How-To"/>
+  </itunes:category>
+
+  
+    <item>
+      <title>There's a hood, and there's metal (featuring Corey Mendell)</title>
+      <itunes:subtitle>There's a hood, and there's metal (featuring Corey Mendell)</itunes:subtitle>
+      <itunes:author>Max Jacobson</itunes:author>
+      <itunes:summary>Max and Corey talk about how engineers think</itunes:summary>
+      
+        <itunes:image href="https://s3.amazonaws.com/metaphorloop/metaphorloop.png" />
+      
+
+      <enclosure url="https://s3.amazonaws.com/metaphorloop/001.mp3" length="137971580" type="audio/mpeg" />
+      <pubDate>Sun, 23 Aug 2015 18:10:00 GMT</pubDate>
+      <itunes:duration>01:10:46</itunes:duration>
+	    <itunes:explicit>no</itunes:explicit>
+	    <itunes:keywords>programming</itunes:keywords>
+
+      <guid>http://hardscrabble.net/metaphorloop/1/</guid>
+      <link>http://hardscrabble.net/metaphorloop/1/</link>
+    </item>
+  
+    <item>
+      <title>Empathizing too much with your code (featuring Vaidehi Joshi)</title>
+      <itunes:subtitle>Empathizing too much with your code (featuring Vaidehi Joshi)</itunes:subtitle>
+      <itunes:author>Max Jacobson</itunes:author>
+      <itunes:summary>Max and Vaidehi talk about doggedly continuing to learn new things and the challenges of sharing them</itunes:summary>
+      
+        <itunes:image href="https://s3.amazonaws.com/metaphorloop/metaphorloop.png" />
+      
+
+      <enclosure url="https://s3.amazonaws.com/metaphorloop/002.mp3" length="138738527" type="audio/mpeg" />
+      <pubDate>Fri, 18 Sep 2015 02:50:00 GMT</pubDate>
+      <itunes:duration>01:09:59</itunes:duration>
+	    <itunes:explicit>no</itunes:explicit>
+	    <itunes:keywords>programming</itunes:keywords>
+
+      <guid>http://hardscrabble.net/metaphorloop/2/</guid>
+      <link>http://hardscrabble.net/metaphorloop/2/</link>
+    </item>
+  
+    <item>
+      <title>My entire life, reading Wikipedia (featuring Dan Eisenberg)</title>
+      <itunes:subtitle>My entire life, reading Wikipedia (featuring Dan Eisenberg)</itunes:subtitle>
+      <itunes:author>Max Jacobson</itunes:author>
+      <itunes:summary>Max and Dan dig into the existential crises that come with programming</itunes:summary>
+      
+        <itunes:image href="https://s3.amazonaws.com/metaphorloop/metaphorloop.png" />
+      
+
+      <enclosure url="https://s3.amazonaws.com/metaphorloop/003.mp3" length="125994499" type="audio/mpeg" />
+      <pubDate>Mon, 23 Nov 2015 01:00:00 GMT</pubDate>
+      <itunes:duration>1:42:05</itunes:duration>
+	    <itunes:explicit>no</itunes:explicit>
+	    <itunes:keywords>programming</itunes:keywords>
+
+      <guid>http://hardscrabble.net/metaphorloop/3/</guid>
+      <link>http://hardscrabble.net/metaphorloop/3/</link>
+    </item>
+  
+</channel>
+</rss>

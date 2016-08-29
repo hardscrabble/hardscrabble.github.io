@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>learning ember.js: day one - hardscrabble</title>
+  <meta content='Max Jacobson' name='author'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='/feed.xml' rel='alternate' title='Posts feed' type='application/atom+xml'>
+  <link href='/img/favicon.ico' rel='icon' type='image/x-icon'>
+  <link rel="stylesheet" href="/css/lib/pinboard.css">
+<link rel="stylesheet" href="/css/lib/normalize.css">
+<link rel="stylesheet" href="/css/lib/solarized.css">
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', "UA-4982721-15", 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+
+<header>
+  <h1><a href="/">hardscrabble</a></h1>
+  <nav>
+    <a href="/">home</a>
+    | <a href="/about/">about</a>
+    | <a href="/metaphorloop/">metaphor loop</a>
+    | <a href="/search/">search</a>
+    | <a href="/links/">links</a>
+  </nav>
+</header>
+
+<div class="post">
+
+  <div class="metadata">
+    <div class="title">
+      <h2>
+        learning ember.js: day one
+      </h2>
+    </div>
+    <div class="byline">
+      by <a href='/about'>Max Jacobson</a>
+    </div>
+    <div class="date">
+      31 Aug 2013
+    </div>
+  </div>
+
+  <div class="body">
+    <h2 id="the-realization">the realization</h2>
+
+<p>OK I want to learn <a href="http://emberjs.com/">ember.js</a>.</p>
+
+<p>Ember has been in development for years and the 1.0 version is meant to be released this weekend. There have been <a href="http://emberjs.com/blog/2013/08/29/ember-1-0-rc8.html">eight</a> release candidates. They’re ready.</p>
+
+<p>But… <em>am I?</em> This release feels like an exciting and right time to dig in. I’ve looked at it before and it hasn’t clicked. But, having just finished my semester at The Flatiron School, I should have time to make it click. And I must keep learning!</p>
+
+<h2 id="rooting-around-in-the-mud">rooting around in the mud</h2>
+
+<p>Ember provides a starter kit which demonstrates a basic usage. It’s a static HTML page that includes all the necessary JavaScript libraries (jQuery, Handlebars, and Ember) and then an <code class="highlighter-rouge">app.js</code> file for us to do our work in. It starts off looking like this:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">App</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">Application</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// put your routes here</span>
+<span class="p">});</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">IndexRoute</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">Route</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="na">model</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span> <span class="s1">'yellow'</span><span class="p">,</span> <span class="s1">'blue'</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>ember starter kit app.js</p>
+
+<p>When you open <code class="highlighter-rouge">index.html</code> in your browser, you can see those three colors have shown up in a bulleted list. The relevant part of that file looks like this:</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-handlebars"</span> <span class="na">data-template-name=</span><span class="s">"index"</span><span class="nt">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+  <span class="p">{{</span><span class="err">#</span><span class="nx">each</span> <span class="nx">item</span> <span class="k">in</span> <span class="nx">model</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">item</span><span class="p">}}</span><span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>  <span class="p">{{</span><span class="o">/</span><span class="nx">each</span><span class="p">}}</span>
+  <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span><span class="nt">&lt;/script&gt;</span>
+
+</code></pre>
+</div>
+
+<p>template for displaying colors</p>
+
+<p>Cool. I can kinda see how the data shows up here.</p>
+
+<h2 id="making-it-mine">making it mine</h2>
+
+<p>I just rewrote that <code class="highlighter-rouge">app.js</code> as <code class="highlighter-rouge">app.coffee</code> because I’m that guy:</p>
+
+<div class="language-coffee highlighter-rouge"><pre class="highlight"><code><span class="nx">App</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="na">Application</span><span class="p">.</span><span class="na">create</span><span class="p">()</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="na">Router</span><span class="p">.</span><span class="na">map</span> <span class="o">-&gt;</span>
+  <span class="c1"># put your routes here</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="na">IndexRoute</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="na">Route</span><span class="p">.</span><span class="na">extend</span>
+  <span class="na">model</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="p">[</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'yellow'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">,</span> <span class="s">'green'</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>coffeescript rewrite (i added a color too)</p>
+
+<p>And now I’m running <code class="highlighter-rouge">coffee -cw js/app.coffee</code> <sup id="fnref:cw"><a href="#fn:cw" class="footnote">1</a></sup> and it is compiling it for me and the site still displays that nice list. Rails auto-compiles coffeescript for you so this is kind of an extra hassle of a step but that is the life we lead.</p>
+
+<h2 id="next-steps">next steps</h2>
+
+<p>My next step as always is to google around and open 175 tabs and then feel overwhelmed and drink some tea and relax for a while.</p>
+
+<p>Did I read this: <a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js-part-2/">http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js-part-2/</a>? Yes I did and it did not hit that sweet spot.</p>
+
+<p>I closed all my tabs. I want to just play around. I decided to ditch that array of colors and try using slightly richer data. Here’s what I came up with:</p>
+
+<div class="language-coffee highlighter-rouge"><pre class="highlight"><code><span class="nx">App</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="na">Application</span><span class="p">.</span><span class="na">create</span><span class="p">()</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="na">Router</span><span class="p">.</span><span class="na">map</span> <span class="o">-&gt;</span>
+  <span class="c1"># put your routes here</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="na">IndexRoute</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="na">Route</span><span class="p">.</span><span class="na">extend</span>
+  <span class="na">model</span><span class="o">:</span> <span class="o">-&gt;</span>
+    <span class="na">firstName</span><span class="o">:</span> <span class="s">"Max"</span>
+    <span class="na">lastName</span><span class="o">:</span> <span class="s">"Jacobson"</span>
+    <span class="na">posts</span><span class="o">:</span>
+      <span class="p">[</span>
+        <span class="na">title</span><span class="o">:</span> <span class="s">"Finished School"</span>
+        <span class="na">date</span><span class="o">:</span>  <span class="s">"2013-08-23"</span>
+        <span class="na">body</span><span class="o">:</span> <span class="s">"Wow that was fun!"</span>
+      <span class="p">,</span>
+        <span class="na">title</span><span class="o">:</span> <span class="s">"Starting school"</span>
+        <span class="na">date</span><span class="o">:</span>  <span class="s">"2013-06-03"</span>
+        <span class="na">body</span><span class="o">:</span> <span class="s">"Can't wait to start school!"</span>
+      <span class="p">]</span>
+</code></pre>
+</div>
+
+<p>app.coffee</p>
+
+<p>and</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/x-handlebars"</span> <span class="na">data-template-name=</span><span class="s">"index"</span><span class="nt">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span>
+    <span class="p">{{</span><span class="nx">model</span><span class="p">.</span><span class="nx">firstName</span><span class="p">}}</span> <span class="p">{{</span><span class="nx">model</span><span class="p">.</span><span class="nx">lastName</span><span class="p">}}</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;</span><span class="nx">s</span> <span class="nx">Blog</span>
+  <span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>  <span class="p">{{</span><span class="err">#</span><span class="nx">each</span> <span class="nx">post</span> <span class="k">in</span> <span class="nx">model</span><span class="p">.</span><span class="nx">posts</span><span class="p">}}</span>
+    <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">post</span><span class="p">.</span><span class="nx">title</span><span class="p">}}</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">}}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">post</span><span class="p">.</span><span class="nx">body</span><span class="p">}}</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="p">{{</span><span class="o">/</span><span class="nx">each</span><span class="p">}}</span>
+  <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span><span class="nt">&lt;/script&gt;</span>
+
+</code></pre>
+</div>
+
+<p>part of index.html</p>
+
+<p>And that takes that data from the CoffeeScript and puts it on the page. Which took a lot of trial and error actually.</p>
+
+<p>Making that and writing this post was like a cup of coffee. My brain is now attenuated to learn it better tomorrow, to receive knowledge, perhaps via a lengthy article or book I’ll find and read. More posts to come as I dig deeper.</p>
+
+<p>Here’s what I described in this post: <a href="http://codepen.io/maxjacobson/pen/uckIL">http://codepen.io/maxjacobson/pen/uckIL</a></p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:cw">
+      <p>the “c” flag means “compile” and the “w” flag means “watch” so together those will watch for new changes and re-compile <a href="#fnref:cw" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+  <div class="post-footer">
+    <p>
+      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
+    </p>
+  </div>
+
+</div>
+
+
+<footer>
+  <div>
+    Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+    and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    The source is <a href="https://github.com/hardscrabble/hardscrabble.github.io">available to browse, for nerds</a>.
+    The feed can be found at <a href="/feed.xml">feed.xml</a>
+  </div>
+</footer>
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src='/js/vendor/lunr.min.js'></script>
+<script src='/js/app.js'></script>
+
+
+<script src="//static.getclicky.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(100815498); }catch(e){}</script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/100815498ns.gif" /></p></noscript>
+</body>
+</html>
+
