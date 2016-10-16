@@ -96,7 +96,7 @@ This is not bad.
 
 That attribute is marked as `protected` because so far we can only imagine it being necessary to be used by other instances of `CupsOfCoffeePerDay`, for the sake of comparison.
 
-(I remember having a lot and horrified conversation with a coworker when neither of us could come up with a scenario where you would use `protected` over `private`, but it turns out that this is precisely the situation where you would.
+(I remember having a long and horrified conversation with a coworker when neither of us could come up with a scenario where you would use `protected` over `private`, but it turns out that this is precisely the situation where you would.)
 
 But look what happens when you try this:
 
@@ -120,9 +120,9 @@ app.rb:32:in `>': comparison of Fixnum with CupsOfCoffeePerDay failed (ArgumentE
 ```
 
 Is there anything we can do to avoid these errors?
-I think one, strong argument is that we should audit our system and make sure that we never mix-and-match our types.
+I think one, strong argument is that we shouldn't try to.
+Rather, we should audit our system and make sure that we never mix-and-match our types.
 If we can do that, that's probably for the best.
-Always use your rich domain objects.
 
 Except... this is Ruby, and Ruby always has another trick up its sleeve.
 
@@ -160,7 +160,8 @@ class CupsOfCoffeePerDay
 end
 ```
 
-There's not a ton of documentation about this. I only found it by luck.
+There's not a ton of documentation about this.
+I only found it by luck.
 I was looking to understand how Ruby numbers does its comparisons, and I opened up [pry][] (with [pry-doc][] installed), and started exploring:
 
 [pry]: https://github.com/pry/pry
@@ -239,4 +240,4 @@ So then it becomes a game of figuring out how to write a `coerce` method and fin
 [link to it]: https://github.com/ruby/ruby/blob/f3cafab56a353db969f5e39923bd15712a204c36/numeric.c#L274-L309
 
 So.
-Now that we know about coerce, our operator methods can be really simple, but they can still be used bidirectionally.
+Now that we know about coerce, our objects can be really simple, but they can still be compared bidirectionally.
