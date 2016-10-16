@@ -108,7 +108,11 @@ Or this:
 
 
 ```ruby
-[CupsOfCoffeePerDay.new(4), 3, CupsOfCoffeePerDay.new(1)].sort
+[
+  CupsOfCoffeePerDay.new(4),
+  3,
+  CupsOfCoffeePerDay.new(1)
+].sort
 ```
 
 
