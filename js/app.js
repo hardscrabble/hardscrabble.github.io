@@ -38,7 +38,7 @@ ready(function () {
   if (!searchBox) { return }
   var list = document.querySelectorAll('.search-results ul')[0]
   if (window.location.hash) {
-    searchBox.value = window.location.hash.slice(1)
+    searchBox.value = decodeURI(window.location.hash.slice(1))
     var li = document.createElement('li')
     li.appendChild(document.createTextNode('Loading...'))
     list.appendChild(li)
@@ -61,7 +61,7 @@ ready(function () {
 
       searchBox.oninput = function () {
         while (list.firstChild) { list.removeChild(list.firstChild) }
-        window.location.hash = this.value
+        window.location.hash = encodeURI(this.value)
         var results = index.search(this.value)
         results.forEach(function (result, i) {
           var post = posts[result.ref]
