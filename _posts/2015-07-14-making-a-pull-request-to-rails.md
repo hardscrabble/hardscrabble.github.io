@@ -45,7 +45,7 @@ refraining from embedding it so you don't need to download a 4mb image if you
 don't want to, and so you can open it in a new tab to start at the beginning
 easily if you want to.
 
-[longgif]: {{ site.baseurl }}img/2015-07-14-rails.gif
+[longgif]: /img/2015-07-14-rails.gif
 
 I don't really love my solution and I should probably consider it further, but
 I know the tests are passing, including the new one I added. I think being a

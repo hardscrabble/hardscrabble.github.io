@@ -4,4 +4,4 @@ set -ex
 
 rm -rf _site
 rm -rf .jekyll-metadata
-bin/jekyll serve --watch --baseurl / --drafts --incremental
+bin/jekyll serve --watch --drafts --incremental

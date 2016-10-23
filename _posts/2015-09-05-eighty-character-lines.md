@@ -7,7 +7,7 @@ Last month we talked about [RuboCop][cop], which analyzes your Ruby code and
 nitpicks it. One of its most difficult to follow suggestions is to keep your
 lines of code no longer than 80 characters.
 
-[cop]: {{site.baseurl}}2015/rubocop
+[cop]: /2015/rubocop
 
 The creator of rubocop, bbatsov, explained his perspective [on his
 blog][batsov]:
@@ -106,7 +106,7 @@ possible to do it through [some gnarly stubbing][stubbing] but, harder). You're
 also introducing some requirements about the order in which the files from your
 code need to be loaded, which feels kind of fragile.
 
-[stubbing]: {{site.baseurl}}2015/stubbing-constants/
+[stubbing]: /2015/stubbing-constants/
 
 One *possible* upside comes to mind. When you follow the typical pattern of
 writing out all the namespace modules and classes, you introduce some room for

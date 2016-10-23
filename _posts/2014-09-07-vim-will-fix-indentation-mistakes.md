@@ -6,7 +6,7 @@ date: 2014-09-07 18:58
 
 Today I learned a neat vim trick (via the [Aaron Paterson Play by Play interview](http://beta.pluralsight.com/courses/play-by-play-aaron-patterson)):
 
-![vim auto indent gif]({{ site.baseurl }}img/2014-09-07-vim-indentation.gif)
+![vim auto indent gif](/img/2014-09-07-vim-indentation.gif)
 
 You can highlight some lines with visual mode and then press `=` and it will fix all of the indentation mistakes therein. If you're in normal mode, you can press `==` to fix just the line you're currently on.
 

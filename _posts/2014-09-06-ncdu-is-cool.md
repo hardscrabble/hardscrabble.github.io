@@ -9,7 +9,7 @@ During that time I heard of a neat app called [DaisyDisk](http://www.daisydiskap
 
 It was updated fairly recently and [seems](http://www.macstories.net/reviews/daisydisk-3/) to still be great. I just re-downloaded and ran it on my 128 GB MacBook Air:
 
-![my daisydisk results]({{ site.baseurl }}img/2014-09-06-daisydisk.png)
+![my daisydisk results](/img/2014-09-06-daisydisk.png)
 
 Fast-forward to a few months ago, and I'm at work as a web developer and my coworker comments that the disk on one of our production Linux servers is nearly full, and we need to find something to delete. I knew DaisyDisk wouldn't work in the command line but didn't know what to suggest. He remembered something called [ncdu](http://dev.yorhel.nl/ncdu) and ran it and I had immediate, rippling acid flashbacks to DaisyDisk! ncdu is a tool that runs totally in the command line with a nice interface and accomplishes the same goals and supports the same workflow:
 
@@ -21,7 +21,7 @@ Fast-forward to a few months ago, and I'm at work as a web developer and my cowo
 
 Here's what it looks like:
 
-![my ncdu results]({{ site.baseurl }}img/2014-09-06-ncdu.png)
+![my ncdu results](/img/2014-09-06-ncdu.png)
 
 Kind of the same!!
 

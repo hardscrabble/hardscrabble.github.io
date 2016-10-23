@@ -7,7 +7,7 @@ redirect_from:
 
 Here's a screenshot of my desktop as of right now:
 
-[![My desktop]({{baseurl}}/img/2014-06-29-den-desktop.png)]({{baseurl}}/img/2014-06-29-den-desktop.png)
+[![My desktop](/img/2014-06-29-den-desktop.png)](/img/2014-06-29-den-desktop.png)
 
 It's an Intel NUC. It's tiny. It's mounted to the back of my 23" Monitor I bought like 4 years ago. It's really clever -- those 4 standard screws that are meant for mounting the monitor to an arm or the wall can instead have the computer mounted to it. It's replacing an old 40 pound (maybe, I'm totally guessing) Dell tower hand me down from my dad's office.
 

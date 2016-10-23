@@ -12,7 +12,7 @@ It doesn't know that I just pasted, it thinks that I was suddenly just typing *s
 When I actually am typing, this is helpful.
 But when I'm pasting, it's kind of annoying.
 
-![Pasting into vim doesn't work well]({{ site.baseurl }}img/2016-07-30-vim-bad-paste.png)
+![Pasting into vim doesn't work well](/img/2016-07-30-vim-bad-paste.png)
 
 (You can see in this example that not only is the indentation screwed up, but also there is an extra `end` which [vim-endwise](https://github.com/tpope/vim-endwise) helpfully tried to auto-insert)
 
@@ -25,7 +25,7 @@ Pretty annoying.
 Copying text out of vim is even more difficult.
 I can use my mouse to highlight the text I want to copy and then press "command + c" to copy it, but this is pretty awful, too, because it's very easy to accidentally copy things like line numbers (which are just text in the terminal, and your mouse doesn't know to avoid it) or to even copy text from multiple files which you happen to have open side by side in split buffers, such that the code is totally broken when you paste it out again.
 
-![Copying from vim split buffer doesn't work well]({{ site.baseurl }}img/2016-07-30-vim-split-buffer.png)
+![Copying from vim split buffer doesn't work well](/img/2016-07-30-vim-split-buffer.png)
 
 My workaround for this is even worse! I generally close my splits, turn off line numbers (`:set nonumber`) and sometimes make my font smaller so I can fit the whole lines on my screen and select the text and copy it.
 When I do this, I generally pick up a bunch of trailing whitespace that wasn't there in the source code.

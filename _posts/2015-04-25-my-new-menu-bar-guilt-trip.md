@@ -52,14 +52,14 @@ but it works so :bowtie:.
 To use it with TextBar, I put this in a file and made it executable, and then
 just referenced the path to the file as the "Script":
 
-![TextBar UI screenshot]({{ site.baseurl }}img/2015-04-25-textbar.png)
+![TextBar UI screenshot](/img/2015-04-25-textbar.png)
 
 I'm having it refresh hourly, because the script is only specific to the
 nearest hour, so it'll always be more-or-less right.
 
 Here's what my menu bar currently looks like:
 
-![menubar screenshot]({{ site.baseurl }}img/2015-04-25-textbar-guilt.png)
+![menubar screenshot](/img/2015-04-25-textbar-guilt.png)
 
 (Tweetbot, this script via textbar, postgres, 1password, dropbox with some
 notification?, google drive, alfred, caffeine, and then some native Mac stuff)

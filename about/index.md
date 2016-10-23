@@ -2,7 +2,7 @@
 title: about
 ---
 
-![goofy photo of me]({{ site.baseurl }}img/max.jpg)
+![goofy photo of me](/img/max.jpg)
 
 I'm a programmer from New York. I love the bands mewithoutYou, Bars of Gold,
 and Bear Vs. Shark. Also Sufjan Stevens. And another band, Against Me! I like

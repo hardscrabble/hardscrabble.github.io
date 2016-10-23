@@ -3,7 +3,7 @@ title: discovering a problem
 date: 2015-01-21 00:15
 ---
 
-![view source on a recent post]({{ site.baseurl }}img/2015-01-21-markup-view-source.png)
+![view source on a recent post](/img/2015-01-21-markup-view-source.png)
 
 That's the "View Source" on a recent post here on the blog.
 
@@ -25,14 +25,14 @@ in Safari. When I tried to run it on my own blog (as you do), I saw this:
 
 [View Source]: https://itunes.apple.com/us/app/view-source-html-javascript/id917660039?mt=8
 
-![view source on a recent post in iOS]({{ site.baseurl }}img/2015-01-21-view-source-on-ios.png)
+![view source on a recent post in iOS](/img/2015-01-21-view-source-on-ios.png)
 
 That... looks kind of wrong? Why's all the head stuff in the body? Huh?
 
 So just a few minutes ago I opened up my text editor and opened the relevant
 file to make a fix, and I saw this:
 
-![HTML in vim with syntastic]({{ site.baseurl }}img/2015-01-21-markup-in-vim-with-syntastic.png)
+![HTML in vim with syntastic](/img/2015-01-21-markup-in-vim-with-syntastic.png)
 
 Hell yeah! Where was that error message when I first introduced the problem?
 

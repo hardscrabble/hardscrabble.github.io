@@ -23,7 +23,7 @@ to share it.
 
 ## metaphor loop
 
-[![metaphor loop]({{ site.baseurl }}img/metaphorloop.png)]({{ site.baseurl }}metaphorloop)
+[![metaphor loop](/img/metaphorloop.png)](/metaphorloop)
 
 *(Click on the art to visit the show homepage, which has subscription links)*
 

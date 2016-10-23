@@ -34,7 +34,7 @@ they're learning in a more direct, free-to-explore way. That market of learners
 has been underserved by the existing solutions, and I wonder if Flatiron will
 be able to pull off an online learning environment just for them.
 
-[loop]: {{site.baseurl}}metaphorloop/2/
+[loop]: /metaphorloop/2/
 [kl]: https://en.wikipedia.org/wiki/Kinesthetic_learning
 
 I do kind of chafe at the idea that "you can't learn real skills with fake

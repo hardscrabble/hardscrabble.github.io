@@ -50,7 +50,7 @@ print %w(
 
 And my prompt looks like this:
 
-![my prompt, where each line includes a random fun emoji]({{ site.baseurl }}img/2016-06-09-prompt.png)
+![my prompt, where each line includes a random fun emoji](/img/2016-06-09-prompt.png)
 
 But over time I noticed that it was kind of..... slow.
 And I started to wonder if maybe my fun affectation was worth it.

@@ -26,7 +26,7 @@ and start a new tmux session.
 
 Here's what that looks like:
 
-[![tmux flow]({{baseurl}}/img/2015-01-03-tmux.gif)]({{baseurl}}/img/2015-01-03-tmux.gif)
+[![tmux flow](/img/2015-01-03-tmux.gif)](/img/2015-01-03-tmux.gif)
 
 (I gotta look back into those failing tests in film snob...)
 

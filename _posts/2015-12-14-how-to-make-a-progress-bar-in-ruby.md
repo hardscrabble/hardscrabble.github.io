@@ -20,7 +20,7 @@ end
 
 Which looks kinda like this:
 
-![progress bar before picture]({{ site.baseurl }}img/2015-12-14-progress-bar-before-picture.png)
+![progress bar before picture](/img/2015-12-14-progress-bar-before-picture.png)
 
 Which is, let's say, serviceable, but not, let's say, beautiful. It stinks that
 it printed out all those lines when it didn't really need to. I would rather it
@@ -52,7 +52,7 @@ rescue Interrupt
 end
 ```
 
-![progress bar after gif]({{ site.baseurl }}img/2015-12-14-progress-bar-after-gif.gif)
+![progress bar after gif](/img/2015-12-14-progress-bar-after-gif.gif)
 
 Probably you shouldn't use this -- there's a very nice gem called
 [ruby-progressbar][] which will work across platforms and lets you customize
@@ -61,6 +61,6 @@ like this:
 
 [ruby-progressbar]: https://github.com/jfelchner/ruby-progressbar
 
-![barnyard]({{ site.baseurl }}img/2015-12-14-progress-barn.gif)
+![barnyard](/img/2015-12-14-progress-barn.gif)
 
 I'll leave it as an exercise to the reader how to write this one.

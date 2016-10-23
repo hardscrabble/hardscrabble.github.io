@@ -17,7 +17,7 @@ bookmarks. Using it requires cloning the codebase and requesting API
 credentials, so it's not a super accessible tool, but for power users it might
 be worth it. Here's a quick demo:
 
-![bin/rake explore demo]({{ site.baseurl }}img/2015-03-22-explore.gif)
+![bin/rake explore demo](/img/2015-03-22-explore.gif)
 
 Here's the code for the CLI as of this moment: <https://github.com/maxjacobson/layabout/blob/255eed15be2e55de804083bfdcf8651538af7bb0/lib/tasks/explore.rake>
 

@@ -6,7 +6,7 @@ date: 2015-03-29 02:40
 The time has come for me to make a vim macro. Here's what it looks like in
 action:
 
-![vim macro demo]({{ site.baseurl }}img/2015-03-29-vim-macro.gif)
+![vim macro demo](/img/2015-03-29-vim-macro.gif)
 
 I made it because I am working on a post that will include a few ruby examples,
 and I got frustrated typing out Liquid's verbose syntax for codeblocks (I wish

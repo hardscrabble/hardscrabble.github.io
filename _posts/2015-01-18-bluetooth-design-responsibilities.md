@@ -8,7 +8,7 @@ honest.
 
 Five months ago I bought this:
 
-![a red speaker]({{ site.baseurl }}img/2015-01-18-amazon-speakers.jpg)
+![a red speaker](/img/2015-01-18-amazon-speakers.jpg)
 
 It's the [AmazonBasics Ultra-Portable Mini Bluetooth Speaker - Red][amzn]. It's
 like one of those cool Jawbone speakers but cheaper and probably not as good.

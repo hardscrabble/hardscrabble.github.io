@@ -14,7 +14,7 @@ History][tb].
 
 Here's what it generally looks like when I do it:
 
-[![squashing a commit]({{baseurl}}/img/2015-03-08-squash.gif)]({{baseurl}}/img/2015-03-08-squash.gif)
+[![squashing a commit](/img/2015-03-08-squash.gif)](/img/2015-03-08-squash.gif)
 
 And this works pretty well for me.
 
@@ -59,7 +59,7 @@ Here's what I do now:
 
 Here's a gif (ignore the part when I got stuck in a dquote confusion please):
 
-[![git fibbing a commit]({{baseurl}}/img/2015-03-08-fib.gif)]({{baseurl}}/img/2015-03-08-fib.gif)
+[![git fibbing a commit](/img/2015-03-08-fib.gif)](/img/2015-03-08-fib.gif)
 
 Get it here: <https://github.com/maxjacobson/dotfiles/blob/master/bin/git-fib>
 

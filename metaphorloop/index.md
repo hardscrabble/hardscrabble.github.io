@@ -2,7 +2,7 @@
 title: metaphor loop
 ---
 
-![metaphor loop]({{ site.baseurl }}img/metaphorloop.png)
+![metaphor loop](/img/metaphorloop.png)
 
 This is a podcast about how we think about programming. There are a lot of ways!
 
