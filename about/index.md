@@ -4,10 +4,10 @@ title: about
 
 ![goofy photo of me](/img/max.jpg)
 
-I'm a programmer from New York. I love the bands mewithoutYou, Bars of Gold,
-and Bear Vs. Shark. Also Sufjan Stevens. And another band, Against Me! I like
-other things too sometimes.
+I'm a programmer from New York.
+I work at [Code Climate](https://codeclimate.com/about)
+This is my blog.
 
-* [@maxjacobson](http://twitter.com/maxjacobson)
-* [github/maxjacobson](http://github.com/maxjacobson)
-* <max@hardscrabble.net>
+* Keep up with me on twitter: [@maxjacobson](https://twitter.com/maxjacobson)
+* Or GitHub: [github.com/maxjacobson](https://github.com/maxjacobson/)
+* Or send me an email: <max@hardscrabble.net>

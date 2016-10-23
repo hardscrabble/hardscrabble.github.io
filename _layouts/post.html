@@ -3,30 +3,23 @@ layout: default
 ---
 
 <div class="post">
-
   <div class="metadata">
     <div class="title">
       <h2>
         {{ page.title }}
       </h2>
+
+      <small>
+        {{ page.date | date_to_string }}
+      </small>
     </div>
+
     <div class="byline">
-      by <a href='/about'>{{ site.author }}</a>
-    </div>
-    <div class="date">
-      {{ page.date | date_to_string }}
+      <a href="https://twitter.com/maxjacobson" class="twitter-follow-button" data-show-count="false">Follow @maxjacobson</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
   </div>
 
   <div class="body">
     {{ content }}
   </div>
-
-  <div class="post-footer">
-    <p>
-      Feel free to get in touch via <a href='http://twitter.com/maxjacobson'>@maxjacobson</a> or <a href='mailto:max@hardscrabble.net'>max@hardscrabble.net</a>
-    </p>
-  </div>
-
 </div>
-
