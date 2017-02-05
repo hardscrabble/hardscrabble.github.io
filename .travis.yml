@@ -2,10 +2,13 @@ language: ruby
 cache: bundler
 rvm:
   - 2.3.1
+env:
+  - TRAVIS_NODE_VERSION="7"
 before_install:
   - "gem install bundler"
   - "bundle config build.nokogiri --use-system-libraries"
   - "bundle install"
+  - "rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION"
   - "npm install -g standard@8.4.0"
 script:
   - exe/build
