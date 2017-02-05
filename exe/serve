@@ -4,4 +4,5 @@ set -ex
 
 rm -rf _site
 rm -rf .jekyll-metadata
+bundle check || bundle install
 bin/jekyll serve --watch --drafts --incremental
