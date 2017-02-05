@@ -37,11 +37,14 @@ blockquote {
 }
 
 code {
-  color: $hotpink;
   margin: 0 2px;
   white-space: nowrap;
 }
 
+p code {
+  color: black;
+  background-color: $hotyellow;
+}
 pre {
   code {
     color: $charcoal;
