@@ -13,6 +13,5 @@ rescue SocketError => e
 end
 
 group :development do
-  gem 'mr_poole'
   gem 'scss_lint'
 end

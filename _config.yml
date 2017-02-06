@@ -59,9 +59,6 @@ gems:
   - jekyll-redirect-from
   - jekyll-sitemap
 
-poole:
-  word_separator: "-"
-
 collections:
   metaphorloop_episodes:
     output: true

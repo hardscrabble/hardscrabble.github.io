@@ -1,4 +1,29 @@
 #!/usr/bin/env bash
-# take the first argument and pass it along to poole
-bin/poole publish $1
 
+set -e
+
+function updateDate() {
+  sed "s/date: [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/date: $(date '+%Y-%m-%d %H:%M %Z')/"
+}
+
+function draftToPost() {
+  sed "s/_drafts\//_posts\/$(date '+%Y-%m-%d')-/"
+}
+
+filename="$1"
+
+if [[ ! -e "$filename" ]]; then
+  echo "$filename does not exist"
+  exit 1
+fi
+
+post="$(cat $filename | updateDate)"
+
+newFilename="$(
+  echo $filename | draftToPost
+)"
+
+echo "$post" > $newFilename
+
+rm $filename
+echo "Moved $filename to $newFilename"

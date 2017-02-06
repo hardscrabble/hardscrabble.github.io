@@ -1,4 +1,37 @@
 #!/usr/bin/env bash
 # take all of the arguments and put them in quotes
-bin/poole draft "$*"
 
+set -e
+
+function dashify() {
+  sed "s/ /-/g"
+}
+
+function removeSpecialChars() {
+  tr -dc '[:alnum:]-'
+}
+
+function downcase() {
+  tr '[:upper:]' '[:lower:]'
+}
+
+title="$*"
+slug=$(
+  echo "$title" | dashify | removeSpecialChars | downcase
+)
+filename="./_drafts/$slug.md"
+mkdir -p _drafts
+
+if [[ -e "$filename" ]]; then
+  echo "$filename already exists"
+  exit 1
+fi
+
+echo "---
+title: $title
+date: $(date '+%Y-%m-%d')
+---
+
+Alright, this is where your post goes." > $filename
+
+echo "Created $filename"

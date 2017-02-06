@@ -15,10 +15,6 @@ my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on
 * run `exe/publish _drafts/my-great-post.md` to move that file into the `_posts`
 directory and add the current timestamp
 
-(Under the hood these are using [Mr. Poole][poole], a butler for Jekyll.)
-
-[poole]: https://github.com/mmcclimon/mr_poole
-
 ## adding a podcast episode
 
 * record and export an mp3 (the feed assumes mp3)
