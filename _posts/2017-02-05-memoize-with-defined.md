@@ -164,7 +164,7 @@ def unkempt?
 end
 ```
 
-Here are our goal is to prevent doing the expensive database query (`Hair.count_for(self)`) more than once.
+Here our goal is to prevent doing the expensive database query (`Hair.count_for(self)`) more than once.
 
 Ponder this question: does our memoization strategy accomplish this goal?
 
