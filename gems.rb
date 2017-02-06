@@ -7,7 +7,8 @@ begin
   require 'open-uri'
   versions = JSON.parse(open('https://pages.github.com/versions.json').read)
   gem 'github-pages', versions.fetch('github-pages')
-rescue SocketError
+rescue SocketError => e
+  STDERR.puts "Couldn't fetch remote github-pages: #{e.inspect}"
   gem 'github-pages'
 end
 
