@@ -43,24 +43,8 @@ when you really only _need_ to do so once.
 Better to write it like this:
 
 ```ruby
-class DogStylist
-  def initialize(dog_id)
-    @dog_id = dog_id
-  end
-
-  def perform
-    if dog
-      dog.sedate
-      dog.groom
-      dog.instagram
-    end
-  end
-
-  private
-
-  def dog
-    @dog ||= Dog.find(@dog_id)
-  end
+def dog
+  @dog ||= Dog.find(@dog_id)
 end
 ```
 
