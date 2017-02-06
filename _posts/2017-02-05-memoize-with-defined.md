@@ -221,4 +221,15 @@ This is more resilient to the possibility that your value may be falsey.
 
 I wish there were a more succinct way to write this, because I think it's generally how you actually want your code to behave when you use `||=`.
 
+To be fair, you can avoid `defined?` and instead write this method like this:
+
+```ruby
+def unkempt?
+  @hair_count ||= Hair.count_for(self)
+  @hair_count > HAIRS_THRESHOLD
+end
+```
+
+Which you prefer is really just a matter of taste.
+
 Alright, take care.
