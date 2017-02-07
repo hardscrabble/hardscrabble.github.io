@@ -41,7 +41,8 @@ code {
   white-space: nowrap;
 }
 
-p, li {
+p,
+li {
   code {
     background-color: $hotyellow;
   }
