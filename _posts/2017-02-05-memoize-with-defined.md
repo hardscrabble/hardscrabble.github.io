@@ -37,6 +37,7 @@ end
 
 This is kind of fine, but it has one problem:
 each time you reference `dog`, you're calling the `dog` method,
+which queries the database each time it's called,
 so you're querying the database over and over,
 when you really only _need_ to do so once.
 
@@ -48,7 +49,9 @@ def dog
 end
 ```
 
-Now, you're still calling the `dog` method over and over, but now it's "memoizing" the result of the database query.
+Here you're still calling the `dog` method over and over, but now it's "memoizing" the result of the database query.
+
+But what does that mean?
 
 Here's a more verbose version of the `dog` method that does the same thing:
 
@@ -58,7 +61,10 @@ def dog
 end
 ```
 
-You can see that `||=` is a syntactical shorthand similar to `+=`, where these two expressions are equivalent:
+You can see that `||=` is a syntactical shorthand similar to `+=`.
+
+In case you're unfamiliar with `+=`, here's an example.
+These two statements are equivalent:
 
 ```ruby
 count = count + 1
@@ -90,7 +96,7 @@ does this memoization strategy guarantee that the database query will only be ex
 
 It doesn't.
 
-Why?
+Why????
 
 I'll tell you.
 
@@ -110,8 +116,7 @@ end
 
 ... then we would execute the database query _five times_, even though we made an effort to prevent that.
 
-This is actually totally fine, because our `perform` method _isn't_ written like that.
-That was just a hypothetical.
+This is actually totally fine, because our `perform` method _isn't_ written like that (again, that was just a hypothetical).
 Our `perform` method only calls the `dog` method more than once if it's truthy, so there's no problem here.
 
 ## memoization using `defined?`
@@ -154,7 +159,8 @@ Ponder this question: does our memoization strategy accomplish this goal?
 
 Answer: it does not.
 
-I hear you screaming, "What!?".
+What?????
+
 I know.
 Let me show you.
 
@@ -199,9 +205,11 @@ So what's going on here?
 
 Well, in a way, everything is working as it's supposed to.
 The first time we call the `unkempt?` method, the `@unkempt` instance variable is not defined, which means it returns `nil`, which is falsey.
-When the instance variable is falsey, we evaluate the expression and assign its result, `false`, to the intance variable.
-The second time we call the `unkempt?` method, the `@unkempt` instance variable _is_ defined, and its value is `false`, which is _also_ falsey (which you have to admit is only fair).
+When the instance variable is falsey, we evaluate the expression and assign its result, `false`, to the instance variable.
+The _second_ time we call the `unkempt?` method, the `@unkempt` instance variable _is_ defined, but its value is now `false`, which is _also_ falsey (which you have to admit is only fair).
 So, again, because the instance variable is falsey, we evaluate the expression and assign its result, `false`, to the instance variable.
+
+Shoot -- that kind of makes sense.
 
 So what to do?
 Here's another way to write this:
@@ -216,7 +224,7 @@ def unkempt?
 end
 ```
 
-This approach uses Ruby's built-in `defined?` keyword to check whether the instance variable is defined at all, rather than checking if its value is truthy.
+This approach uses Ruby's built-in `defined?` keyword to check **whether the instance variable is defined at all**, rather than if its value is truthy.
 This is more resilient to the possibility that your value may be falsey.
 
 I wish there were a more succinct way to write this, because I think it's generally how you actually want your code to behave when you use `||=`.
@@ -230,6 +238,6 @@ def unkempt?
 end
 ```
 
-Which you prefer is really just a matter of taste.
+It's really just a matter of taste if you prefer one over the other.
 
 Alright, take care.
