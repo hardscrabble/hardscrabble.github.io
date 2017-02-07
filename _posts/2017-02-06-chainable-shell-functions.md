@@ -76,7 +76,7 @@ I'm figuring that out by applying a series of transformations to the title:
   * just repeats the title, directing the output into a "pipe", which the next command will read
 * `sed "s/ /-/g"`
   * `sed` is a "stream editor"; it reads in a stream of data and prints out a stream of data
-  * here we're using regular expressions to "s" or _substitute_ all occurences of ` ` (space) with `-` (hyphen)
+  * here we're using regular expressions to "s" or _substitute_ all occurences of a space with `-` (hyphen)
   * we want hyphens because they make for nicer looking URLs than spaces, which get escaped to `%20`.
   * the `g` at the end means "global"; without it, we would only subsitute the first space
 * `tr -dc '[:alnum:]-'`
