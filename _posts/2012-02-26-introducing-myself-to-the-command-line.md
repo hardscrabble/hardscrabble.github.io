@@ -38,7 +38,7 @@ I wonder if I `rmdir i`, if it'll remove all the subfolders too. Ohh cool, it wo
 
 It's kind of weird that when I `rmdir something`, it doesn't go to the trash, it's just *gone*.
 
-`pushd` and `popd` are kind of baking my noodle (as [Corey likes to say](#deadlinktooldpodcastinterviewiwthcorey). Is this like the popping and locking of the programming world? Maybe I should take a break.
+`pushd` and `popd` are kind of baking my noodle (as Corey likes to say (note: this used to link to a podcast, but that podcast is gone). Is this like the popping and locking of the programming world? Maybe I should take a break.
 
 OK so you're in a directory. You `pushd to/a/folder` and now you're there, but you sort of bookmarked where you were. If you want to go back there you `popd`. If you push somewhere, then push somewhere else, then `pushd` over and over you can cycle back and forth between them. If you `popd` over and over you can go back through the stack (from most recent to least recent I think?) of your `pushd`s.
 

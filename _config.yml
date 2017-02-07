@@ -6,7 +6,7 @@ description: "the personal website of Max Jacobson, a programmer in New York"
 url: "http://hardscrabble.net"
 port: 1234
 
-permalink: "/:year/:title"
+permalink: "/:year/:title/"
 
 metaphorloop_metadata:
   title: "metaphor loop"

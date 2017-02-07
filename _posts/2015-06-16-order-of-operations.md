@@ -158,7 +158,7 @@ to happen on the fourth line, because we just saw that Ruby normally evaluates
 the arguments to a method. Here it just totally doesn't, which feels kind of
 weird and inconsistent. It might be helpful to think of `defined?` as a language
 keyword and not a method. See also the [alias
-method](/2014/whoa_rubys_alias_is_weirder_than_i_realized/).
+method](/2014/whoa-rubys-alias-is-weirder-than-i-realized/).
 
 * * *
 

@@ -5,3 +5,4 @@ set -ex
 rm -rf _site
 rm -rf .jekyll-metadata
 bin/jekyll build
+bin/htmlproofer _site --disable-external true
