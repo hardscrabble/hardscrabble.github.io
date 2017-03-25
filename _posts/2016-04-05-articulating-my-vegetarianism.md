@@ -31,9 +31,9 @@ This dissatisfies people, myself included.
 The truthful answer is that **I'm a vegetarian today because I was a vegetarian yesterday and for no other conscious reason**.
 This of course raises a few questions:
 
-1. [why did I start eating vegetarian?](#why-did-i-start-eating-vegetarian)
-1. [what do I like about eating vegetarian?](#what-do-i-like-about-eating-vegetarian)
-1. [what do I do next?](#what-do-i-do-next)
+1. [why did I start eating vegetarian?](#1-why-did-i-start-eating-vegetarian)
+1. [what do I like about eating vegetarian?](#2-what-do-i-like-about-eating-vegetarian)
+1. [what do I do next?](#3-what-do-i-do-next)
 
 ## 1. Why did I start eating vegetarian?
 
