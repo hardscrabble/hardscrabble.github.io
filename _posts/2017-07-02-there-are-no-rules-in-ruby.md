@@ -207,6 +207,7 @@ Notably, we don't call the `initialize` instance method ourselves, although that
 Ruby handles calling that method for us.
 But before Ruby can call an instance method, it needs an instance, and that's where `allocate` comes in.
 It just makes an instance of the class.
+
 And you're allowed to use it in your Ruby code, if you want to.
 
 (Hat tip to [John Crepezzi](http://seejohncode.com/2012/03/16/ruby-class-allocate/) whose blog post explains this really well)
