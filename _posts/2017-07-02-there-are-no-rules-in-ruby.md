@@ -195,7 +195,6 @@ That results in this output:
 $ ruby dog.rb
 false
 nil
-dog.rb:17:in `<main>': undefined method `+' for nil:NilClass (NoMethodError)
 ```
 
 What the hell is this?
