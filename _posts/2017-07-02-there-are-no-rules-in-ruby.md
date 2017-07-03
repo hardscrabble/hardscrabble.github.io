@@ -142,8 +142,8 @@ Maybe like this:
 ```ruby
 thing = get_dog
 if Dog === thing
-  puts thing.instance_variable_defined?("@name")
-  puts thing.instance_variable_get("@name")
+  puts thing.instance_variable_defined?("@name").inspect
+  puts thing.instance_variable_get("@name").inspect
 end
 ```
 
