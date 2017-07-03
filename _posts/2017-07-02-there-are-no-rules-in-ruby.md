@@ -88,6 +88,7 @@ def get_dog
 end
 ```
 
+Maybe it just casually redefined the `name` method for that instance.
 Then your program crashes like this:
 
 ```shell
