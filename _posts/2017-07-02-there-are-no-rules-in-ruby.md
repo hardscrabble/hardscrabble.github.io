@@ -123,6 +123,8 @@ dog.rb:17:in `<main>': undefined method `name' for #<Dog:0x007fecc104a870 @name=
 ```
 
 Which, again, lol.
+You can just remove methods if you want to?
+Sure.
 No one is going to write this.
 I know.
 
