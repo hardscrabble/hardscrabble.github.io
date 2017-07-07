@@ -41,6 +41,11 @@ Look, that would be weird, but it's possible, and Ruby doesn't do anything to he
 
 What's happening?
 You're calling the instance method `#each` of the `DatabaseResult` class.
+And it's just not doing anything at all and doesn't even know you gave it a block.
+Cool.
+
+Brief digression time.
+
 That method has an "arity" of zero.
 How do I know that?
 
