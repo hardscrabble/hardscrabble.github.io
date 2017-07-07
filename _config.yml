@@ -51,6 +51,9 @@ kramdown:
     input: GFM
     hard_wrap: false
 
+paginate: 5
+paginate_path: "/page/:num/"
+
 gems:
   - jemoji
   - jekyll-gist
@@ -58,6 +61,7 @@ gems:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
+  - jekyll-paginate
 
 collections:
   metaphorloop_episodes:
