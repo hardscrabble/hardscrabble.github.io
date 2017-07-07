@@ -210,6 +210,10 @@ I know it's an impractical request, because there are valid use-cases where you 
 But maybe Ruby could detect that somehow.
 I'm just thinking out loud here.
 
+I've seen tests where assertions lived in blocks, and the blocks were never being called, so they weren't actually asserting anything.
+
+I've seen configuration being done via a DSL in a block, except the block wasn't being called, so the defaults were being used.
+
 I guess what I'm saying is it's a little weird to me that blocks aren't treated like ordinary arguments.
 If they were, you'd get an `ArgumentError` if you forgot to provide it or if you provided it and it wasn't expected.
 
