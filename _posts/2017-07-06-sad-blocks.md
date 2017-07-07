@@ -175,7 +175,7 @@ But it doesn't help you when you _do_ provide a block, and you weren't supposed 
 
 Ruby's like, yeah, sure, just provide a block wherever you want, this is a free country.
 
-If you wanted to add this behavior to your blocks, you could do something like this:
+If you wanted to change this behavior in your code, and get helpful errors when your blocks are unexpectedly not invoked, you could do something like this:
 
 ```ruby
 class SadBlock
