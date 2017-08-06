@@ -70,7 +70,7 @@ Okay so now I'm using the `less` command to view the contents of text files. it 
 
 I can read markdown files in the terminal pretty nicely. I'm gonna navigated to my Calepin folder and open up this draft file. `cd ../Dropbox/Apps/Calepin`, `ls`, `less cli.md` wow there it is! Ha! This is fun.
 
-I just whipped up [a background image](http://cl.ly/2q1b430A3t1a1q1y0U1V) for my terminal. I wish it could tile and not just stretch. Looks good as long as I don't resize the window.
+I just whipped up [a background image](/img/2012-02-26-terminal.png) for my terminal. I wish it could tile and not just stretch. Looks good as long as I don't resize the window.
 
 Now I'm `cat`ting things. That just sort of displays the contents of the text file in a slightly different way than `less`. *So* exciting.
 
