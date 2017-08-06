@@ -32,13 +32,13 @@ So why do I care? The videos still play and it's pretty much fine I guess. But i
 
 ClickToPlugin is an awesome Safari Extension that blocks plugins like Flash from running until you click on them. It *also*, when it can, replaces embedded media with a vanilla HTML5 video player. When I typically encounter a YouTube or Vimeo video embedded on a blog, I don't see their custom Flash player, I see this:
 
-[![beyonce video](http://d.pr/i/tq6n+)](http://d.pr/i/tq6n)
+![beyonce video](/img/2013-01-21-beyonce.png)
 
 This example is from an AbsolutePunk.net post, [Beyoncé Performs Star Spangled Banner [Video]](http://www.absolutepunk.net/showthread.php?t=3019022). It behaves much like a regular, Flash YouTube embed -- it doesn't play until you click the triangle although you have preferences like autoplay or auto-preload -- it uses Safari's implementation of the HTML5 video player. Among the benefits: YouTube hasn't yet figured out how to include ads in the HTML5 videos, it feels faster, and on youtube.com, videos don't autoplay so I can open six tabs of Taylor Swift videos without causing a terrible cacophany.
 
 But when I visit that AV Club article, I see this:
 
-[![avclub doesn't have a still frame](http://d.pr/i/Tcpb+)](http://d.pr/i/Tcpb)
+![avclub doesn't have a still frame](/img/2013-01-21-avclub.png)
 
 Which is fine, I guess. It's what I signed up for, using this extension. But c'mon, don't overthink things and get all fancy, stuff'll get broken.
 
@@ -54,7 +54,7 @@ I don't really understand that either, but I don't need to, because it behaves t
 
 On [Layabout](http://layabout.maxjacobson.net), my web app which is embedding videos all day every day, I see this:
 
-[![here there is a still frame](http://d.pr/i/XcJU+)](http://d.pr/i/XcJU)
+![here there is a still frame](/img/2013-01-21-layabout.png)
 
 Look at that aspect ratio -- no black bars! And this is all without manually copying and pasting the embed code from YouTube (or Vimeo in that case). These sites support oEmbed, a protocol for taking a URL and supplying an embed code that works.
 
