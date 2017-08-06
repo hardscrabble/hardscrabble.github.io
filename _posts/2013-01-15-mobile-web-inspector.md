@@ -61,7 +61,7 @@ Let's look at some numbers:
 | Window height as logged by Mobile Safari (`$(window).height()`)  | 1360            |
 | The difference between those two                                 | 224             |
 
-[5th gen iPod Touch screen height]: http://d.pr/i/VZr6
+[5th gen iPod Touch screen height]: /img/2013-01-15-ipod-touch.png
 
 What's the deal with that? Maybe it's a points-and-pixels thing beyond my comprehension, but this feels kinda wrong to me. Is it possibly a bug in Mobile Safari? Why else would the window height be bigger than the total height of the screen? I expected the opposite; the window height should be less than the screen height, considering that the window doesn't include browser chrome like the navigation bar along the bottom and sometimes (at the top of pages) the title and address bar.
 
