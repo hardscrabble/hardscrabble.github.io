@@ -91,7 +91,7 @@ Sometimes.
 
 If I'm reading a post outside of a browser, it's probably in Reeder or Instapaper (links unnecessary, right?). In Reeder, the rat tactic works and the stars are centered and more or less convey what the authors want them to. In Instapaper, the CSS is totally overridden and [it's just a couple of asterisks][]. Same for Safari Reader, Readability, probably others.
 
-[it's just a couple of asterisks]: http://d.pr/i/yP1Y
+[it's just a couple of asterisks]: /img/2012-12-31-asterisks.png
 
 Had they used an hr, each individual reader would style it as they see fit, but they would understand what it is and work to convey your meaning.
 
@@ -135,7 +135,7 @@ hr {
 
 The image could be anything but [here's one][] I just whipped up in pixelmator with a transparent background to play nice with various sites. Keep in mind: the height property corresponds to the image's height, so if you use a different image, adjust accordingly.
 
-[here's one]: http://d.pr/i/AoSz
+[here's one]: /img/2012-12-31-stars.png
 
 ### Edit: styling the hr with pseudo-elements
 
@@ -238,7 +238,7 @@ Which is what my markdown processor, Kramdown, generates when I write this:
 
     `<hr />`
 
-It wraps it in the code tags *and* replaces the angle brackets with their HTML entities, with the goal to make sure it's not recognized as a horizontal rule, but as anonymous, quoted code. Despite these precautions, Instapaper rendered those as horizontal rules, [awkwardly breaking up paragraphs](http://d.pr/i/4wEm) instead of displaying the code's text inline.
+It wraps it in the code tags *and* replaces the angle brackets with their HTML entities, with the goal to make sure it's not recognized as a horizontal rule, but as anonymous, quoted code. Despite these precautions, Instapaper rendered those as horizontal rules, [awkwardly breaking up paragraphs](/img/2012-12-31-awkward-stars.png) instead of displaying the code's text inline.
 
 That behavior may make sense in some contexts, but not really in this one. So I went through and removed the brackets, despite it looking kind of goofy without them. But this post was ostensibly about writing blog posts with things like Instapaper in mind, and I wanted it to be readable in there.
 
