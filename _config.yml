@@ -54,7 +54,7 @@ kramdown:
 paginate: 5
 paginate_path: "/page/:num/"
 
-gems:
+plugins:
   - jemoji
   - jekyll-gist
   - jekyll-coffeescript
