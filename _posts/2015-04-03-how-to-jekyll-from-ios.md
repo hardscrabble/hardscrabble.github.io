@@ -27,7 +27,7 @@ date: 2015-04-03 18:05
     * You will be asked what the commit message should be.
     * The workflow will then create the file in your repo and, upon success, offer to open that file on GitHub.
 
-If you have any problems or ideas, please open an issue on the project's GitHub repo: <https://github.com/maxjacobson/github-pages-editorial>
+~~If you have any problems or ideas, please open an issue on the project's GitHub repo: <https://github.com/maxjacobson/github-pages-editorial>~~ (I deleted the repo)
 
 [Editorial]: http://omz-software.com/editorial/
 [Publish Jekyll Post]: http://www.editorial-workflows.com/workflow/5838419494174720/XyeFJfsyXwE
