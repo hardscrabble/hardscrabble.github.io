@@ -2,8 +2,5 @@
 
 set -ex
 
-rm -rf _site
-rm -rf .jekyll-metadata
-bundle check || bundle install || bundle update
+exe/setup
 bin/jekyll build
-bin/htmlproofer _site --disable-external true

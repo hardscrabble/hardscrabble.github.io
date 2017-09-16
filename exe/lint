@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -ex
+
+exe/build
+bin/htmlproofer _site --disable-external true
+bin/scss-lint _sass
+standard js/*.js
