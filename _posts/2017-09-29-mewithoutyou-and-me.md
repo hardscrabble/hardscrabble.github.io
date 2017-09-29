@@ -75,6 +75,7 @@ Look, things aren't going well, and there are simple pleasures to be had.
 Consider air-guitarring to the little guitar solo at the end there.
 
 This year, in 2017, they're doing a 15 year anniversary tour where they're playing the album in full.
+I'm obviously going.
 
 ## Brother, Sister (2006)
 
