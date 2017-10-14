@@ -13,8 +13,9 @@ layout: default
     <div class="date">
       {{ page.date | date_to_string }}
     </div>
-  </div>
 
+    {% include metaphorloop_subscribe.html %}
+  </div>
 
   <div class="episode-details">
     <audio src="{{page.audio_url}}" controls>
@@ -22,11 +23,5 @@ layout: default
     </audio>
 
     {{ content }}
-  </div>
-
-  <div class="podcast-meta">
-    <p>
-      <a href="/metaphorloop/feed.xml">Subscribe to the feed</a> or <a href="https://itunes.apple.com/us/podcast/metaphor-loop/id1033043747">via iTunes</a>
-    </p>
   </div>
 </div>

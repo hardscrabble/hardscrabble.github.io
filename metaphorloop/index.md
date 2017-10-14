@@ -4,6 +4,8 @@ title: metaphor loop
 
 ![metaphor loop](/img/metaphorloop.png)
 
+{% include metaphorloop_subscribe.html %}
+
 This is a podcast about how we think about programming. There are a lot of ways!
 
 ## episodes
@@ -11,10 +13,6 @@ This is a podcast about how we think about programming. There are a lot of ways!
 {% for episode in site.metaphorloop_episodes %}
   1. [{{episode.title}}]({{episode.url}}) -- {{episode.date | date_to_string}}
 {% endfor %}
-
-## feed
-
-Subscribe: [feed.xml](/metaphorloop/feed.xml) or [itunes](https://itunes.apple.com/us/podcast/metaphor-loop/id1033043747)
 
 ## license
 
