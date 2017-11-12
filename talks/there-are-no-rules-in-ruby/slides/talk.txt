@@ -222,8 +222,8 @@ puts dog.name + " is a dog"
 - You can't hold your entire codebase in your mind
 - You haven't audited every line of every dependency
 - It's hard to consider all of the possible ways your method will be called
-  - types of inputs
-  - state of world (db / variables in memory)
+- types of inputs
+- state of world (db / variables in memory)
 
 ---
 
@@ -809,7 +809,6 @@ Couldn't read file, because: No such file or directory (os error 2)
 ???
 
 - You know exactly what kinds of errors might happen
-  - Note: `std::io::Error` is a set of related errors
 - You can't access the return value without deciding what to do about the error
 
 ---
@@ -879,9 +878,9 @@ class: middle
 ???
 
 - I started to fear (setting people up for failure?), but is Rust actually better?
-  - freedom: "there are no rules" can be a GOOD thing
-  - learning curve
-  - rust trending in right direction
+- freedom: "there are no rules" can be a GOOD thing
+- learning curve
+- rust trending in right direction
 - Right now I care about rules, but I think I might just be in my awkward
   teenage phase of programming
 
@@ -893,8 +892,8 @@ class: middle
 ???
 
 - Pretty clearly not
-  - plenty of great software is written in ruby
-  - plenty of great programmers use ruby
+- plenty of great software is written in ruby
+- plenty of great programmers use ruby
 
 ---
 class: middle
