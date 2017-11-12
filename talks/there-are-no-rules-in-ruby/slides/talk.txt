@@ -1,0 +1,953 @@
+class: center middle
+
+# There are no rules in Ruby
+
+.twitter-handle[## [@maxjacobson](https://twitter.com/maxjacobson)]
+
+## [hardscrabble.net](http://www.hardscrabble.net) 🍫
+
+???
+
+## Look at SETUP-NOTES
+
+## START TALKING NOW
+
+* Hi, welcome, I'm Max Jacobson, I'm here to talk about how there are no rules
+  in ruby
+* I started wanting to give this talk because I learned something about Ruby
+  that really, genuinely surprised me and maybe almost scared me. I don't want
+  to overstate it. It broke me.
+* I'm OK now
+* It helped me think about Ruby in a different way, and now I better understand
+  what it is, and how it compares to other languages
+
+
+---
+name: thanks-organizers
+
+# Thanks to the organizers
+
+![Ruby Conf 2017 Logo](assets/conf-logo.png)
+
+???
+
+# THANKS CONF
+
+- They did a great job organizing
+- Really honored to be here
+
+---
+class: center middle
+
+![New York outline](assets/ny-outline.gif)
+
+???
+
+Introduce self
+
+---
+class: center middle
+
+.cc-logo[[![Code Climate](assets/cc-logo-with-wordmark.svg)](https://codeclimate.com)]
+
+???
+
+Work at CC...
+
+---
+class: center middle
+
+![Ruby Image](assets/ruby.svg)
+
+???
+
+# TO BE CLEAR
+
+* up front: not about how "ruby is dead" or anything
+* more about my personal relationship with it and how it's changed
+* this is a story about awkward phases
+* for example, how much I was into blink-182 as a teenager
+* it's a phase I think I'm kinda still in but starting to gain some perspective
+  on
+* So maybe this would be a more accurate title?
+
+---
+class: center middle
+
+# Max Jacobson
+
+Or:
+
+How I learned to stop worrying and love that
+
+# There are no rules in Ruby
+
+---
+
+# An introduction to rules
+
+.hands-image[![rules](assets/must-wash-hands.jpg)]
+
+???
+
+* This is a pretty good rule
+
+---
+
+# An introduction to rules
+
+.hands-image[![norms](assets/may-wash-hands.jpg)]
+
+???
+
+* I photoshopped this
+* This is not really a rule.
+* Rules are "must statements"
+* Ruby is convention-driven
+
+---
+name: milo
+
+# An introduction to Milo
+
+![Photo of my old dog Milo](assets/milo.jpeg)
+
+???
+
+* I'm going to have a lot of code samples
+* I'm also aware of the convention that people share photos of their pets. I don't have any, but I used to
+* I've always used Milo as an example... so here's a visual
+
+---
+
+# Consider this code
+
+```
+class Dog
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+dog = Dog.new("Milo")
+
+puts dog.name + " is a dog"
+```
+
+???
+
+* I feel pretty object-oriented now that we've initialized an object
+* As promised, there's a dog
+* All of my examples are going to be using the core Ruby APIs
+* Consider this code
+* What happens when you run it?
+
+<hr />
+
+--
+
+```text
+$ ruby dog.rb
+*Milo is a dog
+```
+
+???
+
+* This code is fine
+* Let's make a small change
+
+---
+
+# Let's make a small change
+
+```
+class Dog
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+*def get_dog(name)
+*  Dog.new(name)
+*end
+*
+*dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+???
+
+* This still works great
+* We could run this a million times and it would always do the same thing
+* We have complete information ... for the last time
+* Let's make one more small change
+
+---
+
+# The lack of complete information
+
+```
+class Dog
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+def get_dog(name)
+* # Implementation hidden
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+???
+
+# INTRODUCE RESILIENCY
+
+- Is this code resilient?
+- Is there any implementation of `get_dog` where this errors?
+- How do you know? How can you be sure?
+
+# WHY YOU MIGHT NOT HAVE COMPLETE INFORMATION
+
+- You can't hold your entire codebase in your mind
+- You haven't audited every line of every dependency
+- It's hard to consider all of the possible ways your method will be called
+  - types of inputs
+  - state of world (db / variables in memory)
+
+---
+
+# A rule?
+
+> The method `get_dog` returns a `Dog`.
+
+???
+
+Who's with me?
+
+---
+class: middle
+
+```
+def get_dog(name)
+* raise "Sorry :p"
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+```text
+$ ruby dog.rb
+*dog.rb:10:in `get_dog': Sorry :p (RuntimeError)
+*        from dog.rb:13:in `<main>'
+```
+
+???
+
+- There's no error guarantees in Ruby
+- We could rescue it, but should we? A rescue probably isn't the right fix. That
+  bug doesn't belong to us, it belongs to `get_dog`.
+
+---
+
+# A rule?
+
+> The method `get_dog` returns a `Dog` or raises an error.
+
+???
+
+Who's with me?
+
+---
+class: middle
+
+```
+def get_dog(name)
+* "sorry"
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+```text
+$ ruby dog.rb
+*dog.rb:15:in \`<main>': undefined method `name' for "sorry":String (NoMethodError)
+```
+
+???
+
+- There's no type guarantees in Ruby
+- We could add a type check, but should we?
+- Similar, let's not treat this as our bug. We require a dog.
+
+Let's reset
+
+---
+
+# Resetting...
+
+```
+class Dog
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+def get_dog(name)
+* # Implementation hidden
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+---
+
+# A rule?
+
+> When I initialize a `Dog` with a value, I can then send it the message `name`
+> to read that value.
+
+???
+
+Who's with me?
+
+---
+class: middle
+
+```
+def get_dog(name)
+  dog = Dog.new(name)
+* dog.define_singleton_method(:name) do
+*   "Sorry"
+* end
+
+  dog
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+```text
+$ ruby dog.rb
+*Sorry is a dog
+```
+
+???
+
+- Ruby has open boundaries
+- Even if you find the definition of a class, you have no way of knowing that
+  you're looking at the only place where behavior is defined
+
+---
+
+# A rule?
+
+> When I have an instance of `Dog`, it will have a method `name`.
+
+???
+
+Who's with me?
+
+---
+class: middle
+
+```
+def get_dog(name)
+  dog = Dog.new(name)
+* dog.instance_eval("undef :name")
+  dog
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+```text
+$ ruby dog.rb
+*dog.rb:17:in \`<main>': undefined method `name' for #<Dog:0x00005622c7b05938 @name="Milo"> (NoMethodError)
+```
+
+???
+
+* The boundaries are _super_ open.
+* Looking at the output of the error message, I can see that the instance
+  variable is set, which gives me another idea...
+
+---
+
+# Resetting...
+
+```
+class Dog
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+def get_dog(name)
+* # Implementation hidden
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+---
+
+# A rule?
+
+> When I have an instance of `Dog`, it will have an instance variable `@name`
+> defined.
+
+???
+
+* This is almost sad right? If this is all we can say?
+* Raise your hand if you think this is true?
+* How do we even check that? By looking at it, or by using some cool Ruby
+  methods...
+
+--
+
+```
+dog.instance_variable_defined?("@name") #=> true
+dog.instance_variable_get("@name") #=> "Milo"
+```
+
+---
+class: middle
+
+```
+def get_dog(name)
+* dog = Dog.new(name)
+* dog.remove_instance_variable("@name")
+* dog
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+```text
+$ ruby dog.rb
+*dog.rb:17:in \`<main>': undefined method `+' for nil:NilClass (NoMethodError)
+```
+
+???
+
+* haha
+
+---
+
+# Resetting...
+
+```
+class Dog
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+def get_dog(name)
+* # Implementation hidden
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+---
+
+# A rule?
+
+> When I have an instance of `Dog`, the code in the `initialize` method must
+> have run.
+
+???
+
+Who's with me?
+
+---
+class: middle
+
+```
+def get_dog(name)
+* Dog.allocate
+end
+
+dog = get_dog("Milo")
+
+puts dog.name + " is a dog"
+```
+
+```text
+$ ruby dog.rb
+*dog.rb:15:in \`<main>': undefined method `+' for nil:NilClass (NoMethodError)
+```
+
+???
+
+* This is the thing that almost broke me
+
+---
+
+# What `Dog.new("Milo")` does
+
+```c
+static VALUE
+rb_class_s_new(int argc, const VALUE *argv, VALUE klass)
+{
+    VALUE obj;
+
+    obj = `rb_class_alloc`(klass);
+    rb_obj_call_init(obj, argc, argv);
+
+    return obj;
+}
+```
+
+???
+
+- That's from a file called `object.c` in ruby
+- But I don't speak c...
+- So let's look at what this might look like if it were written in Ruby
+
+---
+
+# What `Dog.new("Milo")` does
+
+```
+class Object
+  def self.new(*args)
+    obj = self.allocate #=> #<Dog:0x0000561d86b33ba8>
+    obj.initialize(*args) #=> "Milo"
+    obj #=> #<Dog:0x0000561d86b33ba8 @name="Milo">
+  end
+end
+```
+
+???
+
+* This is actually super interesting
+* And there's nothing stopping you from using it whenever you want to bypass an
+  initialize method. That's SUPER COOL.
+
+---
+
+# A rule?
+
+> When I have an instance of `Dog`, it’s a good dog.
+
+---
+
+# The way we get by
+
+--
+
+- Have an error tracker
+
+???
+
+You're going to do your best, and it's not going to be good enough
+
+This is hard.
+
+--
+
+- Write loads of tests
+
+--
+
+- Do code review
+
+--
+
+- Think about types
+
+---
+class: middle
+
+# I wasn't always like this.
+
+---
+
+# My personal programmer timeline
+
+- 2012: Started learning Ruby
+- 2013: learned Ruby on Rails at The Flatiron School, started working
+- 2015: started reading about Rust
+- 2017: started to panic
+
+???
+
+- I want to pause there
+- I wasn't always like this
+- I got this way because I started learning Rust
+
+---
+name: rust-intro
+
+# Rust
+
+>  Rust is a systems programming language that runs blazingly fast, prevents
+segfaults, and guarantees thread safety.
+
+[![Rust mascot Ferris the crab](assets/rust-ferris.png)][rust-lang]
+
+[rust-lang]: https://www.rust-lang.org/en-US/
+
+???
+
+- This is Ferris, the mascot of Rust
+- Rust 1.0 came out in May 2015
+- Rust won the "most loved programming language" in the Stack Overflow Developer
+  Survey in 2016 and 2017.
+
+---
+
+# There **are** rules in Rust
+
+```rust
+struct Dog {
+    name: String,
+}
+
+fn get_dog(name: String) -> Dog {
+    Dog { name }
+}
+
+fn main() {
+    let dog = get_dog(String::from("Milo"));
+    println!("{} is a dog", dog.name);
+}
+```
+
+???
+
+- Don't worry too much about the syntax
+- What happens when you run this?
+- I'm not going to fully teach you Rust
+- Just going to show a few things...
+
+--
+
+```text
+$ rustc dog.rs && ./dog
+*Milo is a dog
+```
+
+---
+
+# A rule?
+
+> The function `get_dog` returns a `Dog`.
+
+???
+
+# Let's try to break that rule.
+
+---
+class: middle
+
+```rust
+struct Dog {
+    name: String,
+}
+
+fn get_dog(name: String) -> Dog {
+*   String::from("Sorry :p")
+}
+
+fn main() {
+    let dog = get_dog(String::from("Milo"));
+    println!("{} is a dog", dog.name);
+}
+```
+
+---
+
+# A rule!
+```text
+$ rustc dog.rs && ./dog
+error[E0308]: mismatched types
+ --> dog.rs:6:5
+  |
+5 | fn get_dog(name: String) -> Dog {
+  |                             --- expected \`Dog` because of return type
+6 |     String::from("Sorry :p")
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^ expected struct \`Dog`, found struct \`std::string::String`
+  |
+* = note: expected type \`Dog`
+*            found type \`std::string::String`
+
+error: aborting due to previous error
+```
+
+???
+
+- That rule actually holds!
+- I mean, it fails, but at compile-time, not run-time
+- Which is way better!
+- And it's a pretty good error
+- This is the type system
+
+---
+
+# A rule?
+
+> When I read the field `name` from a `Dog`, it will be the same `String` that
+> I created it with.
+
+---
+class: middle
+
+```rust
+struct Dog {
+    name: String,
+}
+
+fn main() {
+    let dog = Dog { name: String::from("Milo") };
+*   dog.name = String::from("Lola");
+    println!("{} is a dog", dog.name);
+}
+```
+
+---
+
+
+# Another rule!
+
+```text
+$ rustc dog.rs && ./dog
+*error[E0594]: cannot assign to immutable field \`dog.name`
+ --> dog.rs:7:5
+  |
+6 |     let dog = Dog { name: String::from("Milo") };
+  |         --- consider changing this to \`mut dog`
+7 |     dog.name = String::from("Lola");
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot mutably borrow immutable field
+
+error: aborting due to previous error
+```
+
+???
+
+- Immutable by default
+
+---
+
+# A rule?
+
+> The function `get_dog` does not raise an exception.
+
+???
+
+- This is true on a technicality: Rust doesn't have exceptions
+
+---
+
+# Errors in Rust
+
+```rust
+fn read_file(filename: &str) -> Result<String, std::io::Error> {
+    let mut file = File::open(filename)`?`;
+    let mut contents = String::new();
+    file.read_to_string(&mut contents)`?`;
+
+    `Ok`(contents)
+}
+```
+
+---
+
+# Errors in Rust
+
+```
+fn main() {
+    match read_file("where_the_red_fern_grows.txt") {
+        Ok(contents) => println!("{}", contents),
+        Err(err) => println!("Couldn't read file, because: {}", err),
+    }
+}
+```
+
+---
+
+# Errors in Rust
+
+```text
+$ rustc dog.rs && ./dog
+Couldn't read file, because: No such file or directory (os error 2)
+```
+
+???
+
+- You know exactly what kinds of errors might happen
+  - Note: `std::io::Error` is a set of related errors
+- You can't access the return value without deciding what to do about the error
+
+---
+
+# But, tbh, Rust totally can crash
+
+```rust
+fn read_file(filename: &str) -> String {
+    let mut file = File::open(filename).`expect("Couldn't open file")`;
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).`expect("Couldn't read file")`;
+
+    contents
+}
+```
+
+---
+
+# But, tbh, Rust totally can crash
+
+```text
+$ rustc dog.rs && ./dog
+thread 'main' `panicked` at 'Couldn't open file: Error { repr: Os { code: 2, message: "No such file or directory" } }', src/libcore/result.rs:906:4
+note: Run with \`RUST_BACKTRACE=1` for a backtrace.
+```
+
+???
+
+- Looking at the function, I want to feel safe expecting a String
+- But instead, it sometimes panics
+- And so could any rust function I call!?!?
+- I thought rust was supposed to be perfect and not crashable???
+- This was kind of frustrating for me to learn
+- The convention is that you be very very careful about where you choose to
+  panic, but now we're back in "may wash hands" territory
+
+---
+name: panic
+
+# `panic!`
+
+The docs for the `panic!` macro:
+
+> The entry point for panic of Rust threads.
+>
+> This macro is used to inject panic into a Rust thread, causing the thread to
+> panic entirely. Each thread's panic can be reaped as the `Box<Any>` type, and
+> the single-argument form of the `panic!` macro will be the value which is
+> transmitted.
+
+???
+
+- I just like this language
+- Perhaps it was _I_ who had panicked entirely.
+- As I worked in Ruby, I kept thinking "there are no rules!"
+
+---
+class: middle
+
+# Do rules matter?
+
+---
+class: middle
+
+# Do rules matter for new programmers learning?
+
+???
+
+- I started to fear (setting people up for failure?), but is Rust actually better?
+  - freedom: "there are no rules" can be a GOOD thing
+  - learning curve
+  - rust trending in right direction
+- Right now I care about rules, but I think I might just be in my awkward
+  teenage phase of programming
+
+---
+class: middle
+
+# Do rules matter for making good software?
+
+???
+
+- Pretty clearly not
+  - plenty of great software is written in ruby
+  - plenty of great programmers use ruby
+
+---
+class: middle
+
+# Do rules matter for programmer happiness?
+
+???
+
+- This is one of Ruby's design goals, and it's a good one. My experience with
+  Rust has shown me that maybe Ruby could be doing more
+
+---
+
+# The actual rules in Ruby
+
+???
+
+- Of course there actually are some
+- This is going to be non-exhaustive
+
+--
+
+- Syntax errors means your program won't run
+
+--
+
+- You can send messages to objects, and they'll respond in a predictable way
+
+--
+
+- Keywords are special
+
+--
+
+- Whatever you make them.
+
+???
+
+- You can strive for complete information
+
+---
+
+class: center middle
+
+# Thanks!
+
+[@maxjacobson](https://twitter.com/maxjacobson)
+
+[hardscrabble.net/talks/there-are-no-rules-in-ruby](http://www.hardscrabble.net/talks/there-are-no-rules-in-ruby)
+
+???
+
+Final thoughts:
+
+- be careful what you learn, it will mess with your head
+- This was super fun. Thanks to the organizers.

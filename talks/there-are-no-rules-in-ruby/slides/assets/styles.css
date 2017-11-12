@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css?family=Kite+One');
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body {
+  font-family: 'Kite One', sans-serif;
+}
+
+.remark-code {
+  font-size: 1.7em;
+}
+
+p, ul {
+  font-size: 2.0em;
+  margin: 5px auto;
+}
+
+li p {
+  font-size: inherit;
+}
+
+blockquote p {
+  font-size: 1em;
+}
+
+/* Headers */
+h1, h2, h3 {
+  font-weight: normal;
+  margin: 0 auto;
+}
+
+pre {
+  margin: 0 auto 10px auto;
+}
+
+a {
+  color: green;
+  text-decoration: none;
+  /* color: var(--inky); */
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: orange;
+}
+
+img {
+  width: 60%;
+}
+
+/* Style of code samples */
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+/* Style the background behind the slides */
+.remark-container {
+  /* background-color: #ffe6bf; */
+}
+
+/* Style the slide itself */
+/* .remark-slide-content { */
+/*   background-color: var(--toad); */
+/*   color: var(--inky); */
+/* } */
+
+.cc-logo img {
+  width: 40%;
+}
+
+/* :root { */
+/*   --toad: #A6CCAB; */
+/*   --inky: #260C5E; */
+
+
+/*   --col-1: #4717B2; */
+/*   --col-2: #FF982F; */
+/*   --col-3: #5E16FF; */
+/*   --col-5: #06B21D; */
+/* } */
+
+#slide-mouth {
+  background-size: 100%;
+}
+
+#slide-mouth h1 {
+  color: white;
+  background: black;
+  display: inline;
+}
+
+#slide-thanks-organizers img {
+  width: 80%;
+}
+
+.hands-image img {
+  width: 100%;
+}
+
+blockquote {
+  border-left: grey dashed 8px;
+  margin-left: 1em;
+  padding-left: 0.5em;
+  font-size: 3em;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+blockquote code {
+  background: orange;
+}
+
+.remark-notes-area {
+  font-family: sans-serif;
+  font-size: 1.3em;
+}
+
+#slide-rust-intro {
+   /* background-color: #42f4e2; */
+}
+
+#slide-panic blockquote {
+  font-size: 1.5em;
+}
+
+#slide-rust-intro img {
+  width: 200px;
+}
+
+#slide-rust-intro blockquote {
+}
