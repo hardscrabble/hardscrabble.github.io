@@ -117,6 +117,10 @@ blockquote code {
   font-size: 1.3em;
 }
 
+.remark-notes-area p, .remark-notes-area ul {
+  font-size: 1.3em;
+}
+
 #slide-rust-intro {
    /* background-color: #42f4e2; */
 }

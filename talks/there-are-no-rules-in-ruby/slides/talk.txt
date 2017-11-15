@@ -8,7 +8,23 @@ class: center middle
 
 ???
 
-## Look at SETUP-NOTES
+# Set up
+
+- load up the presenter notes (press ? if you forget how)
+- go to next slide to start timer...
+- use `arandr` to set up the second screen
+
+---
+
+class: center middle
+
+# There are no rules in Ruby
+
+.twitter-handle[## [@maxjacobson](https://twitter.com/maxjacobson)]
+
+## [hardscrabble.net](http://www.hardscrabble.net) 🍫
+
+???
 
 ## START TALKING NOW
 
@@ -103,7 +119,8 @@ How I learned to stop worrying and love that
 * I photoshopped this
 * This is not really a rule.
 * Rules are "must statements"
-* Ruby is convention-driven
+* I recently started feeling like Ruby is a restaurant with this sign up. I'm
+  going to try and show you what I mean, and then talk about it.
 
 ---
 name: milo
@@ -138,9 +155,10 @@ puts dog.name + " is a dog"
 
 ???
 
-* I feel pretty object-oriented now that we've initialized an object
+* This is a small example -- probably smaller than your projects at work
+* What I like about this is that we're already doing Object-Oriented Programming
+  and we've just gotten started. We have one object.
 * As promised, there's a dog
-* All of my examples are going to be using the core Ruby APIs
 * Consider this code
 * What happens when you run it?
 
@@ -211,8 +229,7 @@ puts dog.name + " is a dog"
 
 ???
 
-# INTRODUCE RESILIENCY
-
+- Treat this method like it's from some library, whose docs say it returns a Dog
 - Is this code resilient?
 - Is there any implementation of `get_dog` where this errors?
 - How do you know? How can you be sure?
@@ -222,8 +239,6 @@ puts dog.name + " is a dog"
 - You can't hold your entire codebase in your mind
 - You haven't audited every line of every dependency
 - It's hard to consider all of the possible ways your method will be called
-- types of inputs
-- state of world (db / variables in memory)
 
 ---
 
@@ -268,7 +283,7 @@ $ ruby dog.rb
 
 ???
 
-Who's with me?
+- Not going to ask you to raise hands, but please think about it
 
 ---
 class: middle
@@ -326,7 +341,7 @@ puts dog.name + " is a dog"
 
 ???
 
-Who's with me?
+- Does this sound right?
 
 ---
 class: middle
@@ -365,7 +380,7 @@ $ ruby dog.rb
 
 ???
 
-Who's with me?
+- Does this sound right?
 
 ---
 class: middle
@@ -490,7 +505,7 @@ puts dog.name + " is a dog"
 
 ???
 
-Who's with me?
+- Does this sound right?
 
 ---
 class: middle
@@ -715,6 +730,7 @@ error: aborting due to previous error
 - Which is way better!
 - And it's a pretty good error
 - This is the type system
+- This is Rust saying "_but you promised_ you'd return a dog"
 
 ---
 
@@ -731,8 +747,12 @@ struct Dog {
     name: String,
 }
 
+fn get_dog(name: String) -> Dog {
+    Dog { name }
+}
+
 fn main() {
-    let dog = Dog { name: String::from("Milo") };
+    let dog = get_dog(String::from("Milo"));
 *   dog.name = String::from("Lola");
     println!("{} is a dog", dog.name);
 }
@@ -746,12 +766,12 @@ fn main() {
 ```text
 $ rustc dog.rs && ./dog
 *error[E0594]: cannot assign to immutable field \`dog.name`
- --> dog.rs:7:5
-  |
-6 |     let dog = Dog { name: String::from("Milo") };
-  |         --- consider changing this to \`mut dog`
-7 |     dog.name = String::from("Lola");
-  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot mutably borrow immutable field
+  --> dog.rs:11:5
+   |
+10 |     let dog = get_dog(String::from("Milo"));
+   |         --- consider changing this to \`mut dog`
+11 |     dog.name = String::from("Lola");
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot mutably borrow immutable field
 
 error: aborting due to previous error
 ```
@@ -769,13 +789,68 @@ error: aborting due to previous error
 ???
 
 - This is true on a technicality: Rust doesn't have exceptions
+- Let's look a little at Ruby again briefly
+
+---
+
+# Errors in Ruby
+
+```
+def read_file(filename)
+  File.read(filename)
+end
+```
+
+???
+
+- How do I know what errors this might raise?
+- Via some experimentation in irb, I determined that I think this is true:
+
+---
+
+# Errors in Ruby
+
+```
+# Returns a String or raises a SystemCallError
+def read_file(filename)
+  File.read(filename)
+end
+```
+
+???
+
+Well, what if I change that?
+
+---
+
+# Errors in Ruby
+
+```
+# Returns a String or raises a SystemCallError
+def read_file(filename)
+  contents = File.read(filename)
+
+* if contents.length.zero?
+*   raise ArgumentError, "No good empty file"
+* end
+
+  contents
+end
+```
+
+???
+
+- Well, now our comment is incorrect
+- Let's see how Rust helps with this by adding rules
 
 ---
 
 # Errors in Rust
 
 ```rust
-fn read_file(filename: &str) -> Result<String, std::io::Error> {
+fn read_file(filename: &str)
+  -> Result<String, std::io::Error> {
+
     let mut file = File::open(filename)`?`;
     let mut contents = String::new();
     file.read_to_string(&mut contents)`?`;
@@ -783,6 +858,13 @@ fn read_file(filename: &str) -> Result<String, std::io::Error> {
     `Ok`(contents)
 }
 ```
+
+???
+
+- There's a lot going on here
+- The type signature explains that we return a Result
+- The question mark is where thing could go wrong, and we return early
+- The compiler makes sure that any error we return is a std::io::Error
 
 ---
 
@@ -797,6 +879,15 @@ fn main() {
 }
 ```
 
+???
+
+- If we wanted to, we could have different behavior for different kinds of
+  errors
+- If you're curious to dig into specific errors, you can look at the definition
+  of `std::io::Error` and match on the kind of the error
+- You know exactly what kinds of errors might happen
+- You can't access the return value without deciding what to do about the error
+
 ---
 
 # Errors in Rust
@@ -808,8 +899,9 @@ Couldn't read file, because: No such file or directory (os error 2)
 
 ???
 
-- You know exactly what kinds of errors might happen
-- You can't access the return value without deciding what to do about the error
+- This isn't exactly a crash
+- I started to think that maybe Rust is perfect and makes sure your programs
+  can never crash. But...
 
 ---
 
@@ -870,17 +962,26 @@ class: middle
 
 # Do rules matter?
 
+???
+
+- I want to ask a few questions and offer some thoughts, but I don't think I
+  have all the answers
+
 ---
 class: middle
 
-# Do rules matter for new programmers learning?
+# Do rules matter for new programmers's learning?
 
 ???
 
-- I started to fear (setting people up for failure?), but is Rust actually better?
-- freedom: "there are no rules" can be a GOOD thing
-- learning curve
-- rust trending in right direction
+- I started to fear that it did, and that maybe Ruby isn't as beginner friendly
+  as I always thought, and maybe we're setting people up for failure
+- But idk
+- Maybe I should defer to educational psychologists
+- Part of me wants to say that beginners should learn Rust, but that's hard too
+- The freedom of Ruby is an asset: "there are no rules" can be a GOOD thing
+- Rust has a steep learning curve
+- Rust trending in right direction
 - Right now I care about rules, but I think I might just be in my awkward
   teenage phase of programming
 
@@ -894,6 +995,8 @@ class: middle
 - Pretty clearly not
 - plenty of great software is written in ruby
 - plenty of great programmers use ruby
+- Also, what even is "good software"? I think Rust can help you write programs
+  that crash less, but it doesn't really help make sure your logic is correct.
 
 ---
 class: middle
@@ -904,6 +1007,7 @@ class: middle
 
 - This is one of Ruby's design goals, and it's a good one. My experience with
   Rust has shown me that maybe Ruby could be doing more
+- Especially when it comes to maintaining your projects over time
 
 ---
 
@@ -926,13 +1030,19 @@ class: middle
 
 - Keywords are special
 
---
+???
 
-- Whatever you make them.
+- OK and the big one...
+
+---
+class: middle
+
+## ✨ The actual rules are whatever you make them ✨
 
 ???
 
-- You can strive for complete information
+- In reality, there's nothing stopping you from gaining complete information
+- You can decide to have team conventions about how you're going to write Ruby
 
 ---
 
