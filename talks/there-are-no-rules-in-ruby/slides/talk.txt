@@ -68,7 +68,7 @@ class: center middle
 
 ???
 
-Work at CC...
+I'm a Software Engineer at Code Climate
 
 ---
 class: center middle
