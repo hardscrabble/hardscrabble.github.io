@@ -986,6 +986,7 @@ class: middle
 ???
 
 - Pretty clearly not
+- Most people will remember to wash their hands
 - plenty of great software is written in ruby
 - plenty of great programmers use ruby
 - Also, what even is "good software"? I think Rust can help you write programs
