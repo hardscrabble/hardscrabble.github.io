@@ -160,7 +160,7 @@ puts dog.name + " is a dog"
   and we've just gotten started. We have one object.
 * As promised, there's a dog
 * Consider this code
-* What happens when you run it?
+* What happens when you run it? (-> to see)
 
 <hr />
 
@@ -588,9 +588,8 @@ end
 
 ???
 
-You're going to do your best, and it's not going to be good enough
-
-This is hard.
+- You're going to do your best, and it's not going to be good enough
+- This is hard.
 
 --
 
@@ -600,14 +599,28 @@ This is hard.
 
 - Do code review
 
+???
+
+Often in code review, my teammates catch mistakes that slipped through
+
 --
 
 - Think about types
+
+???
+
+- Other languages have "a type system". Ruby does too. It's you.
+- These are a good idea in any language, but they feel pretty necessary in Ruby
 
 ---
 class: middle
 
 # I wasn't always like this.
+
+???
+
+- I want to pause there
+- I wasn't always like this
 
 ---
 
@@ -620,8 +633,6 @@ class: middle
 
 ???
 
-- I want to pause there
-- I wasn't always like this
 - I got this way because I started learning Rust
 
 ---
@@ -819,27 +830,7 @@ end
 
 ???
 
-Well, what if I change that?
-
----
-
-# Errors in Ruby
-
-```
-# Returns a String or raises a SystemCallError
-def read_file(filename)
-  contents = File.read(filename)
-
-* if contents.length.zero?
-*   raise ArgumentError, "No good empty file"
-* end
-
-  contents
-end
-```
-
-???
-
+- Well, what if I change that so it might raise something else, too?
 - Well, now our comment is incorrect
 - Let's see how Rust helps with this by adding rules
 
@@ -917,6 +908,11 @@ fn read_file(filename: &str) -> String {
 }
 ```
 
+???
+
+In this version, according to the function signature, it _always_ returns a
+String.
+
 ---
 
 # But, tbh, Rust totally can crash
@@ -944,18 +940,15 @@ name: panic
 
 The docs for the `panic!` macro:
 
-> The entry point for panic of Rust threads.
->
-> This macro is used to inject panic into a Rust thread, causing the thread to
-> panic entirely. Each thread's panic can be reaped as the `Box<Any>` type, and
-> the single-argument form of the `panic!` macro will be the value which is
-> transmitted.
+> The entry point for panic of Rust threads. This macro is used to inject panic
+> into a Rust thread, causing the thread to panic entirely.
 
 ???
 
 - I just like this language
 - Perhaps it was _I_ who had panicked entirely.
-- As I worked in Ruby, I kept thinking "there are no rules!"
+- As I worked in Ruby, I kept thinking "there are no rules!" It just kept
+  popping into my head
 
 ---
 class: middle
@@ -997,6 +990,11 @@ class: middle
 - plenty of great programmers use ruby
 - Also, what even is "good software"? I think Rust can help you write programs
   that crash less, but it doesn't really help make sure your logic is correct.
+- With Rust, you should still
+  - write tests
+  - do code review
+  - have an error tracker
+  - think about types
 
 ---
 class: middle
@@ -1008,6 +1006,7 @@ class: middle
 - This is one of Ruby's design goals, and it's a good one. My experience with
   Rust has shown me that maybe Ruby could be doing more
 - Especially when it comes to maintaining your projects over time
+- Maybe Ruby itself is in an awkward phase on the cusp of Ruby 3
 
 ---
 
