@@ -33,10 +33,6 @@ class: center middle
 * I started wanting to give this talk because I learned something about Ruby
   that really, genuinely surprised me and maybe almost scared me. I don't want
   to overstate it. It broke me.
-* I'm OK now
-* It helped me think about Ruby in a different way, and now I better understand
-  what it is, and how it compares to other languages
-
 
 ---
 name: thanks-organizers
@@ -59,7 +55,9 @@ class: center middle
 
 ???
 
-Introduce self
+- Just a little bit about myself
+- in from NY
+- I'm starting to fear that I should've gotten a haircut
 
 ---
 class: center middle
@@ -68,7 +66,8 @@ class: center middle
 
 ???
 
-I'm a Software Engineer at Code Climate
+- I'm a Software Engineer at Code Climate
+- I have some stickers with me if you want one
 
 ---
 class: center middle
@@ -97,6 +96,10 @@ Or:
 How I learned to stop worrying and love that
 
 # There are no rules in Ruby
+
+???
+
+This is a movie reference
 
 ---
 
@@ -559,12 +562,42 @@ rb_class_s_new(int argc, const VALUE *argv, VALUE klass)
 ```
 class Object
   def self.new(*args)
-    obj = self.allocate #=> #<Dog:0x0000561d86b33ba8>
-    obj.initialize(*args) #=> "Milo"
-    obj #=> #<Dog:0x0000561d86b33ba8 @name="Milo">
+*   obj = self.allocate #=> #<Dog:0x0000561d86b33ba8>
+    obj.initialize(*args)
+    obj
   end
 end
 ```
+
+---
+
+# What `Dog.new("Milo")` does
+
+```
+class Object
+  def self.new(*args)
+    obj = self.allocate #=> #<Dog:0x0000561d86b33ba8>
+*   obj.initialize(*args) #=> "Milo"
+    obj
+  end
+end
+```
+
+---
+
+# What `Dog.new("Milo")` does
+
+```
+class Object
+  def self.new(*args)
+    obj = self.allocate #=> #<Dog:0x0000561d86b33ba8>
+    obj.initialize(*args) #=> "Milo"
+*   obj #=> #<Dog:0x0000561d86b33ba8 @name="Milo">
+  end
+end
+```
+
+
 
 ???
 
@@ -579,33 +612,55 @@ end
 > When I have an instance of `Dog`, it’s a good dog.
 
 ---
+class: middle
 
 # The way we get by
 
---
+???
 
-- Have an error tracker
+- These examples were pretty hypothetical
+- But think about what are the things we do to feel more confident about our
+  code
+
+---
+class: middle
+
+# Have an error tracker
 
 ???
 
 - You're going to do your best, and it's not going to be good enough
 - This is hard.
 
---
+---
+class: middle
 
-- Write loads of tests
+# Write loads of tests
 
---
+---
+class: middle
 
-- Do code review
+# Do code review
 
 ???
 
 Often in code review, my teammates catch mistakes that slipped through
 
---
+---
+class: middle
 
-- Think about types
+# Get comfortable reading source code
+
+???
+
+- Read source code
+  - Of libraries
+  - Of Ruby itself
+
+---
+class: middle
+
+# Think about types
 
 ???
 
@@ -996,6 +1051,7 @@ class: middle
   - do code review
   - have an error tracker
   - think about types
+  - read source code
 
 ---
 class: middle
@@ -1059,4 +1115,4 @@ class: center middle
 Final thoughts:
 
 - be careful what you learn, it will mess with your head
-- This was super fun. Thanks to the organizers.
+- This was super fun. Thanks.
