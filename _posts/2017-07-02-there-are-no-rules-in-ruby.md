@@ -3,6 +3,12 @@ title: there are no rules in ruby
 date: 2017-07-02 22:28 EDT
 ---
 
+**Note**: I've expanded on these ideas in a conference talk, which you can see [here][talk].
+
+[talk]: /talks/there-are-no-rules-in-ruby
+
+<hr class='fancy' />
+
 I recently learned about a feature of the Ruby programming language that has shaken me to my very core.
 
 Consider this code:
