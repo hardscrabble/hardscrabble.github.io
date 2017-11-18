@@ -11,6 +11,4 @@ I'll add the video once it's available.
 
 For now, you can check out [the slides][slides].
 
-:heart:
-
 [slides]: /talks/there-are-no-rules-in-ruby/slides
