@@ -8,6 +8,11 @@ tags:
 - emoji
 ---
 
+**Edit:** This post is kind of sloppy.
+Please consider reading [this later, similar post](/2016/the-first-useful-thing-i-wrote-in-rust/) instead.
+
+---
+
 So this is fun. Most of us at school have some symbol or emoji in our bash prompts. I've had a little piggie emoji for a few weeks which has served me fine but I'd like to introduce some... *chance* into my life. I want to have a random emoji in my prompt. Originally I wanted a new icon on a per-terminal-session basis but then I decided I wanted a new one *after every command*.
 
 Here's a simple Ruby script to print a random emoji from a nice subset of positive ones (no murder weapons or pills or bills)[^encodingmakesmesad]:
