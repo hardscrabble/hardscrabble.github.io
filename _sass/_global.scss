@@ -1,6 +1,12 @@
 footer {
   @extend %section;
   @extend %dashed-top;
+
+  text-align: left;
+
+  div {
+    margin-top: 10px;
+  }
 }
 
 header {
