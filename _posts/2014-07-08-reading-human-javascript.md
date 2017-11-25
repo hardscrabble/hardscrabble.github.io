@@ -296,6 +296,35 @@ I like that he asked for feedback, because [I already gave some](https://twitter
 
 I don't feel totally prepared to build a front end app but I have a TON more context now. I think I know the next steps for me, which is to read the backbone docs and make something, coming back to reference this when I feel lost.
 
-Maybe I'll make a website for my rubygem [film snob](https://github.com/maxjacobson/film_snob/)[^snob]. I think I'll stick with Ruby for the server, for now, but I'll try to keep it REALLY minimal. I made [this](https://gist.github.com/maxjacobson/9244b99019d4fad3832f) single file sinatra application to demo film snob to my sister, but maybe I'll redo it as a backbone app and put it on Heroku and link it from the README? Sounds like a plan :+1:.
+Maybe I'll make a website for my rubygem [film snob](https://github.com/maxjacobson/film_snob/)[^snob]. I think I'll stick with Ruby for the server, for now, but I'll try to keep it REALLY minimal. I made this single file sinatra application to demo film snob to my sister, but maybe I'll redo it as a backbone app and put it on Heroku and link it from the README? Sounds like a plan :+1:.
+
+```ruby
+# film_snob_sinatra.rb
+#
+# first run: gem install sinatra film_snob
+# then run ruby film_snob_sinatra.rb
+# then visit http://localhost:4567
+
+require 'sinatra'
+require 'film_snob'
+
+get '/' do
+  @url = params[:url]
+  @film = FilmSnob.new(@url)
+  erb :home
+end
+
+__END__
+
+@@home
+
+<% if @film.watchable? %>
+  <%= @film.html %>
+<% end %>
+<form action='/'>
+  <input type='text' name='url' value='<%= @url %>' />
+  <input type='submit' />
+</form>
+```
 
 [^snob]: Which I really need to write about because it's been a thrill and a hoot to make, largely because some randos helped contribute to it.

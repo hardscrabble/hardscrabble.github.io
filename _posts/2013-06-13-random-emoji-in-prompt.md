@@ -19,13 +19,23 @@ Here's a simple Ruby script to print a random emoji from a nice subset of positi
 
 [^encodingmakesmesad]: Note: I'm painfully aware that most of those emoji are probably not showing up for you in your browser right now. I don't understand what exactly emoji are or how they work enough to try to fix that. If you want to do this you will probably need to re-populate that line with your favorite picks.
 
-{% gist 5779455 %}
+```ruby
+#!/usr/bin/ruby
+# encoding: UTF-8
+emoji = %w{🐖 🐊 🐗 💾 💡 ☕ 🍆 🍆 🍆 🍆 🎈 👾}
+print emoji[rand(emoji.length)]
+```
 
 I have this exact file saved in my home directory. It's a dotfile (hidden file) because for the most part I don't want to see it. Maybe there's a better place to put it.
 
 In order to get the output of that script into my prompt, I need to udpate my `PS1` bash variable. In order to refresh it after every command I need to do this weird thing I've never done before (this goes in my bash profile):
 
-{% gist 5779447 %}
+```bash
+function set_prompt {
+  export PS1="[\@] [\W]\n$(~/.emoji.rb)  "
+}
+export PROMPT_COMMAND=set_prompt
+```
 
 The `PROMPT_COMMAND` variable can be assigned some shell script code to run before every drawing of the prompt. In this case, it's calling a function called `set_prompt`, which runs the Ruby program and interpolates its response into the `PS1` variable, so it's different each time.
 
