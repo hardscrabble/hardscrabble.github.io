@@ -1,6 +1,7 @@
 ---
 title: There are no rules in Ruby
 layout: page
+exclude_cta: true
 ---
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/hwFaScbQdIs?rel=0" frameborder="0" allowfullscreen></iframe>
