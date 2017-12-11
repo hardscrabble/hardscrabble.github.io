@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -euo pipefail
 
 exe/setup
 bin/jekyll serve --watch --drafts --incremental

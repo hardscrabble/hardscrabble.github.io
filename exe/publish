@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 function updateDate() {
   sed "s/date: [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/date: $(date '+%Y-%m-%d %H:%M %Z')/"
@@ -9,6 +9,13 @@ function updateDate() {
 function draftToPost() {
   sed "s/_drafts\//_posts\/$(date '+%Y-%m-%d')-/"
 }
+
+set +u
+if [ -z "$1" ]; then
+  echo "usage: exe/publish _drafts/great-post.md"
+  exit 1
+fi
+set -u
 
 filename="$1"
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 function dashify() {
   sed "s/ /-/g"
@@ -13,6 +13,13 @@ function removeSpecialChars() {
 function downcase() {
   tr '[:upper:]' '[:lower:]'
 }
+
+set +u
+if [ -z "$1" ]; then
+  echo "Usage: exe/new Title Of Post"
+  exit 1
+fi
+set -u
 
 title="$*"
 slug=$(

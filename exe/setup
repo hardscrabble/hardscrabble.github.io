@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -euo pipefail
 
 rm -rf _site
 rm -rf .jekyll-metadata
