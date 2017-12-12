@@ -147,3 +147,8 @@ After smearing the data (assuming an even trickle between measurements), the tre
 ```
 
 In this case, it's so close to the eyeball math that it may not have been worth doing, but I will rest easier nevertheless.
+
+I just have one urgent question for you my dear reader: is there a name for what I did here?
+I want to learn more about data.
+As I learn things, I am often pleased to find out that all of the ideas already exist and have good names.
+What's this one's?
