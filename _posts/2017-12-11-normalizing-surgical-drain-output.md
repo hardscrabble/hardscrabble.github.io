@@ -136,6 +136,14 @@ end
 ```
 
 I hacked this together pretty quickly and I'm a little pleased with it.
+Here's the idea:
+
+Instead of having just a few measurements taken at odd intervals, let's pretend we have many thousands of measurements taken at regular intervals.
+One per second, in this implementation.
+And then use code instead of dumb eyeballs to add up all the measurements in each day.
+I'm calling this **smearing the data** for want of a proper term.
+
+
 After smearing the data (assuming an even trickle between measurements), the trend looks like this:
 
 ```
