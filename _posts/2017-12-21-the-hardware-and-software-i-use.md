@@ -264,7 +264,7 @@ For subscribing to websites and newsletters, I use **[Feedbin]**.
 I still love RSS in 2017.
 It's a big part of my day.
 Whenever I read anything I like on the web, I look for a feed so I can subscribe and get more.
-Also, whenver a newsletter seems interesting, I [subscribe via feedbin][newsletter] rather than via my email, which helps me prevent my email inbox from getting cluttered.
+Also, whenever a newsletter seems interesting, I [subscribe via feedbin][newsletter] rather than via my email, which helps me prevent my email inbox from getting cluttered.
 On iOS and macOS, I read via **[Reeder]**, which probably comes second only to Firefox as my favorite and most-used app of all time; I was browsing Google Reader via Reeder on an iPod Touch between classes in college.
 On Linux, I use the Feedbin web UI, which is actually really nice.
 On iOS, to detect RSS feeds on web pages and subscribe to them in Feedbin, I use **[Feed Hawk]**.
