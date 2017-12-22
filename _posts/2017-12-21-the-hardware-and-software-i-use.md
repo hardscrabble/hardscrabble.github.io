@@ -3,13 +3,13 @@ title: the hardware and software I use (2017)
 date: 2017-12-21 01:57 EST
 ---
 
-I'm an inveterate reader of [Uses This] style articles and I've always wanted someone to ask me to participate in one and no one has, and I have a perfectly fine blog, so here this goes nothing (actually something quite self-indulgent and in need of editing and unlikely to be an annual tradition now that I know how weird it feels to write this all out).
+I'm an inveterate reader of [Uses This] style articles and I've always wanted someone to ask me to participate in one and no one has, and I have a perfectly fine blog, so here goes nothing (actually something quite self-indulgent and in need of editing and unlikely to be an annual tradition now that I know how weird it feels to write this all out).
 
 [Uses This]: https://usesthis.com/
 
 I'm borrowing the questions from that website (thanks).
 
-## Table of contents, because this got long, but I guess that's because I really like using hardware and software, which is true
+## Table of contents, because this got long, but I guess that's because I really like using hardware and software, which is true, and that's a good point when you think about it
 
 * [Who are you, and what do you do?](#who-am-i)
 * [What hardware do you use?](#hardware)
@@ -36,7 +36,7 @@ By frequency of use:
 
 I use my **[iPhone 7]** constantly.
 It's great.
-I like the funny home button and don't really miss the headphone jack.
+I like the funny vibrating home button and don't really miss the headphone jack.
 I got the **[AirPods]** for my birthday and they're great, although they've turned me into someone who gets nervous stepping over grates in the sidewalk.
 I use it in a **[Smart Battery Case]** which is fine, although I feel very warped by it because I start feeling a little stressed out as soon as my phone's battery dips below 100%.
 
@@ -46,7 +46,7 @@ I use it in a **[Smart Battery Case]** which is fine, although I feel very warpe
 
 At work, since March 2017, I use a **[Lenovo ThinkPad P50]** which is enormous and heavy and has a numpad built in that I never use and that little red nub for mousing that I never use and a hinge that curiously opens to a full 180 degrees which I never do and a second set of mouse buttons above the track pad which I never use and a fingerprint scanner that I never use.
 I didn't exactly pick it out: when someone left the company I took it over and turned in a MacBook Pro so I could try out switching to Linux (more on that later).
-I do like it: it's super fast; the keyboard is good; the screen is sharp; it has all the ports you could want; the actual thing feels pretty good; once your eyes adjust, its stark black and red aesthetic starts to look kind of slick.
+I do like it: it's super fast; the keyboard is good; the screen is sharp; it has all the ports you could want; the actual thing feels pretty good; and once your eyes adjust, its stark black and red aesthetic starts to look kind of slick.
 I'll probably pick a smaller ThinkPad for my next laptop.
 
 I use it with a **[WASD V2 87-Key Custom Mechanical Keyboard][kb]**, which is _awesome_ and a $5 **[AmazonBasics USB Mouse][mouse]** which is perfectly fine.
@@ -60,7 +60,7 @@ If anything, I'm in the camp of people who detest having to charge things.
 Next up is the **[2016 9.7" iPad Pro][ipad]**.
 I mainly use it to do things like watch videos in bed or read Twitter on the couch.
 Occasionally I'll take it out to a cafe with the **[Apple Magic Keyboard]** so I can do more productive stuff like write emails or research some project, where I appreciate being able to command+tab to switch between apps or command+space to quick-launch apps.
-I recently bought a **[Canopy]** keyboard case and iPad stand to kinda encourage me to do that more, and hopefully I'll like that.
+I recently bought a **[Canopy]** keyboard case to kinda encourage me to do that more, and hopefully I'll like that.
 
 I like having it.
 It lets me give my phone a break.
@@ -74,7 +74,7 @@ It's fun to use and to look at (I have the pink one with the mint green [smart c
 [Canopy]: https://www.studioneat.com/products/canopy
 [smart cover]: https://www.apple.com/th-en/shop/product/MM292ZA/A/smart-cover-for-9-7-inch-ipad-pro-charcoal-grey
 
-For a personal, non-iPad computer, I _used_ to have a **[15-inch, Early 2011 MacBook Pro][mbp]**, but it died in early 2016.
+For a personal, non-iPad computer, I _used_ to have a **[15-inch, Early 2011 MacBook Pro][mbp]**, but it died in early 2017.
 My grandma bought it for me after college when I was trying to become a filmmaker.
 It ended up being the computer where I learned to code instead.
 I [put that machine through hell][hell] trying to keep it going, and I struggled for a while figuring out what to replace it with.
@@ -85,12 +85,12 @@ They ended up [doing so], but not until November, and it was kind of a controver
 [hell]: /2014/mac-upgrades/
 [doing so]: https://www.nytimes.com/2016/11/15/technology/personaltech/apples-new-macbook-pro-fast-and-light-but-not-for-everyone.html
 
-I ended up getting a **[2015 Dell XPS 13 Developer Edition][xps]**, actually a few months before the MacBook Pro finally stopped booting.
+I ended up getting a **[2015 Dell XPS 13 Developer Edition][xps]** in November 2015, actually awhile before the MacBook Pro formally stopped booting.
 I was looking for a light laptop that I could travel with (by this point the MacBook Pro felt like a brick in my bag and had a few loose screws clattering around in it which left me preferring to keep it at home), and also to experiment with using Linux.
 It cost $1,370.
 I like this laptop fine.
 It's light and fast and runs Linux and has a decent battery and a nice screen.
-I think it's weird to have the webcam under the screen.
+I think it's weird to have the webcam positioned below the display instead of above.
 The keyboard is only fine.
 It feels so sturdy and compact that it doesn't feel fragile and I toss it in my bag without a case.
 This is the laptop I brought to India and studied Rust, and later brought to New Orleans to present at RubyConf.
@@ -150,7 +150,10 @@ I watch TV and Movies using an **[Apple TV]** (which is fine) on a TV that my fr
 
 [Apple TV]: https://www.nytimes.com/2015/10/29/technology/personaltech/the-new-apple-tv-invigorates-the-set-top-box.html
 
-When I write longhand, it's usually on **[some cheap Gregg-ruled steno pad][gregg]** I picked up at a pharmacy (I like the spiral being at the top so it stays away from my wrists, and for the margin to be right down the middle so I don't feel weird going right up to the edge of the page, but also I have a sense of how far across the line I've gotten at any given point? Maybe I don't need the middle margin actually) using a **[Muji 0.5MM Gel-Ink black pen][muji]** which my sister recommended to me once, years ago.
+When I write longhand, it's usually on **[some cheap Gregg-ruled steno pad][gregg]** I picked up at a pharmacy
+(I like the spiral being at the top so it stays away from my wrists; I like for the margin to be right down the middle so I don't feel weird writing right up to the edge of the page, and it also gives me a sense of how far across the line I've gotten at any given point?
+Maybe I don't need the middle margin actually)
+using a **[Muji 0.5MM Gel-Ink black pen][muji]** which my sister recommended to me once, years ago.
 
 [gregg]: https://www.staples.com/staplesreg-green-paper-steno-pads-gregg-ruled-6-x-9-12-pack/product_163485
 [muji]: http://www.muji.us/store/new-gel-ink-b-point-pen-0-5mm-black.html
@@ -175,7 +178,7 @@ I also like to use **[Rust]**.
 [Rust]: https://en.wikipedia.org/wiki/Rust_(programming_language)
 
 For writing code, I prefer to use terminal-based tools, primarily: **[vim]** for editing text, **[tmux]** for terminal multiplexing (creating separate workspaces for separate projects, each consisting of a few related shells, controlling how they're laid out and which to focus on), **[zsh]** for a shell, and **[git]** for tracking changes to source code.
-I like them because they're free and open source, blazing fast, and have user interfaces that feel like they're carved from stone.
+I like them because they're free and open source, blazing fast, and have user interfaces that feel like they're [carved from stone](https://twitter.com/maxjacobson/status/943974666825289728).
 There's a long tail of unix tools that assist in the process of writing and testing code, but I'm going to consider them out of the scope of this post.
 Thankfully, those all work pretty much the same on both macOS and Linux.
 
@@ -200,8 +203,10 @@ I initially set it up using [this fabulous tutorial from LearnLinux.tv][ll] and 
 [ArchWiki]: https://wiki.archlinux.org/
 
 For managing windows on my laptops, I'm using **[xmonad]**, a tiling window manager.
-In the past I've tried tiling window manager macOS apps and never found them to be particularly compelling: I've always arranged my windows using my mouse and it's been fine; I don't want to learn a bunch of new keyboard shortcuts; etc.
-But honestly it's so wonderful.
+In the past I've tried macOS apps that add keyboard shortcuts for managing windows in a tiling fashiong (Spectacle, I think, and others) and never found them to be particularly compelling.
+I thought things like: I've always arranged my windows using my mouse and it's been fine; I don't want to learn a bunch of new keyboard shortcuts; etc.
+But depite those earlier fears and protestations, xmonad is absolutely wonderful.
+I think I like it more because it's not a layer on top of a dynamic window manager, it's the whole system.
 I set it up so all of my windows get chunky, hot pink outlines.
 My screen is always 100% filled.
 Windows get automatically resized to fit as I open and close things.
@@ -241,7 +246,7 @@ It's extremely plain and extremely polite and extremely clear.
 
 [nfs]: https://www.nearlyfreespeech.net/
 
-For keeping long-lived notes and checklists, and short-lived plans, I use the **[Apple Notes]** app.
+For lightweight checklists, both long-lived and short lived, I use the **[Apple Notes]** app.
 For example, I have a note called "movies out" which is a checklist of movies that are out or coming out soon that I think I might want to see.
 I refer to that occasionally when I think "hmm what's out?" or when I pass a poster and think "Oh, that's out?"
 I have another note called "pantry" which has a checklist of the staples I like to keep in my kitchen, and I check things off when I buy them, and uncheck them when they're running low.
