@@ -203,7 +203,7 @@ I initially set it up using [this fabulous tutorial from LearnLinux.tv][ll] and 
 [ArchWiki]: https://wiki.archlinux.org/
 
 For managing windows on my laptops, I'm using **[xmonad]**, a tiling window manager.
-In the past I've tried macOS apps that add keyboard shortcuts for managing windows in a tiling fashiong (Spectacle, I think, and others) and never found them to be particularly compelling.
+In the past I've tried macOS apps that add keyboard shortcuts for managing windows in a tiling fashion (Spectacle, I think, and others) and never found them to be particularly compelling.
 I thought things like: I've always arranged my windows using my mouse and it's been fine; I don't want to learn a bunch of new keyboard shortcuts; etc.
 But depite those earlier fears and protestations, xmonad is absolutely wonderful.
 I think I like it more because it's not a layer on top of a dynamic window manager, it's the whole system.
