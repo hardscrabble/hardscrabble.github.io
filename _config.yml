@@ -36,14 +36,11 @@ defaults:
       layout: "metaphorloop_episode"
 
 exclude:
-  - "Gemfile"
-  - "Gemfile.lock"
+  - "gems.rb"
+  - "gems.locked"
   - "README.md"
-  - "vendor"
   - "bin"
   - "exe"
-  - ".travis.yml"
-  - ".scss-lint.yml"
 
 markdown: kramdown
 
