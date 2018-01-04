@@ -36,11 +36,12 @@ defaults:
       layout: "metaphorloop_episode"
 
 exclude:
-  - "gems.rb"
-  - "gems.locked"
+  - "CNAME"
   - "README.md"
   - "bin"
   - "exe"
+  - "gems.locked"
+  - "gems.rb"
 
 markdown: kramdown
 
