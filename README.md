@@ -7,7 +7,8 @@ my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on
 
 (note to self)
 
-* Run `exe/serve` to generate (and watch for changes then recompile) visit <http://localhost:1234>
+* Run `exe/serve` to generate (and watch for changes then recompile)
+* visit <http://localhost:1234>
 
 ## publishing a new post
 
