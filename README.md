@@ -1,4 +1,4 @@
-# [hardscrabble.net](http://hardscrabble.net)
+# [hardscrabble.net](https://hardscrabble.net)
 
 my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on
 [github pages](http://pages.github.com/)
@@ -30,4 +30,3 @@ directory and add the current timestamp
   * `length_as_text` -- e.g. "07:05"
 * optional attributes in the header:
   * `custom_art` if an episode should have special art, link it here
-
