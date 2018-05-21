@@ -182,10 +182,16 @@ I like them because they're free and open source, blazing fast, and have user in
 There's a long tail of unix tools that assist in the process of writing and testing code, but I'm going to consider them out of the scope of this post.
 Thankfully, those all work pretty much the same on both macOS and Linux.
 
+My [dotfiles] are available on GitHub.
+They use thoughtbot's lovely [rcm] tool to ease installation and syncing across multiple machines.
+
 [vim]: https://en.wikipedia.org/wiki/Vim_(text_editor)
 [tmux]: https://en.wikipedia.org/wiki/Tmux
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
 [git]: https://en.wikipedia.org/wiki/Git
+
+[dotfiles]: https://github.com/maxjacobson/dotfiles
+[rcm]: https://github.com/thoughtbot/rcm
 
 On macOS, I use the built-in **[Terminal]** terminal emulator and on Linux I use **[rxvt-unicode]**.
 
