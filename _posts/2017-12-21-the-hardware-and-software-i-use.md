@@ -61,6 +61,7 @@ Next up is the **[2016 9.7" iPad Pro][ipad]**.
 I mainly use it to do things like watch videos in bed or read Twitter on the couch.
 Occasionally I'll take it out to a cafe with the **[Apple Magic Keyboard]** so I can do more productive stuff like write emails or research some project, where I appreciate being able to command+tab to switch between apps or command+space to quick-launch apps.
 I recently bought a **[Canopy]** keyboard case to kinda encourage me to do that more, and hopefully I'll like that.
+(**Edit**: I did)
 
 I like having it.
 It lets me give my phone a break.
