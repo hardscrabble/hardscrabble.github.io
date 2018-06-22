@@ -55,7 +55,7 @@ If anything, I'm in the camp of people who detest having to charge things.
 
 [Lenovo ThinkPad P50]: https://www3.lenovo.com/us/en/laptops/thinkpad/thinkpad-p/ThinkPad-P50/p/22TP2WPWP50
 [kb]: http://www.wasdkeyboards.com/index.php/products/mechanical-keyboard/wasd-v2-87-key-custom-mechanical-keyboard.html
-[mouse]: https://www.amazon.com/AmazonBasics-3-Button-Wired-Mouse-Black/dp/B005EJH6RW?tag=hardscrabblen-20
+[mouse]: https://www.amazon.com/AmazonBasics-3-Button-Wired-Mouse-Black/dp/B005EJH6RW
 
 Next up is the **[2016 9.7" iPad Pro][ipad]**.
 I mainly use it to do things like watch videos in bed or read Twitter on the couch.
@@ -104,7 +104,7 @@ I had salvaged the harddrive from the laptop and bought [a drive enclosure][enc]
 I also had them backed up to another hard drive and to the cloud, via [backblaze].
 All those backups cried out to be restored, _somewhere_.
 
-[enc]: https://www.amazon.com/gp/product/B00JQTO8TU/ref=od_aui_detailpages00?psc=1&tag=hardscrabblen-20&ie=UTF8
+[enc]: https://www.amazon.com/gp/product/B00JQTO8TU/ref=od_aui_detailpages00?psc=1&ie=UTF8
 [backblaze]: https://www.backblaze.com/
 
 I ended up getting a **[Late 2014 Mac Mini][mini]** spec'd out with 16GB of RAM, an SSD, and whatever the fastest processor was.
@@ -130,22 +130,22 @@ I love it.
 
 For sound, I use **[Altec Lansing BXR1220][speakers]** computer speakers I bought for $15 five and a half years ago which are perfectly fine and look pretty cool IMO.
 
-[speakers]: https://www.amazon.com/dp/B0025VKUPW/ref=pe_175190_21431760_M2T1_SC_dp_1?tag=hardscrabblen-20
+[speakers]: https://www.amazon.com/dp/B0025VKUPW/ref=pe_175190_21431760_M2T1_SC_dp_1
 
 For a display, I use a **[Dell U2713HM 27-Inch Screen LED-lit Monitor][dell-monitor]** that The Wirecutter recommended when I bought it in 2014.
 It's been really great.
 
-[dell-monitor]: https://www.amazon.com/dp/B009H0XQQY/ref=pe_385040_121528360_TE_dp_1?tag=hardscrabblen-20
+[dell-monitor]: https://www.amazon.com/dp/B009H0XQQY/ref=pe_385040_121528360_TE_dp_1
 
 For recording audio, I use a **[MXL Tempo USB Desktop Cardioid Condenser Microphone][mic]**.
 I was going through a phase where I enjoyed red things.
 It wasn't a huge investment, is simple to use, and sounds OK.
 
-[mic]: https://www.amazon.com/gp/product/B004OCD7EQ/ref=od_aui_detailpages00?psc=1&tag=hardscrabblen-20&ie=UTF8
+[mic]: https://www.amazon.com/gp/product/B004OCD7EQ/ref=od_aui_detailpages00?psc=1
 
 For Wi-Fi, I switched to **[Eero]** in 2016 to get better coverage of my apartment and it worked out great.
 
-[Eero]: https://www.amazon.com/eero-Home-WiFi-System-Beacon/dp/B071HHK2PN/ref=sr_1_4?sr=8-4&ie=UTF8&keywords=eero%2Bwifi&tag=hardscrabblen-20&qid=1513831109
+[Eero]: https://www.amazon.com/eero-Home-WiFi-System-Beacon/dp/B071HHK2PN/ref=sr_1_4
 
 I watch TV and Movies using an **[Apple TV]** (which is fine) on a TV that my friend Russ handed down to me when his aunt handed hers down to him (which is fine).
 
