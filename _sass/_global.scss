@@ -12,6 +12,10 @@ footer {
 header {
   @extend %section;
   @extend %dashed-bottom;
+
+  position: sticky;
+  top: 0px;
+  background-color: white;
 }
 
 a {
