@@ -3,7 +3,7 @@ author: "Max Jacobson"
 email: "max@hardscrabble.net"
 description: "the personal website of Max Jacobson, a programmer in New York"
 
-url: "https://hardscrabble.net"
+url: "https://www.hardscrabble.net"
 port: 1234
 
 permalink: "/:year/:title/"
@@ -12,7 +12,7 @@ metaphorloop_metadata:
   title: "metaphor loop"
   subtitle: "a podcast about how we think about programming"
   description: "Listen to Max Jacobson talk to programmers about how they think about programming."
-  url: "https://hardscrabble.net/metaphorloop"
+  url: "https://www.hardscrabble.net/metaphorloop"
   cover_art: "https://s3.amazonaws.com/metaphorloop/metaphorloop.png"
 
 defaults:
