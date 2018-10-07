@@ -14,5 +14,5 @@ end
 
 group :development do
   gem 'scss_lint'
-  gem 'html-proofer', '~> 3.4.0'
+  gem 'html-proofer', '~> 3.9'
 end
