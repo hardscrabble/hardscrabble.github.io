@@ -13,9 +13,9 @@ header {
   @extend %section;
   @extend %dashed-bottom;
 
+  background-color: $white;
   position: sticky;
-  top: 0px;
-  background-color: white;
+  top: 0;
 }
 
 a {
