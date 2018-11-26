@@ -1,5 +1,6 @@
 ---
 title: about
+exclude_footer_subscription_ctas: true
 ---
 
 ![goofy photo of me](/img/max.jpg)

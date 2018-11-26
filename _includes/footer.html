@@ -1,8 +1,10 @@
 <footer>
-  <div>
-    Feel free to <a href="/feed.xml">subscribe to the RSS Feed </a> or
-    <a href="https://twitter.com/maxjacobson">follow me @maxjacobson</a>
-  </div>
+  {% if page.exclude_footer_subscription_ctas != true %}
+    <div>
+      Feel free to <a href="/feed.xml">subscribe to the RSS Feed </a> or
+      <a href="https://twitter.com/maxjacobson">follow me @maxjacobson</a>
+    </div>
+  {% endif %}
 
   <div>
     This website is powered by <a href="http://jekyllrb.com/">Jekyll</a>
