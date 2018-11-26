@@ -81,7 +81,7 @@ The first way is probably what most people do, since it's pretty straight-forwar
 ```
 echo "Hello" > README.md
 git add README.md
-git commit "some commit"
+git commit --message "some commit"
 ```
 
 The last command will output:
@@ -145,7 +145,7 @@ That's it.
 1. You feel the simple pleasure of following the recommendation from a blog post.
 1. Probably some other reason that I'm forgetting (fell free to tell me).
 
-[other-ways]: https://github.com/tj/git-extras/blob/a815bb0fbdd9bf346ae614d8d41542ddb7099499/bin/git-fresh-branch
+[other ways]: https://github.com/tj/git-extras/blob/a815bb0fbdd9bf346ae614d8d41542ddb7099499/bin/git-fresh-branch
 
 ## A handy alias
 
