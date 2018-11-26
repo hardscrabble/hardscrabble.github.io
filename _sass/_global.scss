@@ -2,8 +2,6 @@ footer {
   @extend %section;
   @extend %dashed-top;
 
-  text-align: left;
-
   div {
     margin-top: 10px;
   }
@@ -16,6 +14,14 @@ header {
   background-color: $white;
   position: sticky;
   top: 0;
+
+  h1 {
+    margin: 0;
+  }
+
+  .byline {
+    font-size: 75%;
+  }
 }
 
 a {
