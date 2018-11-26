@@ -16,7 +16,7 @@ function downcase() {
 
 set +u
 if [ -z "$1" ]; then
-  echo "Usage: exe/new Title Of Post"
+  echo "Usage: $0 Title Of Post"
   exit 1
 fi
 set -u

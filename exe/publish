@@ -12,7 +12,7 @@ function draftToPost() {
 
 set +u
 if [ -z "$1" ]; then
-  echo "usage: exe/publish _drafts/great-post.md"
+  echo "usage: $0 _drafts/great-post.md"
   exit 1
 fi
 set -u
