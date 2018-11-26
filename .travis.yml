@@ -9,6 +9,6 @@ before_install:
   - "bundle config build.nokogiri --use-system-libraries"
   - "bundle install"
   - "rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION"
-  - "npm install -g standard@10.0.3"
+  - "npm install -g standard@12.0.1"
 script:
   - exe/lint
