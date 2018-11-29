@@ -85,7 +85,7 @@ The git log helps me remember how long I've been following whatever system I'm c
 I've been doing this specifically for most of the top-level directories in my Dropbox (things like `src` and `writing` and `Documents`) and frankly I enjoy very much stumbling on things like this:
 
 ```shell
-cd ~/Dropbox (Personal)/Documents
+cd ~/Dropbox\ \(Personal\)/Documents
 git show
 ```
 
