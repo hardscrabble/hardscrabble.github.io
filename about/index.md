@@ -6,7 +6,7 @@ exclude_footer_subscription_ctas: true
 ![goofy photo of me](/img/max.jpg)
 
 I'm a programmer from New York.
-I work at [Code Climate](https://codeclimate.com/about)
+I work at [Code Climate](https://codeclimate.com/about).
 This is my blog.
 
 * Keep up with me on twitter: [@maxjacobson](https://twitter.com/maxjacobson)
