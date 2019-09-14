@@ -6,6 +6,7 @@ exclude_footer_subscription_ctas: true
 ![Me with my Ethan, my friends' baby](/img/max.jpg)
 
 I'm a programmer from New York.
+I work at Vimeo.
 I've worked at [Code Climate] and [CipherHealth].
 That's my friends' baby.
 This is my blog.
