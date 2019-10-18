@@ -7,13 +7,13 @@ redirect_from:
 
 <div class="posts">
   {% for post in paginator.posts %}
-    <div class="post-excerpt">
+    <div class="homepage-post-container">
       <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
       <p class="author">
         <span class="date">{{ post.date | date_to_string }}</span>
       </p>
       <div class="content">
-        {{ post.excerpt }}
+        {{ post.content | markdownify }}
       </div>
     </div>
   {% endfor %}
