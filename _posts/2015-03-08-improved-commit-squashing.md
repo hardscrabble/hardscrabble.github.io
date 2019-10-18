@@ -77,3 +77,11 @@ Some things I might do:
 * suppress more of the git output (not sure, maybe it's nice to have it?)
 
 :leaves:
+
+---
+
+**EDIT 2019**: At some point in the intervening few years, I noticed someone run
+`git commit --amend --date`, and I made a note in my to do list to update this
+script and this post, and [today I did][updated version].
+
+[updated version]: https://github.com/maxjacobson/dotfiles/commit/01635f718f9903e98774ee436b5ef70034f4d113
