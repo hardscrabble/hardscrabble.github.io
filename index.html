@@ -26,7 +26,7 @@ redirect_from:
   {% else %}
     <span class="previous">◭</span>
   {% endif %}
-  <span class="page_number ">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <span class="page_number ">p. {{ paginator.page }} <small>(of {{ paginator.total_pages }})</small></span>
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="next">◮</a>
   {% else %}
