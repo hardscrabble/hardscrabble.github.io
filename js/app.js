@@ -7,31 +7,6 @@ function ready (fn) {
   }
 }
 
-function endsWithSlash (url) {
-  var lastChar = url[url.length - 1]
-  return lastChar === '/'
-}
-
-function withoutSlash (url) {
-  return url.slice(0, -1)
-}
-
-// setup 404 behavior
-ready(function () {
-  if (document.querySelectorAll('.not-found').length) {
-    var currentUrl = window.location.pathname
-    if (endsWithSlash(currentUrl)) {
-      var suggestion = document.querySelectorAll('.not-found-suggestion')[0]
-
-      setTimeout(function () {
-        window.location = withoutSlash(currentUrl)
-      }, 2000)
-
-      suggestion.setAttribute('style', 'display: block')
-    }
-  }
-})
-
 // setup search behavior
 ready(function () {
   var searchBox = document.querySelectorAll('.search input')[0]
