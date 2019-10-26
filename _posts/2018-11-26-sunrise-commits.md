@@ -143,7 +143,7 @@ That's it.
    There are [other ways] to do that but they melt my brain a little more.
 1. All of the meaningful commits in your repository will have a parent, making them easily diffed.
 1. You feel the simple pleasure of following the recommendation from a blog post.
-1. Probably some other reason that I'm forgetting (fell free to tell me).
+1. Probably some other reason that I'm forgetting (feel free to tell me).
 
 [other ways]: https://github.com/tj/git-extras/blob/a815bb0fbdd9bf346ae614d8d41542ddb7099499/bin/git-fresh-branch
 
