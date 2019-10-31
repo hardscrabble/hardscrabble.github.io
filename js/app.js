@@ -30,7 +30,7 @@ ready(function () {
         this.field('content')
       })
       for (var i = 0; i < posts.length; i++) {
-        posts[i]['id'] = i
+        posts[i].id = i
         index.add(posts[i])
       }
 
