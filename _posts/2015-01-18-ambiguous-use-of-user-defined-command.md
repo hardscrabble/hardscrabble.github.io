@@ -11,7 +11,7 @@ do this all the time. `:E` is short for `:Explore`. I could type `:Ex`, `:Exp`,
   `:Expl`, `:Explo`, `:Explor` as well, but I type `:E`. This is what my
   fingers remember.
 
-[0]: http://www.hardscrabble.net/2015/a-cleaner-file-browsing-interface-for-vim/
+[0]: /2015/a-cleaner-file-browsing-interface-for-vim/
 
 Sometimes I install a plugin, and that plugin exposes another command which
 starts with `:E`, and suddenly I get this vim error message:

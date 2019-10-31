@@ -5,7 +5,7 @@ redirect_from:
   - '/2014/jekyll_api'
 ---
 
-**UPDATE April 2015:** Here's a much, much better way to do it: <http://www.hardscrabble.net/2015/how-to-jekyll-from-ios/>
+**UPDATE April 2015:** Here's a much, much better way to do it: </2015/how-to-jekyll-from-ios/>
 
 First of all: if anyone subscribes to my RSS feed, I apologize for flooding it today with test posts as I futzed with this.
 

@@ -15,7 +15,7 @@ OK. Back to work.
 
 [Yesterday][] I stretched out my head and fell asleep. I was glad to see that while I was sleeping, the team made good and [released Ember 1.0][]
 
-[Yesterday]: http://www.hardscrabble.net/2013/learning-ember-js-day-one/
+[Yesterday]: /2013/learning-ember-js-day-one/
 [released Ember 1.0]: http://emberjs.com/blog/2013/08/31/ember-1-0-released.html
 
 I made some small progress since then.

@@ -69,4 +69,4 @@ dumb? So: **if you listen to some episodes and think you'd like to be on the
 show, let me know**, and we'll at least have a phone call and if it feels like
 a show, it'll be a show.
 
-[hardscrabble.net/metaphorloop](https://hardscrabble.net/metaphorloop)
+[hardscrabble.net/metaphorloop](/metaphorloop)

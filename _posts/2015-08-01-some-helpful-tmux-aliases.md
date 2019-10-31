@@ -8,7 +8,7 @@ writing to share a few aliases/helper functions I've recently added to [my
 dotfiles][1]. Those change all the time so I'm hesitant to link to the files
 which the helper aliases and functions currently live in.
 
-[0]: http://www.hardscrabble.net/2015/terminal-multiplexing/
+[0]: /2015/terminal-multiplexing/
 [1]: https://github.com/maxjacobson/dotfiles
 
 I added them in these commits, though: [`d06362c`][2] and [`c9d8695`][3].

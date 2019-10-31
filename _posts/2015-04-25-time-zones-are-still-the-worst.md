@@ -7,7 +7,7 @@ After publishing [my last post][1], a few minutes ago, I of course triggered
 refreshes until the reminder ticked down to "0 days and 0 hours", but... it
 didn't work.
 
-[1]: http://www.hardscrabble.net/2015/my-new-menu-bar-guilt-trip/
+[1]: /2015/my-new-menu-bar-guilt-trip/
 
 Instead, I saw: "0 days and 4 hours". What the hell?
 

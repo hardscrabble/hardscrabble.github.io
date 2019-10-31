@@ -29,7 +29,7 @@ Reading that post made me feel like I was in good hands and I could learn from t
 * There is a "trap of tightly coupling your application to [a] particular client" which I didn't even know I was in but totally am
 * Ideally, I'd be able to jump into a JavaScript app and be able to contribute, because I know JavaScript pretty well[^worry]; but I totally don't feel like I can do that because I don't know any frameworks. I'm glad that the book acknowledges this should be a goal
 
-[^worry]: I worry that I'll be humbled by these statements as I continue down this path. I'm already pretty embarrassed by my two posts about learning ember ([one](http://www.hardscrabble.net/2013/learning-ember-js-day-one/), [two](http://www.hardscrabble.net/2013/learning-ember-day-two/)) which led nowhere, and this has the potential to be much the same.
+[^worry]: I worry that I'll be humbled by these statements as I continue down this path. I'm already pretty embarrassed by my two posts about learning ember ([one](/2013/learning-ember-js-day-one/), [two](/2013/learning-ember-day-two/)) which led nowhere, and this has the potential to be much the same.
 
 This criterium is interesting to me:
 
@@ -54,7 +54,7 @@ I should probably be using a linter[^linter]. It looks like [even CoffeeScript](
 
 [^linter]: A code-analyzing tool that warns you about code mistakes or poor style
 
-I'm glad that Joreteg (the author of the book I'm annotating, whose name I've somehow neglected to mention so far) gives a plug for [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) as it's a helpful reference I've stumbled on in the past and [endorsed in these pages](http://www.hardscrabble.net/2013/javascript-resources/). I should probably re-read that.
+I'm glad that Joreteg (the author of the book I'm annotating, whose name I've somehow neglected to mention so far) gives a plug for [Airbnb's JavaScript style guide](https://github.com/airbnb/javascript) as it's a helpful reference I've stumbled on in the past and [endorsed in these pages](/2013/javascript-resources/). I should probably re-read that.
 
 ### Things I learned from [chapter 4: Organizing Your Code](http://read.humanjavascript.com/ch04-organizing-your-code.html):
 

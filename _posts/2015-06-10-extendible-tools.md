@@ -7,7 +7,7 @@ I [like][] that you or I can write command line utilities in any language, name
 it `git-butterfly`, or whatever you want, and then run it as though it were an
 official part of the git tool, as `git butterfly`.
 
-[like]: http://www.hardscrabble.net/2015/improved-commit-squashing/
+[like]: /2015/improved-commit-squashing/
 
 It feels a lot like magic, but it's actually not that complicated a thing to do.
 If you don't believe me, watch this video or skip after it to the code, and make

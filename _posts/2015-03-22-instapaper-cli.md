@@ -7,7 +7,7 @@ I've previously [written about extracting a gem from a web app called
 Layabout][film], but I neglected to mention that I later open sourced Layabout
 as well:
 
-[film]: http://www.hardscrabble.net/2014/refactoring_old_code/
+[film]: /2014/refactoring-old-code/
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://t.co/YVAZkNE3cc">https://t.co/YVAZkNE3cc</a></p>&mdash; layabout (@layaboutapp) <a href="https://twitter.com/layaboutapp/status/544164277561856000">December 14, 2014</a></blockquote>
 

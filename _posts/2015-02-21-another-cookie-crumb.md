@@ -10,7 +10,7 @@ way that was actually insightful and helpful. For example, after running their
 script which installs dependencies, there was some helpful output pointing me to
 where I could get the code base.
 
-[0]: http://www.hardscrabble.net/2015/building-firefox/
+[0]: /2015/building-firefox/
 
 Today I checked in with the project and pulled the change from the last few
 days. There has been a flurry of activity, none of which means much of anything
@@ -21,30 +21,30 @@ long on the second run. Instead I got this interesting output:
 
 ```
 0:00.35 /usr/bin/make -f client.mk -s
-0:01.33 
+0:01.33
 0:01.33 The CLOBBER file has been updated, indicating that an incremental
 0:01.33 build since your last build will probably not work. A full/clobber
 0:01.33 build is required.
-0:01.33 
+0:01.33
 0:01.33 The reason for the clobber is:
-0:01.33 
+0:01.33
 0:01.33  Bug 1119335 - (DOMString or sequence<DOMString> or ConstrainDOMStringParameters)
 0:01.33  needs binding flush (Bug 1103153).
-0:01.33 
+0:01.33
 0:01.33 Clobbering can be performed automatically. However, we didn't
 0:01.33 automatically clobber this time because:
-0:01.33 
+0:01.33
 0:01.33   Automatic clobbering is not enabled
 0:01.33   (add "mk_add_options AUTOCLOBBER=1" to your mozconfig).
-0:01.33 
+0:01.33
 0:01.33 The easiest and fastest way to clobber is to run:
-0:01.33 
+0:01.33
 0:01.33  $ mach clobber
-0:01.33 
+0:01.33
 0:01.33 If you know this clobber doesn't apply to you or you're feeling lucky
 0:01.33 -- Well, are ya? -- you can ignore this clobber requirement by
 0:01.33 running:
-0:01.33 
+0:01.33
 0:01.33  $ touch /Users/maxjacobson/src/gecko-dev/obj-x86_64-apple-darwin14.3.0/CLOBBER
 0:01.33 make: *** [/Users/maxjacobson/src/gecko-dev/obj-x86_64-apple-darwin14.3.0/CLOBBER] Error 1
 0:01.36 78 compiler warnings present.

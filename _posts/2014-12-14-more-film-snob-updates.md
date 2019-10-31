@@ -8,7 +8,7 @@ kind of agonized over the decision to mark it as a minor release, I've gone
 ahead and made two more minor releases. I have much less anxiety about it now.
 In fact, I wish I had been doing that earlier.
 
-[my last post]: http://www.hardscrabble.net/2014/film-snob-040/
+[my last post]: /2014/film-snob-040/
 
 I decided to do some release notes on the release section of the GitHub repo,
 instead of here: <https://github.com/maxjacobson/film_snob/releases>.
