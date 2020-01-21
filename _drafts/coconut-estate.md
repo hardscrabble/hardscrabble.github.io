@@ -323,8 +323,8 @@ The basic flow is:
 * In response, the API renders a token, which encodes their claims, which look like:
   ```json
   {
-    user_id: 3,
-    site_admin: false
+    "user_id": 3,
+    "site_admin": false
   }
   ```
 * The front-end can then do two things:
@@ -767,6 +767,7 @@ I'll summarize and sneak in a couple more:
 1. Actually finding time to work on it and feeling like progress is so slow is kind of a bummer
 2. The valleys you go through when you doubt your idea and worry that all the effort you've put in is a bummer
 3. As you do more market research and start finding that there are other things out there that are similar to your idea, and you start feeling like a bit of a fraud, it's kind of a bummer
+4. I thought it would be more fun to join a coworking space, but working there on nights and evenings, it was always empty and a little lonesome
 
 ## why I stopped working on this
 
