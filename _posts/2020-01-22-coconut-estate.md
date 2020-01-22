@@ -1,6 +1,6 @@
 ---
 title: Coconut Estate
-date: 2020-01-22
+date: 2020-01-22 00:31 EST
 ---
 
 As a software engineer who has spent the last 6-7ish years working full-time jobs and listening to podcasts, I've spent a meaningful amount of time day-dreaming about starting my own company.
@@ -189,7 +189,7 @@ Here's an excerpt:
 >   I've been following the progress of Level.app, an indie slack competitor that Derrick Reimer is working on.
 >   He's doing it as an OSS thing, which is neat.
 >   He's using Elixir/Phoenix and Elm.
->   My coworker Scott Larkin is also interested in Elm, and my former colleague Todd Mohney was also enthusiastic about it.
+>   My coworker Scott is also interested in Elm, and my former colleague Todd was also enthusiastic about it.
 >   The latest episode of Reimer's podcast talks about upgrading to Elm 0.19 and how it improved some performance and asset size stuff.
 >   For me, the big appeal is the type safety and the "no runtime exceptions" promise.
 >   I started working my way through the guide yesterday, and this morning I watched the "Let's be mainstream!" talk from Evan Czaplicki.
