@@ -378,7 +378,7 @@ It has exactly two routes:
 
 I built this one as a RESTful API using [warp] rather than GraphQL and actix-web.
 I was really just having fun poking around and taking my self-directed whistle-stop tour through the community.
-Of course, like actix-web, it also uses clap to definte its CLI.
+Of course, like api, it also uses clap to definte its CLI.
 
 [warp]: https://crates.io/crates/warp
 
