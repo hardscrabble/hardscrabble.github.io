@@ -801,6 +801,8 @@ I'll summarize and sneak in a couple more:
    Thinking about what to build is so fun.
 	 Talking to people about your idea and getting their feedback is so fun.
    Brainstorming how you might market your thing is actually so fun.
+   * Oh: thank you very much to everyone who gave me feedback on this at any point, or listened to me talk about it.
+     It meant a lot and I thought it was fun.
 
 ## what was discouraging
 
