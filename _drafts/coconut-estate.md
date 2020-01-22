@@ -1,11 +1,12 @@
 ---
 title: Coconut Estate
-date: 2020-01-20
+date: 2020-01-22
 ---
 
-As a software engineer who has spent the last 6-7ish years working full-time jobs and listening to podcasts, I've spent a meaningful amount of time day-dreaming about starting my own company:
+As a software engineer who has spent the last 6-7ish years working full-time jobs and listening to podcasts, I've spent a meaningful amount of time day-dreaming about starting my own company.
+Here's how I'd do it:
 
-First I'd make a side project, a nights and weekends thing.
+First I'd make a side project, as a nights and weekends thing.
 I'd charge for it, and people would buy it, and then I'd quit my day job.
 Maybe I'd do some freelance work in the early days to make ends meet.
 Maybe I'd do a podcast about the whole process and sell ads on it, to share some behind the scenes stories and get people interested.
@@ -29,14 +30,17 @@ I found a new day job.
 
 And I never wrote about any of it here until now.
 
+So, while I still remember all this, here's a bunch of information about what I did and how I did it and why I stopped.
+
 ## the name
 
 I never had a proper name for it, but the whole time I worked on it, I called it Coconut Estate.
-It's a reference to [my favorite song], which is about an obsessive zealot who destroys himself in his search for knowledge and has no regrets.
+It's a reference to [my favorite song], which is about an obsessive zealot who destroys himself in his search for knowledge, and has no regrets.
 As a product name, it's probably very bad, but there were times I thought about sticking with it.
 Maybe people will find it intriguing, I would think.
 I spent $5.94 on the domain `coconutestate.top`.
-I would joke that the other name I was considering, which comes from [another mewithoutYou song], was Unbearably Sad, which would make Coconut Estate sound better by comparison.
+I would joke that the other name I was considering, which comes from [another mewithoutYou song], was Unbearably Sad.
+That would make Coconut Estate sound better by comparison.
 I liked that Coconut Estate sounded like a _place_ that you enter and enjoy spending time in.
 
 [my favorite song]: https://mewithoutyou.bandcamp.com/track/the-king-beetle-on-a-coconut-estate
@@ -50,7 +54,7 @@ Others could follow that roadmap, and learn to get good at tennis.
 It would be kind of like a curriculum that you could annotate with whatever links, text, resources you want, for each step.
 I imagined it as a kind of recursive thing, so perhaps one of the steps would be "learn how to serve", and you could drill down and that would be a whole roadmap unto itself.
 
-This was inspired by a blog post, [Roadmap for Learning Rails][roadmap-inspiration][^1], published about ten years ago by one Wyatt Greene, who I do not know.
+This was inspired in part by a blog post, [Roadmap for Learning Rails][roadmap-inspiration][^1], published about ten years ago by one Wyatt Greene, who I do not know.
 When I was starting to re-learn how to program in 2012 or so, I must have googled "ruby on rails roadmap", and found it.
 It was _so_ helpful.
 Web development was very complicated[^2].
@@ -64,11 +68,12 @@ And that helped me relax.
 [^1]: Since, apparently, deleted. Thank goodness for the Internet Archive.
 [^2]: I can't imagine how much more overwhelming it must seem now.
 
-I'm sure programming isn't the only thing that's complicated.
+I thought: I'm sure programming isn't the only thing that's complicated.
 I imagined a whole community flourishing, of people writing similar roadmaps out of the goodness of their hearts, about all kinds of topics.
-I imagined people's lives changing as they self-improved.
+I imagined people's lives changing as they self-improved by following roadmaps.
+Because of the thing I made.
 
-I also imagined that having a really nice interface that made it super easy to build and explore these roadmaps would be irresistible, and more useful than a JPG embedded in a blog post.
+I also imagined that having a really nice interface that made it super easy to build and explore these roadmaps would be irresistible, and more useful than a JPEG embedded in a blog post.
 
 ## the product idea: phase two
 
@@ -83,7 +88,9 @@ Some of the business use-cases I was imagining:
 - a roadmap for how to offboard a team member, including all of the things that you need to revoke their access to
 - a roadmap for how to perform your team's monthly security audit
 
-Et cetera.
+Et cetera.[^3]
+
+[^3]: [Et cetera. Et cetera!](https://mewithoutyou.bandcamp.com/track/seven-sisters)
 
 If the public-facing option was to be basically "luxe wikihow", the private-facing part was basically a checklist-oriented knowledge base.
 In fact, the other primary inspiration for this was [The Checklist Manifesto], a book that I never actually read past the first chapter.
@@ -166,15 +173,14 @@ Here's an example excerpt from `brainstorms/max/2018-06-17\ women\ and\ email.tx
 
 Huh!
 I'd forgotten all of that.
-I'm not sure how valuable that thought was, but if thoughts are like lightning bugs, it can be helpful to feel like you're able to catch them and have a jar with holes punched in the lid to put them in.
-Otherwise they might just fly away.
+I'm not sure how valuable that thought was, but if thoughts are like lightning bugs around you, the natural thing is for them to flicker off and disappear into the night.
+Having a hole-punched jar nearby encourages capturing those thoughts, some of which might be valuable.
 
 The file I updated most often was `work-logs/max.txt`.
 This one was directly inspired by <https://brson.github.io/worklog.html>, the "work log" of a Rust programmer that I had stumbled on at some point.
 There were times that I kept one at work, on a notebook at my desk, and found it helpful to remember how I had spent my time, and keep me somewhat accountable as I continued to spend my time.
 
 Here's an excerpt:
-
 
 > ## 2018-09-03
 >
@@ -262,15 +268,30 @@ Some things I wasn't motivated by:
 1. Building quickly
 2. Keeping things simple
 
+In retrospect, these were the wrong motivations, if my goal was to actually finish something.
+Which, nominally, it was.
+
 ## how I organized the code
 
 I made a single repo that had all the code in it.
-At work, we were having success using such a "monorepo", and it felt right.
+At work, we were having success using such a [monorepo](https://danluu.com/monorepo/), and it felt right.
 I made the top-level of the repo into a [Cargo workspace], which is Rust's built-in monorepo-like concept.
 The idea is that you can have several sibling Rust projects that you can think of as a family.
 By the end, I had four members in my workspace:
 
 [Cargo workspace]: https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html
+
+1. api
+2. secrets_keeper
+3. toolbox
+4. authorized_keys_generator
+
+Additionally, alongside the rust projects, I had two non-Rust codebases, each in their own subdirectory:
+
+1. website
+2. terraform
+
+I'll go through each of those in a bit of detail, providing some highlights of how and why they were built.
 
 ### api
 
@@ -290,7 +311,7 @@ I particularly fell in love with clap while building this project, as it made it
 [define-clap-api]: https://github.com/maxjacobson/coconut-estate/blob/edge/api/src/cli.rs#L11-L38
 
 I used [diesel] as an ORM for interacting with the database.
-Diesel is created by Sean Griffin, who I had listened to talk about building Diesel on [The Bike Shed] for ages and was curious to try.
+Diesel is created by Sean Griffin, who I had listened to talking about building Diesel on [The Bike Shed] for ages and was curious to try.
 It's excellent.
 I didn't really stress test it, but everything I wanted to do, it had thoughtfully modeled within Rust's type system.
 
@@ -300,16 +321,16 @@ I didn't really stress test it, but everything I wanted to do, it had thoughtful
 I decided to build a GraphQL API rather than a RESTful one.
 It felt trendy at the time.
 Moreover, at work we were integrating with GitHub's GraphQL API, and I didn't understand how any of that integration code worked.
-Learning about GraphQL by building a simple one was very helpful for me to learn the important concepts, and that made it so much more clear what our client code was doing at work.
-I used the [juniper] crate to define the schema, and used [actix-web][actix-web][^3] to serve the requests.
+Learning about GraphQL APIs by building a simple one was very helpful for me to learn the important concepts, and that made it so much more clear what our client code was doing at work.
+I used the [juniper] crate to define the schema, and used [actix-web][actix-web][^4] to serve the requests.
 GraphQL is really cool.
-I admire the community for opening its heart to a perspective that entirely rejects REST.
+I admire the web dev community for opening its heart to a perspective that entirely rejects REST.
 I'm not anti-REST, but I like for established ideas to be challenged.
 And I like that there is an option available for projects where it's important to give the maximum flexibility to front-end developers.
 
 [juniper]: https://crates.io/crates/juniper
 [actix-web]: https://crates.io/crates/actix-web
-[^3]: Although I haven't worked on this project in ages, I was sad to [recently learn](https://words.steveklabnik.com/a-sad-day-for-rust) that the maintainer of actix-web got burnt out on negative feedback and walked away from the project. I found actix-web very easy to work with in large part because of the effort he put in to providing [examples](https://github.com/actix/examples). Hopefully he knows his work was appreciated by a lot of people. As I'm writing this, I'm seeing that the project is [actually going to carry on](https://github.com/actix/actix-web/issues/1289) under a new maintainer, who somehow saw that happen and thought "sign me up".
+[^4]: Although I haven't worked on this project in ages, I was sad to [recently learn](https://words.steveklabnik.com/a-sad-day-for-rust) that the maintainer of actix-web got burnt out on negative feedback and walked away from the project. I found actix-web very easy to work with in large part because of the effort he put in to providing [examples](https://github.com/actix/examples). Hopefully he knows his work was appreciated by a lot of people. As I'm writing this, I'm seeing that the project is [actually going to carry on](https://github.com/actix/actix-web/issues/1289) under a new maintainer, who somehow saw that happen and thought "sign me up".
 
 The one other interesting thing about the api was how I went about doing authentication and authorization.
 I decided to do claims-based authorization using [JSON Web Tokens] (JWT).
@@ -342,7 +363,7 @@ You could even attempt to change the claims, re-encode them, and make a new toke
 
 Perhaps I would have felt more comfortable with JWT over time.
 
-## secrets_keeper
+### secrets_keeper
 
 I decided that I wanted to roll my own service for managing secrets: [secrets_keeper](https://github.com/maxjacobson/coconut-estate/tree/edge/secrets_keeper).
 For example, api needs to know a PostgreSQL username and password to establish a database connection.
@@ -376,7 +397,7 @@ Here's how you use it:
 Internally, it just stores the secrets in plaintext files on the filesystem.
 There's absolutely no authorization built into secrets_keeper, so it's very important that it run behind a firewall which will be responsible for making sure that only authorized personnel can read and write secrets.
 
-## toolbox
+### toolbox
 
 At the beginning, I wanted to build all of the ops-related scripting in Rust, so I created [toolbox](https://github.com/maxjacobson/coconut-estate/tree/edge/toolbox).
 I thought this would help me keep my Rust skills sharp.
@@ -441,7 +462,7 @@ The idea is that there are three computers involved:
 ```
 
 In words:
-The networking is configured so that the only computer that is allowed to make requests to the secrets keeper is the bastion.
+The networking is configured so that the only computer that is allowed to make requests to the secrets keeper is the bastion server.
 Additionally, the only computer that is allowed to make SSH connections to the secrets keeper server is the bastion server.
 The bastion and the secrets server have their [authorized keys] defined to only allow known administrators to SSH into them.
 
@@ -471,8 +492,8 @@ This was inspired by [codeclimate/popeye][popeye], a tool that generates an auth
 
 [popeye]: https://github.com/codeclimate/popeye
 
-At one point, we talked about instead pulling this from GitHub, which exposes each users's public keys at, e.g., <https://github.com/maxjacobson.keys>.
-I thought I'd try building a simple version of that for my project, so I made a simple CLI (again, using clap), that lets you do:
+At one point, at Code Climate, we talked about instead pulling this from GitHub, which exposes each users's public keys at, e.g., <https://github.com/maxjacobson.keys>.
+I thought I'd try building a simple version of that concept for my project, so I made a simple CLI (again, using clap), that lets you do:
 
 ```
 $ authorized_keys_generator --usernames maxjacobson dhh
@@ -493,28 +514,28 @@ And it would print out:
 <another key here>
 ```
 
-You could write this text to an authorized keys file on a server.
+You could take that text and use it as an authorized keys file on a server.
 I imagined later on I might build in support for you to provide a GitHub org and team, and it would then take care of looking up the users in that team, but it didn't come to that.
 
 ### website
 
-The other significant directory in my monorepo was [website](https://github.com/maxjacobson/coconut-estate/tree/edge/website), which represented the front-end of the website.
-I used [create-elm-app] to scaffold a "hello world" elm app, and boogied from there.
+The other significant directory in my monorepo with application code was [website](https://github.com/maxjacobson/coconut-estate/tree/edge/website), which represented the front-end of the website.
+I used [create-elm-app] to scaffold a "hello world" Elm app, and boogied from there.
 
 [create-elm-app]: https://github.com/halfzebra/create-elm-app
 
-I had _really_ never used elm before, and it was kind of a lark that very quickly started to feel very right.
+I had _really_ never used Elm before, and it was kind of a lark that very quickly started to feel very right.
 At the time, all of my front-end experience was with JavaScript and jQuery.
 This was my first exposure to:
 
-1. a fully functional language
+1. a functional programming language
 1. a front-end web app framework
 1. the declarative UI pattern
 
 I had been planning to use [Ember.js], which I'd been meaning to try for years.
 I still do want to try it some day, I think.
-Elm was just something I was curious to read about, and I got ensared pretty quickly.
-The [Elm guide] is just very good.
+Elm was just something I was curious to read about, and I got ensnared pretty quickly.
+The [Elm guide] is just very good:
 Very friendly and persuasive and not very long.
 It feels like you can learn it in an afternoon, and you kind of can, if you're in the right mood.
 
@@ -538,8 +559,30 @@ I never fully mastered how to use the various functional programming combinators
 
 The relationship between Elm and JavaScript frequently made my brain melt a little bit.
 Part of the idea with the Elm code is that the Elm code has no side effects.
-But the Elm code compiles to JavaScript code, and gets run as JavaScript code in a browser.
-So when the Elm code wants to have a side effect, it's this sort of coy two step process:
+Your program has an entry point, and it receives some parameters, and depending on what the parameters, are, it resolves to some value, and that's it.
+You don't use it to actually _do_ anything, you just take in some parameters, and use those to deterministically produce a single value.
+
+Here are some things you can't "do":
+
+* You can't make a network request.
+* You can't look up the current time
+* You can't write to local storage
+
+Here's what you can do:
+
+You can define these 3-ish entrypoints, each of which answers a single question:
+
+1. `init` -- what is the initial state of the application?
+1. `update` -- if, hypothetically, someone _were_ to interact with the application, how might that change the state of the application?
+1. `view` -- what does the application look like, based on the current state of the application?
+
+Each of these is totally pure and has no side effects.
+But like, of course, we... do want to have side effects.
+So while you can't "do" those things in Elm, you can use Elm to do those things.
+Here's what I mean:
+The Elm code compiles to JavaScript code, and gets run as JavaScript code in a browser.
+And JavaScript can do whatever it wants.
+So when you want to write some Elm code that has a side effect, it's this sort of coy two step process:
 
 1. whisper a "command" into the air, for example: would someone please [make this network request?][elm-get]
 2. describe what should happen if someone _did_ perform that command
@@ -547,8 +590,7 @@ So when the Elm code wants to have a side effect, it's this sort of coy two step
 [elm-get]: https://package.elm-lang.org/packages/elm/http/latest/Http#get
 
 This much is all outlined in [the Elm guide](https://guide.elm-lang.org/effects/), and grows to feel natural over time.
-But I recall myself struggling at times with the question: wait a sec, what do you mean it has no side effects?
-The side effects are the whole point!
+Kind of.
 
 One major asset of the Elm community is its [very active Slack channel](https://elmlang.herokuapp.com/).
 When I was getting stuck, I found myself spending time there lurking and occasionally asking questions.
@@ -581,7 +623,7 @@ This directory contained the definitions of all of the components of my infrastr
 I wanted to follow the "infrastructure as code" trend here, using [HashiCorp terraform](https://www.terraform.io/) because we were using it at work and I barely understood any of its core concepts.
 Actually being responsible for setting it up from scratch was hugely valuable for me to learn terraform fundamentals.
 
-Here's the idea for the not-yet-inducted:
+Here's the idea for the not-yet-inducted who may be reading this:
 
 Let's say you want to deploy your API service to the cloud, and you choose [Digital Ocean](https://www.digitalocean.com/) as your vendor.
 You'll need to create a number of resources within Digital Ocean:
@@ -599,8 +641,8 @@ That's also pretty good, but what if you want to just change one thing about a r
 For example, Digital Ocean droplets can have tags.
 Let's say you decide later on that you want to add a new tag to a droplet.
 If your script is set up to only create the resource, it won't be easily changed to actually _update_ a resource.
-Or, what if you want to delete some resources.
-That's a whole new set of tasks.
+Or, what if you want to delete some resources?
+That's a whole new set of scripts.
 
 This is all where terraform comes in.
 You don't write any scripts to do anything, at all.
@@ -610,12 +652,10 @@ The CLI will figure out what it needs to create, update, or delete.
 It just sort of figures it out.
 It's excellent.
 
-There's some times when it doesn't exactly do what you want, but no one's perfect.
-
 I really enjoyed using Digital Ocean with Terraform.
 I was using AWS at work at the time, which was my first experience with a big cloud vendor.
-It was very helpful for me to see what was in common and what was different.
-It gave me an appreciation for the staggering vast number of services that AWS offers.
+It was very helpful for me to see what was in common and what was different between AWS and Digital Ocean.
+It gave me an appreciation for the staggeringly vast number of services that AWS offers.
 Digital Ocean is pretty quickly launching new things to close the gap, like Kubernetes support, managed databases, generating SSL certificates for your load balancers...
 I like the idea of using smaller players sometimes, and I'd be happy to try Digital Ocean again for something else.
 
@@ -680,8 +720,8 @@ This project was definitely the zenith of my interest in types:
 
 * all of the data in the database hews to the **types** defined in the database's schema
 * as data is loaded into memory in the Rust code, it is always deserialized into Rust types
-* when requests are made to the API, they must adhere to the types defined in the GraphQL schema
-* when the API responds to requests, they must adhere to the types defined in the GraphQL schema
+* when requests are made to the API, the request must adhere to the types defined in the GraphQL schema
+* when the API responds to requests, must adhere to the types defined in the GraphQL schema
 * when the Elm front-end wants to talk to the API, it uses Elm types that represent the GraphQL schema's queries
 * then of course the Elm front-end deserializes the responses into memory in the browser, using Elm types that represent the expected structure of the responses
 
@@ -768,6 +808,19 @@ I'll summarize and sneak in a couple more:
 2. The valleys you go through when you doubt your idea and worry that all the effort you've put in is a bummer
 3. As you do more market research and start finding that there are other things out there that are similar to your idea, and you start feeling like a bit of a fraud, it's kind of a bummer
 4. I thought it would be more fun to join a coworking space, but working there on nights and evenings, it was always empty and a little lonesome
+
+## what I learned about myself
+
+When you work on a team, you can learn about how you work on a team.
+On a team, hopefully, your team supports you, and provides you feedback to keep you on track.
+On your own, if you start to drift out of your lane, you're going to just keep drifting.
+On a team, if your energy flags, your teammates can pick up the slack and the project keeps moving forard.
+On your own, it just ... kind of ... stops.
+
+I think that everyone will drift in a different direction and probably stop somewhere interesting.
+For myself, I learned that when my natural instincts are unchecked, I'm inclined to fuss over the code and try to get things just right, and I'm completely unmotivated by actually delivering completed products to other human beings at any point.
+
+Good to know!
 
 ## why I stopped working on this
 
