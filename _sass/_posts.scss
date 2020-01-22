@@ -25,6 +25,9 @@
   }
 
   .footnotes {
+    @extend %section;
+    @extend %dashed-top;
+
     background-color: $footnotes-bg;
     padding: 5px;
   }
