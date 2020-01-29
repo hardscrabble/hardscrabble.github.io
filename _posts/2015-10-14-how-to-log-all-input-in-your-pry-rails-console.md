@@ -15,7 +15,7 @@ This could be a nice security thing. Maybe you're just nostalgic for old times.
 
 Pry has something called an "[input object][]", which you can override in your
 configuration. The object's responsibility is to feed ruby code to Pry, line by
-line. By default, it uses the [Readling module][]. I don't know a *ton* about
+line. By default, it uses the [Readline module][]. I don't know a *ton* about
 readline, but I gather that it's wrapping some standard unix program, which
 means it sort of *feels* natural. For example, you can input Control+l and it
 will clear the screen; `gets.chomp` doesn't do that kind of thing.
