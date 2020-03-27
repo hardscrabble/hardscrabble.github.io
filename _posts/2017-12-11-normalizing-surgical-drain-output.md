@@ -1,6 +1,6 @@
 ---
 title: Normalizing surgical drain output
-date: 2017-12-11 23:06 EST
+date: 2017-12-11 23:06
 ---
 
 Let's talk body fluids, and then math.

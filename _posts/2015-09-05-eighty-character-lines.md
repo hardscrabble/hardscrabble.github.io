@@ -1,6 +1,6 @@
 ---
 title: eighty character lines
-date: 2015-09-05 23:29 EDT
+date: 2015-09-05 23:29
 ---
 
 Last month we talked about [RuboCop][cop], which analyzes your Ruby code and

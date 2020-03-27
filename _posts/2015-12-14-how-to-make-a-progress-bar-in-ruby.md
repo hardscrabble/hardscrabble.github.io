@@ -1,7 +1,7 @@
 ---
 title: how to re-draw the line you just printed in Ruby, like to make a progress bar
 layout: post
-date: 2015-12-14 22:53 EST
+date: 2015-12-14 22:53
 
 ---
 

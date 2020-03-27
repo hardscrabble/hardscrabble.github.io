@@ -8,6 +8,8 @@ port: 1234
 
 permalink: "/:year/:title/"
 
+timezone: "America/New_York"
+
 metaphorloop_metadata:
   title: "metaphor loop"
   subtitle: "a podcast about how we think about programming"

@@ -1,6 +1,6 @@
 ---
 title: Sad Blocks
-date: 2017-07-06 23:10 EDT
+date: 2017-07-06 23:10
 ---
 
 I wish Ruby knew when you wrote a sad block.

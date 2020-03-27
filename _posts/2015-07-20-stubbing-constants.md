@@ -1,6 +1,6 @@
 ---
 title: stubbing constants in ruby tests
-date: 2015-07-20 23:38 EDT
+date: 2015-07-20 23:38
 ---
 
 Let's say you have some code that doesn't have tests and you want to add tests.

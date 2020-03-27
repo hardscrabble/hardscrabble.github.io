@@ -1,6 +1,6 @@
 ---
 title: begin rescue else
-date: 2015-10-20 23:28 EDT
+date: 2015-10-20 23:28
 ---
 
 Quick ruby tip kinda post.

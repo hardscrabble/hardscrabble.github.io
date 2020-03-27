@@ -1,6 +1,6 @@
 ---
 title: When to use defined? to memoize in Ruby
-date: 2017-02-05 19:08 EST
+date: 2017-02-05 19:08
 ---
 
 Here's a quick Ruby thing.

@@ -1,6 +1,6 @@
 ---
 title: gemfiles are ruby files
-date: 2015-06-02 00:29 EDT
+date: 2015-06-02 00:29
 ---
 
 A while back I saw this cool blog post: [Stay up to date with the latest github

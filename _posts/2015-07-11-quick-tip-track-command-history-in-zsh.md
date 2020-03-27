@@ -1,6 +1,6 @@
 ---
 title: "Quick tip: track command history in zsh"
-date: 2015-07-11 18:29 EDT
+date: 2015-07-11 18:29
 ---
 
 I switched from bash to zsh a few months ago and it's been mostly sweet. I
@@ -13,4 +13,3 @@ export SAVEHIST=1000
 ```
 
 I picked 1000 kind of randomly; a bigger number would probably be fine or nice.
-

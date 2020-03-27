@@ -1,6 +1,6 @@
 ---
 title: pro tip open firefox tabs in background
-date: 2015-09-08 22:20 EDT
+date: 2015-09-08 22:20
 ---
 
 One good thing to know if you're a firefox person: visit `about:config` and poke

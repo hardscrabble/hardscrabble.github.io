@@ -1,6 +1,6 @@
 ---
 title: the hardware and software I use (2017)
-date: 2017-12-21 01:57 EST
+date: 2017-12-21 01:57
 ---
 
 I'm an inveterate reader of [Uses This] style articles and I've always wanted someone to ask me to participate in one and no one has, and I have a perfectly fine blog, so here goes nothing (actually something quite self-indulgent and in need of editing and unlikely to be an annual tradition now that I know how weird it feels to write this all out).

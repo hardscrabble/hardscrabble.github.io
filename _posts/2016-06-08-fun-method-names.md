@@ -1,7 +1,7 @@
 ---
 title: Fun method names in Ruby
 layout: post
-date: 2016-06-08 01:43 EDT
+date: 2016-06-08 01:43
 
 ---
 

@@ -3,7 +3,7 @@
 set -euo pipefail
 
 function updateDate() {
-  sed "s/date: [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/date: $(date '+%Y-%m-%d %H:%M %Z')/"
+  sed "s/date: [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/date: $(date '+%Y-%m-%d %H:%M')/"
 }
 
 function draftToPost() {

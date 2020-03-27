@@ -1,7 +1,7 @@
 ---
 title: the first useful thing I wrote in Rust
 layout: post
-date: 2016-06-09 01:27 EDT
+date: 2016-06-09 01:27
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Using git to track git
-date: 2016-08-21 18:42 EDT
+date: 2016-08-21 18:42
 ---
 
 I made a screencast to share a fun idea I had while exploring a bit how git works.

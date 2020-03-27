@@ -1,6 +1,6 @@
 ---
 title: how to run shell commands from ruby if you care about their output or if they failed
-date: 2016-01-31 17:02 EST
+date: 2016-01-31 17:02
 ---
 
 Recently I made a new gem called [shell whisperer][1] which you might find

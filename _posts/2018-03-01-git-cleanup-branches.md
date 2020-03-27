@@ -1,6 +1,6 @@
 ---
 title: git cleanup-branches
-date: 2018-03-01 21:40 EST
+date: 2018-03-01 21:40
 ---
 
 Do you clean up your git branches as you go or are you, like I am, a lazy hoarder?

@@ -1,6 +1,6 @@
 ---
 title: announcing metaphor loop
-date: 2015-09-18 12:07 EDT
+date: 2015-09-18 12:07
 ---
 
 Last month I started a podcast but I didn't really publicize it because I wasn't

@@ -1,6 +1,6 @@
 ---
 title: assigning values to multiple variables in one line
-date: 2015-06-27 15:43 EDT
+date: 2015-06-27 15:43
 ---
 
 Why would you write this:

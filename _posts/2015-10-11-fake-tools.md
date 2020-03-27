@@ -1,6 +1,6 @@
 ---
 title: fake tools
-date: 2015-10-11 12:07 EDT
+date: 2015-10-11 12:07
 ---
 
 Last week, Flatiron School launched a new online learning program called "Learn

@@ -1,6 +1,6 @@
 ---
 title: making a pull request to rails
-date: 2015-07-14 01:47 EDT
+date: 2015-07-14 01:47
 ---
 
 Today I impulsively made [a pull request to Rails][pull], which feels kind of

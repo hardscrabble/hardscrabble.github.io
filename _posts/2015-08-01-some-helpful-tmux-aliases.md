@@ -1,6 +1,6 @@
 ---
 title: some helpful tmux aliases
-date: 2015-08-01 19:59 EDT
+date: 2015-08-01 19:59
 ---
 
 tmux is [still][0] an essential tool in my development workflow. Today I'm

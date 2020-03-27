@@ -1,6 +1,6 @@
 ---
 title: operators as self expression
-date: 2015-05-26 00:14 EDT
+date: 2015-05-26 00:14
 ---
 
 **EDIT June**: I've followed-up this post: [order of operations][ooo]
