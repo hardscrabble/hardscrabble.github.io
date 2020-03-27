@@ -53,7 +53,7 @@ He rarely offers his own opinions (this morning he offered [a gentle defense of 
 
 <iframe frameborder="0" scrolling="no" height="130" width="100%" src="https://www.wnyc.org/widgets/ondemand_player/wnyc/#file=/audio/json/1006139/&share=1"></iframe>
 
-Social psychologists talk about the Fundamental attribution error.
+Social psychologists talk about the fundamental attribution error.
 This is the one that Carlin was talking about here:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XWPCE2tTLZQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
