@@ -64,7 +64,7 @@ Sometimes in a workplace, someone will toss the camera over their shoulder to so
 They did the fun part, and they got bored, and they want someone else to finish it up.
 That way, they can go do something else that's fun.
 Sometimes we call this **delegating**, and it's a good thing, because it's giving an opportunity to someone that wants it.
-Sometimes it kind of sucks.
+Sometimes it kind of sucks for that person.
 I think it's not always easy to tell which one it is when you're the one tossing the camera.
 But you do your best.
 
