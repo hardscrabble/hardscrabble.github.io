@@ -68,7 +68,7 @@ Sometimes it kind of sucks for that person.
 I think it's not always easy to tell which one it is when you're the one tossing the camera.
 But you do your best.
 
-One last pop colture reference for today.
+One last pop culture reference for today.
 This is related.
 
 Over the last few years, I've gotten really into The Mountain Goats, a wonderful and prolific band that has been putting out wonderful records every one to three years for the last twenty-five years.
