@@ -86,7 +86,7 @@ I didn't really get that from the text, I got it mostly from [this podcast inter
 
 [crestpod]: https://overcast.fm/+LvPkJ2xBo
 
-I recommend that podcast very highly, even if you don't like The Mountain Goats, although I suspect you already do or are about to.
+I recommend that podcast very highly, even if you don't like The Mountain Goats, although I suspect you already do or you're about to.
 
 Is it perhaps also the case that we're drawn to Strong Man, Austin Powers types in the workplace?
 I think it's true that most CEOs aren't just men, but tall men.
