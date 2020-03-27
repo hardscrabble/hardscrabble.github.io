@@ -78,7 +78,7 @@ That last one has stuck with me.
 I hate to talk about Trump on my blog, but it's about this moment when right wing "strong man" leaders have emerged here in the states, and in Brazil, and in Hungary, and in Russia.
 Perversely, it tries to explore and explain their appeal by celebrating it.
 It suggests that, when things are bad, and the people are scared, we're particularly vulnerable and that vulnerability can be very easily exploited by someone who promises to protect us.
-We'll let them get away with anything.
+Like with Austin Powers, we'll let them get away with anything.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yHDsTbMcm_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
