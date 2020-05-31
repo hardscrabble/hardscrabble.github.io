@@ -5,7 +5,7 @@ begin
   # https://byparker.com/blog/2014/stay-up-to-date-with-the-latest-github-pages-gem/
   require 'json'
   require 'open-uri'
-  versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+  versions = JSON.parse(URI('https://pages.github.com/versions.json').open.read)
   gem 'github-pages', versions.fetch('github-pages')
 rescue SocketError => e
   STDERR.puts "Couldn't fetch remote github-pages: #{e.inspect}"
