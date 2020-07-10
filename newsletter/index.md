@@ -6,3 +6,5 @@ title: newsletter
 
 What if I did a newsletter?
 It's an idea.
+
+Here's what I'm thinking: <https://hardscrabble.substack.com/about>.
