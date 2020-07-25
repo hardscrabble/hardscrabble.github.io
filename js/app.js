@@ -10,13 +10,30 @@ function ready (fn) {
 // setup search behavior
 ready(function () {
   var searchBox = document.querySelectorAll('.search input')[0]
-  if (!searchBox) { return }
-  var list = document.querySelectorAll('.search-results ul')[0]
+  if (!searchBox) {
+    return
+  }
+  var searchList = document.querySelectorAll('.search-results ul')[0]
+  var fullArchivesList = document.querySelectorAll('.full-archives ul')[0]
+
+  function showSearch () {
+    searchList.style.display = ''
+    fullArchivesList.style.display = 'none'
+  }
+
+  function showArchives () {
+    searchList.style.display = 'none'
+    fullArchivesList.style.display = ''
+  }
+
   if (window.location.hash) {
+    showSearch()
     searchBox.value = decodeURI(window.location.hash.slice(1))
     var li = document.createElement('li')
     li.appendChild(document.createTextNode('Loading...'))
-    list.appendChild(li)
+    searchList.appendChild(li)
+  } else {
+    showArchives()
   }
 
   var request = new window.XMLHttpRequest()
@@ -35,7 +52,16 @@ ready(function () {
       }
 
       searchBox.oninput = function () {
-        while (list.firstChild) { list.removeChild(list.firstChild) }
+        if (this.value) {
+          showSearch()
+        } else {
+          showArchives()
+        }
+
+        while (searchList.firstChild) {
+          // empty out the search list
+          searchList.removeChild(searchList.firstChild)
+        }
         window.location.hash = encodeURI(this.value)
         var results = index.search(this.value)
         results.forEach(function (result, i) {
@@ -44,13 +70,15 @@ ready(function () {
           var a = document.createElement('a')
           a.setAttribute('href', post.url)
           a.appendChild(document.createTextNode(post.title))
-          li.appendChild(document.createTextNode(post.date + ' — '))
           li.appendChild(a)
-          list.appendChild(li)
+          li.appendChild(document.createTextNode(' ' + post.date))
+          searchList.appendChild(li)
         })
       }
 
-      if (searchBox.value) { searchBox.oninput() }
+      if (searchBox.value) {
+        searchBox.oninput()
+      }
     } else {
       window.alert('Sorry, search is broken. Feel free to let me know.')
     }
