@@ -11,12 +11,12 @@ header {
   @extend %section;
   @extend %dashed-bottom;
 
-  background-color: $white;
-  position: sticky;
-  top: 0;
-
   h1 {
     margin: 0;
+
+    a {
+      color: $charcoal;
+    }
   }
 
   .byline {
@@ -25,7 +25,7 @@ header {
 }
 
 a {
-  color: $green;
+  color: $dark-mint;
   text-decoration: none;
 
   &:hover {
@@ -53,6 +53,7 @@ blockquote {
 }
 
 code {
+  background-color: $white;
   margin: 0 2px;
   white-space: nowrap;
 }
@@ -60,7 +61,7 @@ code {
 p,
 li {
   code {
-    background-color: $hotyellow;
+    background-color: $light-highlight-salmon;
   }
 }
 
@@ -98,7 +99,11 @@ audio {
 }
 
 // WebKit/Blink
-::selection { background: $highlight; }
+::selection {
+  background: $highlight;
+}
 
 // Gecko browsers
-::-moz-selection { background: $highlight; }
+::-moz-selection {
+  background: $highlight;
+}

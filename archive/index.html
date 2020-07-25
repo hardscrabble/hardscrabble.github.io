@@ -1,14 +1,40 @@
 ---
-title: archive
+title: Archive
+redirect_from:
+  - /search
 ---
 
-<div class="archive">
+<div class="projects">
+  <h2>Projects</h2>
+  <p>A handful of projects I've made in the past:</p>
+
   <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url}}">{{ post.title }}</a>
-        <span>{{post.date | date_to_string }}</span>
-      </li>
-    {% endfor %}
+    <li><a href='/newsletter'>Hardscrabble (the newsletter)</a> &mdash; a storytelling newsletter I started in July 2020 as an outlet for writing more regularly.</li>
+    <li><a href='https://bluff.website'>Bluff</a> &mdash; an online game I made in 2020 during the Coronavirus pandemic</li>
+    <li><a href='/talks/there-are-no-rules-in-ruby/'>There are no rules in Ruby</a> &mdash; a tech talk I gave at RubyConf 2017</li>
+    <li><a href='/metaphorloop'>Metaphor Loop</a> &mdash; a podcast I sporadically produced between 2015 and 2017 in which I interviewed interesting programmer friends about how they think about the process of learning programming.</li>
   </ul>
+</div>
+
+<div class="archive">
+  <h2>Blog posts list</h2>
+
+  <div class="search">
+    <input type=text placeholder="search query" autofocus />
+  </div>
+
+  <div class="search-results">
+    <ul></ul>
+  </div>
+
+  <div class="full-archives">
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url}}">{{ post.title }}</a>
+          <span>{{post.date | date_to_string }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

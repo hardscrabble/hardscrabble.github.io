@@ -18,14 +18,12 @@
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">◭</a>
-  {% else %}
-    <span class="previous">◭</span>
+    <a href="{{ paginator.previous_page_path }}" class="previous">previous</a>
+    &bull;
   {% endif %}
-  <span class="page_number ">p. {{ paginator.page }} <small>(of {{ paginator.total_pages }})</small></span>
+  <span class="page_number ">page {{ paginator.page }} </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">◮</a>
-  {% else %}
-    <span class="next ">◮</span>
+    &bull;
+    <a href="{{ paginator.next_page_path }}" class="next">next</a>
   {% endif %}
 </div>
