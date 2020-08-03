@@ -19,11 +19,11 @@
 <div class="pagination">
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path }}" class="previous">previous</a>
-    &bull;
   {% endif %}
-  <span class="page_number ">page {{ paginator.page }} </span>
+  {% if paginator.previous_page and paginator.next_page %}
+    <span>&bull;</span>
+  {% endif %}
   {% if paginator.next_page %}
-    &bull;
     <a href="{{ paginator.next_page_path }}" class="next">next</a>
   {% endif %}
 </div>
