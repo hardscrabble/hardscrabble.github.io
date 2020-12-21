@@ -71,7 +71,7 @@ Mo (in what is probably my favorite line of the first episode) replies, "No, but
 Mo (Alex Newell) plays an important role in the series.
 On one level, he's important because Zoey needs to confide in _someone_ about what's going on so that we can have scenes where Zoey talks about what she thinks is happening and how she feels about it.
 But more importantly, Mo is someone farther along in the journey of self-knowledge and self-expression than Zoey.
-He's gender fluid, black, dates men, sings beautifully (even outside of fantasy sequences), likes drugs, and has a hilariously extravagant home decor style.
+He's gender fluid, Black, dates men, sings beautifully (even outside of fantasy sequences), likes drugs, and has a hilariously extravagant home decor style.
 You would be forgiven for finding him much more interesting than Zoey and wondering why he's not the main character.
 He's not just a symbol of the beauty of unbottled expression, as he does get a few turns in the spotlight that develop and round out who this character is, but he's also that.
 
@@ -116,7 +116,7 @@ Allow your heart to be nourished by Zoey's Extraordinary Playlist.
 It's not all emotions and morals, it's also teeming with the exuberance of pop.
 It's fun when people sing and dance.
 The cast is dotted with a few ringers from Broadway like Skylar Astin and Andrew Leeds, and others swing by in guest roles like Bernadette Peters and Renée Elise Goldsberry.
-The choreography (from Mandy Moore, who worked on La La Land) is fantastic, always enertaining and often moving.
+The choreography (from Mandy Moore, who worked on La La Land) is fantastic, always entertaining and often moving.
 
 Jane Levy anchors the whole thing with a lot of emotion and neurotic energy.
 Perhaps because the protoganist is a software engineer, she spends a lot of time trying to figure out how her new ability "works", and the show has a lot of fun probing its boundaries, stretching the premise out like taffy, and hanging a lantern on the conceptual silliness while always respecting the emotional performances that are made possible by the silly concept.
