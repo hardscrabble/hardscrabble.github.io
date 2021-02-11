@@ -3,7 +3,7 @@ title: Making FactoryBot.lint verbose
 date: 2021-02-10 22:49
 ---
 
-Here's a quick blog post about a specific thing (making `FactoryBot.lint` more verbose) but actually, secretly, about a more genearl thing (taking advantage of Ruby's flexibility to bend the universe to your will).
+Here's a quick blog post about a specific thing (making `FactoryBot.lint` more verbose) but actually, secretly, about a more general thing (taking advantage of Ruby's flexibility to bend the universe to your will).
 Let's start with the specific thing and then come back around to the general thing.
 
 If you use [Rails](https://rubyonrails.org/), there's a good chance you use [FactoryBot](https://github.com/thoughtbot/factory_bot/) to help you write your tests.
