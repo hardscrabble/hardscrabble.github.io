@@ -8,7 +8,7 @@ Hi there -- I'm Max Jacobson, that's me on the right.
 I'm a software engineer at Vimeo in New York.
 This is my home on the web.
 
-If you want more frequent updates from me, check out the [Hardscrabble newsletter](/newsletter).
+If you want to get updates from me in your inbox, check out the [Hardscrabble newsletter](/newsletter).
 
 This website is powered by [Jekyll] and hosted on [GitHub Pages].
 The source is [available to browse][blog-source], for nerds.
