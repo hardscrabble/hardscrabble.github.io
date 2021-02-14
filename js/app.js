@@ -14,7 +14,7 @@ ready(function () {
     return
   }
   var searchList = document.querySelectorAll('.search-results ul')[0]
-  var fullArchivesList = document.querySelectorAll('.full-archives ul')[0]
+  var fullArchivesList = document.querySelectorAll('.full-archives')[0]
 
   function showSearch () {
     searchList.style.display = ''
