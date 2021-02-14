@@ -1,7 +1,7 @@
 ---
 title: erb and indendation
 date: 2012-12-02 7:53 PM
-category: personal
+category: programming
 ---
 
 Earlier while sleeping on the plane I had an idea for a method that I want to write.
