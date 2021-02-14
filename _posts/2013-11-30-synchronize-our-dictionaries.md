@@ -2,9 +2,6 @@
 title: Synchronize Our Dictionaries
 date: 2013-11-30 4:58 PM
 category: programming
-tags:
-- raganwald
-- coffeescript
 redirect_from:
   - '/2013/synchronize_our_dictionaries'
 ---

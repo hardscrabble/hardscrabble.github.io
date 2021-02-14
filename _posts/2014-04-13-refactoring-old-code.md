@@ -1,8 +1,8 @@
 ---
 title: refactoring very old code
 date: 2014-04-13 13:15
-redirect_from:
-  '/2014/refactoring_old_code'
+redirect_from: '/2014/refactoring_old_code'
+category: programming
 ---
 
 Before I went to Flatiron School last summer I cobbled together a web app called [Layabout](http://layabout.tv). This weekend, for the first time in a very long time, I worked up the nerve to look at the source code. You may have heard the phrase ["code smell"](http://blog.codinghorror.com/code-smells/) but I'm not sure it applies to this code. This code is like that ominous stink you'd almost rather ignore?

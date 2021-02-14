@@ -1,6 +1,7 @@
 ---
 title: participate in society
 date: 2015-10-03 00:00
+category: personal
 ---
 
 If there's one piece of advice I feel comfortable giving, it's this: participate

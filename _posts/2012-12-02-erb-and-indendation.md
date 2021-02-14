@@ -1,14 +1,7 @@
 ---
 title: erb and indendation
 date: 2012-12-02 7:53 PM
-category: coding
-from: beefsteak
-tags:
-- erb
-- ruby
-- html
-- indentation
-- sinatra
+category: personal
 ---
 
 Earlier while sleeping on the plane I had an idea for a method that I want to write.

@@ -1,8 +1,7 @@
 ---
 title: all the thoughts that went through my head while trying to pass the first test in the test suite of a warm up exercise this morning before coffee and then again this evening after painkillers
 date: 2013-07-03 3:52 AM
-category: coding
-from: fis-octopress
+category: programming
 ---
 
 Recently at school we've been doing code exercises to warm up in the morning. We're given contained problems to solve with code. Problems that would be possible to solve without code but tedious or prohibitively time-consuming. Sometimes we move on to lecture before I can solve one and it haunts me all day.

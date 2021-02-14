@@ -1,6 +1,7 @@
 ---
 title: When to use defined? to memoize in Ruby
 date: 2017-02-05 19:08
+category: programming
 ---
 
 Here's a quick Ruby thing.

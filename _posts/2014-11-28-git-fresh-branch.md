@@ -1,7 +1,7 @@
 ---
 title: git fresh branch
-layout: post
 date: 2014-11-28 04:11
+category: programming
 ---
 
 Tonight while clicking around the web I discovered

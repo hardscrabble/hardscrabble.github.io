@@ -1,6 +1,7 @@
 ---
 title: inhumanity
 date: 2015-03-22 16:43
+category: personal
 ---
 
 Yesterday morning I grabbed my pants off the floor and a mouse scurried away. I

@@ -1,6 +1,7 @@
 ---
 title: "useful tool: storm"
 date: 2015-01-01 20:37
+category: programming
 ---
 
 I've been sort of passively looking out for something like this for a while.

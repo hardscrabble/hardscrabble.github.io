@@ -3,6 +3,7 @@ title: New Year's Resolutions
 date: 2014-01-06 20:23
 redirect_from:
   - '/2014/new_years_resolutions'
+category: personal
 ---
 
 Last year was good. I think I resolved to take programming seriously. I went to The Flatiron School and now I'm working at CipherHealth. I've learned a shit load and had a lot of fun.

@@ -3,6 +3,7 @@ title: My New Computer
 date: 2014-06-29 20:06
 redirect_from:
   - '/2014/my_new_computer'
+category: personal computing
 ---
 
 Here's a screenshot of my desktop as of right now:

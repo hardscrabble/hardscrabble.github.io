@@ -1,6 +1,7 @@
 ---
 title: git fib, a helpful little script for git commit squashers
 date: 2015-03-08 12:19
+category: programming
 ---
 
 Sometimes I squash git commits. Generally I do this when I'm making a pull

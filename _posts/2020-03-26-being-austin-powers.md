@@ -1,6 +1,7 @@
 ---
 title: Being Austin Powers in the workplace
 date: 2020-03-26 22:26
+category: work
 ---
 
 I struggle with pop culture references.

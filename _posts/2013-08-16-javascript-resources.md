@@ -1,12 +1,7 @@
 ---
 title: javascript resources
 date: 2013-08-16 16:18
-from: fis-octopress
-category: coding
-tags:
-- javascript
-- links
-- learning
+category: programming
 ---
 
 Here are some links to free, online resources I found helpful while learning JavaScript.

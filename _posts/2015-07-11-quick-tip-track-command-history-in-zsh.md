@@ -1,6 +1,7 @@
 ---
 title: "Quick tip: track command history in zsh"
 date: 2015-07-11 18:29
+category: programming
 ---
 
 I switched from bash to zsh a few months ago and it's been mostly sweet. I

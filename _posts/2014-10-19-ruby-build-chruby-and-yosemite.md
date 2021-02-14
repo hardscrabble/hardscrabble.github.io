@@ -1,8 +1,7 @@
 ---
 title: ruby-build, chruby, and yosemite
-layout: post
 date: 2014-10-19 12:05
-
+category: programming
 ---
 
 A few months ago I stopped using [rvm](http://rvm.io/) to install and manage my ruby installations on my computers. I don't have a great reason, other than reading that [Steve Klabnik uses something else](http://blog.steveklabnik.com/posts/2012-12-13-getting-started-with-chruby) and I felt like trying it one day.

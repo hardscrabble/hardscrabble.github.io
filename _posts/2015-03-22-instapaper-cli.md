@@ -1,6 +1,7 @@
 ---
 title: managing your Instapaper bookmarks from the command line
 date: 2015-03-22 17:05
+category: personal computing
 ---
 
 I've previously [written about extracting a gem from a web app called

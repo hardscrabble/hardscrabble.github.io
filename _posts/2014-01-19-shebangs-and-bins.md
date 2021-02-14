@@ -3,6 +3,7 @@ title: shebangs and bins
 date: 2014-01-19 14:36
 redirect_from:
   - '/2014/shebangs_and_bins'
+category: programming
 ---
 
 I had a thought the other night as I was falling asleep: I guess I could create my own shebang? I asked Siri to remind me later and fell asleep.

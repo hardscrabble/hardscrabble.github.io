@@ -1,6 +1,7 @@
 ---
 title: discovering a problem
 date: 2015-01-21 00:15
+category: blogging
 ---
 
 ![view source on a recent post](/img/2015-01-21-markup-view-source.png)

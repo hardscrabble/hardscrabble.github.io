@@ -1,6 +1,7 @@
 ---
 title: don't let me modify my laptop any more please
 date: 2014-12-16 01:32
+category: personal computing
 ---
 
 I'm writing this on a sticker-covered MacBook Pro my Grandma bought me 3.5 years

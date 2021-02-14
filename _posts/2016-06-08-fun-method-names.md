@@ -1,8 +1,7 @@
 ---
 title: Fun method names in Ruby
-layout: post
 date: 2016-06-08 01:43
-
+category: programming
 ---
 
 One thing I like about Ruby is that you can use a little punctuation in your method names, which can help you write expressions that read like nice sentences:

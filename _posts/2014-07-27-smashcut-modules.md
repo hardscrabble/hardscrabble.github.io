@@ -3,6 +3,7 @@ title: composing a Parslet parser from modules and making code climate happy
 date: 2014-07-27 18:39
 redirect_from:
   - '/2014/smashcut_modules'
+category: programming
 ---
 
 I'm making very slow and intermittent progress on [smashcut](http://github.com/maxjacobson/smashcut), my Fountain screenplay parser written in Ruby. At this rate I'll have a usable version in a few years or so :smile:. I'm going to talk about it a little bit here and then talk about how a small refactor boosted my Code Climate GPA for the project from 1.9 to 3.56.

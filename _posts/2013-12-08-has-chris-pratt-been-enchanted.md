@@ -3,6 +3,7 @@ title: Has Chris Pratt Been Enchanted?
 date: 2013-12-08 22:29
 redirect_from:
   - '/2013/has_chris_pratt_been_enchanted'
+category: culture
 ---
 
 I can't think of Chris Pratt, the very funny actor who plays Andy on *Parks and Rec*, without thinking about this tweet, by that show's creator, Mike Schur:

@@ -1,6 +1,7 @@
 ---
 title: using method_missing with class methods in Ruby
 date: 2015-07-08 01:42
+category: programming
 ---
 
 Ruby's `method_missing` let's you write some weird code:

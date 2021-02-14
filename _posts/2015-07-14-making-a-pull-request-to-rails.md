@@ -1,6 +1,7 @@
 ---
 title: making a pull request to rails
 date: 2015-07-14 01:47
+category: programming
 ---
 
 Today I impulsively made [a pull request to Rails][pull], which feels kind of

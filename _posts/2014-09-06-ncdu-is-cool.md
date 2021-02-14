@@ -1,6 +1,7 @@
 ---
 title: 'when your disk fills up, who are you?'
 date: 2014-09-06 20:19
+category: personal computing
 ---
 
 I got into technology in large part because I was drawn to the Mac community. I started reading blogs about apps and productivity. That occupied a lot of my mind during college in particular, when I was struggling with procrastination and wanted to find some silver bullet app to save me.

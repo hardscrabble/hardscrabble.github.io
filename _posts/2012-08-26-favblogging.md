@@ -1,15 +1,7 @@
 ---
 title: Favblogging with pinboard, ifttt, and the rest of the internet
 date: 2012-08-26 6:18 PM
-category: the internet
-tags:
-- pinboard
-- favs
-- favorites
-- love
-- gush
-- ifttt
-- from the archives
+category: blogging
 ---
 
 ## MY FAV STUFF

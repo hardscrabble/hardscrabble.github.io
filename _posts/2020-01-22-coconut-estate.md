@@ -1,6 +1,7 @@
 ---
 title: Coconut Estate
 date: 2020-01-22 00:31
+category: work
 ---
 
 As a software engineer who has spent the last 6-7ish years working full-time jobs and listening to podcasts, I've spent a meaningful amount of time day-dreaming about starting my own company.

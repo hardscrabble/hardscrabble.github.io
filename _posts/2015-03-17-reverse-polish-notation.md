@@ -1,6 +1,7 @@
 ---
 title: reverse polish notation
 date: 2015-03-17 02:30
+category: programming
 ---
 
 Earlier tonight Carlos tweeted this:

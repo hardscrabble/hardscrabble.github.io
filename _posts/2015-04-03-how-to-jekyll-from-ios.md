@@ -1,6 +1,7 @@
 ---
 title: How to easily post to your Jekyll blog from your iPhone or iPad
 date: 2015-04-03 18:05
+category: blogging
 ---
 
 ## Caveats:

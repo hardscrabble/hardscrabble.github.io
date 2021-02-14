@@ -3,6 +3,7 @@ title: updating a jekyll/github blog from the iPad, or anywhere, without touchin
 date: 2014-01-12 0:00
 redirect_from:
   - '/2014/jekyll_api'
+category: blogging
 ---
 
 **UPDATE April 2015:** Here's a much, much better way to do it: [How to easily post to your Jekyll blog from your iPhone or iPad](/2015/how-to-jekyll-from-ios/)

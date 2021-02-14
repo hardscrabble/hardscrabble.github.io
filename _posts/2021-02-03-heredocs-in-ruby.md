@@ -1,8 +1,8 @@
 ---
 title: heredocs in ruby
 date: 2021-02-03 00:28
+category: programming
 ---
-
 
 I've recently been writing a lot of heredocs in Ruby.
 We have to talk about it.

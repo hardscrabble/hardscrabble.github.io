@@ -1,6 +1,7 @@
 ---
 title: analytics
 date: 2015-04-02 02:25
+category: blogging
 ---
 
 A few months ago I installed Google Analytics on hardscrabble, and a few weeks ago I installed [Clicky](https://clicky.com), a competing service.

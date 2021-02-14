@@ -1,6 +1,7 @@
 ---
 title: sleep timers
 date: 2014-09-07 20:06
+category: personal computing
 ---
 
 Falling asleep is one of the weirdest things that everyone does every day. Many people struggle to do it all. They experiment and develop workflows that help cope with this necessary evil. Here's mine.

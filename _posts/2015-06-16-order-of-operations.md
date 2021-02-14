@@ -1,6 +1,7 @@
 ---
 title: order of operations
 date: 2015-06-16 00:00
+category: programming
 ---
 
 Last month, we [looked at](/2015/operators-as-self-expression/) Ruby operators,

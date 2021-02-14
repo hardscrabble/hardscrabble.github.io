@@ -1,6 +1,7 @@
 ---
 title: onscreen texts and I'm so Happy I'm Ecstatic
 date: 2014-08-20 22:46
+category: culture
 ---
 
 People have been linking to this terrific video by [Tony Zhou](http://vimeo.com/tonyzhou) about how film and television depicts onscreen text messaging:

@@ -1,6 +1,7 @@
 ---
 title: enterprising
 date: 2015-01-17 15:31
+category: personal computing
 ---
 
 Steven Soderbergh re-edited some famous movies. Jason Kottke [linked to them][0]

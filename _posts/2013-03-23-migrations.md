@@ -1,13 +1,7 @@
 ---
 title: migrations
 date: 2013-03-23 3:39 PM
-category: coding
-from: beefsteak
-tags:
-- markdown
-- squarespace
-- xml
-- github
+category: programming
 ---
 
 A few days ago on ADN I noticed tech blogger Harry Marks [complaining](https://alpha.app.net/hcmarks/post/4018261) about his blog host, Squarespace. For various reasons, he wanted to take his blog elsewhere. What they gave him was as a large xml file with more than sixty-thousand lines of bracketed stuff amounting to 5.5mb, which is kind of humongous for a text file.

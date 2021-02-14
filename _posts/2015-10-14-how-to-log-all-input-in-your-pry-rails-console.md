@@ -1,6 +1,7 @@
 ---
 title: how to log all input in your pry rails console
 date: 2015-10-14 00:15
+category: programming
 ---
 
 Many Rubyists use and love the [pry][] gem for adding breakpoints to their

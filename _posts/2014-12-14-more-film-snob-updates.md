@@ -1,6 +1,7 @@
 ---
 title: more film snob updates
 date: 2014-12-14 02:20
+category: programming
 ---
 
 Since [my last post][], in which I announced version v0.4.0 of film snob and

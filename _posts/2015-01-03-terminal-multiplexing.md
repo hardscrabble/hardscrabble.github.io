@@ -1,6 +1,7 @@
 ---
 title: terminal multiplexing with tmux
 date: 2015-01-03 22:04
+category: programming
 ---
 
 <iframe src="//player.vimeo.com/video/104250309?byline=0&amp;portrait=0" width="686" height="429" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

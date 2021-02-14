@@ -1,6 +1,7 @@
 ---
 title: Sunrise commits
 date: 2018-11-26 00:16
+category: programming
 ---
 
 I've picked up the habit from some people I've worked with that whenever I create a new repository, I make an initial empty commit that has the commit message `:sunrise:` and no changes in it.

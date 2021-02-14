@@ -1,11 +1,7 @@
 ---
 title: click to ugh
 date: 2013-01-21 3:37 PM
-category: the internet
-tags:
-- youre doing it wrong
-- html
-- the av club
+category: personal computing
 ---
 
 It's time for [You're Doing it Wrong](http://www.maxjacobson.net/tag/youre-doing-it-wrong), my sometimes series where I complain about blogs whose HTML or CSS bugs me!

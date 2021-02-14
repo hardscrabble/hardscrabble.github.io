@@ -1,6 +1,7 @@
 ---
 title: ruby keyword arguments aren't obvious
 date: 2015-03-29 05:13
+category: programming
 ---
 
 Since Ruby 2.0, methods can be defined with keyword arguments instead of the

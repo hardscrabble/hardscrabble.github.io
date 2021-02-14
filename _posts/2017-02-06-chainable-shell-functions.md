@@ -1,6 +1,7 @@
 ---
 title: chainable shell functions
 date: 2017-02-06 22:21
+category: programming
 ---
 
 I learned a neat shell script refactoring strategy yesterday that I'd like to share.

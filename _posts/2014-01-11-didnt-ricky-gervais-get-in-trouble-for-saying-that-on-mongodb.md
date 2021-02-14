@@ -3,6 +3,7 @@ title: Didn't Ricky Gervais get in trouble for saying that? On MongoDB
 date: 2014-01-11 18:52
 redirect_from:
   - '/2014/didnt_ricky_gervais_get_in_trouble_for_saying_that_on_mongodb'
+category: programming
 ---
 
 Remember when Ricky Gervais got in trouble for using the word "Mong" a lot to mean "stupid" and a lot of people were mad at him because it's an offensive thing to say? Anyway, I've been using MongoDB and Mongoid at work and I sometimes worry that the very name is kind of rude, but other than that I mostly like it.

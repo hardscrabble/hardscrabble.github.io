@@ -1,6 +1,7 @@
 ---
 title: I've started initializing git repositories in the weirdest places
 date: 2018-11-26 00:57
+category: programming
 ---
 
 Earlier tonight I caught myself doing this:
