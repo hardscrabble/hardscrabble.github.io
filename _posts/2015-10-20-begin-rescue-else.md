@@ -1,6 +1,7 @@
 ---
 title: begin rescue else
 date: 2015-10-20 23:28
+category: programming
 ---
 
 Quick ruby tip kinda post.

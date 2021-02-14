@@ -1,6 +1,7 @@
 ---
 title: stubbing constants in ruby tests
 date: 2015-07-20 23:38
+category: programming
 ---
 
 Let's say you have some code that doesn't have tests and you want to add tests.

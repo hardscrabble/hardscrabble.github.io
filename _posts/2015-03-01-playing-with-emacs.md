@@ -1,7 +1,7 @@
 ---
 title: playing with emacs for the first time
 date: 2015-03-01 18:15
-meta_note: This post isn't formatted with 80 character line limits because I wrote it in emacs and I don't have that functionality there, and I'm not going to do it by hand!
+category: personal computing
 ---
 
 Today I'm playing with emacs. There has been a confluence of events which have led me to this moment:

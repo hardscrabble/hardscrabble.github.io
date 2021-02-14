@@ -1,6 +1,7 @@
 ---
 title: my first vim macro
 date: 2015-03-29 02:40
+category: programming
 ---
 
 The time has come for me to make a vim macro. Here's what it looks like in

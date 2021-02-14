@@ -1,6 +1,7 @@
 ---
 title: how to tell ruby how to compare numbers to your object with coerce
 date: 2015-11-09 00:50
+category: programming
 ---
 
 Let's say you have some object that represents some numeric idea:

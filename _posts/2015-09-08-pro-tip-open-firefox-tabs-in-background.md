@@ -1,6 +1,7 @@
 ---
 title: pro tip open firefox tabs in background
 date: 2015-09-08 22:20
+category: personal computing
 ---
 
 One good thing to know if you're a firefox person: visit `about:config` and poke

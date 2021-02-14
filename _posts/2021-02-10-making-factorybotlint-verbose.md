@@ -1,6 +1,7 @@
 ---
 title: Making FactoryBot.lint verbose
 date: 2021-02-10 22:49
+category: programming
 ---
 
 Here's a quick blog post about a specific thing (making `FactoryBot.lint` more verbose) but actually, secretly, about a more general thing (taking advantage of Ruby's flexibility to bend the universe to your will).

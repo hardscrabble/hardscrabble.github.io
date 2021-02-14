@@ -1,6 +1,7 @@
 ---
 title: there are no rules in ruby
 date: 2017-07-02 22:28
+category: programming
 ---
 
 **Note**: I've expanded on these ideas in a conference talk, which you can see [here][talk].

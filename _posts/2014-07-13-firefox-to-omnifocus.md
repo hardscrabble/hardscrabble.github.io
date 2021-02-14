@@ -3,6 +3,7 @@ title: An Alfred Workflow for adding the frontmost Firefox tab to OmniFocus with
 date: 2014-07-13 20:33
 redirect_from:
   - '/2014/alfred_workflow_to_bring_frontmost_firefox_tab_to_omnifocus_with_applescript'
+category: personal computing
 ---
 
 Saw [a link](http://www.macstories.net/linked/tools-to-organize-browser-tabs-for-mac-users/) about using tools to take long-lasting tabs out of your browser and put them somewhere useful like Evernote or OmniFocus rather than let them tax your mind and memory. I wanted in.

@@ -1,11 +1,7 @@
 ---
 title: random emoji in prompt
 date: 2013-06-13 7:05 PM
-category: coding
-tags:
-- terminal
-- bash
-- emoji
+category: programming
 ---
 
 **Edit:** This post is kind of sloppy.

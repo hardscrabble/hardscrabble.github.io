@@ -1,6 +1,7 @@
 ---
 title: my newest git alias is git
 date: 2014-09-06 19:35
+category: programming
 ---
 
 Adding aliases makes git a lot more pleasant to use. For example, I am too busy to write `git status` to find out the current status of my project so I did this:

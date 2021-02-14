@@ -1,6 +1,7 @@
 ---
 title: designing your own extendible command line utility
 date: 2015-06-10 00:36
+category: programming
 ---
 
 I [like][] that you or I can write command line utilities in any language, name

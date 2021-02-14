@@ -1,6 +1,7 @@
 ---
 title: Ambiguous use of user-defined command
 date: 2015-01-18 20:33
+category: programming
 ---
 
 I wish Vim plugin authors would stop exposing commands that start with E. Is

@@ -1,6 +1,7 @@
 ---
 title: Commit your skeletons right away
 date: 2018-11-26 00:31
+category: programming
 ---
 
 I was just writing a post about [habits around starting new git repositories][sunrise] and there was one additional thought that isn't quite related but which I also want to say and so now I'm really blogging tonight and coming back to you with a second post.

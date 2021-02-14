@@ -1,6 +1,7 @@
 ---
 title: building firefox for the first time
 date: 2015-02-18 00:41
+category: programming
 ---
 
 recently I came across two blog posts:

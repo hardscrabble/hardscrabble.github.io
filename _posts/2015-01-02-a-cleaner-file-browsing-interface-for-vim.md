@@ -1,6 +1,7 @@
 ---
 title: A cleaner file browsing interface for vim
 date: 2015-01-02 11:49
+category: programming
 ---
 
 <iframe src="//player.vimeo.com/video/115783832" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

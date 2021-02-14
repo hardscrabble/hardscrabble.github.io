@@ -1,6 +1,7 @@
 ---
 title: A little trick that makes using ripgrep in visual studio code nicer
 date: 2021-01-24 17:23
+category: programming
 ---
 
 Hello friends, happy new year.

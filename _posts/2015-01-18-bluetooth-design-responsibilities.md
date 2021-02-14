@@ -1,6 +1,7 @@
 ---
 title: unpairing bluetooth devices is annoying
 date: 2015-01-18 17:07
+category: personal computing
 ---
 
 I don't use that many bluetooth products. Bluetooth kind of confuses me, to be

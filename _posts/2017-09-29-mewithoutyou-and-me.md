@@ -1,6 +1,7 @@
 ---
 title: mewithoutYou and me
 date: 2017-09-29 02:14
+category: culture
 ---
 
 [mewithoutYou][wiki] is a fairly prolific rock and roll band from Philadelphia who I love very much.

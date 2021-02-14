@@ -1,7 +1,7 @@
 ---
 title: the cop and the hound
-layout: post
 date: 2014-09-28 17:05
+category: programming
 ---
 
 As a rails developer I keep hearing about Thoughtbot's cool projects. A fairly recent one is [Hound](https://houndci.com/), a tool that comments on your GitHub pull requests and points out code style violations. I think consistent style is a nice ideal to strive for, so I want something like this.

@@ -1,6 +1,7 @@
 ---
 title: "sindresorhus/pure is such a good zsh prompt"
 date: 2021-02-02 23:30
+category: programming
 ---
 
 Given how much time I spend in a terminal, typing things and hitting enter, I think it's a good idea to keep the vibe in my shell nice.

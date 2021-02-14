@@ -1,8 +1,7 @@
 ---
 title: the first useful thing I wrote in Rust
-layout: post
 date: 2016-06-09 01:27
-
+category: programming
 ---
 
 I've been interested in the [Rust programming language][1] for a while, but it wasn't until this week that I wrote something in it which I found useful.

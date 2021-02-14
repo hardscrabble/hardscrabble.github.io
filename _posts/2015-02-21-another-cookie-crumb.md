@@ -1,6 +1,7 @@
 ---
 title: another cookie crumb
 date: 2015-02-21 01:53
+category: programming
 ---
 
 In [Wednesday's post about building Firefox from source the other day][0], I

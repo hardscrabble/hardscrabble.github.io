@@ -1,12 +1,7 @@
 ---
 title: using mobile web inspector
 date: 2013-01-15 10:50 PM
-category: coding
-tags:
-- jquery
-- javascript
-- safari
-- ios
+category: programming
 ---
 
 I've just figured out why infinite scrolling wasn't working on Layabout on my iPod Touch.

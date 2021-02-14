@@ -1,12 +1,7 @@
 ---
 title: this is my suitcase
 date: 2013-11-30 8:39 PM
-category: pop culture
-tags:
-- this is my suitcase
-- music
-- the internet
-- ecstatic
+category: culture
 ---
 
 > We are not "breaking up", because we all still love each other. Mary Lynn writes great music. I still write music all over. We all still exist and we all still create. We are simply putting a lid on This Is My Suitcase to capture everything we've done; We are merely writing a really good ending to our own wild story.

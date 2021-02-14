@@ -1,7 +1,7 @@
 ---
 title: idempotent
-layout: post
 date: 2014-11-29 01:20
+category: programming
 ---
 
 HTTP GET requests are supposed to be idempotent, but they often have the side

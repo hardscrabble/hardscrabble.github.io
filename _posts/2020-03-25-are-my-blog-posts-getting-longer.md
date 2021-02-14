@@ -1,6 +1,7 @@
 ---
 title: "Are my blog posts getting longer?"
 date: 2020-03-25 23:54
+category: blogging
 ---
 
 Earlier, I was chatting with a coworker about blogging and speculated that my blog posts have gotten longer over time.

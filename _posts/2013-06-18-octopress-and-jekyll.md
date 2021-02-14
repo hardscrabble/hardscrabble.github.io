@@ -1,9 +1,7 @@
 ---
 title: blogs... how do they work?
 date: 2013-06-18 12:45 AM
-category: coding
-tags:
-- blogging
+category: programming
 ---
 
 I've been using this Octopress blog for a couple weeks and I'm compelled to figure out how it works and came to be. Let's spelunk now.

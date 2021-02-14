@@ -1,6 +1,7 @@
 ---
 title: announcing metaphor loop
 date: 2015-09-18 12:07
+category: podcasting
 ---
 
 Last month I started a podcast but I didn't really publicize it because I wasn't

@@ -1,6 +1,7 @@
 ---
 title: Get a shredder
 date: 2020-03-25 23:07
+category: personal
 ---
 
 ![the byproduct of my shredder](/img/2020-03-25-shreddings.jpg)

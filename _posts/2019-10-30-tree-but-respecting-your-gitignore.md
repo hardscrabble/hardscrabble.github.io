@@ -1,6 +1,7 @@
 ---
 title: tree, but respecting your gitignore
 date: 2019-10-30 22:41
+category: programming
 ---
 
 Whenever I'm setting up a new computer, there's a bunch of CLI programs I tend to install.

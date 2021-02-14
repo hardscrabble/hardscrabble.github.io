@@ -1,6 +1,7 @@
 ---
 title: sidenotes
 date: 2013-12-27 18:43
+category: blogging
 ---
 
 **EDIT April 2015**: I took it off the site because it was kind of bad :smile:

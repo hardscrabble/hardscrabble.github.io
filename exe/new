@@ -36,6 +36,7 @@ fi
 echo "---
 title: $title
 date: $(date '+%Y-%m-%d')
+category: tk
 ---
 
 Alright, this is where your post goes." > $filename

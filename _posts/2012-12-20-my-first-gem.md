@@ -1,12 +1,7 @@
 ---
 title: my first gem
 date: 2012-12-20 7:45 AM
-category: coding
-tags:
-- ruby
-- rubygems
-- gems
-- smashcut
+category: programming
 ---
 
 One of the projects I've been intermittently working on is called smashcut. I've been keeping it sort of vague and secret because I'm imagining tickling a wild beast of an audience that isn't *necessarily* real and that tickles me.

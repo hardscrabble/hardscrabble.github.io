@@ -1,6 +1,7 @@
 ---
 title: Zoey's Extraordinary Playlist
 date: 2020-12-19 17:31
+category: culture
 ---
 
 I was indoors a lot this year, and I watched a lot of TV, and I think my favorite thing I watched was Zoey's Extraordinary Playlist, the NBC musical dramedy that aired from January to May this year.

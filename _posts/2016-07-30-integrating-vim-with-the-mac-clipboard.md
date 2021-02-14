@@ -1,6 +1,7 @@
 ---
 title: integrating vim with the mac clipboard
 date: 2016-07-30 18:25
+category: programming
 ---
 
 Using terminal text editors has a lot of advantages, but for a while the biggest disadvantage I've felt as a vim user is that it's kind of hard to interact with the system clipboard.

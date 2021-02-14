@@ -1,7 +1,7 @@
 ---
 title: vim will fix indentation mistakes
-layout: post
 date: 2014-09-07 18:58
+category: programming
 ---
 
 Today I learned a neat vim trick (via the [Aaron Paterson Play by Play interview](http://beta.pluralsight.com/courses/play-by-play-aaron-patterson)):

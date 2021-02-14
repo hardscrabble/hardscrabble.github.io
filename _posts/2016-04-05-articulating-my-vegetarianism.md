@@ -1,6 +1,7 @@
 ---
 title: Articulating my Vegetarianism
 date: 2016-04-05 08:55
+category: personal
 ---
 
 *note: this is going to be sort of personal and self-indulgent and I'm mostly writing it for myself to work out some ideas and make some decisions*

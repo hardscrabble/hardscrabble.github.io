@@ -1,6 +1,7 @@
 ---
 title: time zones are still the worst
 date: 2015-04-25 16:24
+category: programming
 ---
 
 After publishing [my last post][1], a few minutes ago, I of course triggered
