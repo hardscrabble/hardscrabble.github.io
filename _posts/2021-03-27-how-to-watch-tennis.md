@@ -177,7 +177,7 @@ You'll hear their voice throughout the match, doing things like:
 The tours have a stable of chair umpires who they re-use all the time.
 The die-hard fans know their names and have favorites.
 Some of them have legendary voices.
-There's one guy who says "deuce" with such abundant gravitas.
+There's one guy who says "deuce" with such abundant gravitas that you almost wonder if he's joking.
 
 I don't know any of their names, but I think I'll get there.
 
