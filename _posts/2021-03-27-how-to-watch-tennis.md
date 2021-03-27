@@ -222,7 +222,7 @@ This can be bad: their opponent can hit a "drop shot"; if they pop the ball *jus
 
 Some players like to work their way toward the net.
 This can be great: from the net, you can smash the ball into the ground, sending it flying out of your opponent's reach.
-This can be bad: your opponent can make a "passing shot" where send the ball flying past you, and because you're so close to them, you need to have lightning reflexes to actually return it; or, they can make a "lob" where they hit the ball in a high arc over your head, forcing you to try and chase it down, staggering backwards, eyes peering into the sun.
+This can be bad: your opponent can make a "passing shot" where they send the ball flying past you, and because you're so close to them, you need to have lightning reflexes to actually return it; or, they can make a "lob" where they hit the ball in a high arc over your head, forcing you to try and chase it down, staggering backwards, eyes peering into the sun.
 
 Nothing makes me happier than watching a beautiful lob float over someone's head and drop right on the edge of the baseline.
 
