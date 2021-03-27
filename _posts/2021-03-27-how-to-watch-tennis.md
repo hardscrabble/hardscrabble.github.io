@@ -71,7 +71,7 @@ It's vicious, thrilling, efficient.
 
 Storylines start to emerge.
 Someone seems unstoppable.
-Someone know one has heard of has made it to round three.
+Someone no one has heard of has made it to round three.
 Someone sustained and injury and we wonder how it'll affect them in their next match.
 Last year's finalists are on a collision course for a rematch in round four!
 
