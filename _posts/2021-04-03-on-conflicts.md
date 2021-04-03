@@ -5,6 +5,11 @@ category: programming
 ---
 
 Usually when git tells me that my feature branch has a conflict, it makes sense to me.
+Occasionally though, I'll have a conflict, and I'll look at and think...
+"Huh? Why is that even a conflict?"
+
+I think it makes sense to me now though.
+Let's talk about it.
 
 ## An example conflict
 
