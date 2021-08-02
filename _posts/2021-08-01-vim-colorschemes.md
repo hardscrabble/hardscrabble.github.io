@@ -21,11 +21,11 @@ I tried it out occasionally, but none of them looked that good.
 When I wanted to customize the colors in my editor, I'd do it indirectly, by configuring the color schemes for my terminal app.
 Doing that affects the colors of all programs you run, not just vim, and it seemed good enough for me.
 
-It was a "you get what you get and you don't get upset" situation.
-
 I kind of thought that was the best I could hope for.
 And, unfortunately, it was never great.
 Often it wasn't even readable; Vim didn't necessarily know which of the terminal's 16 colors made sense for which contexts, and it might choose to render dark grey text on a black background, because it didn't really know better.
+
+It was a "you get what you get and you don't get upset" situation.
 
 ## delta
 
