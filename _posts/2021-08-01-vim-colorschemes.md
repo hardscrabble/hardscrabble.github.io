@@ -97,6 +97,28 @@ Those funky `&t_8f` and `&t_8b` things are there for tmux compatibility.
 I have no idea what they mean.
 I copied them from the internet.
 
+I also added this:
+
+```vimscript
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+```
+
+I use [fzf](https://github.com/junegunn/fzf#as-vim-plugin) as a fuzzy-file-finder in vim.
+This [`fzf_colors` configuration](https://github.com/junegunn/fzf/blob/master/README-VIM.md#explanation-of-gfzf_colors) tells it to infer its colorscheme from the active vim colorscheme.
+
 ## Configuring git to use delta and smyck
 
 In my `~/.gitconfig`:
