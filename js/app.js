@@ -9,12 +9,12 @@ function ready (fn) {
 
 // setup search behavior
 ready(function () {
-  var searchBox = document.querySelectorAll('.search input')[0]
+  const searchBox = document.querySelectorAll('.search input')[0]
   if (!searchBox) {
     return
   }
-  var searchList = document.querySelectorAll('.search-results ul')[0]
-  var fullArchivesList = document.querySelectorAll('.full-archives')[0]
+  const searchList = document.querySelectorAll('.search-results ul')[0]
+  const fullArchivesList = document.querySelectorAll('.full-archives')[0]
 
   function showSearch () {
     searchList.style.display = ''
@@ -29,24 +29,24 @@ ready(function () {
   if (window.location.hash) {
     showSearch()
     searchBox.value = decodeURI(window.location.hash.slice(1))
-    var li = document.createElement('li')
+    const li = document.createElement('li')
     li.appendChild(document.createTextNode('Loading...'))
     searchList.appendChild(li)
   } else {
     showArchives()
   }
 
-  var request = new window.XMLHttpRequest()
+  const request = new window.XMLHttpRequest()
   request.open('GET', '/searchdata.json', true)
   request.onload = function () {
     if (request.status >= 200 && request.status < 400) {
-      var posts = JSON.parse(request.responseText).posts
-      var index = window.lunr(function () {
+      const posts = JSON.parse(request.responseText).posts
+      const index = window.lunr(function () {
         this.ref('id')
         this.field('title', { boost: 10 })
         this.field('content')
       })
-      for (var i = 0; i < posts.length; i++) {
+      for (let i = 0; i < posts.length; i++) {
         posts[i].id = i
         index.add(posts[i])
       }
@@ -63,11 +63,11 @@ ready(function () {
           searchList.removeChild(searchList.firstChild)
         }
         window.location.hash = encodeURI(this.value)
-        var results = index.search(this.value)
+        const results = index.search(this.value)
         results.forEach(function (result, i) {
-          var post = posts[result.ref]
-          var li = document.createElement('li')
-          var a = document.createElement('a')
+          const post = posts[result.ref]
+          const li = document.createElement('li')
+          const a = document.createElement('a')
           a.setAttribute('href', post.url)
           a.appendChild(document.createTextNode(post.title))
           li.appendChild(a)

@@ -5,4 +5,4 @@ set -euo pipefail
 exe/build
 bin/htmlproofer _site --disable-external true
 bin/scss-lint _sass
-npx standard@14 js/*.js
+npx standard@16 js/*.js
