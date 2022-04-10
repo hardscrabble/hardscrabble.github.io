@@ -8,8 +8,6 @@ Hi there -- I'm Max Jacobson, that's me on the right.
 I'm an engineering manger at Vimeo in New York.
 This is my home on the web.
 
-If you want to get updates from me in your inbox, check out the [Hardscrabble newsletter](/newsletter).
-
 This website is powered by [Jekyll] and hosted on [GitHub Pages].
 The source is [available to browse][blog-source], for nerds.
 
