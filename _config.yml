@@ -42,8 +42,8 @@ exclude:
   - "README.md"
   - "bin"
   - "exe"
-  - "gems.locked"
-  - "gems.rb"
+  - "Gemfile.lock"
+  - "Gemfile"
 
 markdown: kramdown
 
