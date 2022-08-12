@@ -5,5 +5,5 @@ gem 'webrick'
 
 group :development do
   gem 'scss_lint'
-  gem 'html-proofer', '~> 3.9'
+  gem 'html-proofer', '~> 4.3'
 end
