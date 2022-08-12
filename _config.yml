@@ -44,6 +44,7 @@ exclude:
   - "exe"
   - "Gemfile.lock"
   - "Gemfile"
+  - ".github"
 
 markdown: kramdown
 
