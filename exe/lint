@@ -4,5 +4,4 @@ set -euo pipefail
 
 exe/build
 bin/htmlproofer _site --disable-external true --enforce-https false
-bin/scss-lint _sass
-npx standard@16 js/*.js
+npx prettier@2.7.1 . --check

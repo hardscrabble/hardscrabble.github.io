@@ -12,6 +12,5 @@ gem 'webrick'
 gem 'faraday-retry'
 
 group :development do
-  gem 'scss_lint'
   gem 'html-proofer', '~> 4.4'
 end

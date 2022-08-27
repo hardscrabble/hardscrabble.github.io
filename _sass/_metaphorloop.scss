@@ -16,7 +16,7 @@
     font-weight: bold;
 
     &:not(:last-child)::after {
-      content: ',';
+      content: ",";
     }
   }
 }

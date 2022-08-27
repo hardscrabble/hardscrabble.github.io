@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Kite+One');
+@import url("https://fonts.googleapis.com/css?family=Kite+One");
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
 body {
-  font-family: 'Kite One', sans-serif;
+  font-family: "Kite One", sans-serif;
 }
 
 .remark-code {
   font-size: 1.7em;
 }
 
-p, ul {
-  font-size: 2.0em;
+p,
+ul {
+  font-size: 2em;
   margin: 5px auto;
 }
 
@@ -23,7 +24,9 @@ blockquote p {
 }
 
 /* Headers */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: normal;
   margin: 0 auto;
 }
@@ -51,7 +54,10 @@ img {
 }
 
 /* Style of code samples */
-.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code,
+.remark-inline-code {
+  font-family: "Ubuntu Mono";
+}
 
 /* Style the background behind the slides */
 .remark-container {
@@ -71,7 +77,6 @@ img {
 /* :root { */
 /*   --toad: #A6CCAB; */
 /*   --inky: #260C5E; */
-
 
 /*   --col-1: #4717B2; */
 /*   --col-2: #FF982F; */
@@ -117,12 +122,13 @@ blockquote code {
   font-size: 1.3em;
 }
 
-.remark-notes-area p, .remark-notes-area ul {
+.remark-notes-area p,
+.remark-notes-area ul {
   font-size: 1.3em;
 }
 
 #slide-rust-intro {
-   /* background-color: #42f4e2; */
+  /* background-color: #42f4e2; */
 }
 
 /* #slide-panic blockquote { */

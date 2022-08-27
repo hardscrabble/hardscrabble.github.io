@@ -44,6 +44,7 @@ exclude:
   - "exe"
   - ".github"
   - ".ruby-version"
+  - "prettier.config.js"
 
 markdown: kramdown
 
