@@ -42,11 +42,8 @@ exclude:
   - "README.md"
   - "bin"
   - "exe"
-  - "Gemfile.lock"
-  - "Gemfile"
   - ".github"
   - ".ruby-version"
-  - "vendor"
 
 markdown: kramdown
 
