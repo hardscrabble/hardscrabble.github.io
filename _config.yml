@@ -45,6 +45,7 @@ exclude:
   - "Gemfile.lock"
   - "Gemfile"
   - ".github"
+  - ".ruby-version"
 
 markdown: kramdown
 
