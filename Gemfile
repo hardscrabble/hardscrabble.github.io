@@ -3,7 +3,6 @@ source "https://rubygems.org"
 gem 'jekyll', '~> 3.9.2'
 gem 'jemoji'
 gem 'jekyll-gist'
-gem 'jekyll-coffeescript'
 gem 'jekyll-feed'
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'

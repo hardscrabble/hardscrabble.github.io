@@ -60,7 +60,6 @@ paginate_path: "/page/:num/"
 plugins:
   - jemoji
   - jekyll-gist
-  - jekyll-coffeescript
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
