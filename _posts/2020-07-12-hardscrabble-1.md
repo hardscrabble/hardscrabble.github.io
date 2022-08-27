@@ -159,7 +159,7 @@ Doesn't that sound nice?
 Last year's comedy special _John Mulaney & The Sack Lunch Bunch_ ([on Netflix](https://www.netflix.com/title/81104634)) was so funny and I laughed so much that it made me realize that most comedies I watch aren't actually that funny.
 This week, following [the happy news](https://www.vulture.com/2020/07/john-mulaney-sack-lunch-bunch-comedy-central-specials.html) that they're making two more Sack Lunch Bunch specials, I rewatched a handful of the musical numbers, such as the pitch perfect _Grandma's Boyfriend Paul:_
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZumI5Mn9Afg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="ZumI5Mn9Afg" %}
 
 ## Some hyperlinks
 

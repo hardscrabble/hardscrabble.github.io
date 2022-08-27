@@ -24,7 +24,7 @@ He breezes in, barks orders at the models and crew, snaps a bunch of photos, and
 He doesn't even look.
 He just holds it over his shoulder, and an assistant hurries forward to take it.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rPnefcuinFA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="rPnefcuinFA" %}
 
 I think about this thirty second scene _all the time_.
 I hadn't actually _seen_ it in twenty years, but it's never really left me.
@@ -57,7 +57,7 @@ He rarely offers his own opinions (this morning he offered [a gentle defense of 
 Social psychologists talk about the fundamental attribution error.
 This is the one that Carlin was talking about here:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XWPCE2tTLZQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="XWPCE2tTLZQ" %}
 
 We have privileged access to our own minds, so it's often possible to feel like we know why we're doing the things we're doing, and it's in our self-interest to justify our own actions, so that's what we do.
 
@@ -81,7 +81,7 @@ Perversely, it tries to explore and explain their appeal by celebrating it.
 It suggests that, when things are bad, and the people are scared, we're particularly vulnerable and that vulnerability can be very easily exploited by someone who promises to protect us.
 Like with Austin Powers, we'll let them get away with anything.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/yHDsTbMcm_k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% include youtube.html id="yHDsTbMcm_k" %}
 
 I didn't really get that from the text, I got it mostly from [this podcast interview about the song][crestpod], in which he describes the song as "quasi-fascist".
 

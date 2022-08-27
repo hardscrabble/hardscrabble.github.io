@@ -37,7 +37,7 @@ Torches Together ripped into my 16-year-old atmosphere.
 
 [meera]: https://www.nytimes.com/2017/09/22/dining/vegetable-dishes-meera-sodha.html?_r=0
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7LFI0dGe1tc?rel=0&amp;controls=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="7LFI0dGe1tc" %}
 
 Anyway, _Catch For Us The Foxes_ isn't my favorite album of theirs.
 Maybe my least favorite.
@@ -68,7 +68,7 @@ It ends with a secret acoustic track, so you know they have a sensitive side.
 There are a few songs that are more on the snotty and abrasive side IMO ("I Never Said That I Was Brave").
 But a lot of them are (relative) bangers, like "The Ghost":
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VzplDIrlYTs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="VzplDIrlYTs" %}
 
 Can you even imagine how fun it is sing lines like "Put music! Put music! Put music to our troubles!" along at a concert?
 
@@ -91,7 +91,7 @@ He's coming around to being gently amused.
 
 Here's "The Dryness and the Rain":
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5Nvcga_P8bg?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="5Nvcga_P8bg" %}
 
 My favorite moment comes near the end:
 
@@ -113,7 +113,7 @@ Not for the first time, many of their best lines are [cribbed from] or inspired 
 
 The next song, "Wolf Am I! (and Shadow)" is maybe my favorite of their hard rock songs:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jTaQWLD73kM?rel=0&amp;controls=0;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="jTaQWLD73kM" %}
 
 I just think the band sounds so tight and good.
 But also, Weiss finds room for some spontaneity in a way that I find pleasingly self-deprecating:
@@ -177,7 +177,7 @@ I'm not a religious person in any way except that I love this band and find them
 There's even room in these songs for doubt.
 One of my favorites is the longest song on the album, "The King Beetle On a Coconut Estate":
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/J-WNYs9GwKM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="J-WNYs9GwKM" %}
 
 What is this song getting at?
 Is the King a fool?
@@ -195,7 +195,7 @@ Wuff..
 Most of all this album sounds peaceful and gentle and assured and pretty.
 Here's "A Stick, A Carrot, A String", which positively shimmers:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JNdC7oDEQac?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="JNdC7oDEQac" %}
 
 Look, this one is straight up about the baby Jesus, from the perspective of the animals who were around when he was born.
 Weiss finds time to make you empathize with each one:
@@ -241,7 +241,7 @@ For me, this album is just fine.
 
 There's one song which sounds like it could've been on the previous album, "Cardiff Giant", and it is my favorite song on the album:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/y_HlR6OEEJ8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="y_HlR6OEEJ8" %}
 
 ## Pale Horses (2015)
 
@@ -281,13 +281,13 @@ So: he's screaming again.
 
 Here's a lovely music video for "Red Cow" and "Dorothy" which hard-lefts from a screamy rock jam into a graceful, melancholy wind-down:
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XP87vkD7Tag?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="XP87vkD7Tag" %}
 
 This feels like rich new ground to root around in.
 
 Here's another song, Blue Hen, that just sounds great, and contains an all-time great Weiss freak out
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/z_b5J9xgEw8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="z_b5J9xgEw8" %}
 
 > And I'll wrap up your absence<br/>
 > In blankets of reverence<br/>
@@ -298,7 +298,7 @@ I have no idea what that means but I totally know what it means and I love it.
 
 My favorite song has got to be the last one, "Rainbow Signs":
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/XDlBZei_axA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="XDlBZei_axA" %}
 
 It's long and builds slowly and contains the apocalypse and I guess is about his father dying.
 I find it very powerful and kind of awe inspiring.

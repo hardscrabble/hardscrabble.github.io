@@ -22,6 +22,6 @@ While I'm sure ADN would actually be thrilled if some celebrities used it, I thi
 
 [^ridiculous]: That's a very ridiculous thing to say but the founder did pay for my oatmeal yesterday
 
-<iframe width="425" height="239" src="http://www.youtube.com/embed/FOjdXSrtUxA" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="FOjdXSrtUxA" %}
 
-<iframe width="425" height="239" src="http://www.youtube.com/embed/VuNIsY6JdUw" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="VuNIsY6JdUw" %}

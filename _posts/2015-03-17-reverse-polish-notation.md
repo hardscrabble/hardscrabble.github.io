@@ -20,7 +20,7 @@ ham.
 
 Here it is:
 
-<iframe width="459" height="344" src="http://www.youtube.com/embed/H6xcnqlf53g?feature=oembed" frameborder="0" allowfullscreen></iframe>
+{% include youtube.html id="H6xcnqlf53g" %}
 
 It is very long. There are a few moments where I removed sound to take away
 coughs. I might have missed some. I probably did!
