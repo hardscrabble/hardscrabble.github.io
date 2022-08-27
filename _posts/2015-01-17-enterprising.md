@@ -22,5 +22,5 @@ Warner?) feels similarly.
 I read that and was kind of surprised because at first blush I had absolutely
 no clue at all how I might download the video. Sooooo I had to try:
 
-<iframe src="//player.vimeo.com/video/117056934?title=0&amp;byline=0&amp;portrait=0&amp;color=ff9933" width="686" height="386" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/117056934">Enterprising</a> from <a href="http://vimeo.com/maxjacobson">Max Jacobson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+{% include vimeo.html id="117056934" %}
 

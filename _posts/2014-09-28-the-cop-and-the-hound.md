@@ -12,7 +12,7 @@ So I managed to make Hound review the full code base but it took some tricky git
 
 [^screeny]: I call them screenies because the app I use to make screenies is called [Screeny](http://screenyapp.com/)
 
-<iframe src="//player.vimeo.com/video/107315271" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/107315271">Setting up Hound CI to comment on my full code base</a> from <a href="http://vimeo.com/maxjacobson">Max Jacobson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+{% include vimeo.html id="107315271" %}
 
 I didn't want this video to be too long, so I stopped when I managed to get the full codebase analyzed. But here's my plan to continue:
 

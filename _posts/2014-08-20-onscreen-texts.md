@@ -6,7 +6,7 @@ category: culture
 
 People have been linking to this terrific video by [Tony Zhou](http://vimeo.com/tonyzhou) about how film and television depicts onscreen text messaging:
 
-<iframe src="//player.vimeo.com/video/103554797" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% include vimeo.html id="103554797" %}
 
 (I saw it [on Kottke](http://kottke.org/14/08/texting-in-movies) which has some additional context)
 

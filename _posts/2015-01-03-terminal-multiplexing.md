@@ -4,7 +4,7 @@ date: 2015-01-03 22:04
 category: programming
 ---
 
-<iframe src="//player.vimeo.com/video/104250309?byline=0&amp;portrait=0" width="686" height="429" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% include vimeo.html id="104250309" %}
 
 I made this video a few months back with my friend [Alex Au][]. It's a crash
 course in how to use [tmux][]. We made another, shorter, video about *why* you
@@ -13,7 +13,7 @@ might want to use tmux as well:
 [Alex Au]: https://github.com/surrealdetective
 [tmux]: https://en.wikipedia.org/wiki/Tmux
 
-<iframe src="//player.vimeo.com/video/104250007?byline=0&amp;portrait=0" width="686" height="429" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% include vimeo.html id="104250007" %}
 
 If you find yourself with more than a couple of terminal tabs or windows open
 all the time, I think you should consider using tmux instead. In the last few

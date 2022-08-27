@@ -4,9 +4,7 @@ date: 2015-01-02 11:49
 category: programming
 ---
 
-<iframe src="//player.vimeo.com/video/115783832" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<p><a href="http://vimeo.com/115783832">A cleaner file browsing interface for vim</a> from <a href="http://vimeo.com/maxjacobson">Max Jacobson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+{% include vimeo.html id="115783832" %}
 
 TLDW: add this to your `~/.vimrc`:
 

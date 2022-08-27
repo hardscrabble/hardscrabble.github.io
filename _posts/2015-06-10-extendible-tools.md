@@ -14,7 +14,7 @@ It feels a lot like magic, but it's actually not that complicated a thing to do.
 If you don't believe me, watch this video or skip after it to the code, and make
 your own extendible utility, `pig`.
 
-<iframe src="https://player.vimeo.com/video/130172467?color=c9ff23&title=0&byline=0&portrait=0" width="500" height="322" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/130172467">designing your own extendible command line utility</a> from <a href="https://vimeo.com/maxjacobson">Max Jacobson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+{% include vimeo.html id="130172467" %}
 
 If you want your own pig command line utility, copy this code to an executable
 file on your `$PATH` called `pig`. Then, try running `pig`. Try running

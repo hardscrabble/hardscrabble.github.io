@@ -14,7 +14,7 @@ Here's the idea: I know a tool for tracking the changes to a directory over time
 
 So in this screencast you can see me try and do that -- I initialized a git repository, which created a `.git` folder, and then I initialized *another* git repository within that `.git` directory.
 
-<iframe src="https://player.vimeo.com/video/179684267?title=0&byline=0&portrait=0" width="640" height="486" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% include vimeo.html id="179684267" %}
 
 I still don't have a really great understanding of how git represents the data, although I've read Mary Rose Cook's very good essay about this topic [Git From The Inside Out][1], which does contain those answers (I read it a while ago and forgot the details).
 

@@ -53,7 +53,7 @@ What I've created today only does the first thing. It's pretty simple. It would 
 
 Here's a demo video (sorry it's so long):
 
-<iframe src="//player.vimeo.com/video/83994673" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/83994673">Updating a Jekyll Blog with Editorial</a> from <a href="http://vimeo.com/maxjacobson">Max Jacobson</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+{% include vimeo.html id="83994673" %}
 
 Here's the source of the Rails project that serves as a Jekyll API: [maxjacobson/jekyll_api](https://github.com/maxjacobson/jekyll_api). Here's [the Editorial workflow](http://editorial-app.appspot.com/workflow/5026138770374656/tRls0F7xb8s) which will currently only work for me, because I'm not sure the best way to share the source for something like this that's not just a script, but a chain of macros and scripts.
 

@@ -132,7 +132,7 @@ For more information on what to do now, see https://developer.mozilla.org/docs/D
   be captured in a video:
 
 
-<iframe src="//player.vimeo.com/video/119925549?byline=0&portrait=0" width="686" height="386" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% include vimeo.html id="119925549" %}
 
 [4]: https://developer.mozilla.org/en-US/docs/Simple_Firefox_build/Linux_and_MacOS_build_preparation
 [5]: https://twitter.com/maxjacobson/status/567890227693494272
