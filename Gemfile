@@ -12,5 +12,5 @@ gem 'webrick'
 gem 'faraday-retry'
 
 group :development do
-  gem 'html-proofer', '~> 4.4'
+  gem 'html-proofer', '~> 5.0'
 end
