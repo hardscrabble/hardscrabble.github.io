@@ -96,7 +96,7 @@ Jekyll looks at each markup file (HTML, Markdown, Textile) in your project and l
 
 So let's talk about that templating system briefly. Knowing Jekyll is a Ruby project, and having dabbled with Ruby web development, I made the mistake of assuming Jekyll would follow Ruby conventions that I was familiar with (something like Haml or ERB or Slim), but it kind of doesn't. What it uses is [Liquid](https://github.com/Shopify/liquid/), a templating system developed by Shopify. Like Jekyll, it's written in Ruby and distributed as a gem, so it bundles along well. Once I adjusted my expectations, I found it easy to work with. When you initialize a new Jekyll site (with `jekyll new my_great_blog`), it gives you this `index.html` file to be your barebones homepage:
 
-{% gist 5692225 %}
+<script src="https://gist.github.com/maxjacobson/5692225.js"></script>
 
 (note: I think I *have* to use a GitHub Gist to host that code snippet because if I embed it in this post, Jekyll will interpet the Liquid tags)
 

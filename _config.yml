@@ -56,7 +56,6 @@ paginate: 3
 paginate_path: "/page/:num/"
 
 plugins:
-  - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
