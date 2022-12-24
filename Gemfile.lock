@@ -17,12 +17,6 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
-    faraday (2.5.2)
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.0)
-    faraday-retry (2.0.0)
-      faraday (~> 2.0)
     ffi (1.15.5)
     fiber-local (1.0.0)
     forwardable-extended (2.6.0)
@@ -91,7 +85,6 @@ GEM
       ffi (~> 1.0)
     rexml (3.2.5)
     rouge (4.0.1)
-    ruby2_keywords (0.0.5)
     safe_yaml (1.0.5)
     sass-embedded (1.57.1)
       google-protobuf (~> 3.21)
@@ -111,7 +104,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  faraday-retry
   html-proofer
   jekyll
   jekyll-feed

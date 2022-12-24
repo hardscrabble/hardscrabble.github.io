@@ -7,7 +7,6 @@ gem 'jekyll-sitemap'
 gem 'jekyll-paginate'
 gem 'kramdown-parser-gfm'
 gem 'webrick'
-gem 'faraday-retry'
 
 group :development do
   gem 'html-proofer'
