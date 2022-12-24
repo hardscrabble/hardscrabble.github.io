@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'jekyll', '~> 4.3.1'
+gem 'jekyll'
 gem 'jekyll-feed'
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
@@ -10,5 +10,5 @@ gem 'webrick'
 gem 'faraday-retry'
 
 group :development do
-  gem 'html-proofer', '~> 5.0'
+  gem 'html-proofer'
 end

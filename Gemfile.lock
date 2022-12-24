@@ -112,8 +112,8 @@ PLATFORMS
 
 DEPENDENCIES
   faraday-retry
-  html-proofer (~> 5.0)
-  jekyll (~> 4.3.1)
+  html-proofer
+  jekyll
   jekyll-feed
   jekyll-paginate
   jekyll-redirect-from
