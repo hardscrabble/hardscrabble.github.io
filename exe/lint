@@ -3,5 +3,5 @@
 set -euo pipefail
 
 exe/build
-bin/htmlproofer _site --disable-external true --enforce-https false
+bin/htmlproofer _site --disable-external --no-enforce-https
 npx prettier@2.7.1 . --check
