@@ -111,7 +111,6 @@ DEPENDENCIES
   jekyll-redirect-from
   jekyll-sitemap
   kramdown-parser-gfm
-  webrick
 
 BUNDLED WITH
    2.3.7
