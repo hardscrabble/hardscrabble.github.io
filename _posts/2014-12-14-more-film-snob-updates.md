@@ -31,6 +31,6 @@ The next big thing I'll need to decide be when to mark the major release of
 `v1.0.0`. I had [some ideas][ideas] about breaking changes that I would like to
 make, so I thought I would save those for the first major release, but then a
 very generous stranger implemented those ideas and made some pull requests, so I
-have to decide if I'm ready to make it happen now. Why not, I guess? :fearful:
+have to decide if I'm ready to make it happen now. Why not, I guess? 😨
 
 [ideas]:https://github.com/maxjacobson/film_snob/issues?q=milestone%3Av1.0.0+

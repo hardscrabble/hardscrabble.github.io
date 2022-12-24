@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
 gem 'jekyll', '~> 4.2.2'
-gem 'jemoji'
 gem 'jekyll-gist'
 gem 'jekyll-feed'
 gem 'jekyll-redirect-from'

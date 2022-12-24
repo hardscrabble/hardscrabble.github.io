@@ -6,7 +6,7 @@ redirect_from:
 category: programming
 ---
 
-I'm making very slow and intermittent progress on [smashcut](http://github.com/maxjacobson/smashcut), my Fountain screenplay parser written in Ruby. At this rate I'll have a usable version in a few years or so :smile:. I'm going to talk about it a little bit here and then talk about how a small refactor boosted my Code Climate GPA for the project from 1.9 to 3.56.
+I'm making very slow and intermittent progress on [smashcut](http://github.com/maxjacobson/smashcut), my Fountain screenplay parser written in Ruby. At this rate I'll have a usable version in a few years or so 🙂. I'm going to talk about it a little bit here and then talk about how a small refactor boosted my Code Climate GPA for the project from 1.9 to 3.56.
 
 (For those who don't know: [Code Climate][] is a very neat website which analyzes your code and points out improvement areas. They [provide free analysis][] to open source projects like smashcut and paid analysis of private projects. They also maintain a cool blog about code design and techniques at <http://blog.codeclimate.com/>.)
 

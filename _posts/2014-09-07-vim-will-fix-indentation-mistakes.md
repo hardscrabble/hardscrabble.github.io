@@ -41,5 +41,5 @@ class Cat
 end
 ```
 
-I generally do that extra indent but I might stop now :leaves:.
+I generally do that extra indent but I might stop now 🍃.
 

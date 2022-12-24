@@ -104,7 +104,7 @@ fastened by only two screws.
 I hold my breath and turn it on. It actually kind of works. The warning light is
 gone. The "battery health" is 101% now, whatever that means. The estimated
 duration is still terrible, less than an hour on a brand new battery, but I
-kind of don't care. Actually that number is going up as I type this :guitar:.
+kind of don't care. Actually that number is going up as I type this 🎸.
 
 I feel like I need to wear a promise ring not to ever try and open up this
 computer again, for my sake and its. It just won't be a happy thing to do. I

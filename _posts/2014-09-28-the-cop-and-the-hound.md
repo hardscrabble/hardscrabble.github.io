@@ -33,7 +33,7 @@ Maybe I'll change it over time but it seems good right now.
 
 Done: <https://github.com/maxjacobson/film_snob/pull/46>
 
-Being consistent feels good :smile:.
+Being consistent feels good 🙂.
 
 It's actually not that hard to use rubocop directly without Hound. I also added rubocop to my Travis CI configuration, so even if I didn't have Hound, pull requests would consider style guide violations, because the build would fail. There's no commenting, which decreases the visibility. But it's OK because Hound double-comments if you push the same problem twice, so maybe the comments aren't that great? It's also *much* more strict. If you have an 81 character line, it's a complete no go, the build fails, you can't merge that.
 

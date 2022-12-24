@@ -46,7 +46,7 @@ latestPost
 ```
 
 This is kind of a Frankenstein script (it even has [a little Rails][2] in it)
-but it works so :bowtie:.
+but it works so 🤵🏻‍♂️.
 
 [2]: http://apidock.com/rails/ActionView/Helpers/TextHelper/pluralize
 

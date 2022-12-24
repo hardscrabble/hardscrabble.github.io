@@ -77,7 +77,7 @@ Some things I might do:
 * put it on homebrew so it's easier to install
 * suppress more of the git output (not sure, maybe it's nice to have it?)
 
-:leaves:
+🍃
 
 ---
 

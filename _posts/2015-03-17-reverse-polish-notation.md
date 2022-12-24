@@ -40,4 +40,4 @@ implementation of that class is kind of awkward and not great, but it's also
 really contained and could be easily rewritten because there are tests to catch
 mistakes in the refactoring.
 
-:leaves:
+🍃
