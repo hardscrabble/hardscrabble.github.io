@@ -60,6 +60,7 @@ Here are some examples:
 * <https://www.nymeria.io/do-not-sell>
 * <https://www.interseller.io/do-not-sell>
 * <https://contactout.com/optout>
+* <https://www.peopledatalabs.com/privacy/opt-out-form>
 
 
 And then in the interest of naming and shaming, here are some services recruiters cited which do not seem to have a publicly-discoverable page to opt out of having your data sold:
