@@ -6,9 +6,9 @@ category: culture
 
 This new Miley Cyrus song is a bop:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G7KNmW9a75Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% include youtube.html id="G7KNmW9a75Y" %}
 
 I feel like Cyrus is pretty underrated.
 See also this recent performance:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VpLrB_1Epe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% include youtube.html id="VpLrB_1Epe0" %}
