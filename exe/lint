@@ -5,3 +5,4 @@ set -euo pipefail
 exe/build
 bin/htmlproofer _site --disable-external --no-enforce-https
 npx prettier@2.8.1 . --check
+exe/check-responsive-video-embeds
