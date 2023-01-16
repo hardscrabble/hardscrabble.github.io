@@ -1,6 +1,11 @@
 .homepage-post-container {
   &:not(:first-child) {
-    margin-top: 40px;
+    &::before {
+      content: "~ 🍫 ~";
+      display: block;
+      text-align: center;
+      padding: 20px 0;
+    }
   }
 
   h1 {
