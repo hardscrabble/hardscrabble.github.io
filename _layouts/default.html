@@ -15,6 +15,7 @@
   {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines }}" />{% endif %}
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{page.url | absolute_url}}" />
+  <meta property="og:image" content="{{ '/apple-touch-icon.png' | absolute_url }}" />
   {% feed_meta %} 
   <link href='/favicon.ico' rel='icon' type='image/x-icon'>
   <link href="https://micro.blog/maxjacobson" rel="me" />
