@@ -19,13 +19,14 @@ redirect_from:
 
 <!-- Pagination links -->
 <div class="pagination">
+  <div>
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">previous</a>
+    <a href="{{ paginator.previous_page_path }}" class="previous">&larr; previous</a>
   {% endif %}
-  {% if paginator.previous_page and paginator.next_page %}
-    <span>&bull;</span>
-  {% endif %}
+  </div>
+  <div>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">next</a>
+    <a href="{{ paginator.next_page_path }}" class="next">next &rarr;</a>
   {% endif %}
+  </div>
 </div>
