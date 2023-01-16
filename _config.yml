@@ -52,7 +52,7 @@ kramdown:
     input: GFM
     hard_wrap: false
 
-paginate: 3
+paginate: 10
 paginate_path: "/page/:num/"
 
 plugins:
