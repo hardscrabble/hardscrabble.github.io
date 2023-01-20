@@ -46,3 +46,8 @@
     padding: 5px;
   }
 }
+
+.post-post-cta {
+  @extend %dashed-top;
+  margin-top: 200px;
+}
