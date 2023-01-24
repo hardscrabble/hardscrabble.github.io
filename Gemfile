@@ -5,6 +5,7 @@ gem 'jekyll-feed'
 gem 'jekyll-redirect-from'
 gem 'jekyll-sitemap'
 gem 'jekyll-paginate'
+gem 'jekyll-archives'
 gem 'kramdown-parser-gfm'
 
 group :development do

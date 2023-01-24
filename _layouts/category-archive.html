@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+
+<h1>Posts with {{ page.type }} '{{ page.title }}'</h1>
+<div class="archive">
+{% include archive-list.html posts=page.posts linkYear=true showCategory=false %}
+</div>

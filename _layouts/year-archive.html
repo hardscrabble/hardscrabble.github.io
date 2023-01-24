@@ -1,0 +1,8 @@
+---
+layout: default
+---
+
+<h1>Posts from {{ page.date | date: "%Y" }}</h1>
+<div class="archive">
+  {% include archive-list.html posts=page.posts linkYear=false showCategory=true %}
+</div>

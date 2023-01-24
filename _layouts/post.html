@@ -9,6 +9,15 @@ layout: default
         {{ page.title }}
       </h2>
 
+      {% if page.category %}
+        <div class="post-category">
+          Category:
+        <a href="/category/{{ page.category | slugify }}">
+          <span class="category-label">{{ page.category }}</span>
+        </a>
+        </div>
+      {% endif %}
+
       <div clas="published-date">
         {{ page.date | date_to_string }}
       </div>

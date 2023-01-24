@@ -103,3 +103,10 @@ audio {
 ::-moz-selection {
   background: $highlight;
 }
+
+.category-label {
+  background-color: lighten($lightcoral, 10%);
+  border-radius: 5px;
+  font-size: 75%;
+  padding: 2px 5px;
+}

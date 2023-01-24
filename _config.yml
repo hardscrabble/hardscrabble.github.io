@@ -60,8 +60,18 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-archives
 
 collections:
   metaphorloop_episodes:
     output: true
     permalink: "/metaphorloop/:name/"
+
+jekyll-archives:
+  layouts:
+    year: year-archive
+    category: category-archive
+
+  enabled:
+    - year
+    - categories

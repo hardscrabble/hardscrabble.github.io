@@ -28,21 +28,6 @@ redirect_from:
   </div>
 
   <div class="full-archives">
-    {% for post in site.posts %}
-      {% assign currentdate = post.date | date: "%b %Y" %}
-      {% if currentdate != date %}
-        {% unless forloop.first %}</ul>{% endunless %}
-          <h3 id="y{{post.date | date: "%Y"}}m{{post.date | date: "%m"}}">{{ currentdate }}</h3>
-        <ul>
-        {% assign date = currentdate %}
-      {% endif %}
-      <li>
-        <a href="{{ post.url }}">{{ post.title }}</a>
-        {% if post.category %}
-          <span class="category-label">{{ post.category }}</span>
-        {% endif %}
-      </li>
-      {% if forloop.last %}</ul>{% endif %}
-    {% endfor %}
+    {% include archive-list.html posts=site.posts linkYear=true showCategory=true %}
   </div>
 </div>

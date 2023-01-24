@@ -1,0 +1,29 @@
+{% for post in include.posts %}
+  {% assign currentdate = post.date | date: "%b %Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}</ul>{% endunless %}
+      <h3 id="y{{post.date | date: "%Y"}}m{{post.date | date: "%m"}}">
+        {{ post.date | date: "%b" }}
+        {% if include.linkYear %}
+          <a href="/{{ post.date | date: "%Y" }}">
+            {{ post.date | date: "%Y" }}
+          </a>
+        {% else %}
+          {{ post.date | date: "%Y" }}
+        {% endif %}
+      </h3>
+    <ul>
+    {% assign date = currentdate %}
+  {% endif %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% if post.category %}
+      {% if include.showCategory %}
+        <a href="/category/{{ post.category | slugify }}">
+          <span class="category-label">{{ post.category }}</span>
+        </a>
+      {% endif %}
+    {% endif %}
+  </li>
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}
