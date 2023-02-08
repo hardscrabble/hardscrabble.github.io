@@ -1,7 +1,7 @@
 ---
 title: Natasha Lyonne on Directing
 date: 2023-01-29 13:51
-category: link
+category: culture
 ---
 
 I'm really liking the new show Poker Face, and I adored this quote from an interview Natasha Lyonne did to promote it:

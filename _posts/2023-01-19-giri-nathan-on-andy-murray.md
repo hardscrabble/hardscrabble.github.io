@@ -1,7 +1,7 @@
 ---
 title: Giri Nathan on Andy Murray
 date: 2023-01-19 19:42
-category: link
+category: culture
 ---
 
 I so love to read [Giri Nathan's tennis columns over at Defector](https://defector.com/author/giri-nathan), and his post today about Andy Murray is typically excellent: <https://defector.com/andy-murray-sacrifices-his-body-and-sleep-to-deliver-another-classic-win>
