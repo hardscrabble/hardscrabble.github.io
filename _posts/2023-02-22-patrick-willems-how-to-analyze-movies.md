@@ -11,4 +11,4 @@ This analysis of Home Alone is a tour de force:
 It covers quite a lot of ground, from [formalist film theory](https://en.wikipedia.org/wiki/Formalist_film_theory) to [Auteur Theory](https://en.wikipedia.org/wiki/Auteur) demonstrating how they can enrich your experience of filmgoing.
 
 It's pretty long, but is broken up into nice chapters.
-I watched it over severl days.
+I watched it over several days.
