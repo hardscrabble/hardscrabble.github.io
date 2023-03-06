@@ -4,7 +4,7 @@ date: 2023-03-06 17:58
 category: programming
 ---
 
-I usually use [rubocop](https://rubocop.org) to help maintain consistency and catch bugs in my Ruby code bases.
+I usually use [rubocop](https://rubocop.org) to help maintain consistency and catch bugs in my Ruby codebases.
 
 When I'm using Vim, I can see the feedback inline via [Asynchronous Lint Engine, aka ALE](https://github.com/dense-analysis/ale), the terrific vim plugin.
 Here's what it looks like:
