@@ -93,7 +93,7 @@ Hmm, what the heck, rubocop _is_ in the bundle, even though feedbin doesn't actu
 How is it getting in there?
 
 If bundler had a subcommand like [npm explain](https://docs.npmjs.com/cli/v9/commands/npm-explain), we could use that to find out exactly why it's in our bundle.
-Alas, it doesn't, so we must restore to reading through [`Gemfile.lock`](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile.lock) and figure it out.
+Alas, it doesn't, so we must resort to reading through [`Gemfile.lock`](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile.lock) and figure it out.
 If we look closely, [we'll see this clue](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile.lock#L570-L573):
 
 ```text
