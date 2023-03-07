@@ -134,7 +134,7 @@ If we take a look at standard's docs, we can find a [page about integrating stan
 
 Nice! ALE also supports standard, and can be configured to use standard instead of rubocop.
 
-But that's not exactly what I want...
+But that's not _exactly_ what I want...
 
 To recap, here are my goals:
 
