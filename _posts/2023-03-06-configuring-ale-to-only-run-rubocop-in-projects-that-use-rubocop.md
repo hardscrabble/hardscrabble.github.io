@@ -7,33 +7,36 @@ category: programming
 I usually use [rubocop](https://rubocop.org) to help maintain consistency and catch bugs in my Ruby codebases.
 
 When I'm using Vim, I can see the feedback inline via [Asynchronous Lint Engine, aka ALE](https://github.com/dense-analysis/ale), the terrific vim plugin.
+
 Here's what it looks like:
 
-![Screenshot of rubocop issue showing up in vim via ALE](/img/2023-03-06-ale-rubocop.png)
+![Screenshot of rubocop offenses showing up in vim via ALE](/img/2023-03-06-ale-rubocop.png)
 
 Nice!
 
-I could run rubocop from the command line and see my issues there, but it's a really nice workflow to see the issue right away, in context, when I introduce it in the editor.
+I could run rubocop from the command line and see my offenses there, but it's a really nice workflow to see the offense right away, in context, when I introduce it in the editor.
 
 Before I used this vim plugin, I'd just run the rubocop CLI on the command line, which looks like this:
 
-![Screenshot of rubocop issue showing up on command line](/img/2023-03-06-rubocop-at-command-line.png)
+![Screenshot of rubocop offense showing up on command line](/img/2023-03-06-rubocop-at-command-line.png)
 
 It's clear enough what's happening, but you'd need to open the file to see the context, and there's some noise, so I think the editor integration is a real improvement.
 
-But! There's one problem... Not every ruby codebase uses rubocop.
+But! There's one problem... not every ruby codebase uses rubocop.
 
 For example, [the RSS reader I use](https://feedbin.com), Feedbin, is an open source rails app, and when I clone it and open it in vim, here's what I see:
 
-![Screenshot of rubocop issue showing up in vim via ALE when you don't want them to](/img/2023-03-06-ale-rubocop-feedbin.png)
+![Screenshot of rubocop offense showing up in vim via ALE when you don't want them to](/img/2023-03-06-ale-rubocop-feedbin.png)
 
 Yikes!!!
 
-This codebase doesn't even use rubocop, so of course there are a lot of issues.
+This codebase doesn't even use rubocop, so of course there are a lot of "offenses".
 
 This is so annoying that it almost makes me want to disable ALE, but that would make my experience worse when I'm working on codebases that _do_ use rubocop.
 
-But it's possible to fix this with some ALE configuration.
+What to do?
+
+Thankfully, after some poking around, I found out that it is possible to improve the situation with some ALE configuration.
 Here's a bit about how I worked that out.
 
 Here's what I _had_ in my `.vimrc`:
@@ -67,9 +70,9 @@ So, because I configured that `ale_ruby_rubocop_executable` global variable to `
 That has a few nice benefits:
 
 1. You can feel confident that you'll use the version of rubocop specified in your `Gemfile.lock`
-2. If rubocop is _not_ included in your `Gemfile.lock`, the `bundle exec rubocop` command will fail, and therefore no issues will be found
+2. If rubocop is _not_ included in your `Gemfile.lock`, the `bundle exec rubocop` command will fail, and therefore no offenses will be found
 
-So... wait a second, why was I seeing any rubocop issues in the feedbin codebase if feedbin doesn't use rubocop?
+So... wait a second, why was I seeing any rubocop offenses in the feedbin codebase if feedbin doesn't use rubocop?
 
 Hm, let's try searching the codebase with [ripgrep](https://github.com/BurntSushi/ripgrep) for references to rubocop:
 
@@ -90,8 +93,7 @@ Hmm, what the heck, rubocop _is_ in the bundle, even though feedbin doesn't actu
 How is it getting in there?
 
 If bundler had a subcommand like [npm explain](https://docs.npmjs.com/cli/v9/commands/npm-explain), we could use that to find out exactly why it's in our bundle.
-But it doesn't.
-So we can actually just read through [`Gemfile.lock`](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile.lock) and figure it out.
+Alas, it doesn't, so we must restore to reading through [`Gemfile.lock`](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile.lock) and figure it out.
 If we look closely, [we'll see this clue](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile.lock#L570-L573):
 
 ```text
@@ -103,13 +105,13 @@ standard (1.22.1)
 
 Aha! The feedbin codebase uses [standard](https://github.com/testdouble/standard), which is kind of like an opinionated wrapper around rubocop.
 
-So, because it has [this line its Gemfile](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile#L94):
+So, because feedbin has [this line its Gemfile](https://github.com/feedbin/feedbin/blob/2539161b47c71f7b706514b617855726aafc756e/Gemfile#L94):
 
 ```ruby
 gem "standard"
 ```
 
-We get the standard gem and we also get [its dependencies](https://rubygems.org/gems/standard/versions/1.22.1/dependencies) in the bundle, which includes rubocop.
+We get the standard gem and we _also_ get [its dependencies](https://rubygems.org/gems/standard/versions/1.22.1/dependencies) in the bundle, which includes rubocop.
 That means that when ALE tries running `bundle exec rubocop`, rubocop _will_ run.
 
 If we take a look at standard's docs, we can find a [page about integrating standard with vim](https://github.com/testdouble/standard/wiki/IDE:-vim) which recommends this:
@@ -155,7 +157,7 @@ let g:ale_ruby_standardrb_executable = "bin/standardrb"
 let g:ale_fix_on_save = 1
 ```
 
-We're no longer setting `ale_ruby_standardrb_executable` to `"bundle"`, because it proved to be insuffient in codebases like feedbin.
+We're no longer setting `ale_ruby_rubocop_executable` to `"bundle"`, because it proved to be insuffient in codebases like feedbin.
 
 Now we're configuring it to point to the rubocop binstub[^1].
 And likewise, we're configuring it to point to the standard binstub.
