@@ -1711,7 +1711,7 @@ Maybe I'm not much of a visual learner, but I'll take the plain text representat
 One easy way to figure out if you need a package any longer is to just try uninstalling it and seeing what happens:
 
 ```text
-brew uninstall xz
+$ brew uninstall xz
 ==> Downloading https://formulae.brew.sh/api/cask.jws.json
 ######################################################################## 100.0%
 Error: Refusing to uninstall /opt/homebrew/Cellar/xz/5.4.1
