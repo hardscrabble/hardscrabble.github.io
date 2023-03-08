@@ -16,19 +16,19 @@ Here's how I do it.
 First, I tell homebrew to phone home to GitHub and update its local list of packages, which it can use to tell if any of my locally-installed packages have updates:
 
 ```shell
-brew update
+$ brew update
 ```
 
 Then I ask homebrew to list out which packages have updates available, if any:
 
 ```shell
-brew outdated
+$ brew outdated
 ```
 
 Then, typically, I'll upgrade all of them[^1]:
 
 ```shell
-brew upgrade
+$ brew upgrade
 ```
 
 [^1]: If homebrew wants to upgrade vim, I'll usually quit any running vim processes, because it sometimes gets wonky when you upgrade it while it's already running.
