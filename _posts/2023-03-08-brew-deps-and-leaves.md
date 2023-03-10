@@ -38,7 +38,7 @@ There are only about 30 packages that I explicitly install[^2], but most of thos
 
 [^2]: Which I can see spelled out in [my Brewfile](/2023/brewfile/)
 
-For example, I use vim, and vim has several dependencies that homebrew install when it installs vim:
+For example, I use vim, and vim has several dependencies that homebrew installs when it installs vim:
 
 ```text
 $ brew deps vim --tree
