@@ -1,4 +1,4 @@
-# [hardscrabble.net](https://hardscrabble.net)
+# [hardscrabble.net](https://www.hardscrabble.net)
 
 my personal site. powered by [jekyll](http://jekyllrb.com/) and hosted on
 [github pages](http://pages.github.com/)
