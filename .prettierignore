@@ -4,5 +4,4 @@ searchdata.json
 **/*.html
 js/vendor/**/*.js
 **/*.yml
-css/lib/github.css
-css/lib/normalize.css
+css/lib/**/*
