@@ -3,7 +3,7 @@
   {% if currentdate != date %}
     {% unless forloop.first %}</ul>{% endunless %}
       <h3 id="y{{post.date | date: "%Y"}}m{{post.date | date: "%m"}}">
-        {{ post.date | date: "%b" }}
+        {{ post.date | date: "%B" }}
         {% if include.linkYear %}
           <a href="/{{ post.date | date: "%Y" }}">
             {{ post.date | date: "%Y" }}
