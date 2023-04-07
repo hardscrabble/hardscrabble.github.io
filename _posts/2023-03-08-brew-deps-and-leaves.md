@@ -13,7 +13,7 @@ This may be neurotic, or it may be some PTSD from when I used Arch Linux for a f
 
 Here's how I do it.
 
-First, I tell homebrew to phone home to GitHub and update its local list of packages, which it can use to tell if any of my locally-installed packages have updates:
+First, I tell homebrew to phone home and update its local list of packages, which it can use to tell if any of my locally-installed packages have updates:
 
 ```
 $ brew update
