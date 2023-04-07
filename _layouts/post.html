@@ -18,8 +18,8 @@ layout: default
         </div>
       {% endif %}
 
-      <div clas="published-date">
-        {{ page.date | date_to_string }}
+      <div class="published-date">
+        {{ page.date | date: "%B %-d, %Y"}}
       </div>
     </div>
   </div>

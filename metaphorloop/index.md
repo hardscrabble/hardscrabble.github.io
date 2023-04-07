@@ -11,7 +11,7 @@ This is a podcast about how we think about programming. There are a lot of ways!
 ## episodes
 
 {% for episode in site.metaphorloop_episodes %}
-  1. [{{episode.title}}]({{episode.url}}) -- {{episode.date | date_to_string}}
+  1. [{{episode.title}}]({{episode.url}}) -- {{ episode.date | date: "%B %-d, %Y"}}
 {% endfor %}
 
 ## license

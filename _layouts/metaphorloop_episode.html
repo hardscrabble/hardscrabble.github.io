@@ -11,7 +11,7 @@ layout: default
       <span>An episode of <a href="/metaphorloop">metaphor loop</a></span>
     </div>
     <div class="date">
-      {{ page.date | date_to_string }}
+      {{ page.date | date: "%B %-d, %Y"}}
     </div>
 
     {% include metaphorloop_subscribe.html %}
