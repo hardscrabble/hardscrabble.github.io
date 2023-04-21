@@ -9,7 +9,7 @@ In 2006, [65daysofstatic](https://en.wikipedia.org/wiki/65daysofstatic) released
 
 {% include youtube.html id="RukHWcfa1D8" %}
 
-I would have found this via Jerome Holeyman's blog [charlatan](https://charlatan.livejournal.com), which I was a religious reader of back in the Google Reader days, which covered the hard-to-define genre called [Post-Rock](https://en.wikipedia.org/wiki/Post-rock) that Holeyman covered.
+I would have found this via Jerome Holeyman's blog [charlatan](https://charlatan.livejournal.com), which I was a religious reader of back in the Google Reader days, which covered the hard-to-define genre called [Post-Rock](https://en.wikipedia.org/wiki/Post-rock).
 
 I can't really imagine listening to this without watching the video.
 The video is inseparable, remixing the [original music video](https://www.youtube.com/watch?v=e5RuGj0g1tk).
