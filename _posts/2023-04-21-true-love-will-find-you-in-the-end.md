@@ -4,7 +4,7 @@ date: 2023-04-21 15:04
 category: culture
 ---
 
-This Tiny Desk Concert performance by Daniel Johnston really moved me, particularly the fourth and final song, True Love Will Find You In the End.
+This Tiny Desk Concert performance by Daniel Johnston from 2012 really moved me, particularly the fourth and final song, True Love Will Find You In the End.
 
 {% include youtube.html id="3OvWFurOBk8" %}
 
