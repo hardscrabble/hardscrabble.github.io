@@ -14,7 +14,7 @@ His eyes filled with horror, and he said "For God's sake, use a passphrase, man!
 
 SSH Keys are used as an authentication mechanism for some **very sensitive things** like read/write access to remote git repositories and for managing access to remote servers.
 
-But, anecdotally, I feel like a lot of people don't use them even still...
+But, anecdotally, I feel like a lot of people don't use passphrases with their SSH keys...
 So let's talk about it.
 
 When you generate an SSH Key, you get a pair of text files on your computer.
