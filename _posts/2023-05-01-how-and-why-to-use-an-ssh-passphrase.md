@@ -35,7 +35,7 @@ When I add my public key to my github.com account, and that lets me clone privat
 
 We can imagine a scenario where my private key is compromised.
 Maybe I'm at a coffee shop and I run to the bathroom and forget to lock my laptop.
-The snoop sitting next to me might quickly run `cat ~/.id_ed25519`, take a photo, and then close the terminal window.
+The snoop sitting next to me might quickly run `cat ~/.ssh/id_ed25519`, take a photo, and then close the terminal window.
 Now they have my private key, and they can use it from their computer to access whatever I can access.
 
 Eep.
