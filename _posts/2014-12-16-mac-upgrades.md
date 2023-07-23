@@ -80,7 +80,7 @@ action. There's no coaxing this one out.
 So what do I do? I find the power drill my dad left at my apartment a few months
 ago and start fucking up this fixture:
 
-<video src="/video/2014-12-12-upgrade-battery.mp4" controls/>
+<video src="/video/2014-12-12-upgrade-battery.mp4" controls></video>
 
 (Video via [my instagram](https://instagram.com/p/wp3kyDocg8/) from December 12, 2014)
 
