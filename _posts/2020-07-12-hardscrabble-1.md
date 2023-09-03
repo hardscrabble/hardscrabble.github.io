@@ -166,7 +166,7 @@ This week, following [the happy news](https://www.vulture.com/2020/07/john-mulan
 - My friend [Vaidehi Joshi](https://twitter.com/vaidehijoshi) is launching [a newsletter](https://tinyletter.com/vaidehi) imminently, which I can't wait to read.
   Vaidehi's one of the most thoughtful software engineers and prolific writers I know, on topics like [distributed systems](https://medium.com/baseds) and [green tech](https://costofdata.dev/), and her announcement is what inspired me to spend some time putting this together this weekend.
 - My friend [Thomas Countz](https://twitter.com/ThomasCountz), a software engineer and advocate for privacy-focused tech, launched a tech newsletter called [The Pseudocode](https://thepseudocode.com/) a few months ago.
-  I contributed a piece for the first issue, in which [I reflected on what "Senior Engineer" means to me](https://thepseudocode.com/001/the-broom/).
+  I contributed a piece for the first issue, in which [I reflected on what "Senior Engineer" means to me](/2020/the-broom/).
   I hope more issues follow.
 - The idea to include a few recurring segments is inspired directly by [Hmm Weekly](https://hmmweekly.substack.com/), a newsletter that I'm perennially six months behind on, and will eventually catch up with only if they stop making them.
   For a few months, they published "Nineteen Folktales: A Series", one per week, and I gobbled them up, and have returned to one in particular, "The Discontented Butterfly", every few months since reading it.
