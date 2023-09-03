@@ -5,7 +5,7 @@
       <h3 id="y{{post.date | date: "%Y"}}m{{post.date | date: "%m"}}">
         {{ post.date | date: "%B" }}
         {% if include.linkYear %}
-          <a href="/{{ post.date | date: "%Y" }}">
+          <a href="/{{ post.date | date: "%Y" }}/">
             {{ post.date | date: "%Y" }}
           </a>
         {% else %}
@@ -19,7 +19,7 @@
     <a href="{{ post.url }}">{{ post.title }}</a>
     {% if post.category %}
       {% if include.showCategory %}
-        <a href="/category/{{ post.category | slugify }}">
+        <a href="/category/{{ post.category | slugify }}/">
           <span class="category-label">{{ post.category }}</span>
         </a>
       {% endif %}
