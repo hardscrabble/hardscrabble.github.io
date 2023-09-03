@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+require "date"
+require "irb"
+
+CUTOFF = Date.new(2023, 9, 3) # date I started including preview images
+
+Dir.glob("_posts/**/*").each do |file|
+  match = file.match(%r{_posts/(\d{4}-\d{2}-\d{2})})
+  raise if match.nil?
+  date = Date.parse(match[1])
+
+  next if date < CUTOFF
+
+  text = File.read(file)
+  unless text.include?("preview_image: ")
+    warn <<~MSG
+      #{file} is missing a preview image
+    MSG
+
+    exit 1
+  end
+end

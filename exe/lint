@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+exe/check-preview-images
 exe/check-responsive-video-embeds
 exe/build
 bin/htmlproofer _site --disable-external --no-enforce-https
