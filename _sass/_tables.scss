@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+
+th {
+  border: 1px dashed black;
+  padding: 8px;
+}
+
+td {
+  border: 1px dashed black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: $light-highlight-salmon;
+}
