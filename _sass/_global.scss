@@ -80,6 +80,27 @@ audio {
   width: 100%;
 }
 
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+th {
+  border: 1px dashed black;
+  padding: 8px;
+}
+
+td {
+  border: 1px dashed black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: $light-highlight-salmon;
+}
+
 .fancy {
   border: 0;
   color: $black;
