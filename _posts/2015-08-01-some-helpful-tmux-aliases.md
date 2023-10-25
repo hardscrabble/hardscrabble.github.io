@@ -4,6 +4,8 @@ date: 2015-08-01 19:59
 category: programming
 ---
 
+**EDIT October 25, 2023**: I have an updated post that is a better read: [My tmux aliases (2023 edition)](/2023/my-tmux-aliases).
+
 tmux is [still][0] an essential tool in my development workflow. Today I'm
 writing to share a few aliases/helper functions I've recently added to [my
 dotfiles][1]. Those change all the time so I'm hesitant to link to the files
