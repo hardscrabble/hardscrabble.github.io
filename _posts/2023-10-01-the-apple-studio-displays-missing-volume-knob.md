@@ -5,6 +5,8 @@ category: personal computing
 preview_image: img/preview/2023-10-01-knob.jpg
 ---
 
+**EDIT Nov 3, 2023**: I've replaced that gadget with a different, similar gadget that I've written [a new post about](/2023/programming-my-macropad).
+
 I've been using the [Apple Studio Display](https://www.apple.com/studio-display/) as a computer monitor for over a year now and here's my review: it's pretty good, but it's missing a volume knob.
 
 I use the built-in speakers, which are pretty good.
