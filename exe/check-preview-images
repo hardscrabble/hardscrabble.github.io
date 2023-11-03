@@ -5,6 +5,7 @@ require "irb"
 require "yaml"
 
 CUTOFF = Date.new(2023, 9, 3) # date I started including preview images
+MAX_SIZE = 1 * 1024 * 1024 # 1 megabyte
 
 Dir.glob("_posts/**/*").each do |file|
   match = file.match(%r{_posts/(\d{4}-\d{2}-\d{2})})
@@ -18,7 +19,7 @@ Dir.glob("_posts/**/*").each do |file|
 
   if preview_image.nil?
     warn <<~MSG
-      #{file} is missing a preview image
+      [Preview image] #{file} is missing a preview image
     MSG
 
     exit 1
@@ -26,7 +27,15 @@ Dir.glob("_posts/**/*").each do |file|
 
   if !File.exist?(preview_image)
     warn <<~MSG
-      #{file} references preview image #{preview_image} but that file does not exist
+      [Preview image] #{file} references preview image #{preview_image} but that file does not exist
+    MSG
+
+    exit 1
+  end
+
+  if File.open(preview_image).size > MAX_SIZE
+    warn <<~MSG
+      [Preview image] #{file}'s preview image, #{preview_image}, is too large of a file and won't reliably preview everywhere
     MSG
 
     exit 1

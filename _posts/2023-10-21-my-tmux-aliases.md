@@ -2,7 +2,7 @@
 title: My tmux aliases (2023 edition)
 date: 2023-10-21 15:56
 category: personal computing
-preview_image: img/2023-10-21-tmux-example.png
+preview_image: img/preview/2023-10-21-tmux-example.png
 ---
 
 ![My tmux setup, with some panes showing a vim editor process, server logs, and test output](/img/2023-10-21-tmux-example.png)
