@@ -1,6 +1,5 @@
 **/*.md
 _site
-searchdata.json
 **/*.html
 js/vendor/**/*.js
 **/*.yml

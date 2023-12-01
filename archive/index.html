@@ -19,13 +19,9 @@ redirect_from:
 <div class="archive">
   <h2>Blog posts list</h2>
 
-  <div class="search">
-    <input type=text placeholder="search query" autofocus />
-  </div>
-
-  <div class="search-results">
-    <ul></ul>
-  </div>
+  <section>
+    <div id="search"></div>
+  </section>
 
   <div class="full-archives">
     {% include archive-list.html posts=site.posts linkYear=true showCategory=true %}
