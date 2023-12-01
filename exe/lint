@@ -6,4 +6,4 @@ exe/check-preview-images
 exe/check-responsive-video-embeds
 exe/build
 bin/htmlproofer _site --disable-external --no-enforce-https
-npx prettier@2.8.1 . --check
+npx -y prettier@3.1.0 . --check
