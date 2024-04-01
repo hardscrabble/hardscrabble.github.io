@@ -108,7 +108,7 @@ What we can do is use the [`brew deps`](https://docs.brew.sh/Manpage#deps-option
 For me, that prints out 1,580 lines of output, which I'll share in full behind a collapsible [details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) widget here:
 
 <details>
- <summary>Full output of <code>brew deps  --full-name --installed --tree</code></summary>
+ <summary>Full output of <code>brew deps  --full-name --installed --tree</code> (click to expand)</summary>
 
 <pre>
 <code>
