@@ -1,6 +1,6 @@
 _site
 .DS_STORE
-.sass-cache
 *~
 .jekyll-metadata
 .jekyll-cache
+tags
