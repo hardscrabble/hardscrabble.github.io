@@ -4,7 +4,7 @@ title: About
 
 ![Me standing in a driveway](/img/max.jpg)
 
-Hi there -- I'm Max Jacobson.
+Hi there -- I'm Maxwell Jacobson.
 I'm a software engineer, photographer, piano player, chess player, and movie buff in Brooklyn, NY.
 This is my home on the web.
 
