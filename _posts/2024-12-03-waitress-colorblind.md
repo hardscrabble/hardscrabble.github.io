@@ -32,7 +32,7 @@ The context here is that Dawn is single and hesitant about putting herself out t
 
 But hold on, what's her problem with colorblind people? How is it untrustworthy to be colorblind? I love this song, but I always trip over that line. In addition to being a bit ableist, it's also such a non sequitor.
 
-I'm reminded of the classic 2008 parody of Deep Blue Something's Breakfast at Tiffany's from the sketch comedy group Olde English in 2008:
+I'm reminded of the classic 2008 parody of Deep Blue Something's Breakfast at Tiffany's from the sketch comedy group Olde English:
 
 {% include youtube.html id="3RGiepIoOt8" %}
 
