@@ -31,10 +31,10 @@ GEM
       fiber-storage
     fiber-storage (1.0.0)
     forwardable-extended (2.6.0)
-    google-protobuf (4.29.0-arm64-darwin)
+    google-protobuf (4.29.1-arm64-darwin)
       bigdecimal
       rake (>= 13)
-    google-protobuf (4.29.0-x86_64-linux)
+    google-protobuf (4.29.1-x86_64-linux)
       bigdecimal
       rake (>= 13)
     hashery (2.1.2)
@@ -67,7 +67,7 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-archives (2.2.1)
+    jekyll-archives (2.3.0)
       jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
@@ -113,9 +113,9 @@ GEM
     rouge (4.5.1)
     ruby-rc4 (0.1.5)
     safe_yaml (1.0.5)
-    sass-embedded (1.81.0-arm64-darwin)
+    sass-embedded (1.82.0-arm64-darwin)
       google-protobuf (~> 4.28)
-    sass-embedded (1.81.0-x86_64-linux-gnu)
+    sass-embedded (1.82.0-x86_64-linux-gnu)
       google-protobuf (~> 4.28)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
