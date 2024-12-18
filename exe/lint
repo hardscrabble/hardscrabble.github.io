@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
+PATH="node_modules/.bin:$PATH"
+
 exe/check-responsive-video-embeds
 exe/build
 bin/htmlproofer _site --disable-external --no-enforce-https
-npx -y prettier@3.4.1 . --check
+prettier . --check

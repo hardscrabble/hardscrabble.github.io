@@ -45,6 +45,10 @@ exclude:
   - ".github"
   - ".ruby-version"
   - "prettier.config.js"
+  - "package.json"
+  - "pnpm-lock.yaml"
+  - "node_modules"
+  - ".node-version"
 
 markdown: kramdown
 
