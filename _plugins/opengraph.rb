@@ -81,6 +81,8 @@ Jekyll::Hooks.register :site, :after_init do
 end
 
 Jekyll::Hooks.register :site, :post_write do
+  FileUtils.mkdir_p("_site/img/preview")
+
   Dir.glob("tmp/img/preview/*").each do |path|
     FileUtils.cp path, "_site/img/preview"
   end
