@@ -2,7 +2,6 @@
 title: Streaming sites and their bad URLs
 date: 2023-10-01 14:06
 category: culture
-preview_image: img/preview/2023-10-01-streaming-urls.png
 ---
 
 Why do streaming sites have such poor URLs?

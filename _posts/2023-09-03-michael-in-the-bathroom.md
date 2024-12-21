@@ -2,7 +2,6 @@
 title: Michael in the Bathroom
 date: 2023-09-03 13:49
 category: culture
-preview_image: img/preview/2023-09-03-michael-in-the-bathroom.jpg
 ---
 
 Here's some more musical theatre.

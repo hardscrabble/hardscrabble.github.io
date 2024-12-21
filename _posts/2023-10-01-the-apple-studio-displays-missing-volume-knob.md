@@ -2,7 +2,6 @@
 title: The Apple Studio Display's Missing Volume Knob
 date: 2023-10-01 20:09
 category: personal computing
-preview_image: img/preview/2023-10-01-knob.jpg
 ---
 
 **EDIT Nov 3, 2023**: I've replaced that gadget with a different, similar gadget that I've written [a new post about](/2023/programming-my-macropad).

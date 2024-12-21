@@ -2,7 +2,6 @@
 title: The sloughing off of hacks
 date: 2024-10-03 14:17
 category: programming
-preview_image: img/preview/2024-10-03-colors.png
 ---
 
 I was recently looking over a post of mine from a few years ago, [Learning to love vim colorschemes](/2021/vim-colorschemes/), which goes over how I managed to get my favorite color scheme, [Smyck](https://color.smyck.org/), to take effect in several contexts:

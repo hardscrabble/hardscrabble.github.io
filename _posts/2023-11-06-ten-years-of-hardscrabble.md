@@ -2,7 +2,6 @@
 title: Ten years of Hardscrabble
 date: 2023-11-06 10:39
 category: blogging
-preview_image: img/2023-11-06-old-hardscrabble.png
 ---
 
 This website launched ten years ago today.

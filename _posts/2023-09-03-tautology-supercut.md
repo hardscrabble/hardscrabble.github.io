@@ -2,7 +2,6 @@
 title: Tautology Supercut
 date: 2023-09-03 12:12
 category: culture
-preview_image: img/preview/2023-09-03-tautology-supercut.jpg
 ---
 
 The Wire (famously good TV show) had this weird tic: practically half of it's dialogue is tautologies like "it is what it is".

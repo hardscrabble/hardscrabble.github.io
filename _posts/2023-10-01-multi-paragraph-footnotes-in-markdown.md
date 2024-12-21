@@ -2,7 +2,6 @@
 title: Multi-paragraph footnotes in Markdown
 date: 2023-10-01 21:33
 category: blogging
-preview_image: img/preview/2023-10-01-footnotes.png
 ---
 
 It can be challenging to write about Markdown in Markdown, but I'm going to try. The hard part is showing examples of the syntax without that syntax getting converted into HTML. For example, did you know that if you want to bold some text, you do it **like this**? Shit, that got bolded. Let me try again. You can do it \*\*like this\*\*. OK, great.

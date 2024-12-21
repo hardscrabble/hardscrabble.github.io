@@ -2,7 +2,6 @@
 title: Programming my macropad
 date: 2023-11-03 18:30
 category: personal computing
-preview_image: img/preview/2023-11-03-toggle-audio-shortcut.png
 ---
 
 I [recently](/2023/the-apple-studio-displays-missing-volume-knob) wrote about a gadget that I've started using, a [DOIO KB04-01 Macro Keyboard 4 Keys + 1 Knob Macro Pad](https://www.whatgeek.com/products/doio-kb04-01-macro-keyboard-4-keys-1-knob-macro-pad). Weirdly enough, not long after I posted that, it stopped working. The buttons still worked, but the knob didn't, and for me, the knob was basically the whole point. I had no idea how to debug this either. I had never figured out how to program the macropad at all and was using its out of the box settings. There was some discussion online about how it can be programmed using [Via](https://usevia.app/), the popular app, but you needed to install an old version of it and load in a special JSON file in order for that old version of Via to recognize the device. Reader, I tried.
