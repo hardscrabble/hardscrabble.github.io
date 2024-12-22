@@ -47,6 +47,12 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Cache opengraph images
+        id: cache-opengraph-images
+        uses: actions/cache@v4
+        with:
+          path: tmp
+          key: ${{ runner.os }}-tmp
       - name: Setup imagemagick
         run: |
           sudo apt-get install -y libfuse2 gsfonts
