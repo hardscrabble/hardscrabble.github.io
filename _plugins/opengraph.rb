@@ -9,13 +9,7 @@ class GeneratePreview
   end
 
   def write
-    if File.exist?("tmp/#{path}")
-      puts <<~MSG.chomp
-        Already exists - #{path}
-      MSG
-
-      return
-    end
+    return if File.exist?("tmp/#{path}")
 
     font = ENV["OPENGRAPH_FONT"] || "Helvetica"
 
@@ -31,8 +25,6 @@ class GeneratePreview
     CMD
 
     system(cmd) or raise "Failed for #{slug}"
-
-    puts "Generated - tmp/#{path}"
   end
 
   def path
