@@ -1,15 +1,16 @@
 source "https://rubygems.org"
 
-gem 'base64'
-gem 'csv'
-gem 'jekyll'
-gem 'jekyll-feed'
-gem 'jekyll-redirect-from'
-gem 'jekyll-sitemap'
-gem 'jekyll-paginate'
-gem 'jekyll-archives'
-gem 'kramdown-parser-gfm'
+gem "base64"
+gem "csv"
+gem "jekyll"
+gem "jekyll-archives"
+gem "jekyll-feed"
+gem "jekyll-paginate"
+gem "jekyll-redirect-from"
+gem "jekyll-sitemap"
+gem "kramdown-parser-gfm"
+gem "rubocop"
 
 group :development do
-  gem 'html-proofer'
+  gem "html-proofer"
 end

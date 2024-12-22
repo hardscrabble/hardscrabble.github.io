@@ -3,8 +3,11 @@
 set -euo pipefail
 
 PATH="node_modules/.bin:$PATH"
+PATH="bin:$PATH"
+PATH="exe:$PATH"
 
-exe/check-responsive-video-embeds
-exe/build
-bin/htmlproofer _site --disable-external --no-enforce-https
+check-responsive-video-embeds
+build
+htmlproofer _site --disable-external --no-enforce-https
 prettier . --check
+rubocop

@@ -1,0 +1,19 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - vendor/**/*
+    - node_modules/**/*
+  NewCops: enable
+  TargetRubyVersion: 3.3.6
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

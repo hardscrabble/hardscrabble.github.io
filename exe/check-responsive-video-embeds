@@ -2,7 +2,7 @@
 
 ALLOW_LIST = [
   "_posts/2013-01-21-click-to-ugh.md"
-]
+].freeze
 
 Dir.glob("{_posts,_drafts}/**/*").each do |file|
   text = File.read(file)
@@ -22,16 +22,16 @@ Dir.glob("{_posts,_drafts}/**/*").each do |file|
     exit 1
   end
 
-  if text.include?("player.vimeo")
-    warn <<~MSG
+  next unless text.include?("player.vimeo")
 
-      Includes non-responsive vimeo embed: #{file}
+  warn <<~MSG
 
-      Reminder: you can make a vimeo video responsive like this:
+    Includes non-responsive vimeo embed: #{file}
 
-      {% include vimeo.html id="130172467" %}
-    MSG
+    Reminder: you can make a vimeo video responsive like this:
 
-    exit 1
-  end
+    {% include vimeo.html id="130172467" %}
+  MSG
+
+  exit 1
 end

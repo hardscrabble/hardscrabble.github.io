@@ -1,7 +1,7 @@
 # requires `brew install imagemagick`
 # generates opengraph preview images for posts that don't already have one
 
-require 'shellwords'
+require "shellwords"
 
 class GeneratePreview
   def initialize(post)
@@ -26,7 +26,7 @@ class GeneratePreview
         -fill "#248165" \
         -size 1200x630 \
         -gravity SouthWest \
-        "caption:#{ Shellwords.shellescape title }" \
+        "caption:#{Shellwords.shellescape title}" \
         tmp/#{path}
     CMD
 
@@ -36,7 +36,7 @@ class GeneratePreview
   end
 
   def path
-    "img/preview/#{ date }-#{ slug }.png"
+    "img/preview/#{date}-#{slug}.png"
   end
 
   private
@@ -44,7 +44,7 @@ class GeneratePreview
   attr_reader :post
 
   def date
-    post.date.strftime('%Y-%m-%d') 
+    post.date.strftime("%Y-%m-%d")
   end
 
   def slug
@@ -57,22 +57,22 @@ class GeneratePreview
 end
 
 def assert_exists!(file, preview_image)
-  unless File.exist?(preview_image)
-    warn <<~MSG
-      [Preview image] #{file} references preview image #{preview_image} but that file does not exist
-    MSG
+  return if File.exist?(preview_image)
 
-    exit 1
-  end
+  warn <<~MSG
+    [Preview image] #{file} references preview image #{preview_image} but that file does not exist
+  MSG
+
+  exit 1
 end
 
 Jekyll::Hooks.register :posts, :pre_render do |post|
-  if preview_image = post.data["preview_image"]
+  if (preview_image = post.data["preview_image"])
     assert_exists!(post.path, preview_image)
   else
     preview = GeneratePreview.new(post)
     preview.write
-    post.merge_data!({"preview_image" => preview.path }, source: "opengraph plugin")
+    post.merge_data!({ "preview_image" => preview.path }, source: "opengraph plugin")
   end
 end
 
