@@ -80,10 +80,8 @@ Jekyll::Hooks.register :site, :after_init do
   FileUtils.mkdir_p "tmp/img/preview"
 end
 
-Jekyll::Hooks.register :site, :post_write do
+Jekyll::Hooks.register :posts, :post_write do |post|
   FileUtils.mkdir_p("_site/img/preview")
-
-  Dir.glob("tmp/img/preview/*").each do |path|
-    FileUtils.cp path, "_site/img/preview"
-  end
+  path = post.data.fetch("preview_image")
+  FileUtils.cp "tmp/#{path}", "_site/#{path}"
 end
