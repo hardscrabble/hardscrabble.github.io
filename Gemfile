@@ -9,6 +9,7 @@ gem "jekyll-paginate"
 gem "jekyll-redirect-from"
 gem "jekyll-sitemap"
 gem "kramdown-parser-gfm"
+gem "logger"
 gem "rubocop"
 
 group :development do
