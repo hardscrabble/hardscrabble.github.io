@@ -68,9 +68,9 @@ Some things I learned about where configuration goes:
 - prompt configuration goes in `~/.config/fish/functions/fish_prompt.fish`. To define a prompt you just define that function. A little more on this [below](#fish_prompt).
 - Because I'm a very cool minimalist, I can turn off the fish greeting by running `set --universal fish_greeting`.
 
-And I found this doc that answered the question of "how do I do all the basic programming stuff in fish?": <https://fishshell.com/docs/current/language.html>
-
 ### Syntax
+
+And I found this doc that answered the question of "how do I do all the basic programming stuff in fish?": <https://fishshell.com/docs/current/language.html>
 
 Some things I learned about the language:
 
