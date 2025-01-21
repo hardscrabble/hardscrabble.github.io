@@ -81,7 +81,8 @@ blockquote {
 code {
   background-color: var(--white);
   margin: 0 2px;
-  white-space: nowrap;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 p code,
