@@ -1,0 +1,46 @@
+name: CI
+
+on: [push]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 1 # Increment this number if you need to re-download cached gems
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".node-version"
+          cache: pnpm
+      - name: Cache opengraph images
+        id: cache-opengraph-images
+        uses: actions/cache@v4
+        with:
+          path: tmp
+          key: ${{ runner.os }}-tmp
+      - name: Setup imagemagick
+        run: |
+          sudo apt-get install -y libfuse2 gsfonts
+          sudo wget --quiet https://imagemagick.org/archive/binaries/magick -O /usr/bin/magick
+          sudo chmod +x /usr/bin/magick
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: |
+          magick -list font
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+          OPENGRAPH_FONT: "Nimbus-Sans-Regular"
+      - run: exe/lint
+
