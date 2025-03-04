@@ -5,3 +5,4 @@ js/vendor/**/*.js
 **/*.yml
 css/lib/**/*
 pnpm-lock.yaml
+vendor/**/*
