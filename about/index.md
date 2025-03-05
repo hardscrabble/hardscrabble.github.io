@@ -19,7 +19,6 @@ The source is [available to browse][blog-source], for nerds.
 
 <div class="about-elsewhere">
   <a href="https://mastodon.online/@maxjacobson"><i class="fa-brands fa-mastodon" title="Mastodon"></i></a>
-  <a href="https://bsky.app/profile/hardscrabble.net"><i class="fa-brands fa-bluesky" title="Bluesky"></i></a>
   <a href="https://letterboxd.com/maxjacobson/"><i class="fa-brands fa-square-letterboxd" title="Letterboxd"></i></a>
   <a href="https://www.instagram.com/maxjacobson/"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
   <a href="http://github.com/maxjacobson"><i class="fa-brands fa-github" title="GitHub"></i></a>
